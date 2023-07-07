@@ -1,53 +1,68 @@
-<div class="container">
-  <nav class="navbar navbar-expand-sm navbar-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <h4 class="fw-bold mb-0">Food</h4>
-        <h4 class="fw-bold">Delivery</h4>
-      </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <form class="d-flex me-auto">
-          <input
-            class="form-control me-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-        </form>
-        <ul class="navbar-nav mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#"
-              >Restaurants</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Deals</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Orders</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Cart</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Profile</a>
-          </li>
-        </ul>
+<div class="">
+  <div class="header-container">
+    <nav class="container navbar navbar-expand-sm navbar-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <div class="app-name fw-bold mb-0 app-first-name">Food</div>
+          <div class="app-name fw-bold app-last-name">Delivery</div>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <form
+            class="d-flex mt-3 mt-md-0 mb-2 mb-md-0 ms-0 ms-md-3 ms-lg-5 me-0 me-md-3 me-lg-auto justify-content-center justify-content-md-left"
+          >
+            <input class="search-input" type="text" placeholder="Search" />
+          </form>
+          <ul class="navbar-nav nav-bar-list mb-2 mb-lg-0">
+            <li class="nav-item me-3">
+              <a
+                class="nav-link header-nav-link fw-bold"
+                aria-current="page"
+                href="#"
+                >Restaurants</a
+              >
+            </li>
+            <li class="nav-item me-3">
+              <a class="nav-link header-nav-link fw-bold" href="#">Deals</a>
+            </li>
+            <li class="d-none d-md-block header-seprator me-3"></li>
+            <li class="nav-item me-3">
+              <a class="nav-link header-nav-link fw-bold" href="#">My orders</a>
+            </li>
+            <li class="nav-item me-3">
+              <div class="cart-img-container">
+                <img
+                  class="cart-img"
+                  [src]="cartImage.imgUrl"
+                  [alt]="cartImage.imgAlt"
+                />
+              </div>
+            </li>
+            <li class="nav-item">
+              <div class="user-img-container">
+                <img
+                  class="user-img"
+                  [src]="userInfo.userImage.imgUrl"
+                  [alt]="userInfo.firstName + userInfo.lastName"
+                />
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
-  <div class="container-fluid py-3">
+    </nav>
+  </div>
+  <!-- <div class="container-fluid py-3">
     <div class="row my-3">
       <div class="col">
         <label for="exampleFormControlInput1" class="form-label"
@@ -141,5 +156,5 @@
         Save
       </button>
     </div>
-  </ng-template>
+  </ng-template> -->
 </div>
