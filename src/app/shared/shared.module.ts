@@ -3,8 +3,9 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { OfferCardComponent } from './components/offer-card/offer-card.component';
 
-const COMPONENTS = [HeaderComponent, FooterComponent];
+const COMPONENTS = [HeaderComponent, FooterComponent, OfferCardComponent];
 const MODULES = [CommonModule, NgbModule];
 
 @NgModule({
