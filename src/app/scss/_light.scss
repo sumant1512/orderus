@@ -1,0 +1,16 @@
+@import "variables";
+
+:root {
+  --navbar-bg: #{$light-navbar-bg};
+  --navbar-separator: #{$gray-2};
+  --navbar-link: #{$black-1};
+  --navbar-search-bg: #{$white-15};
+  --navbar-search-bg-focus: #{$white};
+  --navbar-search-input-color: #{$black};
+  --navbar-search-input-border: #{$white};
+  --navbar-search-input-border-focus: #{$blue-1};
+  --navbar-cart-bg: #{$white-14};
+  --navbar-user-img-border: #{$gray-2};
+  --app-first-name: #{$black};
+  --app-last-name: #{$blue-1};
+}

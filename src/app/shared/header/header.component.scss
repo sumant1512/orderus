@@ -1,22 +1,27 @@
+@import "variables";
+
 .header-container {
+  background-color: var(--navbar-bg);
   border-bottom: 2px solid #edeef1;
 
   .container {
     padding: 12px 0;
 
     .app-first-name {
-      color: black;
+      color: var(--app-first-name);
+      font-size: 15px;
     }
 
     .app-last-name {
-      color: #4e60ff;
+      color: var(--app-last-name);
+      font-size: 15px;
     }
 
     .search-input {
       font-size: 14px;
       line-height: 1.5;
-      background: #e9eef0;
-      border: 1px solid #d5d9db;
+      background: var(--navbar-search-bg);
+      border: 1px solid var(--navbar-search-input-border);
       background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'><path fill='%238C92A0' d='M11.44 10.73l4.41 4.42a.5.5 0 1 1-.7.7l-4.42-4.41a6.5 6.5 0 1 1 .7-.7v-.01zM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11z'></path></svg>");
       background-repeat: no-repeat;
       background-position-y: 10px;
@@ -32,12 +37,9 @@
 
     .search-input:focus {
       outline: none;
-      background-color: #fff;
-      border: 1px solid #84a2fa;
-    }
-
-    .app-name {
-      font-size: 15px;
+      background-color: var(--navbar-search-bg-focus);
+      border: 1px solid var(--navbar-search-input-border-focus);
+      color: var(--navbar-search-input-color);
     }
 
     .nav-bar-list {
@@ -46,11 +48,11 @@
 
       .header-seprator {
         height: 32px;
-        border: 1px solid #edeef2;
+        border: 1px solid var(--navbar-separator);
       }
 
       .header-nav-link {
-        color: #2b2b43;
+        color: var(--navbar-link);
         font-size: 14px;
       }
 
@@ -61,7 +63,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #e6f8ff;
+        background-color: var(--navbar-cart-bg);
 
         .cart-img {
           width: 20px;
@@ -70,7 +72,7 @@
       }
 
       .user-img-container {
-        border: 3px solid #c9eaf7;
+        border: 3px solid var(--navbar-user-img-border);
         border-radius: 18px;
         padding: 2px;
 

@@ -1,0 +1,16 @@
+@import "variables";
+
+.dark-theme {
+  --navbar-bg: #{$dark-navbar-bg};
+  --navbar-separator: #{$gray-15};
+  --navbar-link: #{$white-1};
+  --navbar-search-bg: #{$black-15};
+  --navbar-search-bg-focus: #{$black};
+  --navbar-search-input-color: #{$white};
+  --navbar-search-input-border: #{$black};
+  --navbar-search-input-border-focus: #{$gray-14};
+  --navbar-cart-bg: #{$black-15};
+  --navbar-user-img-border: #{$gray-15};
+  --app-first-name: #{$white};
+  --app-last-name: #{$blue-1};
+}
