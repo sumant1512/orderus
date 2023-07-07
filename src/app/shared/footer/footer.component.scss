@@ -1,0 +1,24 @@
+.footer-container {
+  background-color: var(--footer-bg);
+  border-top: 2px solid var(--footer-separator);
+
+  .app-first-name {
+    color: var(--footer-app-first-name);
+    font-size: 20px;
+  }
+
+  .app-last-name {
+    color: var(--footer-app-last-name);
+    font-size: 18px;
+  }
+
+  .footer-header {
+    color: var(--footer-header-color);
+    font-size: 15px;
+
+    .footer-url {
+      font-size: 14px;
+      color: var(--footer-url-color);
+    }
+  }
+}

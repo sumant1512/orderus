@@ -1,16 +1,33 @@
-<div class="container">
-  <div class="row">
-    <div class="col-12 col-lg-6">
-      <div class="row">
-        <div class="col-12 col-md-6 col-lg-12">a</div>
-        <div class="col-12 col-md-6 col-lg-12">b</div>
+<div class="footer-container mt-5">
+  <div class="container">
+    <div class="row py-5">
+      <div class="col-12 col-lg-6">
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-12">
+            <div class="fw-bold mb-0 app-first-name">Food</div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-12">
+            <div class="fw-bold app-last-name">Delivery</div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="col-12 col-lg-6">
-      <div class="row">
-        <div class="col-12 col-md-4">a</div>
-        <div class="col-12 col-md-4">b</div>
-        <div class="col-12 col-md-4">c</div>
+      <div class="col-12 col-lg-6">
+        <div class="row">
+          <div
+            *ngFor="let urlList of footerUrlList"
+            class="fw-bold footer-header col-12 col-md-4"
+          >
+            <div class="mb-3">
+              {{ urlList.headerName }}
+            </div>
+            <div
+              *ngFor="let url of urlList.urlList"
+              class="fw-normal footer-url mb-2"
+            >
+              {{ url.name }}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -1,6 +1,8 @@
 @import "variables";
 
 .dark-theme {
+  --app-first-name: #{$white};
+  --app-last-name: #{$blue-1};
   --navbar-bg: #{$dark-navbar-bg};
   --navbar-separator: #{$gray-15};
   --navbar-link: #{$white-1};
@@ -12,6 +14,11 @@
   --navbar-cart-bg: #{$black-15};
   --navbar-user-img-border: #{$gray-15};
   --navbar-mobile-hamberger: #{$white-15};
-  --app-first-name: #{$white};
-  --app-last-name: #{$blue-1};
+
+  --footer-bg: #{$light-navbar-bg};
+  --footer-app-first-name: #{$black};
+  --footer-app-last-name: #{$blue-1};
+  --footer-header-color: #{$black-15};
+  --footer-url-color: #{$gray-15};
+  --footer-separator: #{$gray-2};
 }

@@ -2,7 +2,7 @@
 
 .header-container {
   background-color: var(--navbar-bg);
-  border-bottom: 2px solid #edeef1;
+  border-bottom: 2px solid var(--navbar-separator);
 
   .container {
     padding: 12px 0;
