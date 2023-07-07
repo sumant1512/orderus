@@ -6,15 +6,20 @@
         <div class="fw-bold app-last-name">Delivery</div>
       </a>
       <button
-        class="navbar-toggler"
+        class="border-0 mobile-hamberger d-block d-md-none"
         type="button"
         data-bs-toggle="collapse"
         data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent"
         aria-expanded="false"
         aria-label="Toggle navigation"
+        (click)="toggleHamburger()"
       >
-        <span class="navbar-toggler-icon"></span>
+        <div class="hamburger" id="hamburger-9">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </div>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <form
@@ -23,7 +28,7 @@
           <input class="search-input" type="text" placeholder="Search" />
         </form>
         <ul class="navbar-nav nav-bar-list mb-2 mb-lg-0">
-          <li class="nav-item me-3">
+          <li class="nav-item me-0 me-md-2 me-lg-3">
             <a
               class="nav-link header-nav-link fw-bold"
               aria-current="page"
@@ -31,14 +36,14 @@
               >Restaurants</a
             >
           </li>
-          <li class="nav-item me-3">
+          <li class="nav-item me-0 me-md-2 me-lg-3">
             <a class="nav-link header-nav-link fw-bold" href="#">Deals</a>
           </li>
           <li class="d-none d-md-block header-seprator me-3"></li>
-          <li class="nav-item me-3">
+          <li class="nav-item me-0 me-md-2 me-lg-3">
             <a class="nav-link header-nav-link fw-bold" href="#">My orders</a>
           </li>
-          <li class="nav-item me-3">
+          <li class="nav-item me-0 me-md-2 me-lg-3 mb-3 mb-md-0 mt-2 mt-md-0">
             <div class="cart-img-container">
               <img
                 class="cart-img"

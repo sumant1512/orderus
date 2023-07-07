@@ -28,4 +28,14 @@ export class HeaderComponent {
   public open(modal: any): void {
     this.modalService.open(modal);
   }
+
+  toggleHamburger() {
+    const hamburger = document.getElementById('hamburger-9');
+    console.log(hamburger);
+    if (hamburger?.classList.contains('is-active')) {
+      hamburger.classList.remove('is-active');
+    } else {
+      hamburger?.classList.add('is-active');
+    }
+  }
 }
