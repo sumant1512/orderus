@@ -5,12 +5,14 @@ import { FooterComponent } from './footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { OfferCardComponent } from './components/offer-card/offer-card.component';
 import { ProductThumbnailComponent } from './components/product-thumbnail/product-thumbnail.component';
+import { RestaurantCardComponent } from './components/restaurant-card/restaurant-card.component';
 
 const COMPONENTS = [
   HeaderComponent,
   FooterComponent,
   OfferCardComponent,
   ProductThumbnailComponent,
+  RestaurantCardComponent,
 ];
 const MODULES = [CommonModule, NgbModule];
 

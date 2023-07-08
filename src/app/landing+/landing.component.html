@@ -3,6 +3,7 @@
     <app-offer-card [cardDetails]="card"></app-offer-card>
   </div>
 </div>
+
 <div class="row">
   <div
     *ngFor="let product of productThumbnailList"
@@ -12,46 +13,19 @@
   </div>
 </div>
 
-<!-- <img src="./../../assets/product-thumbnail/burger.png" alt=""> -->
-<p>landing works!</p>
-<p>landing works!</p>
-<p>landing works!</p>
-<p>landing works!</p>
-<p>landing works!</p>
-<p>landing works!</p>
-<p>landing works!</p>
-<p>landing works!</p>
-<p>landing works!</p>
-<p>landing works!</p>
-<p>landing works!</p>
-<p>landing works!</p>
-<p>landing works!</p>
-<p>landing works!</p>
-<p>landing works!</p>
-<p>landing works!</p>
-<p>landing works!</p>
-<p>landing works!</p>
-<p>landing works!</p>
-<p>landing works!</p>
-<p>landing works!</p>
-<p>landing works!</p>
-<p>landing works!</p>
-<p>landing works!</p>
-<p>landing works!</p>
-<p>landing works!</p>
-<p>landing works!</p>
-<p>landing works!</p>
-<p>landing works!</p>
-<p>landing works!</p>
-<p>landing works!</p>
-<p>landing works!</p>
-<p>landing works!</p>
-<p>landing works!</p>
-<p>landing works!</p>
-<p>landing works!</p>
-<p>landing works!</p>
-<p>landing works!</p>
-<p>landing works!</p>
-<p>landing works!</p>
-<p>landing works!</p>
-<p>landing works!</p>
+<div class="row mt-5">
+  <div class="col-12">
+    <div class="near-by-restaurants-header">Nearby restaurants</div>
+  </div>
+</div>
+
+<div class="row">
+  <div
+    *ngFor="let restaurant of restaurantList"
+    class="col-12 col-md-6 col-lg-4 mt-4"
+  >
+    <app-restaurant-card
+      [restaurantCardDetails]="restaurant"
+    ></app-restaurant-card>
+  </div>
+</div>
