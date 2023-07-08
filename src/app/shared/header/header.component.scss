@@ -56,6 +56,10 @@
         font-size: 14px;
       }
 
+      .header-nav-link:focus {
+        color: var(--app-last-name);
+      }
+
       .cart-img-container {
         width: 50px;
         height: 50px;

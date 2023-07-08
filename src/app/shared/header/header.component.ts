@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { IImage } from '../interfaces/image.interface';
 import { IUserInfo } from 'src/app/store/user-info/interfaces/user-info.interface';
+import { APP_ROUTES } from '../constants/app-routes.constants';
 
 @Component({
   selector: 'app-header',
@@ -9,6 +11,7 @@ import { IUserInfo } from 'src/app/store/user-info/interfaces/user-info.interfac
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
+  routesPath = APP_ROUTES;
   cartImage: IImage = {
     imgUrl: './../../../assets/cart.png',
     imgAlt: 'Cart',
@@ -23,7 +26,7 @@ export class HeaderComponent {
     lastName: 'Mishra',
   };
 
-  constructor(private modalService: NgbModal) {}
+  constructor(private router: Router, private modalService: NgbModal) {}
 
   public open(modal: any): void {
     this.modalService.open(modal);
@@ -37,5 +40,9 @@ export class HeaderComponent {
     } else {
       hamburger?.classList.add('is-active');
     }
+  }
+
+  navigateToPage(routePath: string): void {
+    this.router.navigate([routePath]);
   }
 }
