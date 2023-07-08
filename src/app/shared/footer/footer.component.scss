@@ -2,6 +2,15 @@
   background-color: var(--footer-bg);
   border-top: 2px solid var(--footer-separator);
 
+  .purple {
+    // filter: brightness(0) invert(1);
+    filter: brightness(0%);
+    border: 1px solid white;
+    padding: 8px;
+    border-radius: 100%;
+    background-color: white;
+  }
+
   .app-first-name {
     color: var(--footer-app-first-name);
     font-size: 20px;

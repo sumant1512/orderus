@@ -9,6 +9,15 @@
           <div class="col-12">
             <div class="fw-bold app-last-name">Delivery</div>
           </div>
+          <!-- <div class="col-12">
+            <span *ngFor="let socialMedial of socialMediaList" class="fw-bold">
+              <img
+                class="purple"
+                [src]="socialMedial.imgUrl"
+                alt="socialMedial.imgAlt"
+              />
+            </span>
+          </div> -->
           <div class="col-12 mt-3 d-none d-lg-block">
             <div class="copy-right-section">
               <span>© 2023 Food Delivery kit. All Rights Reserved.</span>
@@ -39,10 +48,10 @@
         </div>
       </div>
 
-      <div class="col-12 mt-3 d-block d-lg-none text-center">
+      <div class="col-12 mt-3 d-block d-lg-none text-center text-md-start">
         <div class="copy-right-section">
           <span>© 2023 Food Delivery kit. All Rights Reserved.</span>
-          <ul class="d-inline-flex">
+          <ul class="d-inline-flex float-md-end">
             <li>Terms of Use</li>
             <li class="ms-4">Privacy Policy</li>
           </ul>
