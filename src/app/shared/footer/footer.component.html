@@ -2,22 +2,40 @@
   <div class="container">
     <div class="row py-5">
       <div class="col-12 col-lg-6">
-        <div class="row">
-          <div class="col-12 col-md-6 col-lg-12">
+        <div class="row text-center text-md-start mb-3 mb-md-0">
+          <div class="col-12">
             <div class="fw-bold mb-0 app-first-name">Food</div>
           </div>
-          <div class="col-12 col-md-6 col-lg-12">
+          <div class="col-12">
             <div class="fw-bold app-last-name">Delivery</div>
+          </div>
+          <!-- <div class="col-12">
+            <span *ngFor="let socialMedial of socialMediaList" class="fw-bold">
+              <img
+                class="purple"
+                [src]="socialMedial.imgUrl"
+                alt="socialMedial.imgAlt"
+              />
+            </span>
+          </div> -->
+          <div class="col-12 mt-3 d-none d-lg-block">
+            <div class="copy-right-section">
+              <span>© 2023 Food Delivery kit. All Rights Reserved.</span>
+              <ul class="d-inline-flex">
+                <li>Terms of Use</li>
+                <li class="ms-4">Privacy Policy</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
       <div class="col-12 col-lg-6">
-        <div class="row">
+        <div class="row text-center text-md-start">
           <div
             *ngFor="let urlList of footerUrlList"
             class="fw-bold footer-header col-12 col-md-4"
           >
-            <div class="mb-3">
+            <div class="mb-3 mt-3 mt-lg-0">
               {{ urlList.headerName }}
             </div>
             <div
@@ -27,6 +45,16 @@
               {{ url.name }}
             </div>
           </div>
+        </div>
+      </div>
+
+      <div class="col-12 mt-3 d-block d-lg-none text-center text-md-start">
+        <div class="copy-right-section">
+          <span>© 2023 Food Delivery kit. All Rights Reserved.</span>
+          <ul class="d-inline-flex float-md-end">
+            <li>Terms of Use</li>
+            <li class="ms-4">Privacy Policy</li>
+          </ul>
         </div>
       </div>
     </div>

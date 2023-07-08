@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IFooterUrlList } from '../interfaces/footer-url-list.interface';
+import { IImage } from '../interfaces/image.interface';
 
 @Component({
   selector: 'app-footer',
@@ -35,5 +36,13 @@ export class FooterComponent {
         { name: 'Contact us', url: '' },
       ],
     },
+  ];
+
+  socialMediaList: Array<IImage> = [
+    { imgUrl: './../../../assets/whats-app.svg', imgAlt: 'Whatsapp' },
+    { imgUrl: './../../../assets/twiter.svg', imgAlt: 'twiter' },
+    { imgUrl: './../../../assets/instagram.svg', imgAlt: 'instagram' },
+    { imgUrl: './../../../assets/facebook.svg', imgAlt: 'facebook' },
+    { imgUrl: './../../../assets/whats-app.svg', imgAlt: '' },
   ];
 }

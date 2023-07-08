@@ -1,5 +1,8 @@
-<app-offer-card></app-offer-card>
-<p>landing works!</p>
+<div class="row">
+  <div *ngFor="let card of offerCardList" class="col-12 col-md-6">
+    <app-offer-card [cardDetails]="card"></app-offer-card>
+  </div>
+</div>
 <p>landing works!</p>
 <p>landing works!</p>
 <p>landing works!</p>
