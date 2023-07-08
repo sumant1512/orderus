@@ -4,8 +4,14 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { OfferCardComponent } from './components/offer-card/offer-card.component';
+import { ProductThumbnailComponent } from './components/product-thumbnail/product-thumbnail.component';
 
-const COMPONENTS = [HeaderComponent, FooterComponent, OfferCardComponent];
+const COMPONENTS = [
+  HeaderComponent,
+  FooterComponent,
+  OfferCardComponent,
+  ProductThumbnailComponent,
+];
 const MODULES = [CommonModule, NgbModule];
 
 @NgModule({

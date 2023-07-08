@@ -1,0 +1,26 @@
+.thumbnail-box {
+  border: 1px solid var(--product-thumbnail-border);
+  border-radius: 16px;
+  padding: 8px;
+  text-align: center;
+  cursor: pointer;
+
+  .thumbnail-name {
+    font-size: 12px;
+    font-weight: 500;
+  }
+}
+
+.thumbnail-box:hover {
+  border: 1px solid var(--product-thumbnail-border-hover);
+  background-color: var(--product-thumbnail-background-hover);
+}
+
+.thumbnail-box:focus {
+  border: 2px solid var(--product-thumbnail-border-hover);
+  background-color: var(--product-thumbnail-background-focus);
+
+  .thumbnail-name {
+    color: var(--product-thumbnail-border-hover);
+  }
+}
