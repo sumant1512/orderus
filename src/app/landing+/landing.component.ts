@@ -155,4 +155,12 @@ export class LandingComponent {
       cartProducts: ['one'],
     },
   ];
+
+  restaurantListCopy = this.restaurantList;
+  restaurantLoaded = 0;
+
+  loadMoreRestaurants(): void {
+    this.restaurantLoaded = this.restaurantLoaded + 1;
+    this.restaurantList = [...this.restaurantList, ...this.restaurantListCopy];
+  }
 }
