@@ -1,12 +1,26 @@
-<div class="row flex-column-reverse flex-lg-row">
-  <div class="col-12 col-lg-6">img</div>
-  <div class="col-12 col-lg-6">
+<div
+  [ngClass]="{
+    'spicy-box': cardDetails.type === 'spicy',
+    'sweet-box': cardDetails.type === 'sweet'
+  }"
+  class="row mx-3 pt-3 mt-4 card-box flex-column-reverse flex-lg-row"
+>
+  <div class="col-12 col-lg-6 position-relative">
+    <img
+      class="card-image position-absolute"
+      [src]="cardDetails.offerCardImage"
+      [alt]="cardDetails.offerCardImageAlt"
+    />
+  </div>
+  <div class="col-12 col-lg-6 ps-4 position-relative">
     <div class="row">
       <div class="col-6 col-lg-12">
-        <div>type</div>
-        <div>offer</div>
+        <div class="card-header">{{ cardDetails.offerCardHeader }}</div>
+        <div class="card-offer">{{ cardDetails.offer }}</div>
       </div>
-      <div class="col-6 col-lg-12">name</div>
+      <div class="col-6 col-lg-12 position-absolute type">
+        {{ cardDetails.typeLabel }}
+      </div>
     </div>
   </div>
 </div>
