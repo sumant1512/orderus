@@ -3,6 +3,16 @@
     <app-offer-card [cardDetails]="card"></app-offer-card>
   </div>
 </div>
+<div class="row">
+  <div
+    *ngFor="let product of productThumbnailList"
+    class="col-3 col-md-4 col-lg-2 mt-4"
+  >
+    <app-product-thumbnail [thumbnailDetails]="product"></app-product-thumbnail>
+  </div>
+</div>
+
+<!-- <img src="./../../assets/product-thumbnail/burger.png" alt=""> -->
 <p>landing works!</p>
 <p>landing works!</p>
 <p>landing works!</p>
