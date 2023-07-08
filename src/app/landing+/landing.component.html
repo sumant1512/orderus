@@ -29,3 +29,11 @@
     ></app-restaurant-card>
   </div>
 </div>
+
+<div class="row mt-5" *ngIf="restaurantLoaded < 3">
+  <div class="col-12 text-center">
+    <button class="btn load-btn" type="submit" (click)="loadMoreRestaurants()">
+      Load More...
+    </button>
+  </div>
+</div>
