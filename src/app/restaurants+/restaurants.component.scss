@@ -1,0 +1,27 @@
+.all-restaurants-header {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+  cursor: pointer;
+}
+
+.all-restaurants-header:hover {
+  text-decoration: underline;
+}
+
+.load-btn {
+  border: 1px solid #4e60ff;
+  font-size: 14px;
+  font-weight: bold;
+  color: #4e60ff;
+  padding: 8px 16px;
+}
+
+.restaurant-count {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.restaurant-count:hover {
+  text-decoration: underline;
+}

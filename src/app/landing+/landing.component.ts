@@ -9,6 +9,7 @@ import { IRestaurantCardDetail } from '../shared/interfaces/restaurant-card-deta
   styleUrls: ['./landing.component.scss'],
 })
 export class LandingComponent {
+  restaurantLoaded = 0;
   offerCardList: Array<IOfferCardDetails> = [
     {
       offerCardImage: './../../assets/icecream.png',
@@ -157,7 +158,6 @@ export class LandingComponent {
   ];
 
   restaurantListCopy = this.restaurantList;
-  restaurantLoaded = 0;
 
   loadMoreRestaurants(): void {
     this.restaurantLoaded = this.restaurantLoaded + 1;
