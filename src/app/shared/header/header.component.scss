@@ -32,7 +32,7 @@
     }
 
     .search-input::placeholder {
-      color: #838d99;
+      color: var(--navbar-search-input-placeholder-color);
     }
 
     .search-input:focus {

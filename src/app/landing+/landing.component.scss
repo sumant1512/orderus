@@ -10,9 +10,9 @@
 }
 
 .load-btn {
-  border: 1px solid #4e60ff;
+  border: 1px solid var(--load-more-btn-border);
   font-size: 14px;
   font-weight: bold;
-  color: #4e60ff;
+  color: var(--load-more-btn-text-color);
   padding: 8px 16px;
 }
