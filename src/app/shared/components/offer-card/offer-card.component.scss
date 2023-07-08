@@ -1,6 +1,12 @@
+@import "mq";
+
 .card-box {
   border-radius: 16px;
-  height: 204px;
+  height: 304px;
+
+  @include mq(lg) {
+    height: 204px;
+  }
 
   .card-header {
     letter-spacing: 0.1px;
@@ -17,10 +23,21 @@
 
   .card-image {
     bottom: 0px;
+    height: 188px;
+  }
+
+  .offer-section {
+    @include mq(lg) {
+      position: relative;
+    }
   }
 
   .type {
     bottom: 16px;
+
+    @include mq(lg) {
+      position: absolute;
+    }
   }
 }
 
