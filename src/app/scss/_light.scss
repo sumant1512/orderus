@@ -9,6 +9,7 @@
   --navbar-search-bg: #{$white-15};
   --navbar-search-bg-focus: #{$white};
   --navbar-search-input-color: #{$black};
+  --navbar-search-input-placeholder-color: #{$gray-13};
   --navbar-search-input-border: #{$white};
   --navbar-search-input-border-focus: #{$blue-1};
   --navbar-cart-bg: #{$white-14};
@@ -22,8 +23,17 @@
   --footer-url-color: #{$gray-13};
   --footer-separator: #{$dark-navbar-bg};
 
+  --offer-card-header-color: #{$black};
+  --offer-card-spicy-bg: #{$orange-0};
+  --offer-card-spicy-offer-color: #{$orange-1};
+  --offer-card-sweet-bg: #{$blue-3};
+  --offer-card-sweet-offer-color: #{$blue-1};
+
   --product-thumbnail-border: #{$gray-2};
   --product-thumbnail-border-hover: #{$blue-2};
   --product-thumbnail-background-hover: #{$blue-0};
   --product-thumbnail-background-focus: #{$blue-3};
+
+  --load-more-btn-border: #{$blue-1};
+  --load-more-btn-text-color: #{$blue-2};
 }
