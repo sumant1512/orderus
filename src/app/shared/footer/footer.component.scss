@@ -21,4 +21,13 @@
       color: var(--footer-url-color);
     }
   }
+
+  .copy-right-section {
+    font-size: 14px;
+    color: var(--footer-url-color);
+    a {
+      font-weight: 500;
+      color: var(--footer-url-color);
+    }
+  }
 }
