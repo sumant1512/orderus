@@ -1,0 +1,39 @@
+.card-box {
+  border-radius: 16px;
+  height: 204px;
+
+  .card-header {
+    letter-spacing: 0.1px;
+    font-size: 20px;
+    color: black;
+    font-weight: 500;
+  }
+
+  .card-offer {
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 0.1px;
+  }
+
+  .card-image {
+    bottom: 0px;
+  }
+
+  .type {
+    bottom: 16px;
+  }
+}
+
+.spicy-box {
+  background-color: #fff3ed;
+  .card-offer {
+    color: #fd6d22;
+  }
+}
+
+.sweet-box {
+  background-color: #f3f4ff;
+  .card-offer {
+    color: #4e60ff;
+  }
+}
