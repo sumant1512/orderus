@@ -1,0 +1,48 @@
+<div class="restaurant-card w-100">
+  <div class="row">
+    <img
+      class="restaurant-img"
+      [src]="restaurantCardDetails.imgUrl"
+      [alt]="restaurantCardDetails.imgAlt"
+    />
+  </div>
+  <div class="row px-3 pt-3">
+    <div class="col-10 restaurant-name">{{ restaurantCardDetails.name }}</div>
+    <div class="col-2 position-relative">
+      <span
+        *ngIf="restaurantCardDetails.cartProducts?.length"
+        class="badge cart-badge position-absolute"
+        >{{ restaurantCardDetails.cartProducts?.length }}</span
+      >
+      <img
+        [src]="
+          restaurantCardDetails.cartProducts?.length
+            ? blueCartImage
+            : greyCartImage
+        "
+        alt="Cart Image"
+      />
+    </div>
+  </div>
+  <div class="row delivery-time px-3 pb-3">
+    <div class="col-12 d-flex align-items-center">
+      <span
+        ><img src="./../../../../assets/restaurant-card/clock.png" alt="Clock"
+      /></span>
+      <span class="ms-1 mt-1">{{ restaurantCardDetails.deliveryTime }}</span>
+      <span class="ms-3 mt-1 blue-dot"></span>
+      <span class="ms-2 mt-1">{{ restaurantCardDetails.minimumPrice }}</span>
+    </div>
+  </div>
+  <div class="row px-3 pb-3">
+    <div
+      *ngFor="let product of restaurantCardDetails.productList"
+      class="col-4"
+    >
+      <div class="product-badge">
+        <img [src]="product.imgUrl" [alt]="product.imgAlt" />
+        <span class="badge-name ms-1">{{ product.name }}</span>
+      </div>
+    </div>
+  </div>
+</div>

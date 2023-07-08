@@ -1,0 +1,56 @@
+.restaurant-card {
+  border: 1px solid #edeef2;
+  border-radius: 16px;
+  border-top-left-radius: 38px;
+  border-top-right-radius: 38px;
+
+  .restaurant-name {
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 0.1px;
+  }
+
+  .restaurant-img {
+    border-top-left-radius: 44px;
+    border-top-right-radius: 44px;
+  }
+
+  .delivery-time {
+    font-size: 12px;
+    font-weight: 500;
+    color: #83859c;
+  }
+
+  .cart-badge {
+    background-color: #4e60ff;
+    color: white;
+    font-size: 8px;
+    right: 20px;
+  }
+
+  .product-badge {
+    display: flex;
+    background-color: #edeef2;
+    justify-content: center;
+    border-radius: 16px;
+    padding: 8px 16px;
+
+    img {
+      height: 14px;
+      margin-top: 2px;
+    }
+
+    .badge-name {
+      font-size: 12px;
+      font-weight: 500;
+    }
+  }
+}
+
+.blue-dot {
+  width: 3px;
+  height: 3px;
+  display: inline-block;
+  border-radius: 100%;
+  background-color: #4e60ff;
+}
