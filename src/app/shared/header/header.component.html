@@ -1,7 +1,7 @@
 <div class="header-container">
   <nav class="container navbar navbar-expand-sm navbar-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand pe-cursor" (click)="navigateToPage('')">
         <div class="fw-bold mb-0 app-first-name">Food</div>
         <div class="fw-bold app-last-name">Delivery</div>
       </a>
@@ -28,22 +28,35 @@
           <input class="search-input" type="text" placeholder="Search" />
         </form>
         <ul class="navbar-nav nav-bar-list mb-2 mb-lg-0">
-          <li class="nav-item me-0 me-md-2 me-lg-3">
+          <li class="nav-item me-0 me-md-2 me-lg-3 pe-cursor">
             <a
+              tabindex="1"
               class="nav-link header-nav-link fw-bold"
               aria-current="page"
-              href="#"
+              (click)="navigateToPage(routesPath.RESTAURANTS)"
               >Restaurants</a
             >
           </li>
-          <li class="nav-item me-0 me-md-2 me-lg-3">
-            <a class="nav-link header-nav-link fw-bold" href="#">Deals</a>
+          <li class="nav-item me-0 me-md-2 me-lg-3 pe-cursor">
+            <a
+              tabindex="1"
+              class="nav-link header-nav-link fw-bold"
+              (click)="navigateToPage('')"
+              >Deals</a
+            >
           </li>
           <li class="d-none d-md-block header-seprator me-3"></li>
-          <li class="nav-item me-0 me-md-2 me-lg-3">
-            <a class="nav-link header-nav-link fw-bold" href="#">My orders</a>
+          <li class="nav-item me-0 me-md-2 me-lg-3 pe-cursor">
+            <a
+              tabindex="1"
+              class="nav-link header-nav-link fw-bold"
+              (click)="navigateToPage('')"
+              >My orders</a
+            >
           </li>
-          <li class="nav-item me-0 me-md-2 me-lg-3 mb-3 mb-md-0 mt-2 mt-md-0">
+          <li
+            class="nav-item me-0 me-md-2 me-lg-3 mb-3 mb-md-0 mt-2 mt-md-0 pe-cursor"
+          >
             <div class="cart-img-container">
               <img
                 class="cart-img"
@@ -52,7 +65,7 @@
               />
             </div>
           </li>
-          <li class="nav-item">
+          <li class="nav-item pe-cursor">
             <div class="user-img-container">
               <img
                 class="user-img"
