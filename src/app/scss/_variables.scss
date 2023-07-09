@@ -30,12 +30,18 @@ $blue-3: hsl(235, 100%, 98%);
 $gray-0: hsl(228, 16%, 94%);
 $gray-1: hsl(228, 16%, 94%);
 $gray-2: hsl(228, 6%, 90%);
+$gray-3: hsl(235, 11%, 56%);
 $gray-13: hsl(0, 0%, 57%);
 $gray-14: hsl(0, 0%, 41%);
 $gray-15: hsl(0, 0%, 31%);
 
-$orange-0: hsl(20, 100%, 96%);
+$red-0: hsl(0, 100%, 50%);
+
+$orange-0: hsl(39, 100%, 50%);
 $orange-1: hsl(21, 98%, 56%);
+$orange-2: hsl(20, 100%, 96%);
+
+$green-0: hsl(120, 100%, 25%);
 
 // Convert the value of a hexadecimal variable to RGB
 @function hexToRGB($hex) {
