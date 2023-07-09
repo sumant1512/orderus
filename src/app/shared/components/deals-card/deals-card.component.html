@@ -1,19 +1,19 @@
 <div class="deal-card w-100 p-3">
   <div class="row">
-    <div class="col-7">
+    <div class="col-8">
       <button
         [ngClass]="{
           active: dealCardDetails.btnType === btnType.ACTIVE,
           scheduled: dealCardDetails.btnType === btnType.SCHEDULED,
           expired: dealCardDetails.btnType === btnType.EXPIRED
         }"
-        class="type-btn px-3 py-1 mb-2"
+        class="type-btn bg-transparent f-10 px-3 py-1 mb-2"
       >
         {{ dealCardDetails.btnType }}
       </button>
-      <div class="deal-details">{{ dealCardDetails.name }}</div>
+      <div class="deal-details fw-bold fw-14">{{ dealCardDetails.name }}</div>
     </div>
-    <div class="col-5">
+    <div class="col-4">
       <img
         class="img-thumbnail"
         [src]="dealCardDetails.imgUrl"
@@ -22,5 +22,46 @@
     </div>
   </div>
 
-  <div class="row deal-separator mt-2"></div>
+  <div class="row deal-separator deal-info-header f-12 fw-500 mt-2 mx-0">
+    <div class="col-12 d-flex align-items-center px-0">
+      <span
+        ><img src="./../../../../assets/restaurant-card/clock.png" alt="Clock"
+      /></span>
+      <span class="ms-1 mt-1">Valid through</span>
+    </div>
+  </div>
+
+  <div class="row f-12 fw-500">
+    <div class="col-12 d-flex align-items-center">
+      <span class="ms-1 mt-1">{{
+        dealCardDetails.validity.validityStartsFrom | date : "d MMMM, y"
+      }}</span>
+      <span *ngIf="dealCardDetails.validity.validityEndsOn" class="ms-1 mt-1">
+        -
+      </span>
+      <span *ngIf="dealCardDetails.validity.validityEndsOn" class="ms-1 mt-1">{{
+        dealCardDetails.validity.validityEndsOn | date : "d MMMM, y"
+      }}</span>
+      <span
+        *ngIf="dealCardDetails?.validity?.validityInfo"
+        class="fw-500 ms-1 mt-1 validity-info"
+        >({{ dealCardDetails.validity.validityInfo }})</span
+      >
+    </div>
+  </div>
+
+  <div class="row deal-info-header f-12 fw-500 mt-2 mx-0">
+    <div class="col-12 d-flex align-items-center px-0">
+      <span
+        ><img src="./../../../../assets/restaurant-card/clock.png" alt="Clock"
+      /></span>
+      <span class="ms-1 mt-1">Restaurant</span>
+    </div>
+  </div>
+
+  <div class="row f-12 fw-500">
+    <div class="col-12">
+      <span class="ms-1 mt-1">{{ dealCardDetails.restaurantType }}</span>
+    </div>
+  </div>
 </div>

@@ -2,20 +2,7 @@
   border: 2px solid var(--deal-card-border-color);
   border-radius: 16px;
 
-  .deal-separator {
-    border-top: 2px solid var(--deal-card-separator);
-    margin: 0;
-  }
-
-  .deal-details {
-    color: #2b2b43;
-    font-size: 12px;
-    font-weight: bold;
-  }
-
   .type-btn {
-    background-color: transparent;
-    font-size: 10px;
     border-radius: 16px;
   }
 
@@ -32,5 +19,21 @@
   .expired {
     border: 1px solid var(--deal-card-red-btn-color);
     color: var(--deal-card-red-btn-border);
+  }
+
+  .deal-details {
+    color: var(--deal-card-details-color);
+  }
+
+  .deal-separator {
+    border-top: 2px solid var(--deal-card-separator);
+  }
+
+  .deal-info-header {
+    color: var(--deal-card-header-color);
+  }
+
+  .validity-info {
+    color: var(--deal-card-validity-info-color);
   }
 }

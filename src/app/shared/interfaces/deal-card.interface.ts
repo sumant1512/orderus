@@ -10,6 +10,6 @@ export interface IDealCardDetail extends IImage {
 
 export interface IValidity {
   validityStartsFrom: string;
-  validityEndsOn: string;
+  validityEndsOn?: string;
   validityInfo?: string;
 }
