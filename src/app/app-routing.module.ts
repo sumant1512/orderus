@@ -16,6 +16,16 @@ const routes: Routes = [
         (m) => m.RestaurantsModule
       ),
   },
+  {
+    path: APP_ROUTES.DEALS,
+    loadChildren: () =>
+      import('./deals+/deals.module').then((m) => m.DealsModule),
+  },
+  {
+    path: APP_ROUTES.MY_ORDERS,
+    loadChildren: () =>
+      import('./my-orders+/my-orders.module').then((m) => m.MyOrdersModule),
+  },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
