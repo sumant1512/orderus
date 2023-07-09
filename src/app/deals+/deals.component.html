@@ -3,3 +3,9 @@
     <span class="all-deals-header">All Deals</span>
   </div>
 </div>
+
+<div class="row">
+  <div *ngFor="let deal of dealsList" class="col-12 col-md-6 col-lg-4 mt-4">
+    <app-deals-card [dealCardDetails]="deal"></app-deals-card>
+  </div>
+</div>

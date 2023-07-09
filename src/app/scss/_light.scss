@@ -24,7 +24,7 @@
   --footer-separator: #{$dark-navbar-bg};
 
   --offer-card-header-color: #{$black};
-  --offer-card-spicy-bg: #{$orange-0};
+  --offer-card-spicy-bg: #{$orange-2};
   --offer-card-spicy-offer-color: #{$orange-1};
   --offer-card-sweet-bg: #{$blue-3};
   --offer-card-sweet-offer-color: #{$blue-1};
@@ -36,4 +36,16 @@
 
   --load-more-btn-border: #{$blue-1};
   --load-more-btn-text-color: #{$blue-2};
+
+  --deal-card-border-color: #{$gray-2};
+  --deal-card-separator: #{$gray-2};
+  --deal-card-red-btn-color: #{$red-0};
+  --deal-card-red-btn-border: #{$red-0};
+  --deal-card-green-btn-color: #{$green-0};
+  --deal-card-green-btn-border: #{$green-0};
+  --deal-card-orange-btn-color: #{$orange-0};
+  --deal-card-orange-btn-border: #{$orange-0};
+  --deal-card-spicy-color: #{$orange-1};
+  --deal-card-sweet-bg: #{$blue-3};
+  --deal-card-sweet-color: #{$blue-1};
 }

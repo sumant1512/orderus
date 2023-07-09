@@ -14,11 +14,12 @@ const COMPONENTS = [
   OfferCardComponent,
   ProductThumbnailComponent,
   RestaurantCardComponent,
+  DealsCardComponent,
 ];
 const MODULES = [CommonModule, NgbModule];
 
 @NgModule({
-  declarations: [...COMPONENTS, DealsCardComponent],
+  declarations: [...COMPONENTS],
   imports: [...MODULES],
   exports: [...COMPONENTS, MODULES],
 })
