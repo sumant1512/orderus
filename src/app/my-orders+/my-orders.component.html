@@ -3,3 +3,46 @@
     <span class="all-my-orders-header">My Orders</span>
   </div>
 </div>
+
+<table class="table mt-4">
+  <thead>
+    <tr class="f-14">
+      <th class="ps-3 ps-md-4 ps-lg-5" scope="col">OrderId</th>
+      <th class="d-none d-md-table-cell" scope="col">Restaurant</th>
+      <th class="d-none d-lg-table-cell" scope="col">Creation Date</th>
+      <th class="d-none d-lg-table-cell" scope="col">Creation Time</th>
+      <th scope="col">Status</th>
+      <th scope="col">Total Amount</th>
+    </tr>
+  </thead>
+  <tbody class="pe-cursor">
+    <tr class="f-12" *ngFor="let order of orderList">
+      <td class="fw-500 ps-md-4 ps-lg-5" data-label="OrderId">
+        {{ order.orderId }}
+      </td>
+      <td class="d-none d-md-table-cell" data-label="Restaurant">
+        {{ order.restaurantName }}
+      </td>
+      <td class="d-none d-lg-table-cell" data-label="Creation Date">
+        {{ order.orderDateTime | date : "d MMM, y" }}
+      </td>
+      <td class="d-none d-lg-table-cell" data-label="Creation Time">
+        {{ order.orderDateTime | date : "hh:mm a" }}
+      </td>
+      <td class="fw-500" data-label="Status">
+        <span
+          [ngClass]="{
+            completed: order.status === 'Completed',
+            cancelled: order.status === 'Canceled',
+            'in-progress': order.status === 'In Progress'
+          }"
+          class="dot me-2"
+        ></span
+        >{{ order.status }}
+      </td>
+      <td class="fw-500" data-label="Total Amount">
+        ${{ order.amount | number : "1.2-2" }}
+      </td>
+    </tr>
+  </tbody>
+</table>
