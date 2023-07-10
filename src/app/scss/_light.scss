@@ -31,7 +31,7 @@
 
   --product-thumbnail-border: #{$gray-2};
   --product-thumbnail-border-hover: #{$blue-2};
-  --product-thumbnail-background-hover: #{$blue-0};
+  --product-thumbnail-background-hover: #{$blue-4};
   --product-thumbnail-background-focus: #{$blue-3};
 
   --load-more-btn-border: #{$blue-1};
@@ -52,4 +52,7 @@
   --order-border-box-shadow-color: #{$gray-4};
   --order-table-head-border-color: #{$gray-5};
   --order-table-body-border-color: #{$gray-5};
+  --order-completed-status-color: #{$green-0};
+  --order-cancelled-status-color: #{$red-0};
+  --order-in-progress-status-color: #{$blue-0};
 }
