@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IRestaurantCardDetail } from '../../interfaces/restaurant-card-details.interface';
 
 @Component({
@@ -8,7 +8,14 @@ import { IRestaurantCardDetail } from '../../interfaces/restaurant-card-details.
 })
 export class RestaurantCardComponent {
   @Input() restaurantCardDetails!: IRestaurantCardDetail;
+  @Output() onCardClick = new EventEmitter<number>();
 
   greyCartImage = './../../../../assets/restaurant-card/cart-grey.png';
   blueCartImage = './../../../../assets/restaurant-card/cart-blue.png';
+
+  cardClick(id: number): void {
+    if (id) {
+      this.onCardClick.emit(id);
+    }
+  }
 }

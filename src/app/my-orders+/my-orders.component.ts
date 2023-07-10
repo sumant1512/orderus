@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IOrder } from '../shared/interfaces/my-order.interface';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-my-orders',
@@ -87,6 +88,14 @@ export class MyOrdersComponent {
       amount: 976.23,
     },
   ];
+
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+
+  navigateToOrderDetails(id: number): void {
+    this.router.navigate([id], {
+      relativeTo: this.activatedRoute,
+    });
+  }
 
   onSortClick(colName: string, type: string) {
     if (type === 'number') {

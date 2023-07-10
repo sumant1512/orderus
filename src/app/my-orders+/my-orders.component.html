@@ -42,7 +42,11 @@
     </tr>
   </thead>
   <tbody class="pe-cursor">
-    <tr class="f-12" *ngFor="let order of orderList">
+    <tr
+      class="f-12"
+      *ngFor="let order of orderList"
+      (click)="navigateToOrderDetails(order.orderId)"
+    >
       <td class="fw-500 ps-md-4 ps-lg-5" data-label="OrderId">
         {{ order.orderId }}
       </td>

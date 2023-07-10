@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IRestaurantCardDetail } from '../shared/interfaces/restaurant-card-details.interface';
 import { IProductThumbnail } from '../shared/interfaces/product-thumbnail.interface';
 
@@ -11,6 +12,7 @@ export class RestaurantsComponent {
   restaurantLoaded = 0;
   restaurantList: Array<IRestaurantCardDetail> = [
     {
+      id: 1,
       name: 'Royal Sushi House',
       imgUrl: './../../assets/restaurant-card/restaurant-1.png',
       imgAlt: 'Restaurant',
@@ -26,6 +28,7 @@ export class RestaurantsComponent {
       cartProducts: [],
     },
     {
+      id: 2,
       name: 'Burgers & Pizza',
       imgUrl: './../../assets/restaurant-card/restaurant-2.png',
       imgAlt: 'Restaurant',
@@ -46,6 +49,7 @@ export class RestaurantsComponent {
       cartProducts: ['one', 'two'],
     },
     {
+      id: 3,
       name: 'Ninja sushi',
       imgUrl: './../../assets/restaurant-card/restaurant-3.png',
       imgAlt: 'Restaurant',
@@ -60,6 +64,7 @@ export class RestaurantsComponent {
       ],
     },
     {
+      id: 4,
       name: 'Sushi master',
       imgUrl: './../../assets/restaurant-card/restaurant-4.png',
       imgAlt: 'Restaurant',
@@ -74,6 +79,7 @@ export class RestaurantsComponent {
       ],
     },
     {
+      id: 5,
       name: 'Japanese sushi',
       imgUrl: './../../assets/restaurant-card/restaurant-5.png',
       imgAlt: 'Restaurant',
@@ -88,6 +94,7 @@ export class RestaurantsComponent {
       ],
     },
     {
+      id: 6,
       name: 'Kobe',
       imgUrl: './../../assets/restaurant-card/restaurant-6.png',
       imgAlt: 'Restaurant',
@@ -139,8 +146,16 @@ export class RestaurantsComponent {
 
   restaurantListCopy = this.restaurantList;
 
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+
   loadMoreRestaurants(): void {
     this.restaurantLoaded = this.restaurantLoaded + 1;
     this.restaurantList = [...this.restaurantList, ...this.restaurantListCopy];
+  }
+
+  navigateToRestaurantDetails(id: number): void {
+    this.router.navigate([id], {
+      relativeTo: this.activatedRoute,
+    });
   }
 }
