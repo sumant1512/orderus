@@ -13,7 +13,7 @@ export class DealsComponent {
       btnType: EDealBtn.ACTIVE,
       imgUrl: './../../assets/deals-card/deal-1.jpg',
       imgAlt: 'sandwich',
-      name: '20% off on Vegan sandwiched every Saturday this Summer',
+      name: '20% off on Vegan sandwiched',
       validity: {
         validityStartsFrom: new Date('7/1/2023').toDateString(),
         validityEndsOn: new Date('7/1/2024').toDateString(),
