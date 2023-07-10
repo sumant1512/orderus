@@ -28,6 +28,7 @@
   >
     <app-restaurant-card
       [restaurantCardDetails]="restaurant"
+      (onCardClick)="navigateToRestaurantDetails($event)"
     ></app-restaurant-card>
   </div>
 </div>

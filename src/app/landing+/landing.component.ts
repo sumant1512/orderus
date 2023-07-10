@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IOfferCardDetails } from '../shared/interfaces/offer-card.interface';
 import { IProductThumbnail } from '../shared/interfaces/product-thumbnail.interface';
 import { IRestaurantCardDetail } from '../shared/interfaces/restaurant-card-details.interface';
+import { Router } from '@angular/router';
+import { APP_ROUTES } from '../shared/constants/app-routes.constants';
 
 @Component({
   selector: 'app-landing',
@@ -64,6 +66,7 @@ export class LandingComponent {
 
   restaurantList: Array<IRestaurantCardDetail> = [
     {
+      id: 1,
       name: 'Royal Sushi House',
       imgUrl: './../../assets/restaurant-card/restaurant-1.png',
       imgAlt: 'Restaurant',
@@ -79,6 +82,7 @@ export class LandingComponent {
       cartProducts: [],
     },
     {
+      id: 2,
       name: 'Burgers & Pizza',
       imgUrl: './../../assets/restaurant-card/restaurant-2.png',
       imgAlt: 'Restaurant',
@@ -99,6 +103,7 @@ export class LandingComponent {
       cartProducts: ['one', 'two'],
     },
     {
+      id: 3,
       name: 'Ninja sushi',
       imgUrl: './../../assets/restaurant-card/restaurant-3.png',
       imgAlt: 'Restaurant',
@@ -113,6 +118,7 @@ export class LandingComponent {
       ],
     },
     {
+      id: 4,
       name: 'Sushi master',
       imgUrl: './../../assets/restaurant-card/restaurant-4.png',
       imgAlt: 'Restaurant',
@@ -127,6 +133,7 @@ export class LandingComponent {
       ],
     },
     {
+      id: 5,
       name: 'Japanese sushi',
       imgUrl: './../../assets/restaurant-card/restaurant-5.png',
       imgAlt: 'Restaurant',
@@ -141,6 +148,7 @@ export class LandingComponent {
       ],
     },
     {
+      id: 6,
       name: 'Kobe',
       imgUrl: './../../assets/restaurant-card/restaurant-6.png',
       imgAlt: 'Restaurant',
@@ -159,8 +167,14 @@ export class LandingComponent {
 
   restaurantListCopy = this.restaurantList;
 
+  constructor(private router: Router) {}
+
   loadMoreRestaurants(): void {
     this.restaurantLoaded = this.restaurantLoaded + 1;
     this.restaurantList = [...this.restaurantList, ...this.restaurantListCopy];
+  }
+
+  navigateToRestaurantDetails(id: number): void {
+    this.router.navigate([APP_ROUTES.RESTAURANTS, id]);
   }
 }
