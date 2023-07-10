@@ -38,15 +38,15 @@ table {
     }
 
     .completed {
-      background-color: green;
+      background-color: var(--order-completed-status-color);
     }
 
     .in-progress {
-      background-color: blue;
+      background-color: var(--order-in-progress-status-color);
     }
 
     .cancelled {
-      background-color: red;
+      background-color: var(--order-cancelled-status-color);
     }
   }
 }

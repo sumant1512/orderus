@@ -1,7 +1,7 @@
 export interface IOrder {
   orderId: number;
   restaurantName: string;
-  orderDateTime: string;
+  orderDateTime: Date;
   status?: string;
   amount: number;
 }
