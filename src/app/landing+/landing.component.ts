@@ -5,7 +5,7 @@ import { IRestaurantCardDetail } from '../shared/interfaces/restaurant-card-deta
 import { Router } from '@angular/router';
 import { APP_ROUTES } from '../shared/constants/app-routes.constants';
 import { Subscription } from 'rxjs';
-import { RestaurantFacade } from '../store/restaurants/restaurant.facade';
+import { RestaurantFacade } from '../store/restaurant/restaurant.facade';
 
 @Component({
   selector: 'app-landing',
