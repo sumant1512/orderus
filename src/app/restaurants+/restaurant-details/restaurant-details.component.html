@@ -1,20 +1,43 @@
-<div class="restaurant-details-page">
+<div *ngIf="restaurantDetails?.id" class="restaurant-details-page py-4">
   <div class="container">
     <div class="header">
       <div class="row">
-        <div class="col-12 col-lg-7">
+        <div class="col-12 col-lg-8 d-flex align-items-center">
           <div class="row">
-            <div class="col-3">
+            <div class="col-3 restaurant-thumbnail">
               <img
                 class="img-thumbnail"
                 [src]="restaurantDetails.thumbnailImage.imgUrl"
                 [alt]="restaurantDetails.thumbnailImage.imgAlt"
               />
             </div>
-            <div class="col-9">B</div>
+            <div class="col-9">
+              <div class="fw-bold f-24">{{ restaurantDetails.name }}</div>
+              <div class="f-14 mt-2">{{ restaurantDetails.about }}</div>
+              <div class="delivery-time mt-3">
+                <span
+                  ><img
+                    src="./../../../../assets/restaurant-card/clock.png"
+                    alt="Clock"
+                /></span>
+                <span class="ms-1 mt-1">{{
+                  restaurantDetails.deliveryTime
+                }}</span>
+                <span class="ms-3 blue-dot"></span>
+                <span class="ms-2 mt-1">{{
+                  restaurantDetails.minimumPrice
+                }}</span>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="col-12 col-lg-5">C</div>
+        <div class="col-12 col-lg-4">
+          <img
+            class="img-fluid location-image"
+            [src]="restaurantDetails.locationImage.imgUrl"
+            [alt]="restaurantDetails.locationImage.imgAlt"
+          />
+        </div>
       </div>
     </div>
   </div>

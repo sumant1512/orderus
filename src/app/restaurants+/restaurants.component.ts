@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { IRestaurantCardDetail } from '../shared/interfaces/restaurant-card-details.interface';
 import { IProductThumbnail } from '../shared/interfaces/product-thumbnail.interface';
-import { RestaurantFacade } from '../store/restaurants/restaurant.facade';
+import { RestaurantFacade } from '../store/restaurant/restaurant.facade';
 @Component({
   selector: 'app-restaurants',
   templateUrl: './restaurants.component.html',
