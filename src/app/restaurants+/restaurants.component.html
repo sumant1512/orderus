@@ -1,42 +1,50 @@
-<div class="row mt-4 mt-lg-5">
-  <div class="col-12">
-    <span class="all-restaurants-header">All restaurants</span>
+<div class="container">
+  <div class="row mt-4 mt-lg-5">
+    <div class="col-12">
+      <span class="all-restaurants-header">All restaurants</span>
+    </div>
   </div>
-</div>
 
-<div class="row">
-  <div
-    *ngFor="let product of productThumbnailList"
-    class="col-3 col-md-4 col-lg-2 mt-4"
-  >
-    <app-product-thumbnail [thumbnailDetails]="product"></app-product-thumbnail>
-  </div>
-</div>
-
-<div class="row mt-5">
-  <div class="col-12">
-    <span class="restaurant-count">
-      Found {{ restaurantList.length }} restaurants</span
+  <div class="row">
+    <div
+      *ngFor="let product of productThumbnailList"
+      class="col-3 col-md-4 col-lg-2 mt-4"
     >
+      <app-product-thumbnail
+        [thumbnailDetails]="product"
+      ></app-product-thumbnail>
+    </div>
   </div>
-</div>
 
-<div class="row">
-  <div
-    *ngFor="let restaurant of restaurantList"
-    class="col-12 col-md-6 col-lg-4 mt-4"
-  >
-    <app-restaurant-card
-      [restaurantCardDetails]="restaurant"
-      (onCardClick)="navigateToRestaurantDetails($event)"
-    ></app-restaurant-card>
+  <div class="row mt-5">
+    <div class="col-12">
+      <span class="restaurant-count">
+        Found {{ restaurantList.length }} restaurants</span
+      >
+    </div>
   </div>
-</div>
 
-<div class="row mt-5" *ngIf="restaurantLoaded < 3">
-  <div class="col-12 text-center">
-    <button class="btn load-btn" type="submit" (click)="loadMoreRestaurants()">
-      Load More...
-    </button>
+  <div class="row">
+    <div
+      *ngFor="let restaurant of restaurantList"
+      class="col-12 col-md-6 col-lg-4 mt-4"
+    >
+      <app-restaurant-card
+        [restaurantCardDetails]="restaurant"
+        (onCardClick)="navigateToRestaurantDetails($event)"
+      ></app-restaurant-card>
+    </div>
+  </div>
+
+  <div class="row mt-5" *ngIf="restaurantLoaded < 3">
+    <div class="col-12 text-center">
+      <button
+        class="btn load-btn"
+        type="submit"
+        (click)="loadMoreRestaurants()"
+      >
+        Load More...
+      </button>
+    </div>
   </div>
 </div>

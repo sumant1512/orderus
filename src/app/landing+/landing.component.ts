@@ -1,17 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { IOfferCardDetails } from '../shared/interfaces/offer-card.interface';
 import { IProductThumbnail } from '../shared/interfaces/product-thumbnail.interface';
 import { IRestaurantCardDetail } from '../shared/interfaces/restaurant-card-details.interface';
 import { Router } from '@angular/router';
 import { APP_ROUTES } from '../shared/constants/app-routes.constants';
+import { Subscription } from 'rxjs';
+import { RestaurantFacade } from '../store/restaurants/restaurant.facade';
 
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
   styleUrls: ['./landing.component.scss'],
 })
-export class LandingComponent {
+export class LandingComponent implements OnInit, OnDestroy {
+  subscription = new Subscription();
   restaurantLoaded = 0;
+  restaurantList!: Array<IRestaurantCardDetail>;
+  restaurantListCopy!: Array<IRestaurantCardDetail>;
+
   offerCardList: Array<IOfferCardDetails> = [
     {
       offerCardImage: './../../assets/icecream.png',
@@ -64,110 +70,29 @@ export class LandingComponent {
     },
   ];
 
-  restaurantList: Array<IRestaurantCardDetail> = [
-    {
-      id: 1,
-      name: 'Royal Sushi House',
-      imgUrl: './../../assets/restaurant-card/restaurant-1.png',
-      imgAlt: 'Restaurant',
-      deliveryTime: '30-40 min',
-      minimumPrice: '$32 min sum',
-      productList: [
-        {
-          imgUrl: './../../assets/restaurant-card/sushi.png',
-          imgAlt: 'Sushi',
-          name: 'Sushi',
-        },
-      ],
-      cartProducts: [],
-    },
-    {
-      id: 2,
-      name: 'Burgers & Pizza',
-      imgUrl: './../../assets/restaurant-card/restaurant-2.png',
-      imgAlt: 'Restaurant',
-      deliveryTime: '40-60 min',
-      minimumPrice: '$24 min sum',
-      productList: [
-        {
-          imgUrl: './../../assets/restaurant-card/pizza.png',
-          imgAlt: 'Pizza',
-          name: 'Pizza',
-        },
-        {
-          imgUrl: './../../assets/restaurant-card/burger.png',
-          imgAlt: 'Burger',
-          name: 'Burger',
-        },
-      ],
-      cartProducts: ['one', 'two'],
-    },
-    {
-      id: 3,
-      name: 'Ninja sushi',
-      imgUrl: './../../assets/restaurant-card/restaurant-3.png',
-      imgAlt: 'Restaurant',
-      deliveryTime: '20-40 min',
-      minimumPrice: '$40 min sum',
-      productList: [
-        {
-          imgUrl: './../../assets/restaurant-card/sushi.png',
-          imgAlt: 'Sushi',
-          name: 'Sushi',
-        },
-      ],
-    },
-    {
-      id: 4,
-      name: 'Sushi master',
-      imgUrl: './../../assets/restaurant-card/restaurant-4.png',
-      imgAlt: 'Restaurant',
-      deliveryTime: '60-70 min',
-      minimumPrice: '$49 min sum',
-      productList: [
-        {
-          imgUrl: './../../assets/restaurant-card/sushi.png',
-          imgAlt: 'Sushi',
-          name: 'Sushi',
-        },
-      ],
-    },
-    {
-      id: 5,
-      name: 'Japanese sushi',
-      imgUrl: './../../assets/restaurant-card/restaurant-5.png',
-      imgAlt: 'Restaurant',
-      deliveryTime: '30-50 min',
-      minimumPrice: '$104 min sum',
-      productList: [
-        {
-          imgUrl: './../../assets/restaurant-card/sushi.png',
-          imgAlt: 'Sushi',
-          name: 'Sushi',
-        },
-      ],
-    },
-    {
-      id: 6,
-      name: 'Kobe',
-      imgUrl: './../../assets/restaurant-card/restaurant-6.png',
-      imgAlt: 'Restaurant',
-      deliveryTime: '20-30 min',
-      minimumPrice: '$57 min sum',
-      productList: [
-        {
-          imgUrl: './../../assets/restaurant-card/sushi.png',
-          imgAlt: 'Sushi',
-          name: 'Sushi',
-        },
-      ],
-      cartProducts: ['one'],
-    },
-  ];
+  constructor(
+    private restaurantFacade: RestaurantFacade,
+    private router: Router
+  ) {
+    this.restaurantFacade.fetchRestaurant();
+  }
 
-  restaurantListCopy = this.restaurantList;
+  ngOnInit(): void {
+    this.getRestaurantList();
+  }
 
-  constructor(private router: Router) {}
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+
+  getRestaurantList(): void {
+    this.subscription.add(
+      this.restaurantFacade.restaurantListState.subscribe((list) => {
+        this.restaurantList = list;
+        this.restaurantListCopy = list;
+      })
+    );
+  }
 
   loadMoreRestaurants(): void {
     this.restaurantLoaded = this.restaurantLoaded + 1;
