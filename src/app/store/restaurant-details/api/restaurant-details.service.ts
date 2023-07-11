@@ -14,7 +14,7 @@ export class RestaurantDetailsService {
 
   fetchRestaurantDetails(id: string): Observable<any> {
     return this.http
-      .get<any>(`./../../../../assets/api/restaurant-details-${id}.json`)
+      .get<any>(`./../../../../assets/api/restaurant-details-1.json`)
       .pipe(
         map((response) => {
           if (response) {
