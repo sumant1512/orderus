@@ -4,9 +4,11 @@ import { IProductThumbnail } from 'src/app/shared/interfaces/product-thumbnail.i
 export interface IRestaurantDetailsState extends IImage {
   id: number;
   name: string;
+  about: '';
   deliveryTime: string;
   minimumPrice: string;
   productList?: Array<IProductThumbnail>;
   cartProducts?: Array<string>;
   thumbnailImage: IImage;
+  locationImage: IImage;
 }

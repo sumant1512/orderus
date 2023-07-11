@@ -2,11 +2,16 @@
   "data": {
     "id": 1,
     "name": "Royal Sushi House",
+    "about": "Very tasty sushi here. We are famous fo sushi. Very tasty sushi here. We are famous fo sushi. Very tasty sushi here. We are famous fo sushi.",
     "imgUrl": "./../../assets/restaurant-card/restaurant-1.png",
     "imgAlt": "Restaurant",
     "thumbnailImage": {
       "imgUrl": "./../../../assets/restaurant-details/restaurant_detail-1.jpg",
       "imgAlt": "Restaurant"
+    },
+    "locationImage": {
+      "imgUrl": "./../../../assets/restaurant-details/location.jpg",
+      "imgAlt": "Restaurant Location"
     },
     "deliveryTime": "30-40 min",
     "minimumPrice": "$32 min sum",
