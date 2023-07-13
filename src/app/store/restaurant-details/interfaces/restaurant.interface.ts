@@ -11,4 +11,12 @@ export interface IRestaurantDetailsState extends IImage {
   cartProducts?: Array<string>;
   thumbnailImage: IImage;
   locationImage: IImage;
+  menuItemList: Array<IMenuItemCard>;
+}
+
+export interface IMenuItemCard extends IImage {
+  id: number;
+  name: string;
+  description: string;
+  price: number;
 }

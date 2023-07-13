@@ -1,0 +1,48 @@
+<div class="row menu-card-one px-2 py-3">
+  <div class="col-5 col-md-3">
+    <img class="img-fluid" [src]="menuItem.imgUrl" [alt]="menuItem.imgAlt" />
+  </div>
+  <div class="d-block d-md-none my-auto text-end col-7">
+    <div class="fw-bold mb-4">
+      <span
+        [ngClass]="{
+          'sub-btn-disabled': itemCount <= 0,
+          'pe-cursor': itemCount > 0
+        }"
+        class="sub-btn"
+        (click)="updateProductCount('sub')"
+        >-</span
+      >
+      <span class="mx-3">{{ itemCount }}</span>
+      <span class="add-btn pe-cursor" (click)="updateProductCount('add')"
+        >+</span
+      >
+    </div>
+    <button class="fw-bold add-cart-btn"><span>+</span> Add to Cart</button>
+  </div>
+  <div class="col-12 col-md-6">
+    <div class="item-name mt-1">{{ menuItem.name }}</div>
+    <div class="item-desc mt-1">{{ menuItem.description }}</div>
+    <div class="fw-bold f-24 mt-2">$ {{ menuItem.price }}</div>
+  </div>
+  <div class="d-none d-md-block col-12 col-md-3 position-relative">
+    <div class="position-absolute bottom-0">
+      <div class="fw-bold text-center mb-4">
+        <span
+          [ngClass]="{
+            'sub-btn-disabled': itemCount <= 0,
+            'pe-cursor': itemCount > 0
+          }"
+          class="sub-btn"
+          (click)="updateProductCount('sub')"
+          >-</span
+        >
+        <span class="mx-3">{{ itemCount }}</span>
+        <span class="add-btn pe-cursor" (click)="updateProductCount('add')"
+          >+</span
+        >
+      </div>
+      <button class="fw-bold add-cart-btn"><span>+</span> Add to Cart</button>
+    </div>
+  </div>
+</div>
