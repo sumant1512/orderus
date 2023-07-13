@@ -55,4 +55,19 @@
   --order-completed-status-color: #{$green-0};
   --order-cancelled-status-color: #{$red-0};
   --order-in-progress-status-color: #{$blue-0};
+
+  --restaurant-details-header-bg-color: #{$gray-6};
+  --restaurant-details-header-time-separator-color: #{$blue-15};
+  --restaurant-details-header-delivery-time-color: #{$gray-12};
+  --restaurant-details-header-location-img-border-color: #{$white};
+  --restaurant-details-header-restaurant-thumbnail-bg-color: #{$white};
+
+  --menu-card-border: #{$gray-2};
+  --menu-card-one-btn-bg: #{$blue-3};
+  --menu-card-one-btn-bg-hover: #{$blue-15};
+  --menu-card-one-btn-color: #{$blue-1};
+  --menu-card-one-btn-color-hover: #{$white};
+  --menu-card-one-item-desc-color: #{$gray-12};
+  --menu-card-one-add-sub-btn-bg: #{$gray-6};
+  --menu-card-one-add-sub-btn-disabled-color: #{$gray-12};
 }

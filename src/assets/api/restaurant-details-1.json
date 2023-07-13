@@ -22,6 +22,48 @@
         "name": "Sushi"
       }
     ],
-    "cartProducts": []
+    "cartProducts": [],
+    "menuItemList": [
+      {
+        "id": 1,
+        "imgUrl": "./../../../assets/menu-card/item-1.jpg",
+        "imgAlt": "Nigri set",
+        "name": "Nigiri set",
+        "description": "This is made of aloo and chilli. It is very tasty and spicy.",
+        "price": 16.8
+      },
+      {
+        "id": 2,
+        "imgUrl": "./../../../assets/menu-card/item-1.jpg",
+        "imgAlt": "Nigri set",
+        "name": "Nigiri set",
+        "description": "This is made of aloo and chilli. It is very tasty and spicy.",
+        "price": 16.8
+      },
+      {
+        "id": 3,
+        "imgUrl": "./../../../assets/menu-card/item-1.jpg",
+        "imgAlt": "Nigri set",
+        "name": "Nigiri set",
+        "description": "This is made of aloo and chilli. It is very tasty and spicy.",
+        "price": 16.8
+      },
+      {
+        "id": 4,
+        "imgUrl": "./../../../assets/menu-card/item-1.jpg",
+        "imgAlt": "Nigri set",
+        "name": "Nigiri set",
+        "description": "This is made of aloo and chilli. It is very tasty and spicy.",
+        "price": 16.8
+      },
+      {
+        "id": 5,
+        "imgUrl": "./../../../assets/menu-card/item-1.jpg",
+        "imgAlt": "Nigri set",
+        "name": "Nigiri set",
+        "description": "This is made of aloo and chilli. It is very tasty and spicy.",
+        "price": 16.8
+      }
+    ]
   }
 }

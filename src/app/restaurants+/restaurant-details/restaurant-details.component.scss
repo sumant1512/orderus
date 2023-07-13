@@ -1,10 +1,12 @@
 @import "mq";
 
-.restaurant-details-page {
-  background-color: #fff4f4;
+.restaurant-details-header {
+  background-color: var(--restaurant-details-header-bg-color);
 
   .restaurant-thumbnail {
-    background-color: white;
+    background-color: var(
+      --restaurant-details-header-restaurant-thumbnail-bg-color
+    );
     border-radius: 16px;
     padding: 16px 8px;
     @include mq(lg) {
@@ -18,7 +20,7 @@
   }
 
   .location-image {
-    border: 4px solid white;
+    border: 4px solid var(--restaurant-details-header-location-img-border-color);
     border-radius: 16px;
     max-height: 250px;
     width: 100%;
@@ -27,14 +29,22 @@
   .blue-dot {
     width: 3px;
     height: 3px;
+    margin-top: 6px;
     display: inline-block;
     border-radius: 100%;
-    background-color: #4e60ff;
+    background-color: var(--restaurant-details-header-time-separator-color);
   }
 
   .delivery-time {
     font-size: 12px;
     font-weight: 500;
-    color: #83859c;
+    color: var(--restaurant-details-header-delivery-time-color);
   }
+}
+
+.body-header-text {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+  cursor: default;
 }

@@ -7,6 +7,7 @@ import { OfferCardComponent } from './components/offer-card/offer-card.component
 import { ProductThumbnailComponent } from './components/product-thumbnail/product-thumbnail.component';
 import { RestaurantCardComponent } from './components/restaurant-card/restaurant-card.component';
 import { DealsCardComponent } from './components/deals-card/deals-card.component';
+import { MenuItemCardOneComponent } from './components/menu-item-card-one/menu-item-card-one.component';
 
 const COMPONENTS = [
   HeaderComponent,
@@ -15,6 +16,7 @@ const COMPONENTS = [
   ProductThumbnailComponent,
   RestaurantCardComponent,
   DealsCardComponent,
+  MenuItemCardOneComponent,
 ];
 const MODULES = [CommonModule, NgbModule];
 
