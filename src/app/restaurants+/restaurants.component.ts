@@ -64,12 +64,14 @@ export class RestaurantsComponent implements OnInit, OnDestroy {
     );
   }
 
-  loadMoreRestaurants(): void {
-    this.restaurantLoaded = this.restaurantLoaded + 1;
-    this.restaurantList = [
-      ...this.restaurantList,
-      ...this.initialRestaurantList,
-    ];
+  loadMoreRestaurants(event: boolean): void {
+    if (event) {
+      this.restaurantLoaded = this.restaurantLoaded + 1;
+      this.restaurantList = [
+        ...this.restaurantList,
+        ...this.initialRestaurantList,
+      ];
+    }
   }
 
   navigateToRestaurantDetails(id: number): void {

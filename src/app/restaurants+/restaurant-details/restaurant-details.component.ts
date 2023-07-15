@@ -37,4 +37,8 @@ export class RestaurantDetailsComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
+
+  reviewBtnClick(event: boolean): void {
+    console.log(event);
+  }
 }

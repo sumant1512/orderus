@@ -9,6 +9,7 @@ import { RestaurantCardComponent } from './components/restaurant-card/restaurant
 import { DealsCardComponent } from './components/deals-card/deals-card.component';
 import { MenuItemCardOneComponent } from './components/menu-item-card-one/menu-item-card-one.component';
 import { ItemFilterPipe } from './pipes/item-filter.pipe';
+import { ButtonComponent } from './components/button/button.component';
 
 const COMPONENTS = [
   HeaderComponent,
@@ -18,6 +19,7 @@ const COMPONENTS = [
   RestaurantCardComponent,
   DealsCardComponent,
   MenuItemCardOneComponent,
+  ButtonComponent,
   ItemFilterPipe,
 ];
 const MODULES = [CommonModule, NgbModule];
