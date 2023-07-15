@@ -57,12 +57,13 @@
           <li
             class="nav-item me-0 me-md-2 me-lg-3 mb-3 mb-md-0 mt-2 mt-md-0 pe-cursor"
           >
-            <div class="cart-img-container">
-              <img
-                class="cart-img"
-                [src]="cartImage.imgUrl"
-                [alt]="cartImage.imgAlt"
-              />
+            <div class="cart-img-container position-relative">
+              <span
+                *ngIf="cartItemCount"
+                class="badge cart-badge position-absolute"
+                >{{ cartItemCount }}</span
+              >
+              <img [src]="cartImage.imgUrl" [alt]="cartImage.imgAlt" />
             </div>
           </li>
           <li class="nav-item pe-cursor">

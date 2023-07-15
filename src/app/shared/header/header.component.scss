@@ -1,5 +1,7 @@
 @import "variables";
 
+@import "mq";
+
 .header-container {
   background-color: var(--navbar-bg);
   border-bottom: 2px solid var(--navbar-separator);
@@ -72,6 +74,15 @@
         .cart-img {
           width: 20px;
           height: 20px;
+        }
+
+        .cart-badge {
+          background-color: var(--navbar-badge-bg-color);
+          color: var(--navbar-badge-color);
+          font-size: 8px;
+          right: 14%;
+          top: 20%;
+          padding: 4px 5px 4px 6px;
         }
       }
 

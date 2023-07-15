@@ -12,6 +12,7 @@ import { APP_ROUTES } from '../constants/app-routes.constants';
 })
 export class HeaderComponent {
   routesPath = APP_ROUTES;
+  cartItemCount = 1;
   cartImage: IImage = {
     imgUrl: './../../../assets/cart.png',
     imgAlt: 'Cart',
