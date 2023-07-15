@@ -14,6 +14,8 @@
   --navbar-search-input-border-focus: #{$gray-14};
   --navbar-cart-bg: #{$black-15};
   --navbar-user-img-border: #{$gray-15};
+  --navbar-badge-bg-color: #{$blue-1};
+  --navbar-badge-color: #{$white};
   --navbar-mobile-hamberger: #{$white-15};
 
   --footer-bg: #{$light-navbar-bg};
@@ -55,6 +57,13 @@
   --order-completed-status-color: #{$green-0};
   --order-cancelled-status-color: #{$red-0};
   --order-in-progress-status-color: #{$blue-0};
+
+  --restaurant-card-border-color: #{$gray-0};
+  --restaurant-card-delivery-time-color: #{$gray-12};
+  --restaurant-card-time-separator-color: #{$blue-15};
+  --restaurant-card-cart-badge-bg-color: #{$blue-1};
+  --restaurant-card-cart-badge-color: #{$white};
+  --restaurant-card-item-badge-bg-color: #{$gray-0};
 
   --restaurant-details-header-bg-color: #{$gray-6};
   --restaurant-details-header-time-separator-color: #{$blue-15};

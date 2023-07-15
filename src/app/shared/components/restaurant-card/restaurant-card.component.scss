@@ -1,7 +1,7 @@
 @import "mq";
 
 .restaurant-card {
-  border: 1px solid #edeef2;
+  border: 1px solid var(--restaurant-card-border-color);
   border-radius: 16px;
   border-top-left-radius: 38px;
   border-top-right-radius: 38px;
@@ -20,12 +20,12 @@
   .delivery-time {
     font-size: 12px;
     font-weight: 500;
-    color: #83859c;
+    color: var(--restaurant-card-delivery-time-color);
   }
 
   .cart-badge {
-    background-color: #4e60ff;
-    color: white;
+    background-color: var(--restaurant-card-cart-badge-bg-color);
+    color: var(--restaurant-card-cart-badge-color);
     font-size: 8px;
     right: 30%;
 
@@ -36,7 +36,7 @@
 
   .product-badge {
     display: flex;
-    background-color: #edeef2;
+    background-color: var(--restaurant-card-item-badge-bg-color);
     justify-content: center;
     border-radius: 16px;
     padding: 8px 16px;
@@ -58,5 +58,5 @@
   height: 3px;
   display: inline-block;
   border-radius: 100%;
-  background-color: #4e60ff;
+  background-color: var(--restaurant-card-time-separator-color);
 }
