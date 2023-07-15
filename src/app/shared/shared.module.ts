@@ -8,6 +8,7 @@ import { ProductThumbnailComponent } from './components/product-thumbnail/produc
 import { RestaurantCardComponent } from './components/restaurant-card/restaurant-card.component';
 import { DealsCardComponent } from './components/deals-card/deals-card.component';
 import { MenuItemCardOneComponent } from './components/menu-item-card-one/menu-item-card-one.component';
+import { ItemFilterPipe } from './pipes/item-filter.pipe';
 
 const COMPONENTS = [
   HeaderComponent,
@@ -17,6 +18,7 @@ const COMPONENTS = [
   RestaurantCardComponent,
   DealsCardComponent,
   MenuItemCardOneComponent,
+  ItemFilterPipe,
 ];
 const MODULES = [CommonModule, NgbModule];
 
@@ -24,5 +26,6 @@ const MODULES = [CommonModule, NgbModule];
   declarations: [...COMPONENTS],
   imports: [...MODULES],
   exports: [...COMPONENTS, MODULES],
+  providers: [ItemFilterPipe],
 })
 export class SharedModule {}

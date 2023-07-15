@@ -1,12 +1,12 @@
 import { IImage } from 'src/app/shared/interfaces/image.interface';
-import { IProductThumbnail } from 'src/app/shared/interfaces/product-thumbnail.interface';
+import { IItemFilter } from '../../item-filter/interfaces/item-filter.interface';
 
 export interface IRestaurant extends IImage {
   id: number;
   name: string;
   deliveryTime: string;
   minimumPrice: string;
-  productList?: Array<IProductThumbnail>;
+  productList?: Array<IItemFilter>;
   cartProducts?: Array<string>;
 }
 

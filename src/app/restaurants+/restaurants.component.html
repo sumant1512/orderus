@@ -7,11 +7,12 @@
 
   <div class="row">
     <div
-      *ngFor="let product of productThumbnailList"
+      *ngFor="let item of itemFilterList"
       class="col-3 col-md-4 col-lg-2 mt-4"
     >
       <app-product-thumbnail
-        [thumbnailDetails]="product"
+        [itemDetails]="item"
+        (onItemSelect)="filterRestaurant($event)"
       ></app-product-thumbnail>
     </div>
   </div>

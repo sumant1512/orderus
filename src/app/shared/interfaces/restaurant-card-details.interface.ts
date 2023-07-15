@@ -1,11 +1,11 @@
+import { IItemFilter } from 'src/app/store/item-filter/interfaces/item-filter.interface';
 import { IImage } from './image.interface';
-import { IProductThumbnail } from './product-thumbnail.interface';
 
 export interface IRestaurantCardDetail extends IImage {
   id: number;
   name: string;
   deliveryTime: string;
   minimumPrice: string;
-  productList?: Array<IProductThumbnail>;
+  productList?: Array<IItemFilter>;
   cartProducts?: Array<string>;
 }

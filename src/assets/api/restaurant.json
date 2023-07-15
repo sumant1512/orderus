@@ -9,9 +9,16 @@
       "minimumPrice": "$32 min sum",
       "productList": [
         {
+          "id": 4,
           "imgUrl": "./../../assets/restaurant-card/sushi.png",
           "imgAlt": "Sushi",
           "name": "Sushi"
+        },
+        {
+          "id": 2,
+          "imgUrl": "./../../assets/restaurant-card/burger.png",
+          "imgAlt": "Burger",
+          "name": "Burger"
         }
       ],
       "cartProducts": []
@@ -25,11 +32,13 @@
       "minimumPrice": "$24 min sum",
       "productList": [
         {
+          "id": 1,
           "imgUrl": "./../../assets/restaurant-card/pizza.png",
           "imgAlt": "Pizza",
           "name": "Pizza"
         },
         {
+          "id": 2,
           "imgUrl": "./../../assets/restaurant-card/burger.png",
           "imgAlt": "Burger",
           "name": "Burger"
@@ -46,6 +55,7 @@
       "minimumPrice": "$40 min sum",
       "productList": [
         {
+          "id": 4,
           "imgUrl": "./../../assets/restaurant-card/sushi.png",
           "imgAlt": "Sushi",
           "name": "Sushi"
@@ -61,9 +71,28 @@
       "minimumPrice": "$49 min sum",
       "productList": [
         {
+          "id": 1,
+          "imgUrl": "./../../assets/restaurant-card/pizza.png",
+          "imgAlt": "Pizza",
+          "name": "Pizza"
+        },
+        {
+          "id": 4,
           "imgUrl": "./../../assets/restaurant-card/sushi.png",
           "imgAlt": "Sushi",
           "name": "Sushi"
+        },
+        {
+          "id": 5,
+          "imgUrl": "./../../assets/product-thumbnail/broccoli.png",
+          "imgAlt": "Vegan",
+          "name": "Vegan"
+        },
+        {
+          "id": 6,
+          "imgUrl": "./../../assets/product-thumbnail/cake.png",
+          "imgAlt": "Dessarts",
+          "name": "Dessarts"
         }
       ]
     },
@@ -76,6 +105,7 @@
       "minimumPrice": "$104 min sum",
       "productList": [
         {
+          "id": 4,
           "imgUrl": "./../../assets/restaurant-card/sushi.png",
           "imgAlt": "Sushi",
           "name": "Sushi"
@@ -91,6 +121,7 @@
       "minimumPrice": "$57 min sum",
       "productList": [
         {
+          "id": 4,
           "imgUrl": "./../../assets/restaurant-card/sushi.png",
           "imgAlt": "Sushi",
           "name": "Sushi"

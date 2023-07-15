@@ -1,5 +1,5 @@
 import { IImage } from 'src/app/shared/interfaces/image.interface';
-import { IProductThumbnail } from 'src/app/shared/interfaces/product-thumbnail.interface';
+import { IItemFilter } from '../../item-filter/interfaces/item-filter.interface';
 
 export interface IRestaurantDetailsState extends IImage {
   id: number;
@@ -7,7 +7,7 @@ export interface IRestaurantDetailsState extends IImage {
   about: '';
   deliveryTime: string;
   minimumPrice: string;
-  productList?: Array<IProductThumbnail>;
+  productList?: Array<IItemFilter>;
   cartProducts?: Array<string>;
   thumbnailImage: IImage;
   locationImage: IImage;

@@ -109,7 +109,6 @@ export class MyOrdersComponent {
   }
 
   sortNumbers(colName: string): void {
-    console.log(colName);
     if (this.sortOrder === 1) {
       this.orderList.sort((a, b) => {
         return (
