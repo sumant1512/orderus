@@ -42,6 +42,8 @@ export class HeaderComponent {
   }
 
   navigateToPage(routePath: string): void {
+    const headerContent = document.getElementById('navbarSupportedContent');
+    headerContent?.classList.remove('show');
     this.router.navigate([routePath]);
   }
 }
