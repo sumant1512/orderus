@@ -17,16 +17,6 @@
       "offer": "50% OFF",
       "typeLabel": "Foodies",
       "type": "spicy"
-    },
-
-    {
-      "id": 3,
-      "imgUrl": "./../../assets/burger.png",
-      "imgAlt": "Burger",
-      "offerCardHeader": "Big Burgers",
-      "offer": "50% OFF",
-      "typeLabel": "Foodies",
-      "type": "spicy"
     }
   ]
 }
