@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IOfferCardDetails } from '../../interfaces/offer-card.interface';
+import { IOffers } from 'src/app/store/offers/interfaces/offers.interface';
 
 @Component({
   selector: 'app-offer-card',
@@ -7,5 +7,5 @@ import { IOfferCardDetails } from '../../interfaces/offer-card.interface';
   styleUrls: ['./offer-card.component.scss'],
 })
 export class OfferCardComponent {
-  @Input() cardDetails!: IOfferCardDetails;
+  @Input() cardDetails!: IOffers;
 }

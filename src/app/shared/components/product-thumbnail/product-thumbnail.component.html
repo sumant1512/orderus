@@ -1,8 +1,12 @@
-<div class="thumbnail-box" [tabindex]="tabIndex">
+<div
+  (click)="selectItem(itemDetails.id)"
+  class="thumbnail-box"
+  [tabindex]="tabIndex"
+>
   <img
     class="position-lg-absolute mb-1"
-    [src]="thumbnailDetails.imgUrl"
-    [alt]="thumbnailDetails.imgAlt"
+    [src]="itemDetails.imgUrl"
+    [alt]="itemDetails.imgAlt"
   />
-  <div class="thumbnail-name">{{ thumbnailDetails.name }}</div>
+  <div class="thumbnail-name">{{ itemDetails.name }}</div>
 </div>

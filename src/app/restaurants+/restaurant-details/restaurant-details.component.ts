@@ -29,7 +29,6 @@ export class RestaurantDetailsComponent implements OnInit, OnDestroy {
       this.restaurantDetailsFacade.restaurantDetailsState.subscribe(
         (details) => {
           this.restaurantDetails = details;
-          console.log(this.restaurantDetails);
         }
       )
     );

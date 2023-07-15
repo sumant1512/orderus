@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { IProductThumbnail } from '../../interfaces/product-thumbnail.interface';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { IItemFilter } from 'src/app/store/item-filter/interfaces/item-filter.interface';
 
 @Component({
   selector: 'app-product-thumbnail',
@@ -7,6 +7,12 @@ import { IProductThumbnail } from '../../interfaces/product-thumbnail.interface'
   styleUrls: ['./product-thumbnail.component.scss'],
 })
 export class ProductThumbnailComponent {
-  @Input() thumbnailDetails!: IProductThumbnail;
+  @Input() itemDetails!: IItemFilter;
   @Input() tabIndex!: number;
+
+  @Output() onItemSelect = new EventEmitter<number>();
+
+  selectItem(id: number): void {
+    this.onItemSelect.emit(id);
+  }
 }

@@ -1,11 +1,14 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { IOfferCardDetails } from '../shared/interfaces/offer-card.interface';
-import { IProductThumbnail } from '../shared/interfaces/product-thumbnail.interface';
 import { IRestaurantCardDetail } from '../shared/interfaces/restaurant-card-details.interface';
 import { Router } from '@angular/router';
 import { APP_ROUTES } from '../shared/constants/app-routes.constants';
 import { Subscription } from 'rxjs';
 import { RestaurantFacade } from '../store/restaurant/restaurant.facade';
+import { ItemFilterFacade } from '../store/item-filter/item-filter.facade';
+import { IItemFilter } from '../store/item-filter/interfaces/item-filter.interface';
+import { ItemFilterPipe } from '../shared/pipes/item-filter.pipe';
+import { IOffers } from '../store/offers/interfaces/offers.interface';
+import { OffersFacade } from '../store/offers/offers.facade';
 
 @Component({
   selector: 'app-landing',
@@ -16,68 +19,27 @@ export class LandingComponent implements OnInit, OnDestroy {
   subscription = new Subscription();
   restaurantLoaded = 0;
   restaurantList!: Array<IRestaurantCardDetail>;
-  restaurantListCopy!: Array<IRestaurantCardDetail>;
+  initialRestaurantList!: Array<IRestaurantCardDetail>;
 
-  offerCardList: Array<IOfferCardDetails> = [
-    {
-      offerCardImage: './../../assets/icecream.png',
-      offerCardImageAlt: 'Icecream',
-      offerCardHeader: 'All Deserts',
-      offer: '20% OFF',
-      typeLabel: 'Deserty',
-      type: 'sweet',
-    },
-    {
-      offerCardImage: './../../assets/burger.png',
-      offerCardImageAlt: 'Burger',
-      offerCardHeader: 'Big Burgers',
-      offer: '50% OFF',
-      typeLabel: 'Foodies',
-      type: 'spicy',
-    },
-  ];
+  offerCardList: Array<IOffers> = [];
 
-  productThumbnailList: Array<IProductThumbnail> = [
-    {
-      imgUrl: './../../assets/product-thumbnail/pizza.png',
-      imgAlt: 'Pizza',
-      name: 'Pizza',
-    },
-    {
-      imgUrl: './../../assets/product-thumbnail/burger.png',
-      imgAlt: 'Burger',
-      name: 'Burger',
-    },
-    {
-      imgUrl: './../../assets/product-thumbnail/meat.png',
-      imgAlt: 'BBQ',
-      name: 'BBQ',
-    },
-    {
-      imgUrl: './../../assets/product-thumbnail/sushi.png',
-      imgAlt: 'Sushi',
-      name: 'Sushi',
-    },
-    {
-      imgUrl: './../../assets/product-thumbnail/broccoli.png',
-      imgAlt: 'Vegan',
-      name: 'Vegan',
-    },
-    {
-      imgUrl: './../../assets/product-thumbnail/cake.png',
-      imgAlt: 'Dessarts',
-      name: 'Dessarts',
-    },
-  ];
+  itemFilterList: Array<IItemFilter> = [];
 
   constructor(
+    private offersFacade: OffersFacade,
+    private itemFilterFacade: ItemFilterFacade,
     private restaurantFacade: RestaurantFacade,
+    private itemFilter: ItemFilterPipe,
     private router: Router
   ) {
+    this.offersFacade.fetchOffersList();
+    this.itemFilterFacade.fetchItemFilter();
     this.restaurantFacade.fetchRestaurant();
   }
 
   ngOnInit(): void {
+    this.getOffers();
+    this.getItemFilterList();
     this.getRestaurantList();
   }
 
@@ -85,18 +47,45 @@ export class LandingComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
+  getOffers(): void {
+    this.subscription.add(
+      this.offersFacade.offersListState.subscribe((list) => {
+        console.log(list);
+        this.offerCardList = list;
+      })
+    );
+  }
+
+  getItemFilterList(): void {
+    this.subscription.add(
+      this.itemFilterFacade.itemFilterListState.subscribe((list) => {
+        this.itemFilterList = list;
+      })
+    );
+  }
+
   getRestaurantList(): void {
     this.subscription.add(
       this.restaurantFacade.restaurantListState.subscribe((list) => {
         this.restaurantList = list;
-        this.restaurantListCopy = list;
+        this.initialRestaurantList = list;
       })
+    );
+  }
+
+  filterRestaurant(itemId: number): void {
+    this.restaurantList = this.itemFilter.transform(
+      this.initialRestaurantList,
+      itemId
     );
   }
 
   loadMoreRestaurants(): void {
     this.restaurantLoaded = this.restaurantLoaded + 1;
-    this.restaurantList = [...this.restaurantList, ...this.restaurantListCopy];
+    this.restaurantList = [
+      ...this.restaurantList,
+      ...this.initialRestaurantList,
+    ];
   }
 
   navigateToRestaurantDetails(id: number): void {
