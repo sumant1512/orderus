@@ -1,0 +1,12 @@
+.primary-btn {
+  border: 1px solid var(--primary-btn-border);
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--primary-btn-text-color);
+  padding: 8px 16px;
+}
+
+.primary-btn:hover {
+  background-color: var(--primary-btn-bg-color-hover);
+  color: var(--primary-btn-text-color-hover);
+}
