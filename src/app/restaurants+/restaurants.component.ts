@@ -59,7 +59,7 @@ export class RestaurantsComponent implements OnInit, OnDestroy {
 
   filterRestaurant(itemId: number): void {
     this.restaurantList = this.itemFilter.transform(
-      this.restaurantList,
+      this.initialRestaurantList,
       itemId
     );
   }
