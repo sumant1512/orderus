@@ -12,6 +12,7 @@ import { ItemFilterPipe } from './pipes/item-filter.pipe';
 import { ButtonComponent } from './components/button/button.component';
 import { RatingComponent } from './components/rating/rating.component';
 import { ReviewCardComponent } from './components/review-card/review-card.component';
+import { DropdownComponent } from './components/dropdown/dropdown.component';
 
 const COMPONENTS = [
   HeaderComponent,
@@ -21,9 +22,10 @@ const COMPONENTS = [
   RestaurantCardComponent,
   DealsCardComponent,
   MenuItemCardOneComponent,
+  ReviewCardComponent,
   ButtonComponent,
   RatingComponent,
-  ReviewCardComponent,
+  DropdownComponent,
   ItemFilterPipe,
 ];
 const MODULES = [CommonModule, NgbModule];

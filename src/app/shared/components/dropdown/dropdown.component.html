@@ -1,0 +1,7 @@
+<div class="dropdown">
+  <select>
+    <option *ngFor="let dropdown of dropdownList" [value]="dropdown.id">
+      {{ dropdown.name }}
+    </option>
+  </select>
+</div>
