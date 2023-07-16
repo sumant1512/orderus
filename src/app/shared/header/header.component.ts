@@ -42,9 +42,19 @@ export class HeaderComponent {
     }
   }
 
+  detectMobile(): boolean {
+    const userAgent = window.navigator.userAgent.toLowerCase();
+    return /(android|webos|iphone|ipod|blackberry|windows phone)/.test(
+      userAgent
+    );
+  }
+
   navigateToPage(routePath: string): void {
-    const headerContent = document.getElementById('navbarSupportedContent');
-    headerContent?.classList.remove('show');
+    if (this.detectMobile()) {
+      const headerContent = document.getElementById('navbarSupportedContent');
+      headerContent?.classList.remove('show');
+      this.toggleHamburger();
+    }
     this.router.navigate([routePath]);
   }
 }

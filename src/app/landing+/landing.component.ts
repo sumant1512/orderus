@@ -50,7 +50,6 @@ export class LandingComponent implements OnInit, OnDestroy {
   getOffers(): void {
     this.subscription.add(
       this.offersFacade.offersListState.subscribe((list) => {
-        console.log(list);
         this.offerCardList = list;
       })
     );
