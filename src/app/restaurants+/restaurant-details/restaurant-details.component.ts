@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { IRestaurantDetailsState } from 'src/app/store/restaurant-details/interfaces/restaurant.interface';
+import { IRestaurantDetailsState } from 'src/app/store/restaurant-details/interfaces/restaurant-details.interface';
 import { RestaurantDetailsFacade } from 'src/app/store/restaurant-details/restaurant-details.facade';
 
 @Component({

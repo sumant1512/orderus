@@ -12,6 +12,7 @@ export interface IRestaurantDetailsState extends IImage {
   thumbnailImage: IImage;
   locationImage: IImage;
   menuItemList: Array<IMenuItemCard>;
+  reviews: Array<IRestaurantReviews>;
 }
 
 export interface IMenuItemCard extends IImage {
@@ -19,4 +20,14 @@ export interface IMenuItemCard extends IImage {
   name: string;
   description: string;
   price: number;
+}
+
+export interface IRestaurantReviews extends IImage {
+  id: number;
+  name: string;
+  review: string;
+  rating: number;
+  likes: number;
+  dislikes: number;
+  date: string;
 }

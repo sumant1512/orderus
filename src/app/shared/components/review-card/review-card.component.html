@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="row pb-3 card-separator">
+    <div class="col-2 p-0">
+      <img
+        class="img-thumbnail rounded-circle"
+        [src]="reviewDetails.imgUrl"
+        [alt]="reviewDetails.imgAlt"
+      />
+    </div>
+    <div class="col-10">
+      <div class="fw-bold">{{ reviewDetails.name }}</div>
+      <div>
+        <app-rating
+          [maxRating]="5"
+          [currentRating]="reviewDetails.rating"
+        ></app-rating>
+      </div>
+      <div class="f-12 comment mt-2">
+        {{ reviewDetails.review }}
+      </div>
+      <div>
+        <img
+          class="like-img"
+          [src]="
+            reviewDetails.likes < reviewDetails.dislikes
+              ? trasnparentLikeImg.imgUrl
+              : likeImg.imgUrl
+          "
+          [alt]="
+            reviewDetails.likes < reviewDetails.dislikes
+              ? trasnparentLikeImg.imgAlt
+              : likeImg.imgAlt
+          "
+        />
+        <span class="f-12 mx-2 fw-500 review-like-count">{{
+          reviewDetails.likes
+        }}</span>
+        <img
+          class="dislike-img mt-2"
+          [src]="
+            reviewDetails.likes < reviewDetails.dislikes
+              ? likeImg.imgUrl
+              : trasnparentLikeImg.imgUrl
+          "
+          [alt]="
+            reviewDetails.likes < reviewDetails.dislikes
+              ? likeImg.imgAlt
+              : trasnparentLikeImg.imgAlt
+          "
+        />
+        <span class="f-12 mx-2 fw-500 review-like-count">{{
+          reviewDetails.dislikes
+        }}</span>
+      </div>
+    </div>
+  </div>
+</div>

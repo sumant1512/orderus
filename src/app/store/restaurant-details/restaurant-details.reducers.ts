@@ -1,4 +1,4 @@
-import { IRestaurantDetailsState } from './interfaces/restaurant.interface';
+import { IRestaurantDetailsState } from './interfaces/restaurant-details.interface';
 import {
   RestaurantDetailsActions,
   RestaurantDetailsActionsUnion,
