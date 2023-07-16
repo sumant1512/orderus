@@ -10,8 +10,8 @@ export class RestaurantCardComponent {
   @Input() restaurantCardDetails!: IRestaurantCardDetail;
   @Output() onCardClick = new EventEmitter<number>();
 
-  greyCartImage = './../../../../assets/restaurant-card/cart-grey.svg';
-  blueCartImage = './../../../../assets/restaurant-card/cart-blue.svg';
+  greyCartImage = './../../../../assets/restaurant-card/cart-grey.png';
+  blueCartImage = './../../../../assets/restaurant-card/cart-blue.png';
 
   cardClick(id: number): void {
     if (id) {

@@ -1,4 +1,4 @@
-import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { IRestaurantDetailsState } from 'src/app/store/restaurant-details/interfaces/restaurant-details.interface';
@@ -14,11 +14,6 @@ export class RestaurantDetailsComponent implements OnInit, OnDestroy {
   restaurantDetails!: IRestaurantDetailsState;
   isDesktop!: boolean;
   activeSlideName = 'menu';
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
-    this.onSlideChange('menu');
-  }
 
   constructor(
     private restaurantDetailsFacade: RestaurantDetailsFacade,
