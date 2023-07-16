@@ -63,7 +63,11 @@
                 class="badge cart-badge position-absolute"
                 >{{ cartItemCount }}</span
               >
-              <img [src]="cartImage.imgUrl" [alt]="cartImage.imgAlt" />
+              <img
+                class="cart-img"
+                [src]="cartImage.imgUrl"
+                [alt]="cartImage.imgAlt"
+              />
             </div>
           </li>
           <li class="nav-item pe-cursor">
