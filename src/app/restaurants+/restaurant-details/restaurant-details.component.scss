@@ -50,18 +50,12 @@
   font-size: 20px;
   font-weight: 500;
   letter-spacing: 0.1px;
-  cursor: default;
 }
 
-.reviews-box {
-  border: 1px solid var(--review-rating-box-border-color);
-  border-radius: 16px;
+.deactive {
+  color: var(--restaurant-details-heading-deactive-color);
+}
 
-  .review-header-separator {
-    border-bottom: 1px solid var(--review-rating-header-separator-color);
-  }
-
-  .rating-num {
-    color: var(--review-rating-num-color);
-  }
+.active {
+  color: var(--restaurant-details-heading-active-color);
 }

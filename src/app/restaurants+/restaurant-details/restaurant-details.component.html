@@ -50,45 +50,40 @@
   <div class="row">
     <div class="col-12 col-lg-8">
       <div class="mb-3">
-        <span class="body-header-text">Menu</span>
+        <span
+          [ngClass]="{ active: activeSlideName === 'menu' }"
+          class="body-header-text deactive pe-cursor"
+          (click)="onSlideChange('menu')"
+          >Menu</span
+        >
+        <span
+          [ngClass]="{ active: activeSlideName === 'reviews' }"
+          class="body-header-text deactive pe-cursor ms-3 d-inline-block d-lg-none"
+          (click)="onSlideChange('reviews')"
+          >Reviews</span
+        >
       </div>
-      <div
-        class="container-fluid mb-3"
-        *ngFor="let menu of restaurantDetails.menuItemList"
-      >
-        <app-menu-item-card-one [menuItem]="menu"></app-menu-item-card-one>
+      <ng-container *ngIf="activeSlideName === 'menu'">
+        <div
+          class="container-fluid mb-3"
+          *ngFor="let menu of restaurantDetails.menuItemList"
+        >
+          <app-menu-item-card-one [menuItem]="menu"></app-menu-item-card-one>
+        </div>
+      </ng-container>
+      <div *ngIf="activeSlideName === 'reviews'" class="d-block d-lg-none">
+        <app-restaurant-reviews
+          [reviews]="restaurantDetails.reviews"
+        ></app-restaurant-reviews>
       </div>
     </div>
-    <div class="col-12 col-lg-4">
+    <div class="d-none d-lg-block col-lg-4">
       <div class="mb-3">
-        <span class="body-header-text">Reviews</span>
+        <span class="body-header-text pe-cursor">Reviews</span>
       </div>
-      <div class="container-fluid mb-3 py-3 reviews-box">
-        <div class="row pb-3 review-header-separator">
-          <div class="col-7">
-            <div class="f-12 fw-bold">Overall Rating</div>
-            <div>
-              <span class="f-18 fw-500 rating-num">4.2</span
-              ><span class="mx-2"
-                ><app-rating
-                  [maxRating]="5"
-                  [currentRating]="selectedRating"
-                ></app-rating>
-              </span>
-              <span class="fw-bold f-12">3 Votes</span>
-            </div>
-          </div>
-          <div class="col-5 ps-0 text-end">
-            <app-button
-              [label]="'Leave Review'"
-              (btnClick)="reviewBtnClick($event)"
-            ></app-button>
-          </div>
-        </div>
-        <div class="mt-3" *ngFor="let review of restaurantDetails.reviews">
-          <app-review-card [reviewDetails]="review"></app-review-card>
-        </div>
-      </div>
+      <app-restaurant-reviews
+        [reviews]="restaurantDetails.reviews"
+      ></app-restaurant-reviews>
     </div>
   </div>
 </div>
