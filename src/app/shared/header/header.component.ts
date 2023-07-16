@@ -14,7 +14,7 @@ export class HeaderComponent {
   routesPath = APP_ROUTES;
   cartItemCount = 1;
   cartImage: IImage = {
-    imgUrl: './../../../assets/cart.png',
+    imgUrl: './../../../assets/cart-blue.svg',
     imgAlt: 'Cart',
   };
 
