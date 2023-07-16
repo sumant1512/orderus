@@ -1,6 +1,4 @@
-.card-separator {
-  border-bottom: 1px solid var(--review-rating-separator);
-
+.card-body {
   .comment {
     letter-spacing: 0.3px;
   }
@@ -17,4 +15,8 @@
   .review-like-count {
     color: var(--review-rating-like-dislike-num-color);
   }
+}
+
+.card-separator {
+  border-bottom: 1px solid var(--review-rating-separator);
 }
