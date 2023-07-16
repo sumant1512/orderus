@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row pb-3 card-separator">
+  <div [ngClass]="{ 'pb-3 card-separator': !isLast }" class="row card-body">
     <div class="col-2 p-0">
       <img
         class="img-thumbnail rounded-circle"

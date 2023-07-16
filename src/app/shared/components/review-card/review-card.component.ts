@@ -9,6 +9,7 @@ import { IImage } from '../../interfaces/image.interface';
 })
 export class ReviewCardComponent {
   @Input() reviewDetails!: IRestaurantReviews;
+  @Input() isLast!: boolean;
 
   likeImg: IImage = {
     imgUrl: './../../../../assets/like.svg',
