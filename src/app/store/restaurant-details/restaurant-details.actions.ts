@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { IRestaurantDetailsState } from './interfaces/restaurant.interface';
+import { IRestaurantDetailsState } from './interfaces/restaurant-details.interface';
 
 export enum RestaurantDetailsActions {
   FETCH_RESTAURANT_DETAILS = '[RestaurantDetails] Fetch RestaurantDetails',

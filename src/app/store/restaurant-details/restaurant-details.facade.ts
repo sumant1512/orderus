@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { AppState } from '../app.state';
 import * as restaurantDetailsSelector from './restaurant-details.selectors';
-import { IRestaurantDetailsState } from './interfaces/restaurant.interface';
+import { IRestaurantDetailsState } from './interfaces/restaurant-details.interface';
 import {
   FetchRestaurantDetails,
   FetchedRestaurantDetails,

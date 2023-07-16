@@ -6,7 +6,7 @@ import {
   RestaurantDetailsActions,
   RestaurantDetailsActionsUnion,
 } from './restaurant-details.actions';
-import { IRestaurantDetailsState } from './interfaces/restaurant.interface';
+import { IRestaurantDetailsState } from './interfaces/restaurant-details.interface';
 import { RestaurantDetailsService } from './api/restaurant-details.service';
 
 @Injectable()

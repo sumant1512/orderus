@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IMenuItemCard } from 'src/app/store/restaurant-details/interfaces/restaurant.interface';
+import { IMenuItemCard } from 'src/app/store/restaurant-details/interfaces/restaurant-details.interface';
 
 @Component({
   selector: 'app-menu-item-card-one',
