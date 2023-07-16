@@ -21,6 +21,10 @@
     font-size: 12px;
     font-weight: 500;
     color: var(--restaurant-card-delivery-time-color);
+
+    .clock {
+      width: 10px;
+    }
   }
 
   .cart-badge {
