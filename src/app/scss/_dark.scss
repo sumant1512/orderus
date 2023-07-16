@@ -80,10 +80,18 @@
   --menu-card-one-add-sub-btn-bg: #{$gray-6};
   --menu-card-one-add-sub-btn-disabled-color: #{$gray-12};
 
+  --review-rating-box-border-color: #{$gray-2};
+  --review-rating-header-separator-color: #{$gray-2};
+  --review-rating-num-color: #{$blue-0};
+
   // components color
 
   --primary-btn-border: #{$blue-1};
   --primary-btn-text-color: #{$blue-2};
   --primary-btn-bg-color-hover: #{$blue-15};
   --primary-btn-text-color-hover: #{$white};
+
+  --primary-rating-color: #{$gray-1};
+  --primary-rating-filled-color: #{$blue-0};
+  --primary-rating-color-hover: #{$blue-0};
 }

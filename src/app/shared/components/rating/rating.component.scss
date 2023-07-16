@@ -1,0 +1,17 @@
+.rating-icon {
+  width: 16px;
+  cursor: pointer;
+}
+
+.rating-icon svg {
+  fill: var(--primary-rating-color);
+  transition: fill 0.3s ease-in-out;
+}
+
+.rating-icon:hover svg {
+  fill: var(--primary-rating-color-hover);
+}
+
+.rating-icon svg.filled {
+  fill: var(--primary-rating-filled-color);
+}

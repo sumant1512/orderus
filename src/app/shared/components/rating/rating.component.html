@@ -1,0 +1,13 @@
+<div class="rating d-inline-flex">
+  <span *ngFor="let star of stars" (click)="rate(star)" class="rating-icon">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      [ngClass]="{ filled: star <= currentRating }"
+    >
+      <path
+        d="M12 2L9.09 8.45L2 9.27L7.46 14.14L6.36 21.27L12 17.42L17.64 21.27L16.54 14.14L22 9.27L14.91 8.45L12 2Z"
+      />
+    </svg>
+  </span>
+</div>
