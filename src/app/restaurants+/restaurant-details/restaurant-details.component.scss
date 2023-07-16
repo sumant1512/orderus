@@ -50,6 +50,14 @@
 }
 
 .reviews-box {
-  border: 1px solid black;
+  border: 1px solid var(--review-rating-box-border-color);
   border-radius: 16px;
+
+  .review-header-separator {
+    border-bottom: 1px solid var(--review-rating-header-separator-color);
+  }
+
+  .rating-num {
+    color: var(--review-rating-num-color);
+  }
 }

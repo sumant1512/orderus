@@ -12,6 +12,7 @@ import { RestaurantDetailsFacade } from 'src/app/store/restaurant-details/restau
 export class RestaurantDetailsComponent implements OnInit, OnDestroy {
   subscription = new Subscription();
   restaurantDetails!: IRestaurantDetailsState;
+  selectedRating = 3;
 
   constructor(
     private restaurantDetailsFacade: RestaurantDetailsFacade,

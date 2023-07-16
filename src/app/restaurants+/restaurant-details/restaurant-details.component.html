@@ -62,11 +62,20 @@
       <div class="mb-3">
         <span class="body-header-text">Reviews</span>
       </div>
-      <div class="container-fluid mb-3 pt-3 reviews-box">
-        <div class="row">
+      <div class="container-fluid mb-3 py-3 reviews-box">
+        <div class="row pb-3 review-header-separator">
           <div class="col-6 col-lg-7">
-            <div class="f-14 fw-bold">Overall Rating</div>
-            <div><span>4.2</span><span>Votes</span> <span>3 Votes</span></div>
+            <div class="f-12 fw-bold">Overall Rating</div>
+            <div>
+              <span class="f-18 fw-500 rating-num">4.2</span
+              ><span class="mx-2"
+                ><app-rating
+                  [maxRating]="5"
+                  [currentRating]="selectedRating"
+                ></app-rating>
+              </span>
+              <span class="fw-bold f-12">3 Votes</span>
+            </div>
           </div>
           <div class="col-6 col-lg-5">
             <app-button
