@@ -1,0 +1,11 @@
+<div class="d-flex">
+  <input
+    class="me-3"
+    type="checkbox"
+    [formControl]="control"
+    (input)="onChange($event.target)"
+    (blur)="onTouched()"
+  />
+
+  <label class="f-10 fw-500">{{ label }}</label>
+</div>

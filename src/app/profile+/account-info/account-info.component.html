@@ -1,1 +1,89 @@
-<p>account-info works!</p>
+<div class="container-fluid py-3 account-info-container">
+  <div class="row mb-3">
+    <div class="col-12 fw-bold">Personal Information</div>
+    <div class="col-12 mt-3 mb-2 f-10 fw-500 avtar">Avtar</div>
+    <div class="col-12">
+      <img
+        class="user-img me-3 mb-3 mb-md-0"
+        src="./../../../assets/userImg.png"
+        alt=""
+      />
+      <app-button class="me-3" [label]="'Change'"></app-button>
+      <app-button-secondary [label]="'Remove'"></app-button-secondary>
+    </div>
+  </div>
+
+  <section class="mb-5">
+    <div class="row mb-0 mb-md-3">
+      <div class="col-12 mb-1 mb-md-0 col-md-6">
+        <app-input [label]="'First name'"></app-input>
+      </div>
+      <div class="col-12 mb-1 mb-md-0 col-md-6">
+        <app-input [label]="'Last name'"></app-input>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 mb-1 mb-md-0 col-md-6">
+        <app-input [label]="'Email'"></app-input>
+      </div>
+      <div class="col-12 mb-1 mb-md-0 col-md-6">
+        <app-input [label]="'Phone Number'"></app-input>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-3">
+    <div class="row mb-3">
+      <div class="col-12 fw-bold">Email notification</div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-6 mb-2">
+        <app-input-checkbox [label]="'New deals'"></app-input-checkbox>
+      </div>
+      <div class="col-12 col-md-6 mb-2">
+        <app-input-checkbox [label]="'New restaurants'"></app-input-checkbox>
+      </div>
+      <div class="col-12 col-md-6 mb-2">
+        <app-input-checkbox [label]="'Order statuses'"></app-input-checkbox>
+      </div>
+      <div class="col-12 col-md-6 mb-2">
+        <app-input-checkbox [label]="'Password changes'"></app-input-checkbox>
+      </div>
+      <div class="col-12 col-md-6 mb-2">
+        <app-input-checkbox [label]="'Special offers'"></app-input-checkbox>
+      </div>
+      <div class="col-12 col-md-6 mb-2">
+        <app-input-checkbox [label]="'News letter'"></app-input-checkbox>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="row pt-3 account-footer">
+      <div
+        class="col-12 text-center text-md-start mb-3 mb-md-0 col-md-4 col-lg-6"
+      >
+        <app-button-danger class="me-3" [label]="'Log out'"></app-button-danger>
+      </div>
+      <div
+        class="col-12 text-center text-md-end mb-3 mb-md-0 col-md-8 col-lg-6"
+      >
+        <div class="row">
+          <div class="col-6">
+            <app-button-danger
+              class="me-3"
+              [label]="'Discard changes'"
+            ></app-button-danger>
+          </div>
+          <div class="col-6">
+            <app-button
+              class="me-3"
+              [label]="'Save changes'"
+              [isFilled]="true"
+            ></app-button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
