@@ -3,4 +3,6 @@ export const APP_ROUTES = {
   RESTAURANTS: 'restaurants',
   DEALS: 'deals',
   MY_ORDERS: 'my-orders',
+  CART: 'cart',
+  PROFILE: 'profile',
 };

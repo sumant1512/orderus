@@ -26,6 +26,15 @@ const routes: Routes = [
     loadChildren: () =>
       import('./my-orders+/my-orders.module').then((m) => m.MyOrdersModule),
   },
+  {
+    path: APP_ROUTES.CART,
+    loadChildren: () => import('./cart+/cart.module').then((m) => m.CartModule),
+  },
+  {
+    path: APP_ROUTES.PROFILE,
+    loadChildren: () =>
+      import('./profile+/profile.module').then((m) => m.ProfileModule),
+  },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 

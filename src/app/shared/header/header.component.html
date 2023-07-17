@@ -57,7 +57,10 @@
           <li
             class="nav-item me-0 me-md-2 me-lg-3 mb-3 mb-md-0 mt-2 mt-md-0 pe-cursor"
           >
-            <div class="cart-img-container position-relative">
+            <div
+              (click)="navigateToPage(routesPath.CART)"
+              class="cart-img-container position-relative"
+            >
               <span
                 *ngIf="cartItemCount"
                 class="badge cart-badge position-absolute"
@@ -71,7 +74,10 @@
             </div>
           </li>
           <li class="nav-item pe-cursor">
-            <div class="user-img-container">
+            <div
+              (click)="navigateToPage(routesPath.PROFILE)"
+              class="user-img-container"
+            >
               <img
                 class="user-img"
                 [src]="userInfo.userImage.imgUrl"
