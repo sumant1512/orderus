@@ -1,13 +1,12 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-button',
-  templateUrl: './button.component.html',
-  styleUrls: ['./button.component.scss'],
+  selector: 'app-button-danger',
+  templateUrl: './button-danger.component.html',
+  styleUrls: ['./button-danger.component.scss'],
 })
-export class ButtonComponent {
+export class ButtonDangerComponent {
   @Input() label!: string;
-  @Input() isFilled: boolean = false;
   @Output() btnClick = new EventEmitter<boolean>();
 
   emitBtnClickEvent(): void {

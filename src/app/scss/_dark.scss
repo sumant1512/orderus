@@ -61,7 +61,7 @@
   --order-in-progress-status-color: #{$blue-0};
 
   --restaurant-card-border-color: #{$gray-0};
-  --restaurant-card-delivery-time-color: #{$gray-12};
+  --restaurant-card-delivery-time-color: #{$gray-3};
   --restaurant-card-time-separator-color: #{$blue-15};
   --restaurant-card-cart-badge-bg-color: #{$blue-1};
   --restaurant-card-cart-badge-color: #{$white};
@@ -69,7 +69,7 @@
 
   --restaurant-details-header-bg-color: #{$gray-6};
   --restaurant-details-header-time-separator-color: #{$blue-15};
-  --restaurant-details-header-delivery-time-color: #{$gray-12};
+  --restaurant-details-header-delivery-time-color: #{$gray-3};
   --restaurant-details-header-location-img-border-color: #{$white};
   --restaurant-details-header-restaurant-thumbnail-bg-color: #{$white};
   --restaurant-details-heading-active-color: #{$black};
@@ -80,9 +80,9 @@
   --menu-card-one-btn-bg-hover: #{$blue-15};
   --menu-card-one-btn-color: #{$blue-1};
   --menu-card-one-btn-color-hover: #{$white};
-  --menu-card-one-item-desc-color: #{$gray-12};
+  --menu-card-one-item-desc-color: #{$gray-3};
   --menu-card-one-add-sub-btn-bg: #{$gray-6};
-  --menu-card-one-add-sub-btn-disabled-color: #{$gray-12};
+  --menu-card-one-add-sub-btn-disabled-color: #{$gray-3};
 
   --review-rating-box-border-color: #{$gray-2};
   --review-rating-header-separator-color: #{$gray-2};
@@ -95,7 +95,7 @@
   --settings-card-bg-color: #{$white};
   --settings-card-selected-bg-color: #{$blue-3};
   --settings-card-heading-color: #{$black};
-  --settings-card-description-color: #{$gray-12};
+  --settings-card-description-color: #{$gray-3};
   --settings-card-icon-bg-color: #{$gray-1};
   --settings-card-selected-icon-bg-color: #{$blue-0};
 
@@ -114,4 +114,9 @@
   --primary-rating-color: #{$gray-1};
   --primary-rating-filled-color: #{$blue-0};
   --primary-rating-color-hover: #{$blue-0};
+
+  --danger-btn-border: #{$red-0};
+  --danger-btn-text-color: #{$red-0};
+  --danger-btn-bg-color-hover: #{$red-0};
+  --danger-btn-text-color-hover: #{$white};
 }

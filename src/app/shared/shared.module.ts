@@ -18,6 +18,8 @@ import { HeadingComponent } from './components/heading/heading.component';
 import { InputComponent } from './components/input/input.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ButtonSecondaryComponent } from './components/button-secondary/button-secondary.component';
+import { InputCheckboxComponent } from './components/input-checkbox/input-checkbox.component';
+import { ButtonDangerComponent } from './components/button-danger/button-danger.component';
 
 const COMPONENTS = [
   HeaderComponent,
@@ -32,9 +34,11 @@ const COMPONENTS = [
   HeadingComponent,
   ButtonComponent,
   ButtonSecondaryComponent,
+  ButtonDangerComponent,
   RatingComponent,
   DropdownComponent,
   InputComponent,
+  InputCheckboxComponent,
   ItemFilterPipe,
 ];
 const MODULES = [CommonModule, NgbModule, FormsModule, ReactiveFormsModule];
