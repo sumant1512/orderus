@@ -14,6 +14,7 @@
         >
           <app-setting-card
             [settingDetails]="setting"
+            [isSelected]="selectedSettingId === setting.id"
             (selectedCardEvent)="selectSetting($event)"
           ></app-setting-card>
         </div>
@@ -26,10 +27,11 @@
           [headingType]="headingTypeList.H1"
         ></app-heading>
       </div>
-      <div class="d-block d-lg-none">
+      <div>
         <!-- <app-restaurant-reviews
             [reviews]="restaurantDetails.reviews"
           ></app-restaurant-reviews> -->
+        <router-outlet></router-outlet>
       </div>
     </div>
   </div>
