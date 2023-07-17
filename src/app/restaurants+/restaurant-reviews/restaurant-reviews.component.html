@@ -3,14 +3,16 @@
     <div class="col-7">
       <div class="f-12 fw-bold">Overall Rating</div>
       <div>
-        <span class="f-18 fw-500 rating-num">4.2</span
+        <span class="f-18 fw-500 rating-num">{{
+          selectedRating | number : "1.1-1"
+        }}</span
         ><span class="mx-2"
           ><app-rating
             [maxRating]="5"
             [currentRating]="selectedRating"
           ></app-rating>
         </span>
-        <span class="fw-bold f-12">3 Votes</span>
+        <span class="fw-bold f-12">{{ votesCount }} Votes</span>
       </div>
     </div>
     <div class="col-5 ps-0 text-end">
@@ -27,7 +29,7 @@
     </div>
     <div class="col-3"></div>
   </div>
-  <div class="mt-3" *ngFor="let review of reviews; last as isLast">
+  <div class="mt-3" *ngFor="let review of reviewList; last as isLast">
     <app-review-card
       [reviewDetails]="review"
       [isLast]="isLast"
