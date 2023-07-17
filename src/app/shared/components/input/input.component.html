@@ -1,0 +1,8 @@
+<div>
+  <label>{{ label }}</label>
+  <input
+    [formControl]="control"
+    (input)="onChange($event.target)"
+    (blur)="onTouched()"
+  />
+</div>

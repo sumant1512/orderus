@@ -15,6 +15,9 @@ import { ReviewCardComponent } from './components/review-card/review-card.compon
 import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { SettingCardComponent } from './components/setting-card/setting-card.component';
 import { HeadingComponent } from './components/heading/heading.component';
+import { InputComponent } from './components/input/input.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ButtonSecondaryComponent } from './components/button-secondary/button-secondary.component';
 
 const COMPONENTS = [
   HeaderComponent,
@@ -28,11 +31,13 @@ const COMPONENTS = [
   SettingCardComponent,
   HeadingComponent,
   ButtonComponent,
+  ButtonSecondaryComponent,
   RatingComponent,
   DropdownComponent,
+  InputComponent,
   ItemFilterPipe,
 ];
-const MODULES = [CommonModule, NgbModule];
+const MODULES = [CommonModule, NgbModule, FormsModule, ReactiveFormsModule];
 
 @NgModule({
   declarations: [...COMPONENTS],
