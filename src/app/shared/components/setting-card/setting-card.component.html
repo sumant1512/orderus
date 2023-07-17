@@ -1,0 +1,21 @@
+<div
+  class="settings-card container-fluid pe-cursor"
+  [tabIndex]="settingDetails.id"
+  (click)="emitEvent(settingDetails.id)"
+>
+  <div class="row p-2">
+    <div class="col-2 p-1">
+      <div class="settings-icon">
+        <img src="./../../../../assets/profile/location.svg" alt="" />
+      </div>
+    </div>
+    <div class="col-10">
+      <div>
+        <label class="heading f-14 fw-bold">{{ settingDetails.name }}</label>
+      </div>
+      <div>
+        <label class="description f-12">{{ settingDetails.description }}</label>
+      </div>
+    </div>
+  </div>
+</div>

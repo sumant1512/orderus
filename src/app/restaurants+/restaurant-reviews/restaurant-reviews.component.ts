@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { EHeadingType } from 'src/app/shared/enum/heading-type.enum';
 import { IDropdown } from 'src/app/shared/interfaces/dropdown.interface';
 import { IRestaurantReviews } from 'src/app/store/restaurant-details/interfaces/restaurant-details.interface';
 
@@ -8,6 +9,7 @@ import { IRestaurantReviews } from 'src/app/store/restaurant-details/interfaces/
   styleUrls: ['./restaurant-reviews.component.scss'],
 })
 export class RestaurantReviewsComponent {
+  headingTypeList = EHeadingType;
   reviewList!: Array<IRestaurantReviews>;
   selectedRating: number = 0;
   votesCount: number = 0;

@@ -13,6 +13,8 @@ import { ButtonComponent } from './components/button/button.component';
 import { RatingComponent } from './components/rating/rating.component';
 import { ReviewCardComponent } from './components/review-card/review-card.component';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
+import { SettingCardComponent } from './components/setting-card/setting-card.component';
+import { HeadingComponent } from './components/heading/heading.component';
 
 const COMPONENTS = [
   HeaderComponent,
@@ -23,6 +25,8 @@ const COMPONENTS = [
   DealsCardComponent,
   MenuItemCardOneComponent,
   ReviewCardComponent,
+  SettingCardComponent,
+  HeadingComponent,
   ButtonComponent,
   RatingComponent,
   DropdownComponent,

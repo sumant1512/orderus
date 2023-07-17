@@ -1,1 +1,36 @@
-<p>profile works!</p>
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="mb-3">
+        <app-heading
+          [label]="'Settings'"
+          [headingType]="headingTypeList.H1"
+        ></app-heading>
+      </div>
+      <div class="row">
+        <div
+          class="col-12 col-md-6 col-lg-12 mb-2"
+          *ngFor="let setting of settingsList"
+        >
+          <app-setting-card
+            [settingDetails]="setting"
+            (selectedCardEvent)="selectSetting($event)"
+          ></app-setting-card>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-lg-8">
+      <div class="mb-3">
+        <app-heading
+          [label]="getNameById(selectedSettingId)"
+          [headingType]="headingTypeList.H1"
+        ></app-heading>
+      </div>
+      <div class="d-block d-lg-none">
+        <!-- <app-restaurant-reviews
+            [reviews]="restaurantDetails.reviews"
+          ></app-restaurant-reviews> -->
+      </div>
+    </div>
+  </div>
+</div>

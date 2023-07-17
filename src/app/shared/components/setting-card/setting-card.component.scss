@@ -1,0 +1,32 @@
+.settings-card {
+  border: 1px solid var(--settings-card-box-border-color);
+  background-color: var(--settings-card-bg-color);
+  border-radius: 10px;
+
+  .heading {
+    color: var(--settings-card-heading-color);
+  }
+
+  .description {
+    color: var(--settings-card-description-color);
+  }
+
+  .settings-icon {
+    background-color: var(--settings-card-icon-bg-color);
+    padding: 8px;
+    border-radius: 10px;
+    text-align: center;
+
+    img {
+      width: 75%;
+    }
+  }
+}
+
+.settings-card:focus {
+  background-color: var(--settings-card-selected-bg-color);
+
+  .settings-icon {
+    background-color: var(--settings-card-selected-icon-bg-color);
+  }
+}
