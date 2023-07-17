@@ -23,7 +23,7 @@
   }
 }
 
-.settings-card:focus {
+.selected {
   border: 2px solid var(--settings-card-box-selected-border-color);
   background-color: var(--settings-card-selected-bg-color);
 

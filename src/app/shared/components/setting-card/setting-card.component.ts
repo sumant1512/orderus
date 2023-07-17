@@ -10,6 +10,7 @@ import { EHeadingType } from '../../enum/heading-type.enum';
 export class SettingCardComponent {
   headingTypeList = EHeadingType;
   @Input() settingDetails!: ISettings;
+  @Input() isSelected: boolean = false;
 
   @Output() selectedCardEvent = new EventEmitter<number>();
 

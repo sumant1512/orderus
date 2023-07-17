@@ -1,6 +1,7 @@
 <div
   class="settings-card container-fluid pe-cursor"
   [tabIndex]="settingDetails.id"
+  [ngClass]="{ selected: isSelected }"
   (click)="emitEvent(settingDetails.id)"
 >
   <div class="row p-2">

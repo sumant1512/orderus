@@ -4,4 +4,5 @@ export interface ISettings extends IImage {
   id: number;
   name: string;
   description: string;
+  path: string;
 }
