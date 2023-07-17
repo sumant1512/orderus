@@ -59,6 +59,7 @@
           >
             <div
               (click)="navigateToPage(routesPath.CART)"
+              [ngClass]="{ selected: selectedRoute === 'cart' }"
               class="cart-img-container position-relative"
             >
               <span
@@ -76,7 +77,8 @@
           <li class="nav-item pe-cursor">
             <div
               (click)="navigateToPage(routesPath.PROFILE)"
-              class="user-img-container"
+              [ngClass]="{ selected: selectedRoute === 'profile' }"
+              class="user-img-container selected"
             >
               <img
                 class="user-img"
