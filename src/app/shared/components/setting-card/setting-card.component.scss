@@ -24,6 +24,7 @@
 }
 
 .settings-card:focus {
+  border: 2px solid var(--settings-card-box-selected-border-color);
   background-color: var(--settings-card-selected-bg-color);
 
   .settings-icon {

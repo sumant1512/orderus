@@ -13,6 +13,7 @@ import { APP_ROUTES } from '../constants/app-routes.constants';
 export class HeaderComponent {
   routesPath = APP_ROUTES;
   cartItemCount = 1;
+  selectedRoute = APP_ROUTES.HOME;
   cartImage: IImage = {
     imgUrl: './../../../assets/cart-blue.png',
     imgAlt: 'Cart',
@@ -55,6 +56,7 @@ export class HeaderComponent {
       headerContent?.classList.remove('show');
       this.toggleHamburger();
     }
+    this.selectedRoute = routePath;
     this.router.navigate([routePath]);
   }
 }

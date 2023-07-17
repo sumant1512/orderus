@@ -13,7 +13,9 @@
   --navbar-search-input-border: #{$black};
   --navbar-search-input-border-focus: #{$gray-14};
   --navbar-cart-bg: #{$black-15};
+  --navbar-cart-selected-border: #{$gray-3};
   --navbar-user-img-border: #{$gray-15};
+  --navbar-user-img-selected-border: #{$gray-3};
   --navbar-badge-bg-color: #{$blue-1};
   --navbar-badge-color: #{$white};
   --navbar-mobile-hamberger: #{$white-15};
@@ -89,6 +91,7 @@
   --review-rating-like-dislike-num-color: #{$gray-3};
 
   --settings-card-box-border-color: #{$gray-2};
+  --settings-card-box-selected-border-color: #{$blue-0};
   --settings-card-bg-color: #{$white};
   --settings-card-selected-bg-color: #{$blue-3};
   --settings-card-heading-color: #{$black};

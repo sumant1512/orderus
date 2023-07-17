@@ -86,6 +86,15 @@
         }
       }
 
+      .cart-img-container.selected {
+        border: 3px solid var(--navbar-cart-selected-border);
+
+        .cart-badge {
+          right: 10%;
+          top: 18%;
+        }
+      }
+
       .user-img-container {
         border: 3px solid var(--navbar-user-img-border);
         border-radius: 18px;
@@ -96,6 +105,10 @@
           height: 48px;
           border-radius: 14px;
         }
+      }
+
+      .user-img-container.selected {
+        border-color: var(--navbar-user-img-selected-border);
       }
     }
 
