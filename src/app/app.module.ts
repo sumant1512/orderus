@@ -10,6 +10,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { appReducers } from './store/app.reducers';
 import { AppEffects } from './store/app.effects';
 import { HttpClientModule } from '@angular/common/http';
+import { ProfileModule } from './profile+/profile.module';
+import { CartModule } from './cart+/cart.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,6 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     StoreDevtoolsModule.instrument({
       maxAge: 10,
     }),
+    ProfileModule,
+    CartModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
