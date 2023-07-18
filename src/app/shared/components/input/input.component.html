@@ -5,6 +5,7 @@
   <div>
     <input
       type="text"
+      [placeholder]="label"
       [formControl]="control"
       (input)="onChange($event.target)"
       (blur)="onTouched()"
