@@ -1,7 +1,14 @@
 <div class="container-fluid py-3 payment-info-container">
-  <div class="row mb-3">
-    <div class="col-12 fw-bold">Connected payment methods</div>
-  </div>
+  <section>
+    <div class="row mb-3">
+      <div class="col-12 fw-bold">Connected payment methods</div>
+    </div>
+    <div class="row">
+      <div *ngFor="let payment of paymentList" class="col-12 col-md-6 mb-3">
+        <app-payment-card [payment]="payment"></app-payment-card>
+      </div>
+    </div>
+  </section>
 
   <section class="mb-3">
     <div class="row mb-3">
