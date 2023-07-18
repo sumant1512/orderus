@@ -15,3 +15,11 @@ export interface IAddress extends IImage {
   address2: string;
   pinCode: string;
 }
+
+export interface IPayment {
+  id: number;
+  cardNumber: string;
+  expiryDate: string;
+  cardHolerName: string;
+  cardType: string;
+}

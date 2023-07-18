@@ -1,1 +1,19 @@
-<p>payment-card works!</p>
+<div *ngIf="payment?.id" class="container-fluid payment-card-box p-2">
+  <div class="row">
+    <div class="col-8">
+      <div class="f-14 fw-bold card-number">
+        **** **** **** {{ payment.cardNumber }}
+      </div>
+      <div class="f-12 fw-500 exp-name">
+        {{ payment.expiryDate }}
+      </div>
+      <div class="f-12 fw-500 mt-2 exp-name">
+        {{ payment.cardHolerName }}
+      </div>
+    </div>
+
+    <div class="col-3">
+      {{ payment.cardType }}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+.payment-card-box {
+  border: 1px solid var(--payment-card-box-border);
+  border-radius: 10px;
+
+  img {
+    border-radius: 10px;
+  }
+
+  .card-number {
+    color: var(--payment-card-number-color);
+  }
+
+  .exp-name {
+    color: var(--payment-card-expiry-name-color);
+  }
+}
