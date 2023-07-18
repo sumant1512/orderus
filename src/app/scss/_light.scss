@@ -95,7 +95,14 @@
   --settings-card-icon-bg-color: #{$gray-1};
   --settings-card-selected-icon-bg-color: #{$blue-0};
 
-  --account-info-box-border-color: #{$gray-2};
+  --settings-box-border-color: #{$gray-2};
+
+  --account-info-avtar-color: #{$gray-3};
+
+  --address-card-box-border: #{$gray-7};
+  --address-card-add-one-color: #{$gray};
+  --address-card-add-two-color: #{$black-14};
+  --address-card-country-color: #{$black};
 
   // components color
 
@@ -122,4 +129,8 @@
   --danger-btn-bg-color: #{$white};
   --danger-btn-bg-color-hover: #{$red-0};
   --danger-btn-text-color-hover: #{$white};
+
+  --input-border: #{$gray-7};
+  --input-border-focused: #{$blue-15};
+  --input-label-color: #{$black-14};
 }

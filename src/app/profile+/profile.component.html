@@ -7,7 +7,7 @@
           [headingType]="headingTypeList.H1"
         ></app-heading>
       </div>
-      <div class="row">
+      <div class="row mb-3">
         <div
           class="col-12 col-md-6 col-lg-12 mb-2"
           *ngFor="let setting of settingsList"
@@ -28,9 +28,6 @@
         ></app-heading>
       </div>
       <div>
-        <!-- <app-restaurant-reviews
-            [reviews]="restaurantDetails.reviews"
-          ></app-restaurant-reviews> -->
         <router-outlet></router-outlet>
       </div>
     </div>

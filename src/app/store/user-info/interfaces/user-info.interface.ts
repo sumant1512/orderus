@@ -5,3 +5,13 @@ export interface IUserInfo {
   firstName: string;
   lastName: string;
 }
+
+export interface IAddress extends IImage {
+  id: number;
+  country: string;
+  state: string;
+  city: string;
+  address1: string;
+  address2: string;
+  pinCode: string;
+}

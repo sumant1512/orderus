@@ -20,6 +20,8 @@ import { InputCheckboxComponent } from './components/input-checkbox/input-checkb
 import { PrimaryButtonDirective } from './directives/primary-button.directive';
 import { DangerButtonDirective } from './directives/danger-button.directive';
 import { PrimaryFilledButtonDirective } from './directives/primary-filled-button.directive';
+import { PaymentCardComponent } from './components/payment-card/payment-card.component';
+import { AddressCardComponent } from './components/address-card/address-card.component';
 
 const COMPONENTS = [
   HeaderComponent,
@@ -31,6 +33,8 @@ const COMPONENTS = [
   MenuItemCardOneComponent,
   ReviewCardComponent,
   SettingCardComponent,
+  PaymentCardComponent,
+  AddressCardComponent,
   HeadingComponent,
   RatingComponent,
   DropdownComponent,
