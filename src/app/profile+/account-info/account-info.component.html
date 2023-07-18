@@ -8,8 +8,8 @@
         src="./../../../assets/userImg.png"
         alt=""
       />
-      <app-button class="me-3" [label]="'Change'"></app-button>
-      <app-button-secondary [label]="'Remove'"></app-button-secondary>
+      <button class="me-3" appPrimaryButton>Change</button>
+      <button class="me-3" appPrimaryFilledButton>Remove</button>
     </div>
   </div>
 
@@ -63,24 +63,17 @@
       <div
         class="col-12 text-center text-md-start mb-3 mb-md-0 col-md-4 col-lg-6"
       >
-        <app-button-danger class="me-3" [label]="'Log out'"></app-button-danger>
+        <button class="me-3" appDangerButton>Log out</button>
       </div>
       <div
         class="col-12 text-center text-md-end mb-3 mb-md-0 col-md-8 col-lg-6"
       >
         <div class="row">
           <div class="col-6">
-            <app-button-danger
-              class="me-3"
-              [label]="'Discard changes'"
-            ></app-button-danger>
+            <button class="me-3" appDangerButton>Discard changes</button>
           </div>
           <div class="col-6">
-            <app-button
-              class="me-3"
-              [label]="'Save changes'"
-              [isFilled]="true"
-            ></app-button>
+            <button class="me-3" appPrimaryFilledButton>Save changes</button>
           </div>
         </div>
       </div>

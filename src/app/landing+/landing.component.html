@@ -37,10 +37,9 @@
 
   <div class="row mt-5" *ngIf="restaurantLoaded < 3 && restaurantList?.length">
     <div class="col-12 text-center">
-      <app-button
-        [label]="'Load More...'"
-        (btnClick)="loadMoreRestaurants($event)"
-      ></app-button>
+      <button class="me-3" (click)="loadMoreRestaurants()" appPrimaryButton>
+        Load More...
+      </button>
     </div>
   </div>
 </div>

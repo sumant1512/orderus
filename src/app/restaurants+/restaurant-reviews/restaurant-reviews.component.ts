@@ -20,12 +20,14 @@ export class RestaurantReviewsComponent {
 
   @Input() set reviews(value: Array<IRestaurantReviews>) {
     this.reviewList = value;
-    this.votesCount = this.reviewList.length;
-    this.setOverAllRating(this.reviewList);
+    if (this.reviewList?.length) {
+      this.votesCount = this.reviewList.length;
+      this.setOverAllRating(this.reviewList);
+    }
   }
 
-  reviewBtnClick(event: boolean): void {
-    console.log(event);
+  reviewBtnClick(): void {
+    console.log('event');
   }
 
   setOverAllRating(allRating: Array<IRestaurantReviews>): void {

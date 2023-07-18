@@ -33,3 +33,48 @@
 .fw-400 {
   font-weight: 400 !important;
 }
+
+.primary-btn {
+  border: 1px solid var(--primary-btn-border);
+  color: var(--primary-btn-text-color);
+  background-color: var(--primary-btn-bg-color);
+  font-size: 12px;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 6px;
+}
+
+.primary-btn:hover {
+  background-color: var(--primary-btn-bg-color-hover);
+  color: var(--primary-btn-text-color-hover);
+}
+
+.primary-filled-btn {
+  background-color: var(--primary-filled-btn-bg);
+  color: var(--primary-filled-btn-color);
+  border: none;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 6px;
+}
+
+.primary-filled-btn:hover {
+  background-color: var(--primary-filled-btn-bg-hover);
+  color: var(--primary-filled-btn-color-hover);
+}
+
+.danger-btn {
+  border: 1px solid var(--danger-btn-border);
+  color: var(--danger-btn-text-color);
+  background-color: var(--danger-btn-bg-color);
+  font-size: 12px;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 6px;
+}
+
+.danger-btn:hover {
+  background-color: var(--danger-btn-bg-color-hover);
+  color: var(--danger-btn-text-color-hover);
+}

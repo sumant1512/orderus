@@ -16,10 +16,9 @@
       </div>
     </div>
     <div class="col-5 ps-0 text-end">
-      <app-button
-        [label]="'Leave Review'"
-        (btnClick)="reviewBtnClick($event)"
-      ></app-button>
+      <button class="me-3" (click)="reviewBtnClick()" appPrimaryButton>
+        Leave Review
+      </button>
     </div>
   </div>
   <div class="row mt-3 mb-4">

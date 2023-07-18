@@ -76,10 +76,6 @@
   --restaurant-details-heading-deactive-color: #{$gray-13};
 
   --menu-card-border: #{$gray-2};
-  --menu-card-one-btn-bg: #{$blue-3};
-  --menu-card-one-btn-bg-hover: #{$blue-15};
-  --menu-card-one-btn-color: #{$blue-1};
-  --menu-card-one-btn-color-hover: #{$white};
   --menu-card-one-item-desc-color: #{$gray-3};
   --menu-card-one-add-sub-btn-bg: #{$gray-6};
   --menu-card-one-add-sub-btn-disabled-color: #{$gray-3};
@@ -105,11 +101,17 @@
 
   --primary-btn-border: #{$blue-1};
   --primary-btn-text-color: #{$blue-2};
+  --primary-btn-bg-color: #{$white};
   --primary-btn-bg-color-hover: #{$blue-15};
   --primary-btn-text-color-hover: #{$white};
 
   --primary-select-border: #{$blue-1};
   --primary-select-text-color: #{$blue-2};
+
+  --primary-filled-btn-bg: #{$blue-3};
+  --primary-filled-btn-bg-hover: #{$blue-15};
+  --primary-filled-btn-color: #{$blue-1};
+  --primary-filled-btn-color-hover: #{$white};
 
   --primary-rating-color: #{$gray-1};
   --primary-rating-filled-color: #{$blue-0};
