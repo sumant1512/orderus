@@ -1,1 +1,45 @@
-<p>payment-info works!</p>
+<div class="container-fluid py-3 payment-info-container">
+  <div class="row mb-3">
+    <div class="col-12 fw-bold">Connected payment methods</div>
+    <div class="col-12 mt-3 mb-2 f-10 fw-500 avtar">Avtar</div>
+    <div class="col-12">
+      <img
+        class="user-img me-3 mb-3 mb-md-0"
+        src="./../../../assets/userImg.png"
+        alt=""
+      />
+      <button class="me-3" appPrimaryButton>Change</button>
+      <button class="me-3" appPrimaryFilledButton>Remove</button>
+    </div>
+  </div>
+
+  <section class="mb-3">
+    <div class="row mb-3">
+      <div class="col-12 fw-bold">New payment method</div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-6 mb-2">
+        <app-input [label]="'Card number'"></app-input>
+      </div>
+      <div class="col-12 col-md-3 mb-2">
+        <app-input [label]="'Expiration'"></app-input>
+      </div>
+      <div class="col-12 col-md-3 mb-2">
+        <app-input [label]="'CVC'"></app-input>
+      </div>
+      <div class="col-12 col-md-12 mb-2">
+        <app-input [label]="'Cardholder name'"></app-input>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="row pt-3 text-end">
+      <div class="col-12">
+        <button class="me-3" appPrimaryFilledButton>
+          Add new payment method
+        </button>
+      </div>
+    </div>
+  </section>
+</div>
