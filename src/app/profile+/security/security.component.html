@@ -1,1 +1,36 @@
-<p>security works!</p>
+<div class="container-fluid py-3 security-container">
+  <div class="row mb-3 mb-md-4 mb-lg-5">
+    <div class="col-12 fw-bold">2 factor authentication</div>
+    <div class="col-12 col-md-6 mt-3 mb-2">
+      <app-input [label]="'Phone number'"></app-input>
+    </div>
+    <div class="col-12 col-md-6 text-end mt-3 mb-2">
+      <button class="me-3" appPrimaryButton>Turn on</button>
+    </div>
+  </div>
+
+  <section class="mb-3">
+    <div class="row mb-3">
+      <div class="col-12 fw-bold">Change password</div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-4 mb-2">
+        <app-input [label]="'Current password'"></app-input>
+      </div>
+      <div class="col-12 col-md-4 mb-2">
+        <app-input [label]="'New password'"></app-input>
+      </div>
+      <div class="col-12 col-md-4 mb-2">
+        <app-input [label]="'Confirm new password'"></app-input>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="row pt-3 text-end">
+      <div class="col-12">
+        <button class="me-3" appPrimaryFilledButton>Change password</button>
+      </div>
+    </div>
+  </section>
+</div>

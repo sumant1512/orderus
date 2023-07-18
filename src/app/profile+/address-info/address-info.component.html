@@ -1,1 +1,46 @@
-<p>address-info works!</p>
+<div class="container-fluid py-3 address-info-container">
+  <div class="row mb-3">
+    <div class="col-12 fw-bold">Existing shipping address</div>
+    <div class="col-12 mt-3 mb-2 f-10 fw-500 avtar">Avtar</div>
+    <div class="col-12">
+      <img
+        class="user-img me-3 mb-3 mb-md-0"
+        src="./../../../assets/userImg.png"
+        alt=""
+      />
+      <button class="me-3" appPrimaryButton>Change</button>
+      <button class="me-3" appPrimaryFilledButton>Remove</button>
+    </div>
+  </div>
+
+  <section class="mb-3">
+    <div class="row mb-3">
+      <div class="col-12 fw-bold">New shipping address</div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-4 mb-2">
+        <app-input [label]="'Country'"></app-input>
+      </div>
+      <div class="col-12 col-md-4 mb-2">
+        <app-input [label]="'State'"></app-input>
+      </div>
+      <div class="col-12 col-md-4 mb-2">
+        <app-input [label]="'City'"></app-input>
+      </div>
+      <div class="col-12 col-md-6 mb-2">
+        <app-input [label]="'Address line 1'"></app-input>
+      </div>
+      <div class="col-12 col-md-6 mb-2">
+        <app-input [label]="'Address line 2'"></app-input>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="row pt-3 text-end">
+      <div class="col-12">
+        <button class="me-3" appPrimaryFilledButton>Add new address</button>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,14 @@
+.address-info-container {
+  border: 1px solid var(--account-info-box-border-color);
+  border-radius: 16px;
+
+  .avtar {
+    color: hsl(235, 11%, 56%);
+  }
+
+  .user-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+  }
+}
