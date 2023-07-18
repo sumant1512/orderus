@@ -1,5 +1,5 @@
 label {
-  color: hsl(235deg 8.87% 33.99%);
+  color: var(--input-label-color);
   letter-spacing: 0.3px;
   margin-bottom: 2px;
 }
@@ -11,9 +11,9 @@ input {
   letter-spacing: 0.3px;
   padding: 10px;
   outline: none;
-  border: 1px solid hsl(228, 6%, 90%);
+  border: 1px solid var(--input-border);
 }
 
 input[type="text"]:focus {
-  border: 1px solid blue;
+  border: 1px solid var(--input-border-focused);
 }

@@ -1,0 +1,20 @@
+.address-card-box {
+  border: 1px solid var(--address-card-box-border);
+  border-radius: 10px;
+
+  img {
+    border-radius: 10px;
+  }
+
+  .country {
+    color: var(--address-card-country-color);
+  }
+
+  .add-1 {
+    color: var(--address-card-add-one-color);
+  }
+
+  .add-2 {
+    color: var(--address-card-add-two-color);
+  }
+}

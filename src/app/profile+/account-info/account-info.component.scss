@@ -1,9 +1,10 @@
 .account-info-container {
-  border: 1px solid var(--account-info-box-border-color);
+  border: 1px solid var(--settings-box-border-color);
+  min-height: 540px;
   border-radius: 16px;
 
   .avtar {
-    color: hsl(235, 11%, 56%);
+    color: var(--account-info-avtar-color);
   }
 
   .user-img {
@@ -13,6 +14,6 @@
   }
 
   .account-footer {
-    border-top: 1px solid var(--account-info-box-border-color);
+    border-top: 1px solid var(--settings-box-border-color);
   }
 }

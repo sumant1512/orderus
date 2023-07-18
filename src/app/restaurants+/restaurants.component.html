@@ -39,7 +39,7 @@
 
   <div class="row mt-5" *ngIf="restaurantLoaded < 3 && restaurantList?.length">
     <div class="col-12 text-center">
-      <button class="me-3" (click)="loadMoreRestaurants()" appPrimaryButton>
+      <button (click)="loadMoreRestaurants()" appPrimaryButton>
         Load More...
       </button>
     </div>
