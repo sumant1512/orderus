@@ -34,6 +34,13 @@
   font-weight: 400 !important;
 }
 
+.heading-two {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+  color: var(--heading-two-color);
+}
+
 .primary-btn {
   border: 1px solid var(--primary-btn-border);
   color: var(--primary-btn-text-color);

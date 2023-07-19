@@ -1,6 +1,7 @@
 .menu-card-one {
-  border: 1px solid var(--menu-card-border);
-  border-radius: 16px;
+  .price-scetion {
+    justify-content: space-between;
+  }
 
   img {
     border-radius: 16px;
@@ -30,18 +31,8 @@
   .sub-btn-disabled {
     color: var(--menu-card-one-add-sub-btn-disabled-color);
   }
+}
 
-  .add-cart-btn {
-    background-color: var(--menu-card-one-btn-bg);
-    border: none;
-    border-radius: 8px;
-    padding: 12px 20px;
-    right: 12px;
-    color: var(--menu-card-one-btn-color);
-  }
-
-  .add-cart-btn:hover {
-    background-color: var(--menu-card-one-btn-bg-hover);
-    color: var(--menu-card-one-btn-color-hover);
-  }
+.separator {
+  border-bottom: 1px solid var(--box-border-color);
 }

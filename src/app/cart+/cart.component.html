@@ -1,1 +1,25 @@
-<p>cart works!</p>
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-12 col-lg-8 mb-3">
+      <span class="heading-two deactive pe-cursor">My cart</span>
+    </div>
+    <div class="d-none d-lg-block col-lg-4"></div>
+  </div>
+
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-8">
+      <div class="cart-box">
+        <div
+          class="container-fluid"
+          *ngFor="let menu of restaurantDetails.menuItemList; last as isLast"
+        >
+          <app-cart-menu-card
+            [menuItem]="menu"
+            [isLast]="isLast"
+          ></app-cart-menu-card>
+        </div>
+      </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-4">b</div>
+  </div>
+</div>
