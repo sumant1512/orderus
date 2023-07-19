@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { IRestaurantDetailsState } from '../store/restaurant-details/interfaces/restaurant-details.interface';
 import { RestaurantDetailsFacade } from '../store/restaurant-details/restaurant-details.facade';
+import { IAddress } from '../store/user-info/interfaces/user-info.interface';
 
 @Component({
   selector: 'app-cart',
@@ -14,6 +15,31 @@ export class CartComponent implements OnInit, OnDestroy {
   restaurantDetails!: IRestaurantDetailsState;
   isDesktop!: boolean;
   activeSlideName = 'menu';
+
+  addressList: Array<IAddress> = [
+    {
+      id: 1,
+      imgUrl: './../../../../assets/profile/map.png',
+      imgAlt: 'Map',
+      country: 'USA',
+      state: 'New York',
+      city: 'New York',
+      address1: '4517 Washington Ave.',
+      address2: 'Manchester',
+      pinCode: '11004',
+    },
+    {
+      id: 2,
+      imgUrl: './../../../../assets/profile/map.png',
+      imgAlt: 'Map',
+      country: 'USA',
+      state: 'California',
+      city: 'San Deigo',
+      address1: '3891 Ranchview ontario Dr.',
+      address2: 'Richardson',
+      pinCode: '62639',
+    },
+  ];
 
   constructor(
     private restaurantDetailsFacade: RestaurantDetailsFacade,

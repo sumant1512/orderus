@@ -1,5 +1,5 @@
 .thumbnail-box {
-  border: 1px solid var(--product-thumbnail-border);
+  border: 1px solid var(--box-border-color);
   border-radius: 16px;
   padding: 8px;
   text-align: center;
@@ -12,15 +12,15 @@
 }
 
 .thumbnail-box:hover {
-  border: 1px solid var(--product-thumbnail-border-hover);
+  border: 1px solid var(--box-border-hover-color);
   background-color: var(--product-thumbnail-background-hover);
 }
 
 .thumbnail-box:focus {
-  border: 2px solid var(--product-thumbnail-border-hover);
+  border: 2px solid var(--box-border-hover-color);
   background-color: var(--product-thumbnail-background-focus);
 
   .thumbnail-name {
-    color: var(--product-thumbnail-border-hover);
+    color: var(--box-border-hover-color);
   }
 }

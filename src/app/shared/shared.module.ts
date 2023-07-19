@@ -22,6 +22,7 @@ import { PrimaryFilledButtonDirective } from './directives/primary-filled-button
 import { PaymentCardComponent } from './components/payment-card/payment-card.component';
 import { AddressCardComponent } from './components/address-card/address-card.component';
 import { CartMenuCardComponent } from './components/cart-menu-card/cart-menu-card.component';
+import { TransparentFilledButtonDirective } from './directives/transparent-filled-button.directive';
 
 const COMPONENTS = [
   HeaderComponent,
@@ -44,6 +45,7 @@ const COMPONENTS = [
   PrimaryButtonDirective,
   DangerButtonDirective,
   PrimaryFilledButtonDirective,
+  TransparentFilledButtonDirective,
 ];
 const MODULES = [CommonModule, NgbModule, FormsModule, ReactiveFormsModule];
 

@@ -4,7 +4,6 @@
   --app-first-name: #{$white};
   --app-last-name: #{$blue-1};
   --navbar-bg: #{$dark-navbar-bg};
-  --navbar-separator: #{$gray-15};
   --navbar-link: #{$white-1};
   --navbar-search-bg: #{$black-15};
   --navbar-search-bg-focus: #{$black};
@@ -25,7 +24,6 @@
   --footer-app-last-name: #{$blue-1};
   --footer-header-color: #{$black-15};
   --footer-url-color: #{$gray-15};
-  --footer-separator: #{$gray-2};
 
   --offer-card-header-color: #{$black};
   --offer-card-spicy-bg: #{$orange-2};
@@ -80,14 +78,11 @@
   --menu-card-one-add-sub-btn-bg: #{$gray-6};
   --menu-card-one-add-sub-btn-disabled-color: #{$gray-3};
 
-  --review-rating-box-border-color: #{$gray-2};
   --review-rating-header-separator-color: #{$gray-2};
   --review-rating-num-color: #{$blue-0};
   --review-rating-separator: #{$gray-2};
   --review-rating-like-dislike-num-color: #{$gray-3};
 
-  --settings-card-box-border-color: #{$gray-2};
-  --settings-card-box-selected-border-color: #{$blue-0};
   --settings-card-bg-color: #{$white};
   --settings-card-selected-bg-color: #{$blue-3};
   --settings-card-heading-color: #{$black};
@@ -95,14 +90,9 @@
   --settings-card-icon-bg-color: #{$gray-1};
   --settings-card-selected-icon-bg-color: #{$blue-0};
 
-  --settings-box-border-color: #{$gray-2};
-
   --account-info-avtar-color: #{$gray-3};
 
   --address-card-box-border: #{$gray-7};
-  --address-card-add-one-color: #{$gray};
-  --address-card-add-two-color: #{$black-14};
-  --address-card-country-color: #{$black};
 
   --payment-card-box-border: #{$gray-7};
   --payment-card-number-color: #{$black};
@@ -111,7 +101,13 @@
   // common
 
   --box-border-color: #{$gray-2};
-  --heading-two-color: #{$black};
+  --separator-color: #{$gray-2};
+  --box-border-hover-color: #{$blue-2};
+  --box-border-focus-color: #{$blue-3};
+  --label-1: #{$black-14};
+  --label-2: #{$black};
+  --label-3: #{$blue-0};
+  --label-4: #{$gray};
 
   // components colors
 
@@ -124,10 +120,13 @@
   --primary-select-border: #{$blue-1};
   --primary-select-text-color: #{$blue-2};
 
-  --primary-filled-btn-bg: #{$blue-3};
-  --primary-filled-btn-bg-hover: #{$blue-15};
-  --primary-filled-btn-color: #{$blue-1};
-  --primary-filled-btn-color-hover: #{$white};
+  --primary-filled-btn-bg: #{$blue-15};
+  --primary-filled-btn-color: #{$white};
+
+  --transparent-filled-btn-bg: #{$blue-3};
+  --transparent-filled-btn-bg-hover: #{$blue-15};
+  --transparent-filled-btn-color: #{$blue-1};
+  --transparent-filled-btn-color-hover: #{$white};
 
   --primary-rating-color: #{$gray-1};
   --primary-rating-filled-color: #{$blue-0};
