@@ -2,3 +2,29 @@
   border: 1px solid var(--box-border-color);
   border-radius: 16px;
 }
+
+.address-box {
+  border: 1px solid var(--box-border-color);
+  border-radius: 16px;
+}
+
+.payment-box {
+  border: 1px solid var(--box-border-color);
+  border-radius: 16px;
+}
+
+.select-heading {
+  color: var(--label-4);
+}
+
+.light-label {
+  color: var(--label-1);
+}
+
+.dark-label {
+  color: var(--label-2);
+}
+
+.total-price {
+  color: var(--label-3);
+}

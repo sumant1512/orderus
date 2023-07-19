@@ -3,11 +3,11 @@
     <div class="col-12 col-lg-8 mb-3">
       <span class="heading-two deactive pe-cursor">My cart</span>
     </div>
-    <div class="d-none d-lg-block col-lg-4"></div>
+    <div class="col-12 col-lg-4"></div>
   </div>
 
   <div class="row">
-    <div class="d-none d-lg-block col-lg-8">
+    <div class="col-12 col-lg-8">
       <div class="cart-box">
         <div
           class="container-fluid"
@@ -20,6 +20,39 @@
         </div>
       </div>
     </div>
-    <div class="d-none d-lg-block col-lg-4">b</div>
+    <div class="col-12 col-lg-4">
+      <div class="container-fluid pt-3 address-box">
+        <p class="fw-500 f-12 mb-2 select-heading">
+          Select your shipping address
+        </p>
+        <div *ngFor="let address of addressList" class="mb-3">
+          <app-address-card [address]="address"></app-address-card>
+        </div>
+        <button class="w-100 mb-3" appTransparentFilledButton>
+          Add new shipping address
+        </button>
+      </div>
+
+      <div class="container-fluid pt-3 mt-3 payment-box">
+        <div class="col-12 fw-bold mb-3">Payment summary</div>
+        <div class="fw-500 f-14">
+          <div class="opposite-direction mb-2">
+            <span class="light-label">Subtotal</span
+            ><span class="dark-label">$129.40</span>
+          </div>
+          <div class="opposite-direction mb-3">
+            <span class="light-label">Shipping</span
+            ><span class="dark-label">$20.00</span>
+          </div>
+          <div class="opposite-direction mb-3">
+            <span class="dark-label">Total (tax incl.)</span
+            ><span class="fw-bold total-price">$149.40</span>
+          </div>
+        </div>
+        <button class="w-100 mb-3" appPrimaryFilledButton>
+          Proceed to checkout
+        </button>
+      </div>
+    </div>
   </div>
 </div>

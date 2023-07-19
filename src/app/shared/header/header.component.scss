@@ -4,7 +4,7 @@
 
 .header-container {
   background-color: var(--navbar-bg);
-  border-bottom: 2px solid var(--navbar-separator);
+  border-bottom: 2px solid var(--separator-color);
 
   .container {
     padding: 12px 0;
@@ -50,7 +50,7 @@
 
       .header-seprator {
         height: 32px;
-        border: 1px solid var(--navbar-separator);
+        border: 1px solid var(--separator-color);
       }
 
       .header-nav-link {

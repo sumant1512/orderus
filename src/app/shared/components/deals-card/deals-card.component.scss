@@ -1,5 +1,5 @@
 .deal-card {
-  border: 2px solid var(--deal-card-border-color);
+  border: 2px solid var(--box-border-color);
   border-radius: 16px;
 
   .type-btn {
@@ -26,7 +26,7 @@
   }
 
   .deal-separator {
-    border-top: 2px solid var(--deal-card-separator);
+    border-top: 2px solid var(--separator-color);
   }
 
   .deal-info-header {

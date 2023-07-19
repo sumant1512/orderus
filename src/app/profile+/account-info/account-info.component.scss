@@ -1,5 +1,5 @@
 .account-info-container {
-  border: 1px solid var(--settings-box-border-color);
+  border: 1px solid var(--box-border-color);
   min-height: 540px;
   border-radius: 16px;
 
@@ -14,6 +14,6 @@
   }
 
   .account-footer {
-    border-top: 1px solid var(--settings-box-border-color);
+    border-top: 1px solid var(--box-border-color);
   }
 }
