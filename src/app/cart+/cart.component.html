@@ -21,37 +21,42 @@
       </div>
     </div>
     <div class="col-12 col-lg-4">
-      <div class="container-fluid pt-3 address-box">
-        <p class="fw-500 f-12 mb-2 select-heading">
-          Select your shipping address
-        </p>
-        <div *ngFor="let address of addressList" class="mb-3">
-          <app-address-card [address]="address"></app-address-card>
+      <div class="row container-fluid">
+        <div class="col-12 mt-3 mt-lg-0 pt-3 address-box">
+          <div class="mb-3">
+            <app-toggle></app-toggle>
+          </div>
+          <p class="fw-500 f-12 mb-2 select-heading">
+            Select your shipping address
+          </p>
+          <div *ngFor="let address of addressList" class="mb-3">
+            <app-address-card [address]="address"></app-address-card>
+          </div>
+          <button class="w-100 mb-3" appTransparentFilledButton>
+            Add new shipping address
+          </button>
         </div>
-        <button class="w-100 mb-3" appTransparentFilledButton>
-          Add new shipping address
-        </button>
-      </div>
 
-      <div class="container-fluid pt-3 mt-3 payment-box">
-        <div class="col-12 fw-bold mb-3">Payment summary</div>
-        <div class="fw-500 f-14">
-          <div class="opposite-direction mb-2">
-            <span class="light-label">Subtotal</span
-            ><span class="dark-label">$129.40</span>
+        <div class="col-12 pt-3 mt-3 payment-box">
+          <div class="col-12 fw-bold mb-3">Payment summary</div>
+          <div class="fw-500 f-14">
+            <div class="opposite-direction mb-2">
+              <span class="light-label">Subtotal</span
+              ><span class="dark-label">$129.40</span>
+            </div>
+            <div class="opposite-direction mb-3">
+              <span class="light-label">Shipping</span
+              ><span class="dark-label">$20.00</span>
+            </div>
+            <div class="opposite-direction mb-3">
+              <span class="dark-label">Total (tax incl.)</span
+              ><span class="fw-bold total-price">$149.40</span>
+            </div>
           </div>
-          <div class="opposite-direction mb-3">
-            <span class="light-label">Shipping</span
-            ><span class="dark-label">$20.00</span>
-          </div>
-          <div class="opposite-direction mb-3">
-            <span class="dark-label">Total (tax incl.)</span
-            ><span class="fw-bold total-price">$149.40</span>
-          </div>
+          <button class="w-100 mb-3" appPrimaryFilledButton>
+            Proceed to checkout
+          </button>
         </div>
-        <button class="w-100 mb-3" appPrimaryFilledButton>
-          Proceed to checkout
-        </button>
       </div>
     </div>
   </div>

@@ -110,6 +110,11 @@
 
   // components color
 
+  --toggle-bg-color: #{$gray-6};
+  --toggle-label-color: #{$black};
+  --switch-bg-color: #{$black-1};
+  --switch-text-color: #{$white};
+
   --primary-btn-border: #{$blue-1};
   --primary-btn-text-color: #{$blue-2};
   --primary-btn-bg-color: #{$white};
