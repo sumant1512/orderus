@@ -7,7 +7,14 @@
   <div class="row p-2">
     <div class="col-2 p-1">
       <div class="settings-icon">
-        <img src="./../../../../assets/profile/location.svg" alt="" />
+        <img
+          [src]="
+            isSelected
+              ? getSelectedIcon(settingDetails.imgUrl)
+              : settingDetails.imgUrl
+          "
+          [alt]="settingDetails.imgAlt"
+        />
       </div>
     </div>
     <div class="col-10">

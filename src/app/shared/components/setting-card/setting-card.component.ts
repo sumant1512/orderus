@@ -14,6 +14,14 @@ export class SettingCardComponent {
 
   @Output() selectedCardEvent = new EventEmitter<number>();
 
+  getSelectedIcon(imgUrl: string): string {
+    const pathArr = imgUrl.split('/');
+    const position = pathArr.length - 1;
+    const lightPath = 'light';
+    pathArr.splice(position, 0, lightPath);
+    return pathArr.join('/');
+  }
+
   emitEvent(id: number): void {
     this.selectedCardEvent.emit(id);
   }

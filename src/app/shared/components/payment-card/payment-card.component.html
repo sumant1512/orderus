@@ -1,19 +1,29 @@
 <div *ngIf="payment?.id" class="container-fluid payment-card-box p-2">
   <div class="row">
-    <div class="col-8">
+    <div class="col-12">
       <div class="f-14 fw-bold card-number">
         **** **** **** {{ payment.cardNumber }}
+        <img
+          class="float-end"
+          src="./../../../assets/icons/kebab.svg"
+          alt="action"
+        />
       </div>
       <div class="f-12 fw-500 exp-name">
         {{ payment.expiryDate }}
       </div>
       <div class="f-12 fw-500 mt-2 exp-name">
         {{ payment.cardHolerName }}
+        <img
+          class="card-type float-end"
+          [src]="getCardTypeImge(payment.cardType)"
+          alt="card"
+        />
       </div>
     </div>
 
-    <div class="col-3">
+    <!-- <div class="col-3">
       {{ payment.cardType }}
-    </div>
+    </div> -->
   </div>
 </div>
