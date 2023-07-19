@@ -1,0 +1,39 @@
+<div class="row menu-card-one px-2 py-3">
+  <div class="col-12 col-md-8">
+    <div class="row">
+      <div class="col-3">
+        <img
+          class="img-fluid"
+          [src]="menuItem.imgUrl"
+          [alt]="menuItem.imgAlt"
+        />
+      </div>
+      <div class="col-9">
+        <div class="heading-two mt-1">{{ menuItem.name }}</div>
+        <div class="item-desc mt-1">{{ menuItem.description }}</div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="fw-bold d-flex align-items-center price-scetion text-start text-md-center mt-3 col-12 col-md-4"
+  >
+    <span>
+      <span
+        [ngClass]="{
+          'sub-btn-disabled': itemCount <= 0,
+          'pe-cursor': itemCount > 0
+        }"
+        class="sub-btn"
+        (click)="updateProductCount('sub')"
+        >-</span
+      >
+      <span class="mx-3">{{ itemCount }}</span>
+      <span class="add-btn pe-cursor" (click)="updateProductCount('add')"
+        >+</span
+      ></span
+    >
+    <span class="f-24 ms-0 ms-md-3"> $ {{ menuItem.price }} </span>
+  </div>
+</div>
+
+<div *ngIf="!isLast" class="separator"></div>

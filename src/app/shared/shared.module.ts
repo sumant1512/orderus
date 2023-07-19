@@ -13,7 +13,6 @@ import { RatingComponent } from './components/rating/rating.component';
 import { ReviewCardComponent } from './components/review-card/review-card.component';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { SettingCardComponent } from './components/setting-card/setting-card.component';
-import { HeadingComponent } from './components/heading/heading.component';
 import { InputComponent } from './components/input/input.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputCheckboxComponent } from './components/input-checkbox/input-checkbox.component';
@@ -22,6 +21,7 @@ import { DangerButtonDirective } from './directives/danger-button.directive';
 import { PrimaryFilledButtonDirective } from './directives/primary-filled-button.directive';
 import { PaymentCardComponent } from './components/payment-card/payment-card.component';
 import { AddressCardComponent } from './components/address-card/address-card.component';
+import { CartMenuCardComponent } from './components/cart-menu-card/cart-menu-card.component';
 
 const COMPONENTS = [
   HeaderComponent,
@@ -35,7 +35,7 @@ const COMPONENTS = [
   SettingCardComponent,
   PaymentCardComponent,
   AddressCardComponent,
-  HeadingComponent,
+  CartMenuCardComponent,
   RatingComponent,
   DropdownComponent,
   InputComponent,
