@@ -24,17 +24,39 @@
       <div class="row container-fluid">
         <div class="col-12 mt-3 mt-lg-0 pt-3 address-box">
           <div class="mb-3">
-            <app-toggle></app-toggle>
+            <app-toggle
+              (selectedSection)="onSectionSelect($event)"
+            ></app-toggle>
           </div>
           <p class="fw-500 f-12 mb-2 select-heading">
-            Select your shipping address
+            {{
+              activeSlideName === "delivery"
+                ? "Select your shipping address"
+                : "Restaurant address"
+            }}
           </p>
-          <div *ngFor="let address of addressList" class="mb-3">
-            <app-address-card [address]="address"></app-address-card>
-          </div>
-          <button class="w-100 mb-3" appTransparentFilledButton>
-            Add new shipping address
-          </button>
+          <ng-container *ngIf="activeSlideName === 'delivery'">
+            <div *ngFor="let address of addressList" class="mb-3">
+              <app-address-card [address]="address"></app-address-card>
+            </div>
+            <button class="w-100 mb-3" appTransparentFilledButton>
+              Add new shipping address
+            </button>
+          </ng-container>
+
+          <ng-container *ngIf="activeSlideName === 'pickup'">
+            <img
+              class="img-fluid pick-up-location mb-2"
+              src="./../../assets/location.png"
+              alt="location"
+            />
+            <div class="f-14 fw-bold country">San Deigo</div>
+            <div class="f-12 fw-500 add-1">California State, USA</div>
+            <div class="f-12 fw-500 mt-2 add-2 mb-3">
+              {{ "3891 Ranchview Dr." }} {{ "Richardson" }},
+              {{ "62639" }}
+            </div>
+          </ng-container>
         </div>
 
         <div class="col-12 pt-3 mt-3 payment-box">
