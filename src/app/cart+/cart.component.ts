@@ -13,8 +13,7 @@ import { IAddress } from '../store/user-info/interfaces/user-info.interface';
 export class CartComponent implements OnInit, OnDestroy {
   subscription = new Subscription();
   restaurantDetails!: IRestaurantDetailsState;
-  isDesktop!: boolean;
-  activeSlideName = 'menu';
+  activeSlideName = 'delivery';
 
   addressList: Array<IAddress> = [
     {
@@ -45,11 +44,7 @@ export class CartComponent implements OnInit, OnDestroy {
     private restaurantDetailsFacade: RestaurantDetailsFacade,
     private activatedRoute: ActivatedRoute
   ) {
-    this.activatedRoute.paramMap.subscribe((params) => {
-      this.restaurantDetailsFacade.fetchRestaurantDetails(
-        params.get('id') as string
-      );
-    });
+    this.getRestaurantDetails();
   }
 
   ngOnInit(): void {
@@ -62,21 +57,18 @@ export class CartComponent implements OnInit, OnDestroy {
     );
   }
 
-  onSlideChange(slideName: string): void {
-    this.isDesktop = this.detectDesktop();
-
-    if (!this.isDesktop) {
-      this.activeSlideName = slideName;
-    } else {
-      this.activeSlideName = 'menu';
-    }
+  getRestaurantDetails(): void {
+    this.subscription.add(
+      this.activatedRoute.paramMap.subscribe((params) => {
+        this.restaurantDetailsFacade.fetchRestaurantDetails(
+          params.get('id') as string
+        );
+      })
+    );
   }
 
-  private detectDesktop(): boolean {
-    const userAgent = window.navigator.userAgent.toLowerCase();
-    return !/(android|webos|iphone|ipad|ipod|blackberry|windows phone)/.test(
-      userAgent
-    );
+  onSectionSelect(section: string): void {
+    this.activeSlideName = section;
   }
 
   ngOnDestroy(): void {

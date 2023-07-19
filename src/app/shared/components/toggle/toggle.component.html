@@ -7,8 +7,12 @@
     checked="checked"
   />
   <input type="radio" id="switchPickUp" name="switchPlan" value="PickUp" />
-  <label for="switchDelivery">Delivery</label>
-  <label for="switchPickUp">Pick up</label>
+  <label for="switchDelivery" (click)="emitSelectedSection('delivery')"
+    >Delivery</label
+  >
+  <label for="switchPickUp" (click)="emitSelectedSection('pickup')"
+    >Pick up</label
+  >
   <div class="switch-wrapper">
     <div class="switch">
       <div>Delivery</div>
