@@ -1,0 +1,50 @@
+.cart-box {
+  border: 1px solid var(--box-border-color);
+  border-radius: 16px;
+}
+
+.address-box {
+  border: 1px solid var(--box-border-color);
+  border-radius: 16px;
+}
+
+.pick-up-location {
+  border-radius: 10px;
+}
+
+.country {
+  color: var(--label-2);
+}
+
+.meals-count {
+  color: var(--label-5);
+}
+
+.add-1 {
+  color: var(--label-4);
+}
+
+.add-2 {
+  color: var(--label-1);
+}
+
+.payment-box {
+  border: 1px solid var(--box-border-color);
+  border-radius: 16px;
+}
+
+.select-heading {
+  color: var(--label-2);
+}
+
+.light-label {
+  color: var(--label-1);
+}
+
+.dark-label {
+  color: var(--label-2);
+}
+
+.total-price {
+  color: var(--label-3);
+}

@@ -4,6 +4,7 @@
       <div class="f-14 fw-bold card-number">
         **** **** **** {{ payment.cardNumber }}
         <img
+          *ngIf="isActionEnabled"
           class="float-end"
           src="./../../../assets/icons/kebab.svg"
           alt="action"

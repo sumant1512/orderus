@@ -8,6 +8,7 @@ import { IPayment } from 'src/app/store/user-info/interfaces/user-info.interface
 })
 export class PaymentCardComponent {
   @Input() payment!: IPayment;
+  @Input() isActionEnabled: boolean = true;
 
   getCardTypeImge(cardType: string): string {
     switch (cardType) {
