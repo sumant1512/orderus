@@ -1,23 +1,28 @@
-.cart-box {
+.order-status-box {
   border: 1px solid var(--box-border-color);
   border-radius: 16px;
 }
 
-.address-box {
+.menu-box {
   border: 1px solid var(--box-border-color);
   border-radius: 16px;
 }
 
-.pick-up-location {
+.shipping-address-box {
+  border: 1px solid var(--box-border-color);
+  border-radius: 16px;
+}
+
+.meals-count {
+  color: var(--label-5);
+}
+
+.shipping-location {
   border-radius: 10px;
 }
 
 .country {
   color: var(--label-2);
-}
-
-.meals-count {
-  color: var(--label-5);
 }
 
 .add-1 {
@@ -33,7 +38,7 @@
   border-radius: 16px;
 }
 
-.select-heading {
+.shipping-address-heading {
   color: var(--label-2);
 }
 

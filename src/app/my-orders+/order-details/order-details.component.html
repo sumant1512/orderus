@@ -1,19 +1,22 @@
 <div class="container mt-3">
-  <!-- <div class="row">
-    <div class="col-12 col-lg-8 mb-3">
-      <span class="heading-two deactive pe-cursor">My cart</span>
-    </div>
-    <div class="col-12 col-lg-4"></div>
-  </div> -->
-
   <div class="row">
     <div class="col-12 col-lg-8">
-      <div class="cart-box pt-3">
+      <div class="order-status-box mb-3 py-3">
+        <div class="row">
+          <div class="col-6">
+            <span class="heading-three pe-cursor ms-4 mb-4"
+              >Order status
+              <sub class="f-10 fw-bold meals-count">ID 11223344</sub></span
+            >
+          </div>
+        </div>
+      </div>
+      <div class="menu-box pt-3">
         <div>
-          <span class="heading-two deactive pe-cursor ms-4 mb-4"
+          <span class="heading-three pe-cursor ms-4 mb-4"
             >Menu
-            <span class="f-10 fw-bold meals-count"
-              >{{ restaurantDetails.menuItemList.length }} meals</span
+            <sub class="f-10 fw-bold meals-count"
+              >{{ restaurantDetails.menuItemList.length }} meals</sub
             ></span
           >
         </div>
@@ -31,10 +34,12 @@
     <div class="col-12 col-lg-4">
       <div class="row">
         <div class="col-12 col-md-6 col-lg-12 mt-3 mt-lg-0">
-          <div class="address-box py-3 px-2 px-md-3">
-            <p class="fw-500 f-12 mb-2 select-heading">Shipping address</p>
+          <div class="shipping-address-box py-3 px-2 px-md-3">
+            <p class="fw-500 f-12 mb-2 shipping-address-heading">
+              Shipping address
+            </p>
             <img
-              class="img-fluid pick-up-location mb-2"
+              class="img-fluid shipping-location mb-2"
               src="./../../assets/location.png"
               alt="location"
             />
