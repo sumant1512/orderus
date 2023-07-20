@@ -1,3 +1,86 @@
-<p>order-details works!</p>
+<div class="container mt-3">
+  <!-- <div class="row">
+    <div class="col-12 col-lg-8 mb-3">
+      <span class="heading-two deactive pe-cursor">My cart</span>
+    </div>
+    <div class="col-12 col-lg-4"></div>
+  </div> -->
 
-<img src="./../../../assets/icons/kebab.svg" alt="" />
+  <div class="row">
+    <div class="col-12 col-lg-8">
+      <div class="cart-box pt-3">
+        <div>
+          <span class="heading-two deactive pe-cursor ms-4 mb-4"
+            >Menu
+            <span class="f-10 fw-bold meals-count"
+              >{{ restaurantDetails.menuItemList.length }} meals</span
+            ></span
+          >
+        </div>
+        <div
+          class="container-fluid"
+          *ngFor="let menu of restaurantDetails.menuItemList; last as isLast"
+        >
+          <app-cart-menu-card
+            [menuItem]="menu"
+            [isLast]="isLast"
+          ></app-cart-menu-card>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-lg-4">
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg-12 mt-3 mt-lg-0">
+          <div class="address-box py-3 px-2 px-md-3">
+            <p class="fw-500 f-12 mb-2 select-heading">Shipping address</p>
+            <img
+              class="img-fluid pick-up-location mb-2"
+              src="./../../assets/location.png"
+              alt="location"
+            />
+            <div class="f-14 fw-bold country">San Deigo</div>
+            <div class="f-12 fw-500 add-1">California State, USA</div>
+            <div class="f-12 fw-500 mt-2 add-2">
+              {{ "3891 Ranchview Dr." }} {{ "Richardson" }},
+              {{ "62639" }}
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-12 mt-3">
+          <div class="payment-box py-3 px-2 px-md-3">
+            <div class="fw-bold mb-3">Payment details</div>
+            <div class="mb-3">
+              <app-payment-card
+                [payment]="paymentInfo"
+                [isActionEnabled]="false"
+              ></app-payment-card>
+            </div>
+            <div class="fw-500 f-14">
+              <div class="opposite-direction mb-2">
+                <span class="light-label">Subtotal</span
+                ><span class="dark-label">$129.40</span>
+              </div>
+              <div class="opposite-direction mb-2">
+                <span class="light-label">Shipping</span
+                ><span class="dark-label">$20.00</span>
+              </div>
+              <div class="opposite-direction mb-2">
+                <span class="light-label">Tips</span
+                ><span class="dark-label">$5.00</span>
+              </div>
+              <div class="opposite-direction mb-3">
+                <span class="light-label">Discount</span
+                ><span class="dark-label">-$5.00</span>
+              </div>
+              <div class="opposite-direction mb-3">
+                <span class="dark-label">Total (tax incl.)</span
+                ><span class="fw-bold total-price">$149.40</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
