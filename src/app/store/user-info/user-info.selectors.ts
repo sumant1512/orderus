@@ -18,6 +18,7 @@ export const fetchUserBasicInfo = (state: AppState) => {
     email: state.userInfo?.userInfo.email,
     phone: state.userInfo?.userInfo.phone,
     altPhone: state.userInfo?.userInfo.altPhone,
+    emailNotification: state.userInfo?.userInfo.emailNotification,
   } as IUserBasicInfo;
 };
 

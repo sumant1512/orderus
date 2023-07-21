@@ -1,12 +1,23 @@
-import { Component, Input } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { Component, Input, OnInit } from '@angular/core';
+import {
+  ControlValueAccessor,
+  FormControl,
+  NG_VALUE_ACCESSOR,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-input-checkbox',
   templateUrl: './input-checkbox.component.html',
   styleUrls: ['./input-checkbox.component.scss'],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: InputCheckboxComponent,
+      multi: true,
+    },
+  ],
 })
-export class InputCheckboxComponent {
+export class InputCheckboxComponent implements OnInit, ControlValueAccessor {
   @Input() label!: string;
   control: FormControl;
   onChange: any = () => {};

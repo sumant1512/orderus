@@ -1,4 +1,7 @@
-<div class="container-fluid py-3 account-info-container">
+<div
+  [formGroup]="accountInfoForm"
+  class="container-fluid py-3 account-info-container"
+>
   <div class="row mb-3">
     <div class="col-12 fw-bold">Personal Information</div>
     <div class="col-12 mt-3 mb-2 f-10 fw-500 avtar">Avtar</div>
@@ -16,44 +19,35 @@
   <section class="mb-5">
     <div class="row mb-0 mb-md-3">
       <div class="col-12 mb-1 mb-md-0 col-md-6">
-        <app-input [label]="'First name'"></app-input>
+        <app-input
+          formControlName="firstName"
+          [label]="'First name'"
+        ></app-input>
       </div>
       <div class="col-12 mb-1 mb-md-0 col-md-6">
-        <app-input [label]="'Last name'"></app-input>
+        <app-input formControlName="lastName" [label]="'Last name'"></app-input>
       </div>
     </div>
     <div class="row">
       <div class="col-12 mb-1 mb-md-0 col-md-6">
-        <app-input [label]="'Email'"></app-input>
+        <app-input formControlName="email" [label]="'Email'"></app-input>
       </div>
       <div class="col-12 mb-1 mb-md-0 col-md-6">
-        <app-input [label]="'Phone Number'"></app-input>
+        <app-input formControlName="phone" [label]="'Phone Number'"></app-input>
       </div>
     </div>
   </section>
 
-  <section class="mb-3">
+  <section *ngIf="emailNotificationList?.length" class="mb-3">
     <div class="row mb-3">
       <div class="col-12 fw-bold">Email notification</div>
     </div>
     <div class="row">
-      <div class="col-12 col-md-6 mb-2">
-        <app-input-checkbox [label]="'New deals'"></app-input-checkbox>
-      </div>
-      <div class="col-12 col-md-6 mb-2">
-        <app-input-checkbox [label]="'New restaurants'"></app-input-checkbox>
-      </div>
-      <div class="col-12 col-md-6 mb-2">
-        <app-input-checkbox [label]="'Order statuses'"></app-input-checkbox>
-      </div>
-      <div class="col-12 col-md-6 mb-2">
-        <app-input-checkbox [label]="'Password changes'"></app-input-checkbox>
-      </div>
-      <div class="col-12 col-md-6 mb-2">
-        <app-input-checkbox [label]="'Special offers'"></app-input-checkbox>
-      </div>
-      <div class="col-12 col-md-6 mb-2">
-        <app-input-checkbox [label]="'News letter'"></app-input-checkbox>
+      <div
+        *ngFor="let notification of emailNotificationList"
+        class="col-12 col-md-6 mb-2"
+      >
+        <app-input-checkbox [label]="notification.name"></app-input-checkbox>
       </div>
     </div>
   </section>

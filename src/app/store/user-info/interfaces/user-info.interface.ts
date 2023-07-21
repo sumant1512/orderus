@@ -5,7 +5,6 @@ export interface IUserInfoState {
 }
 
 export interface IUserInfo extends IUserBasicInfo {
-  emailNotification: Array<INotifcation>;
   addressList: Array<IAddress>;
   paymentList: Array<IPayment>;
   twoFactorAuth: ITwoFactorAuth;
@@ -20,6 +19,7 @@ export interface IUserBasicInfo {
   email: string;
   phone: string;
   altPhone: string;
+  emailNotification: Array<INotifcation>;
 }
 
 export interface INotifcation {
