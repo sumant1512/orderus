@@ -1,0 +1,64 @@
+{
+  "data": {
+    "id": 1,
+    "imgUrl": "./../../assets/userImg.png",
+    "imgAlt": "Sumant",
+    "firstName": "Sumant",
+    "lastName": "Mishra",
+    "email": "sumantmishra511@gmail.com",
+    "phone": "9579310997",
+    "altPhone": "8269359143",
+    "emailNotification": [
+      { "id": 1, "name": "New deals", "status": true },
+      { "id": 2, "name": "New restaurants", "status": true },
+      { "id": 3, "name": "Order statuses", "status": true },
+      { "id": 4, "name": "Password changes", "status": true },
+      { "id": 5, "name": "Special offers", "status": true },
+      { "id": 6, "name": "New letter", "status": true }
+    ],
+    "addressList": [
+      {
+        "id": 1,
+        "imgUrl": "./../../../../assets/profile/map.png",
+        "imgAlt": "Map",
+        "country": "USA",
+        "state": "New York",
+        "city": "New York",
+        "address1": "4517 Washington Ave.",
+        "address2": "Manchester",
+        "pinCode": "11004"
+      },
+      {
+        "id": 2,
+        "imgUrl": "./../../../../assets/profile/map.png",
+        "imgAlt": "Map",
+        "country": "USA",
+        "state": "California",
+        "city": "San Deigo",
+        "address1": "3891 Ranchview ontario Dr.",
+        "address2": "Richardson",
+        "pinCode": "62639"
+      }
+    ],
+    "paymentList": [
+      {
+        "id": 1,
+        "cardNumber": "4444",
+        "expiryDate": "12/29",
+        "cardHolerName": "Sumant Mishra",
+        "cardType": "visa"
+      },
+      {
+        "id": 2,
+        "cardNumber": "9204",
+        "expiryDate": "09/31",
+        "cardHolerName": "Sanjay Sharma",
+        "cardType": "mastercard"
+      }
+    ],
+    "twoFactorAuth": {
+      "isActive": true,
+      "number": "9579310997"
+    }
+  }
+}

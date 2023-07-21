@@ -1,34 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { IAddress } from 'src/app/store/user-info/interfaces/user-info.interface';
+import { UserInfoFacade } from 'src/app/store/user-info/user-info.facade';
 
 @Component({
   selector: 'app-address-info',
   templateUrl: './address-info.component.html',
   styleUrls: ['./address-info.component.scss'],
 })
-export class AddressInfoComponent {
-  addressList: Array<IAddress> = [
-    {
-      id: 1,
-      imgUrl: './../../../../assets/profile/map.png',
-      imgAlt: 'Map',
-      country: 'USA',
-      state: 'New York',
-      city: 'New York',
-      address1: '4517 Washington Ave.',
-      address2: 'Manchester',
-      pinCode: '11004',
-    },
-    {
-      id: 2,
-      imgUrl: './../../../../assets/profile/map.png',
-      imgAlt: 'Map',
-      country: 'USA',
-      state: 'California',
-      city: 'San Deigo',
-      address1: '3891 Ranchview ontario Dr.',
-      address2: 'Richardson',
-      pinCode: '62639',
-    },
-  ];
+export class AddressInfoComponent implements OnInit {
+  subscription = new Subscription();
+  addressList!: Array<IAddress>;
+
+  constructor(private userInfoFacade: UserInfoFacade) {}
+
+  ngOnInit(): void {
+    this.getUserAddressList();
+  }
+
+  getUserAddressList(): void {
+    this.subscription.add(
+      this.userInfoFacade.userAddressListInfo.subscribe((address) => {
+        this.addressList = address;
+      })
+    );
+  }
 }
