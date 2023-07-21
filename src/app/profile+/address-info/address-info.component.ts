@@ -12,6 +12,8 @@ export class AddressInfoComponent implements OnInit {
   subscription = new Subscription();
   addressList!: Array<IAddress>;
 
+  selectedAddressId = 0;
+
   constructor(private userInfoFacade: UserInfoFacade) {}
 
   ngOnInit(): void {
@@ -24,5 +26,9 @@ export class AddressInfoComponent implements OnInit {
         this.addressList = address;
       })
     );
+  }
+
+  selectAddress(id: number): void {
+    this.selectedAddressId = id;
   }
 }
