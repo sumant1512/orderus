@@ -5,7 +5,12 @@
     </div>
     <div class="row">
       <div *ngFor="let address of addressList" class="col-12 col-md-6 mb-3">
-        <app-address-card [address]="address"></app-address-card>
+        <app-address-card
+          [address]="address"
+          [isSelectEnabled]="true"
+          [isSelected]="selectedAddressId === address.id"
+          (selectedCardEvent)="selectAddress($event)"
+        ></app-address-card>
       </div>
     </div>
   </section>

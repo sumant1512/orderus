@@ -1,4 +1,12 @@
-<div *ngIf="address?.id" class="container-fluid address-card-box p-2">
+<div
+  *ngIf="address?.id"
+  [ngClass]="{
+    selected: isSelectEnabled && isSelected,
+    'pe-cursor': isSelectEnabled
+  }"
+  class="container-fluid address-card-box p-2"
+  (click)="emitEvent(address.id)"
+>
   <div class="row">
     <div class="col-3 pe-0">
       <img class="w-100 h-100" [src]="address.imgUrl" [alt]="address.imgAlt" />
