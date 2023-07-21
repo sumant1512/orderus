@@ -1,9 +1,31 @@
 import { IImage } from 'src/app/shared/interfaces/image.interface';
 
-export interface IUserInfo {
-  userImage: IImage;
+export interface IUserInfoState {
+  userInfo: IUserInfo;
+}
+
+export interface IUserInfo extends IUserBasicInfo {
+  emailNotification: Array<INotifcation>;
+  addressList: Array<IAddress>;
+  paymentList: Array<IPayment>;
+  twoFactorAuth: ITwoFactorAuth;
+}
+
+export interface IUserBasicInfo {
+  id: number;
+  imgUrl: string;
+  imgAlt: string;
   firstName: string;
   lastName: string;
+  email: string;
+  phone: string;
+  altPhone: string;
+}
+
+export interface INotifcation {
+  id: number;
+  name: string;
+  status: boolean;
 }
 
 export interface IAddress extends IImage {
@@ -22,4 +44,9 @@ export interface IPayment {
   expiryDate: string;
   cardHolerName: string;
   cardType: string;
+}
+
+export interface ITwoFactorAuth {
+  isActive: boolean;
+  number: string;
 }

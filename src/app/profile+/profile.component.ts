@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ISettings } from '../shared/interfaces/settings.interface';
 import { EHeadingType } from '../shared/enum/heading-type.enum';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UserInfoFacade } from '../store/user-info/user-info.facade';
 
 @Component({
   selector: 'app-profile',
@@ -47,7 +48,13 @@ export class ProfileComponent {
 
   selectedSettingId = 1;
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private userInfoFacade: UserInfoFacade
+  ) {
+    this.userInfoFacade.fetchUserInfo();
+  }
 
   getNameById(id: number): string {
     const foundItem = this.settingsList.find((item) => item.id === id);

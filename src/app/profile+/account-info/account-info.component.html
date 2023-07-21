@@ -5,8 +5,8 @@
     <div class="col-12">
       <img
         class="user-img me-3 mb-3 mb-md-0"
-        src="./../../../assets/userImg.png"
-        alt=""
+        [src]="userInfo.imgUrl"
+        [alt]="userInfo.imgAlt"
       />
       <button class="me-3" appPrimaryButton>Change</button>
       <button class="me-3" appTransparentFilledButton>Remove</button>

@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { IImage } from '../interfaces/image.interface';
-import { IUserInfo } from 'src/app/store/user-info/interfaces/user-info.interface';
 import { APP_ROUTES } from '../constants/app-routes.constants';
 
 @Component({
@@ -19,13 +18,9 @@ export class HeaderComponent {
     imgAlt: 'Cart',
   };
 
-  userInfo: IUserInfo = {
-    userImage: {
-      imgUrl: './../../../assets/userImg.png',
-      imgAlt: 'Cart',
-    },
-    firstName: 'Sumant',
-    lastName: 'Mishra',
+  userInfo = {
+    imgUrl: './../../assets/userImg.png',
+    imgAlt: 'User',
   };
 
   constructor(private router: Router, private modalService: NgbModal) {}
