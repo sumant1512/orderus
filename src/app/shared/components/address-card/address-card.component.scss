@@ -2,8 +2,36 @@
   border: 1px solid var(--address-card-box-border);
   border-radius: 10px;
 
+  .action {
+    background: var(--address-card-action-bg-color);
+    color: var(--address-card-action-color);
+    padding: 8px 16px;
+    width: 120px;
+    transition: opacity 0.2s, margin-top 0.2s;
+    border-radius: 8px;
+    border: 1px solid var(--box-border-color);
+    box-shadow: 0 2px 1px 1px rgba(0, 0, 0, 0.2);
+    top: 20px;
+    right: 6px;
+    position: absolute;
+    &.hidden {
+      opacity: 0;
+      pointer-events: none;
+      margin-top: -10px;
+    }
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        margin-bottom: 4px;
+      }
+    }
+  }
+
   img {
     border-radius: 10px;
+    padding: 0 0 10px 10px;
   }
 
   .country {

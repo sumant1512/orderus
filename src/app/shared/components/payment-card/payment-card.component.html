@@ -1,14 +1,29 @@
-<div *ngIf="payment?.id" class="container-fluid payment-card-box p-2">
+<div
+  *ngIf="payment?.id"
+  [ngClass]="{
+    selected: isSelectEnabled && isSelected,
+    'pe-cursor': isSelectEnabled
+  }"
+  class="container-fluid payment-card-box p-2"
+  (click)="emitEvent(payment.id)"
+>
   <div class="row">
     <div class="col-12">
-      <div class="f-14 fw-bold card-number">
+      <div class="f-14 fw-bold card-number position-relative">
         **** **** **** {{ payment.cardNumber }}
-        <img
-          *ngIf="isActionEnabled"
-          class="float-end"
-          src="./../../../assets/icons/kebab.svg"
-          alt="action"
-        />
+        <span *ngIf="isActionEnabled" class="float-end">
+          <img
+            src="./../../../assets/icons/kebab.svg"
+            alt="action"
+            (click)="toggleAction(payment.id)"
+          />
+          <div class="action hidden" [attr.id]="payment.id">
+            <ul>
+              <li>Update</li>
+              <li>Delete</li>
+            </ul>
+          </div>
+        </span>
       </div>
       <div class="f-12 fw-500 exp-name">
         {{ payment.expiryDate }}
@@ -22,9 +37,5 @@
         />
       </div>
     </div>
-
-    <!-- <div class="col-3">
-      {{ payment.cardType }}
-    </div> -->
   </div>
 </div>
