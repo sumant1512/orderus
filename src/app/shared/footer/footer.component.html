@@ -3,21 +3,25 @@
     <div class="row py-5">
       <div class="col-12 col-lg-6">
         <div class="row text-center text-md-start mb-3 mb-md-0">
-          <div class="col-12">
+          <div class="col-12 col-md-6 col-lg-12">
             <div class="fw-bold mb-0 app-first-name">Food</div>
-          </div>
-          <div class="col-12">
             <div class="fw-bold app-last-name">Delivery</div>
           </div>
-          <!-- <div class="col-12">
-            <span *ngFor="let socialMedial of socialMediaList" class="fw-bold">
+          <div
+            class="col-12 col-md-6 text-center text-md-end text-lg-start col-lg-12 social-media-icons"
+          >
+            <span
+              *ngFor="let socialMedia of socialMediaList; let i = index"
+              class="fw-bold"
+            >
               <img
+                [ngClass]="{ 'me-3': i + 1 !== socialMediaList.length }"
                 class="purple"
-                [src]="socialMedial.imgUrl"
-                alt="socialMedial.imgAlt"
+                [src]="socialMedia.imgUrl"
+                [alt]="socialMedia.imgAlt"
               />
             </span>
-          </div> -->
+          </div>
           <div class="col-12 mt-3 d-none d-lg-block">
             <div class="copy-right-section">
               <span>© 2023 Food Delivery kit. All Rights Reserved.</span>

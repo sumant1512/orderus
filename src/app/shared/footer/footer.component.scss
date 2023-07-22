@@ -2,15 +2,6 @@
   background-color: var(--footer-bg);
   border-top: 2px solid var(--separator-color);
 
-  .purple {
-    // filter: brightness(0) invert(1);
-    filter: brightness(0%);
-    border: 1px solid white;
-    padding: 8px;
-    border-radius: 100%;
-    background-color: white;
-  }
-
   .app-first-name {
     color: var(--footer-app-first-name);
     font-size: 20px;
@@ -19,6 +10,15 @@
   .app-last-name {
     color: var(--footer-app-last-name);
     font-size: 18px;
+  }
+
+  .social-media-icons {
+    margin-top: 12px;
+    img {
+      background-color: var(--footer-social-media-bg-color);
+      padding: 8px;
+      border-radius: 40%;
+    }
   }
 
   .footer-header {
