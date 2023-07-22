@@ -39,10 +39,10 @@ export class FooterComponent {
   ];
 
   socialMediaList: Array<IImage> = [
-    { imgUrl: './../../../assets/whats-app.svg', imgAlt: 'Whatsapp' },
-    { imgUrl: './../../../assets/twiter.svg', imgAlt: 'twiter' },
-    { imgUrl: './../../../assets/instagram.svg', imgAlt: 'instagram' },
-    { imgUrl: './../../../assets/facebook.svg', imgAlt: 'facebook' },
-    { imgUrl: './../../../assets/whats-app.svg', imgAlt: '' },
+    { imgUrl: './../../../assets/footer/whatsapp.svg', imgAlt: 'Whatsapp' },
+    { imgUrl: './../../../assets/footer/twitter.svg', imgAlt: 'twiter' },
+    { imgUrl: './../../../assets/footer/instagram.svg', imgAlt: 'instagram' },
+    { imgUrl: './../../../assets/footer/facebook.svg', imgAlt: 'facebook' },
+    { imgUrl: './../../../assets/footer/linkedin.svg', imgAlt: 'linkedin' },
   ];
 }
