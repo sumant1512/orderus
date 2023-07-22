@@ -60,6 +60,20 @@
   margin-bottom: 1px;
 }
 
+.horizontal-line {
+  width: calc(100% - 56px);
+  background-color: var(--order-details-deliverycard-line-separator-bg-color);
+  height: 1px;
+  margin-left: 16px;
+}
+
+.vertical-line {
+  width: 1px;
+  height: 60px;
+  background-color: var(--order-details-deliverycard-line-separator-bg-color);
+  margin: 10px 20px;
+}
+
 .location-date {
   display: flex;
   justify-content: left;
