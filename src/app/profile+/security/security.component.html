@@ -1,29 +1,35 @@
 <div class="container-fluid py-3 security-container">
-  <div class="row mb-3 mb-md-4 mb-lg-5">
+  <div [formGroup]="twoFactorAuthForm" class="row mb-3 mb-md-4 mb-lg-5">
     <div class="col-12 fw-bold">2 factor authentication</div>
     <div class="col-12 col-md-6 mt-3 mb-2">
-      <app-input [label]="'Phone number'"></app-input>
+      <app-input formControlName="phone" [label]="'Phone number'"></app-input>
     </div>
     <div
       class="col-12 col-md-6 text-end mt-3 mb-2 d-flex align-items-end justify-content-end"
     >
-      <button appPrimaryButton>Turn on</button>
+      <button appPrimaryButton>{{ twoFactorBtnLabel }}</button>
     </div>
   </div>
 
-  <section class="mb-3">
+  <section [formGroup]="passwordForm" class="mb-3">
     <div class="row mb-3">
       <div class="col-12 fw-bold">Change password</div>
     </div>
     <div class="row">
       <div class="col-12 col-md-4 mb-2">
-        <app-input [label]="'Current password'"></app-input>
+        <app-input
+          formControlName="currentPw"
+          [label]="'Current password'"
+        ></app-input>
       </div>
       <div class="col-12 col-md-4 mb-2">
-        <app-input [label]="'New password'"></app-input>
+        <app-input formControlName="newPw" [label]="'New password'"></app-input>
       </div>
       <div class="col-12 col-md-4 mb-2">
-        <app-input [label]="'Confirm new password'"></app-input>
+        <app-input
+          formControlName="confirmPw"
+          [label]="'Confirm new password'"
+        ></app-input>
       </div>
     </div>
   </section>
