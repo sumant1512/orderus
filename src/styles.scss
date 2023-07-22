@@ -114,3 +114,11 @@
   background-color: var(--danger-btn-bg-color-hover);
   color: var(--danger-btn-text-color-hover);
 }
+
+.blue-dot {
+  width: 4px;
+  height: 4px;
+  display: inline-block;
+  border-radius: 100%;
+  background-color: var(--restaurant-card-time-separator-color);
+}

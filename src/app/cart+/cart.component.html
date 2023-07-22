@@ -37,10 +37,16 @@
               }}
             </p>
             <ng-container *ngIf="activeSlideName === 'delivery'">
-              <div *ngFor="let address of addressList" class="mb-3">
-                <app-address-card [address]="address"></app-address-card>
+              <div *ngFor="let address of addressList" class="mb-2">
+                <app-address-card
+                  [address]="address"
+                  [isActionEnabled]="false"
+                  [isSelectEnabled]="true"
+                  [isSelected]="selectedDeliveryAddessId === address.id"
+                  (selectedCardEvent)="onDeliveryAddressSelect($event)"
+                ></app-address-card>
               </div>
-              <button class="w-100 mb-3" appTransparentFilledButton>
+              <button class="w-100 mt-2 mb-3" appTransparentFilledButton>
                 Add new shipping address
               </button>
             </ng-container>

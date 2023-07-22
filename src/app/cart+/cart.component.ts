@@ -15,6 +15,8 @@ export class CartComponent implements OnInit, OnDestroy {
   restaurantDetails!: IRestaurantDetailsState;
   activeSlideName = 'delivery';
 
+  selectedDeliveryAddessId = 0;
+
   addressList: Array<IAddress> = [
     {
       id: 1,
@@ -69,6 +71,10 @@ export class CartComponent implements OnInit, OnDestroy {
 
   onSectionSelect(section: string): void {
     this.activeSlideName = section;
+  }
+
+  onDeliveryAddressSelect(id: number): void {
+    this.selectedDeliveryAddessId = id;
   }
 
   ngOnDestroy(): void {
