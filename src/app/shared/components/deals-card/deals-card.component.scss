@@ -2,6 +2,11 @@
   border: 2px solid var(--box-border-color);
   border-radius: 16px;
 
+  .deal-img {
+    max-height: 101px;
+    min-height: 101px;
+  }
+
   .type-btn {
     border-radius: 16px;
   }
