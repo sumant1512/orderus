@@ -58,7 +58,7 @@
     ],
     "twoFactorAuth": {
       "isActive": true,
-      "number": "9579310997"
+      "phone": "9579310997"
     }
   }
 }

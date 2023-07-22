@@ -48,5 +48,5 @@ export interface IPayment {
 
 export interface ITwoFactorAuth {
   isActive: boolean;
-  number: string;
+  phone: string;
 }

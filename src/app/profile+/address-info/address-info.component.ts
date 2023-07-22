@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { IAddress } from 'src/app/store/user-info/interfaces/user-info.interface';
 import { UserInfoFacade } from 'src/app/store/user-info/user-info.facade';
-import { addressInfoForm } from './accress-info.form';
+import { addressInfoForm } from './address-info.form';
 
 @Component({
   selector: 'app-address-info',

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { IPayment } from 'src/app/store/user-info/interfaces/user-info.interface';
 import { UserInfoFacade } from 'src/app/store/user-info/user-info.facade';
+import { paymentInfoForm } from './payment-info.form';
 
 @Component({
   selector: 'app-payment-info',
@@ -9,6 +10,7 @@ import { UserInfoFacade } from 'src/app/store/user-info/user-info.facade';
   styleUrls: ['./payment-info.component.scss'],
 })
 export class PaymentInfoComponent implements OnInit {
+  paymentInfoForm = paymentInfoForm();
   subscription = new Subscription();
   paymentList!: Array<IPayment>;
 
