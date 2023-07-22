@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { IAddress } from 'src/app/store/user-info/interfaces/user-info.interface';
 import { UserInfoFacade } from 'src/app/store/user-info/user-info.facade';
+import { addressInfoForm } from './accress-info.form';
 
 @Component({
   selector: 'app-address-info',
@@ -9,6 +10,7 @@ import { UserInfoFacade } from 'src/app/store/user-info/user-info.facade';
   styleUrls: ['./address-info.component.scss'],
 })
 export class AddressInfoComponent implements OnInit {
+  addressInforForm = addressInfoForm();
   subscription = new Subscription();
   addressList!: Array<IAddress>;
 
@@ -30,5 +32,22 @@ export class AddressInfoComponent implements OnInit {
 
   selectAddress(id: number): void {
     this.selectedAddressId = id;
+    // const selectedAddress = this.addressList.find(
+    //   (address) => address.id === id
+    // );
+    // if (selectedAddress) {
+    //   this.setAddressForm(selectedAddress);
+    // }
+  }
+
+  setAddressForm(address: IAddress): void {
+    this.addressInforForm.setValue({
+      address1: address.address1 || '',
+      address2: address.address2 || '',
+      country: address.country || '',
+      state: address.state || '',
+      city: address.city || '',
+      pinCode: address.pinCode || '',
+    });
   }
 }

@@ -12,13 +12,21 @@
       <img class="w-100 h-100" [src]="address.imgUrl" [alt]="address.imgAlt" />
     </div>
     <div class="col-9">
-      <div class="f-14 fw-bold country">
+      <div class="f-14 fw-bold country position-relative">
         {{ address.city }}
-        <img
-          class="float-end"
-          src="./../../../assets/icons/kebab.svg"
-          alt="action"
-        />
+        <span *ngIf="isActionEnabled" class="float-end">
+          <img
+            src="./../../../assets/icons/kebab.svg"
+            alt="action"
+            (click)="toggleAction(address.id)"
+          />
+          <div class="action hidden" [attr.id]="address.id">
+            <ul>
+              <li>Update</li>
+              <li>Delete</li>
+            </ul>
+          </div>
+        </span>
       </div>
       <div class="f-12 fw-500 add-1">
         {{ address.state }} State, {{ address.country }}

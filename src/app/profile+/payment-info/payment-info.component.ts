@@ -12,6 +12,8 @@ export class PaymentInfoComponent implements OnInit {
   subscription = new Subscription();
   paymentList!: Array<IPayment>;
 
+  selectedPaymentId = 0;
+
   constructor(private userInfoFacade: UserInfoFacade) {}
 
   ngOnInit(): void {
@@ -24,5 +26,15 @@ export class PaymentInfoComponent implements OnInit {
         this.paymentList = payment;
       })
     );
+  }
+
+  selectPayment(id: number): void {
+    this.selectedPaymentId = id;
+    // const selectedAddress = this.addressList.find(
+    //   (address) => address.id === id
+    // );
+    // if (selectedAddress) {
+    //   this.setAddressForm(selectedAddress);
+    // }
   }
 }
