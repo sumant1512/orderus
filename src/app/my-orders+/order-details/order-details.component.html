@@ -1,13 +1,40 @@
 <div class="container mt-3">
   <div class="row">
     <div class="col-12 col-lg-8">
-      <div class="order-status-box mb-3 py-3">
+      <div class="container-fluid order-status-box mb-3 py-3">
         <div class="row">
-          <div class="col-6">
-            <span class="heading-three pe-cursor ms-4 mb-4"
+          <div class="col-12 col-md-6 mb-2 mb-md-0">
+            <span class="heading-three pe-cursor mb-4"
               >Order status
-              <sub class="f-10 fw-bold meals-count">ID 11223344</sub></span
+              <sub class="f-10 fw-bold grey-light-label">ID 11223344</sub></span
             >
+          </div>
+          <div class="col-12 d-block d-md-none mb-3 f-12 fw-500">
+            <span class="blue-dot me-1 blue-dot-align"></span> In Progress
+          </div>
+          <div class="col-12 col-md-6 grey-light-label f-12 fw-500">
+            <div class="location-date mb-2">
+              <span
+                ><img
+                  src="./../../../assets/profile//location.svg"
+                  alt="" /></span
+              ><span> Bahama Beeze </span>
+            </div>
+            <div class="d-flex d-md-none location-date mb-2 mb-md-0">
+              <span><img src="./../../../assets/calendar4.svg" alt="" /></span>
+              <span> 21 september </span>
+            </div>
+          </div>
+        </div>
+        <div class="row d-none d-md-flex mt-2">
+          <div class="col-12 col-md-6 f-12 fw-500">
+            <span class="blue-dot me-1 blue-dot-align"></span> In Progress
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="location-date">
+              <span><img src="./../../../assets/calendar4.svg" alt="" /></span>
+              <span class="f-12 fw-500 grey-light-label"> 21 september </span>
+            </div>
           </div>
         </div>
       </div>
@@ -15,7 +42,9 @@
         <div>
           <span class="heading-three pe-cursor ms-4 mb-4"
             >Menu
-            <sub class="f-10 fw-bold meals-count"
+            <sub
+              *ngIf="restaurantDetails && restaurantDetails.menuItemList"
+              class="f-10 fw-bold grey-light-label"
               >{{ restaurantDetails.menuItemList.length }} meals</sub
             ></span
           >

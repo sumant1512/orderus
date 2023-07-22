@@ -1,3 +1,5 @@
+@import "mq";
+
 .order-status-box {
   border: 1px solid var(--box-border-color);
   border-radius: 16px;
@@ -11,10 +13,6 @@
 .shipping-address-box {
   border: 1px solid var(--box-border-color);
   border-radius: 16px;
-}
-
-.meals-count {
-  color: var(--label-5);
 }
 
 .shipping-location {
@@ -42,6 +40,10 @@
   color: var(--label-2);
 }
 
+.grey-light-label {
+  color: var(--label-5);
+}
+
 .light-label {
   color: var(--label-1);
 }
@@ -52,4 +54,33 @@
 
 .total-price {
   color: var(--label-3);
+}
+
+.blue-dot-align {
+  margin-bottom: 1px;
+}
+
+.location-date {
+  display: flex;
+  justify-content: left;
+
+  img {
+    width: 15px;
+    margin-right: 8px;
+  }
+}
+
+@include mq(md) {
+  .location-date {
+    display: flex;
+    justify-content: right;
+
+    img {
+      margin-left: 8px;
+    }
+  }
+
+  .location-date > span:first-child {
+    order: 2;
+  }
 }
