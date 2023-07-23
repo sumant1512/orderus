@@ -23,10 +23,14 @@
             ></app-payment-card>
           </div>
           <div class="col-12 col-md-4 mb-3">
-            <div class="new-payment-card-box p-2 text-center">
+            <div
+              (click)="enableNewPayment()"
+              class="new-payment-card-box pe-cursor p-2 text-center"
+            >
               <div>
                 <img
                   tabindex="1"
+                  [ngClass]="{ selected: !isNewPaymentEnabled }"
                   class="mb-1 p-2 mt-2"
                   src="./../../assets/plus.svg"
                   alt="add"
@@ -34,6 +38,59 @@
               </div>
               <div class="f-12 fw-500 new-label">New payment method</div>
             </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <section [formGroup]="paymentInfoForm" class="mb-3">
+              <div class="row mb-3">
+                <div class="heading-four">New payment method</div>
+              </div>
+              <div class="row">
+                <div class="col-12 col-md-6 mb-2">
+                  <app-input
+                    formControlName="cardNumber"
+                    [label]="'Card number'"
+                    [isDisabled]="isNewPaymentEnabled"
+                  ></app-input>
+                </div>
+                <div class="col-12 col-md-3 mb-2">
+                  <app-input
+                    formControlName="expiration"
+                    [label]="'Expiration'"
+                    [isDisabled]="isNewPaymentEnabled"
+                  ></app-input>
+                </div>
+                <div class="col-12 col-md-3 mb-2">
+                  <app-input
+                    formControlName="cvc"
+                    [label]="'CVC'"
+                    [isDisabled]="isNewPaymentEnabled"
+                  ></app-input>
+                </div>
+                <div class="col-12 col-md-12 mb-2">
+                  <app-input
+                    formControlName="cardHolderName"
+                    [label]="'Cardholder name'"
+                    [isDisabled]="isNewPaymentEnabled"
+                  ></app-input>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <div class="row pt-3 text-end">
+                <div class="col-12">
+                  <button
+                    [disabled]="isNewPaymentEnabled"
+                    appTransparentFilledButton
+                  >
+                    Add new payment method
+                  </button>
+                </div>
+              </div>
+            </section>
           </div>
         </div>
       </section>

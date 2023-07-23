@@ -14,6 +14,12 @@ input {
   border: 1px solid var(--input-border);
 }
 
+.disabled {
+  background-color: var(--input-disbled-background-color);
+  color: var(--input-disbled-color);
+  border-color: var(--input-disbled-border-color);
+}
+
 input[type="text"]:focus {
   border: 1px solid var(--input-border-focused);
 }
