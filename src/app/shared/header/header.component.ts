@@ -46,7 +46,7 @@ export class HeaderComponent {
   }
 
   navigateToPage(routePath: string): void {
-    if (this.detectMobile()) {
+    if (this.detectMobile() && routePath) {
       const headerContent = document.getElementById('navbarSupportedContent');
       headerContent?.classList.remove('show');
       this.toggleHamburger();
