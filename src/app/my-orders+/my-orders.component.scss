@@ -1,11 +1,4 @@
-.all-my-orders-header {
-  font-size: 20px;
-  font-weight: 500;
-  letter-spacing: 0.1px;
-  cursor: default;
-}
-
-.all-my-orders-header:hover {
+.heading-two:hover {
   text-decoration: underline;
 }
 
@@ -22,6 +15,8 @@ table {
   }
   thead > tr > th {
     line-height: 60px !important;
+    background-color: var(--order-table-bg-color);
+    color: var(--order-table-text-color);
   }
   tbody > tr {
     border-bottom: 1px solid var(--order-table-head-border-color);
@@ -29,6 +24,8 @@ table {
   tbody > tr > td {
     line-height: 60px !important;
     padding: 0 10px;
+    background-color: var(--order-table-bg-color);
+    color: var(--order-table-text-color);
 
     .dot {
       height: 5px;

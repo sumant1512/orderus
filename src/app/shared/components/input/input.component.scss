@@ -1,5 +1,5 @@
 label {
-  color: var(--input-label-color);
+  color: var(--label-6);
   letter-spacing: 0.3px;
   margin-bottom: 2px;
 }
@@ -11,6 +11,8 @@ input {
   letter-spacing: 0.3px;
   padding: 10px;
   outline: none;
+  color: var(--input-color);
+  background-color: var(--input-background-color);
   border: 1px solid var(--input-border);
 }
 

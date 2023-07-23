@@ -15,7 +15,9 @@
             </div>
             <div class="col-8 col-md-9">
               <div class="heading-one">{{ restaurantDetails.name }}</div>
-              <div class="f-14 mt-2">{{ restaurantDetails.about }}</div>
+              <div class="f-14 mt-2 restaurant-about">
+                {{ restaurantDetails.about }}
+              </div>
               <div class="delivery-time mt-3 d-flex align-items-center">
                 <span
                   ><img
@@ -52,13 +54,13 @@
       <div class="mb-3">
         <span
           [ngClass]="{ active: activeSlideName === 'menu' }"
-          class="body-header-text deactive pe-cursor"
+          class="heading-two deactive pe-cursor"
           (click)="onSlideChange('menu')"
           >Menu</span
         >
         <span
           [ngClass]="{ active: activeSlideName === 'reviews' }"
-          class="body-header-text deactive pe-cursor ms-3 d-inline-block d-lg-none"
+          class="heading-two deactive pe-cursor ms-3 d-inline-block d-lg-none"
           (click)="onSlideChange('reviews')"
           >Reviews</span
         >
@@ -79,7 +81,7 @@
     </div>
     <div class="d-none d-lg-block col-lg-4">
       <div class="mb-3">
-        <span class="body-header-text pe-cursor">Reviews</span>
+        <span class="heading-two pe-cursor">Reviews</span>
       </div>
       <app-restaurant-reviews
         [reviews]="restaurantDetails.reviews"
