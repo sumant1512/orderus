@@ -1,1 +1,89 @@
-<p>checkout works!</p>
+<div class="container">
+  <div class="row mt-4">
+    <div class="col-12 f-12 fw-bold" (click)="navigateToCart()">
+      <img src="./../../assets/chevron-left.svg" alt="back" />
+      <span class="back-label pe-cursor"> Back to cart</span>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-12 col-md-8">
+      <section class="container-fluid py-3 select-payment-container">
+        <div class="row mb-3">
+          <div class="heading-four">Select payment method</div>
+        </div>
+        <div class="row">
+          <div *ngFor="let payment of paymentList" class="col-12 col-md-4 mb-3">
+            <app-payment-card
+              [payment]="payment"
+              [isActionEnabled]="true"
+              [isSelectEnabled]="true"
+              [isSelected]="selectedPaymentId === payment.id"
+              (selectedCardEvent)="selectPayment($event)"
+            ></app-payment-card>
+          </div>
+          <div class="col-12 col-md-4 mb-3">
+            <div class="new-payment-card-box p-2 text-center">
+              <div>
+                <img
+                  tabindex="1"
+                  class="mb-1 p-2 mt-2"
+                  src="./../../assets/plus.svg"
+                  alt="add"
+                />
+              </div>
+              <div class="f-12 fw-500 new-label">New payment method</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="col-12 col-md-4">
+      <div class="payment-box py-3 px-2 px-md-3">
+        <div class="fw-bold mb-3">Payment summary</div>
+
+        <div [formGroup]="paymentForm" class="mb-4 pb-4 coupan-form">
+          <div class="mb-3">
+            <app-input
+              formControlName="coupanCode"
+              [label]="'Coupan code'"
+            ></app-input>
+          </div>
+          <div>
+            <app-input formControlName="tip" [label]="'Tips'"></app-input>
+          </div>
+        </div>
+
+        <div class="fw-500 f-14">
+          <div class="opposite-direction mb-2">
+            <span class="light-label">Subtotal</span
+            ><span class="dark-label">$129.40</span>
+          </div>
+          <div class="opposite-direction mb-2">
+            <span class="light-label">Shipping</span
+            ><span class="dark-label">$20.00</span>
+          </div>
+          <div class="opposite-direction mb-2">
+            <span class="light-label">Tip</span>
+            <span class="dark-label" *ngIf="isNumber(tipValue)">{{
+              tipValue || 0 | number : "1.2-2"
+            }}</span>
+            <span class="dark-label" *ngIf="!isNumber(tipValue)">{{
+              tipValue ? "Invalid number" : "$" + (0 | number : "1.2-2")
+            }}</span>
+          </div>
+          <div class="opposite-direction mb-3">
+            <span class="light-label">Discount (coupan)</span
+            ><span class="dark-label">$0.00</span>
+          </div>
+          <div class="opposite-direction mb-3">
+            <span class="dark-label">Total (tax incl.)</span
+            ><span class="fw-bold total-price">$149.40</span>
+          </div>
+        </div>
+        <button class="w-100 mb-3" appPrimaryFilledButton>Submit order</button>
+      </div>
+    </div>
+  </div>
+</div>

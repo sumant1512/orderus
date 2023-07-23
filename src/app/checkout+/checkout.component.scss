@@ -1,0 +1,57 @@
+.back-label {
+  padding-top: 6px;
+  color: var(--label-1);
+
+  &:hover {
+    border-bottom: 2px solid var(--checkout-back-underline-color);
+  }
+}
+
+.select-payment-container {
+  border: 1px solid var(--box-border-color);
+  border-radius: 16px;
+
+  .new-payment-card-box {
+    border: 1px solid var(--payment-card-box-border);
+    border-radius: 10px;
+    min-height: 93px;
+
+    img {
+      background-color: var(--icons-bg-color);
+      border-radius: 50%;
+
+      &:hover {
+        background-color: var(--icons-bg-selected-color);
+      }
+
+      &:focus {
+        background-color: var(--icons-bg-selected-color);
+      }
+    }
+
+    .new-label {
+      color: var(--label-4);
+    }
+  }
+}
+
+.payment-box {
+  border: 1px solid var(--box-border-color);
+  border-radius: 16px;
+
+  .coupan-form {
+    border-bottom: 1px solid var(--separator-color);
+  }
+
+  .light-label {
+    color: var(--label-1);
+  }
+
+  .dark-label {
+    color: var(--label-2);
+  }
+
+  .total-price {
+    color: var(--label-3);
+  }
+}
