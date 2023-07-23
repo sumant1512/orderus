@@ -1,6 +1,8 @@
 @import "variables";
 
 .dark-theme {
+  --app-body-bg: #{$black-2};
+
   --app-first-name: #{$white};
   --app-last-name: #{$blue-1};
   --navbar-bg: #{$dark-navbar-bg};
@@ -19,12 +21,12 @@
   --navbar-badge-color: #{$white};
   --navbar-mobile-hamberger: #{$white-15};
 
-  --footer-bg: #{$light-navbar-bg};
+  --footer-bg: #{$dark-navbar-bg};
   --footer-social-media-bg-color: #{$white};
-  --footer-app-first-name: #{$black};
+  --footer-app-first-name: #{$white};
   --footer-app-last-name: #{$blue-1};
-  --footer-header-color: #{$black-15};
-  --footer-url-color: #{$gray-15};
+  --footer-header-color: #{$white-15};
+  --footer-url-color: #{$gray-13};
 
   --offer-card-header-color: #{$black};
   --offer-card-spicy-bg: #{$orange-2};
@@ -33,9 +35,9 @@
   --offer-card-sweet-offer-color: #{$blue-1};
 
   --product-thumbnail-border: #{$gray-2};
-  --product-thumbnail-border-hover: #{$blue-2};
-  --product-thumbnail-background-hover: #{$blue-4};
-  --product-thumbnail-background-focus: #{$blue-3};
+  --product-thumbnail-background-hover: #{$black};
+  --product-thumbnail-background-focus: #{$black};
+  --product-thumbnail-text-color: #{$white};
 
   --load-more-btn-border: #{$blue-1};
   --load-more-btn-text-color: #{$blue-2};
@@ -58,6 +60,8 @@
   --order-completed-status-color: #{$green-0};
   --order-cancelled-status-color: #{$red-0};
   --order-in-progress-status-color: #{$blue-0};
+  --order-table-bg-color: #{$black};
+  --order-table-text-color: #{$white};
 
   --order-details-deliverycard-line-separator-bg-color: #{$green-0};
 
@@ -68,12 +72,12 @@
   --restaurant-card-cart-badge-color: #{$white};
   --restaurant-card-item-badge-bg-color: #{$gray-0};
 
-  --restaurant-details-header-bg-color: #{$gray-6};
+  --restaurant-details-header-bg-color: #{$black-15};
   --restaurant-details-header-time-separator-color: #{$blue-15};
   --restaurant-details-header-delivery-time-color: #{$gray-3};
   --restaurant-details-header-location-img-border-color: #{$white};
   --restaurant-details-header-restaurant-thumbnail-bg-color: #{$white};
-  --restaurant-details-heading-active-color: #{$black};
+  --restaurant-details-heading-active-color: #{$white};
   --restaurant-details-heading-deactive-color: #{$gray-13};
 
   --menu-card-border: #{$gray-2};
@@ -104,18 +108,18 @@
 
   // common
 
-  --box-border-color: #{$gray-2};
-  --separator-color: #{$gray-2};
-  --box-border-hover-color: #{$blue-2};
-  --box-border-focus-color: #{$blue-3};
+  --box-border-color: #{$gray-15};
+  --separator-color: #{$gray-15};
+  --box-border-hover-color: #{$white};
+  --box-border-focus-color: #{$white};
   --icons-bg-color: #{$gray-1};
   --icons-bg-selected-color: #{$blue-0};
   --label-1: #{$black-14};
-  --label-2: #{$black};
+  --label-2: #{$white};
   --label-3: #{$blue-0};
   --label-4: #{$gray};
   --label-5: #{$gray-3};
-  --label-6: #{$gray-12};
+  --label-6: #{$gray-2};
 
   // components colors
 
@@ -124,10 +128,10 @@
   --switch-bg-color: #{$black-1};
   --switch-text-color: #{$white};
 
-  --primary-btn-border: #{$blue-1};
-  --primary-btn-text-color: #{$blue-2};
-  --primary-btn-bg-color: #{$white};
-  --primary-btn-bg-color-hover: #{$blue-15};
+  --primary-btn-border: #{$gray};
+  --primary-btn-text-color: #{$gray};
+  --primary-btn-bg-color: #{$black};
+  --primary-btn-bg-color-hover: #{$black-2};
   --primary-btn-text-color-hover: #{$white};
 
   --primary-select-border: #{$blue-1};
@@ -151,9 +155,10 @@
   --danger-btn-bg-color-hover: #{$red-0};
   --danger-btn-text-color-hover: #{$white};
 
-  --input-border: #{$gray-7};
-  --input-border-focused: #{$blue-15};
-  --input-label-color: #{$black-14};
+  --input-border: #{$black-14};
+  --input-background-color: #{$black-15};
+  --input-color: #{$white};
+  --input-border-focused: #{$black};
   --input-disbled-border-color: #{$gray-6};
   --input-disbled-background-color: #{$gray-6};
   --input-disbled-color: #{$gray-7};

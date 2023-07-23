@@ -1,6 +1,8 @@
 @import "variables";
 
 :root {
+  --app-body-bg: #{$white};
+
   --app-first-name: #{$black};
   --app-last-name: #{$blue-1};
   --navbar-bg: #{$light-navbar-bg};
@@ -19,12 +21,12 @@
   --navbar-badge-color: #{$white};
   --navbar-mobile-hamberger: #{$black-15};
 
-  --footer-bg: #{$dark-navbar-bg};
-  --footer-social-media-bg-color: #{$white};
-  --footer-app-first-name: #{$white};
+  --footer-bg: #{$light-navbar-bg};
+  --footer-social-media-bg-color: #{$gray-1};
+  --footer-app-first-name: #{$black};
   --footer-app-last-name: #{$blue-1};
-  --footer-header-color: #{$white-15};
-  --footer-url-color: #{$gray-13};
+  --footer-header-color: #{$black-15};
+  --footer-url-color: #{$gray-15};
 
   --offer-card-header-color: #{$black};
   --offer-card-spicy-bg: #{$orange-2};
@@ -33,9 +35,9 @@
   --offer-card-sweet-offer-color: #{$blue-1};
 
   --product-thumbnail-border: #{$gray-2};
-  --product-thumbnail-border-hover: #{$blue-2};
   --product-thumbnail-background-hover: #{$blue-4};
   --product-thumbnail-background-focus: #{$blue-3};
+  --product-thumbnail-text-color: #{$black};
 
   --load-more-btn-border: #{$blue-1};
   --load-more-btn-text-color: #{$blue-2};
@@ -58,6 +60,8 @@
   --order-completed-status-color: #{$green-0};
   --order-cancelled-status-color: #{$red-0};
   --order-in-progress-status-color: #{$blue-0};
+  --order-table-bg-color: #{$white};
+  --order-table-text-color: #{$black};
 
   --order-details-deliverycard-line-separator-bg-color: #{$green-0};
 
@@ -152,8 +156,9 @@
   --danger-btn-text-color-hover: #{$white};
 
   --input-border: #{$gray-7};
+  --input-background-color: #{$white};
+  --input-color: #{$black};
   --input-border-focused: #{$blue-15};
-  --input-label-color: #{$black-14};
   --input-disbled-border-color: #{$gray-6};
   --input-disbled-background-color: #{$gray-6};
   --input-disbled-color: #{$gray-7};
