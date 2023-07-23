@@ -4,5 +4,6 @@ export const APP_ROUTES = {
   DEALS: 'deals',
   MY_ORDERS: 'my-orders',
   CART: 'cart',
+  CHECKOUT: 'checkout',
   PROFILE: 'profile',
 };
