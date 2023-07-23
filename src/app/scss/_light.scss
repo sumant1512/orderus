@@ -89,8 +89,6 @@
   --settings-card-selected-bg-color: #{$blue-3};
   --settings-card-heading-color: #{$black};
   --settings-card-description-color: #{$gray-3};
-  --settings-card-icon-bg-color: #{$gray-1};
-  --settings-card-selected-icon-bg-color: #{$blue-0};
 
   --account-info-avtar-color: #{$gray-3};
 
@@ -102,12 +100,16 @@
   --payment-card-number-color: #{$black};
   --payment-card-expiry-name-color: #{$black-14};
 
+  --checkout-back-underline-color: #{$black-14};
+
   // common
 
   --box-border-color: #{$gray-2};
   --separator-color: #{$gray-2};
   --box-border-hover-color: #{$blue-2};
   --box-border-focus-background-color: #{$blue-3};
+  --icons-bg-color: #{$gray-1};
+  --icons-bg-selected-color: #{$blue-0};
   --label-1: #{$black-14};
   --label-2: #{$black};
   --label-3: #{$blue-0};

@@ -4,11 +4,15 @@
   </div>
   <div>
     <input
-      type="text"
-      [placeholder]="label"
-      [formControl]="control"
-      (input)="onChange($event.target)"
-      (blur)="onTouched()"
+      #input
+      [type]="inputType"
+      [value]="value"
+      (input)="onInput($event)"
+      [placeholder]="placeholder ? placeholder : label"
+      [disabled]="isDisabled"
+      [readOnly]="edit"
+      (blur)="onTouched($event)"
+      (focus)="onFocus()"
     />
   </div>
 </div>

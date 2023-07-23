@@ -19,10 +19,10 @@ export class PaymentInfoComponent implements OnInit {
   constructor(private userInfoFacade: UserInfoFacade) {}
 
   ngOnInit(): void {
-    this.getUserAddressList();
+    this.getPaymentList();
   }
 
-  getUserAddressList(): void {
+  getPaymentList(): void {
     this.subscription.add(
       this.userInfoFacade.userPaymentListInfo.subscribe((payment) => {
         this.paymentList = payment;
