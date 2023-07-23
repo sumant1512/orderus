@@ -1,9 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { IRestaurantDetailsState } from '../store/restaurant-details/interfaces/restaurant-details.interface';
 import { RestaurantDetailsFacade } from '../store/restaurant-details/restaurant-details.facade';
 import { IAddress } from '../store/user-info/interfaces/user-info.interface';
+import { APP_ROUTES } from '../shared/constants/app-routes.constants';
 
 @Component({
   selector: 'app-cart',
@@ -44,7 +45,8 @@ export class CartComponent implements OnInit, OnDestroy {
 
   constructor(
     private restaurantDetailsFacade: RestaurantDetailsFacade,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) {
     this.getRestaurantDetails();
   }
@@ -75,6 +77,10 @@ export class CartComponent implements OnInit, OnDestroy {
 
   onDeliveryAddressSelect(id: number): void {
     this.selectedDeliveryAddessId = id;
+  }
+
+  navigateToCheckout(): void {
+    this.router.navigate([APP_ROUTES.CHECKOUT]);
   }
 
   ngOnDestroy(): void {

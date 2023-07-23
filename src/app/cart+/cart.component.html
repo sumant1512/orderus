@@ -84,7 +84,11 @@
                 ><span class="fw-bold total-price">$149.40</span>
               </div>
             </div>
-            <button class="w-100 mb-3" appPrimaryFilledButton>
+            <button
+              class="w-100 mb-3"
+              (click)="navigateToCheckout()"
+              appPrimaryFilledButton
+            >
               Proceed to checkout
             </button>
           </div>
