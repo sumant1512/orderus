@@ -17,7 +17,7 @@
   <div
     class="fw-bold d-flex align-items-center price-scetion text-start text-md-center mt-3 col-12 col-md-4"
   >
-    <span>
+    <span *ngIf="isCountChangeEnabled">
       <span
         [ngClass]="{
           'sub-btn-disabled': itemCount <= 0,
@@ -31,6 +31,9 @@
       <span class="add-btn pe-cursor" (click)="updateProductCount('add')"
         >+</span
       ></span
+    >
+    <span *ngIf="isCountLabelEnabled" class="f-10 fw-bold light-label"
+      >X 2</span
     >
     <span class="heading-one ms-0 ms-md-3"> $ {{ menuItem.price }} </span>
   </div>

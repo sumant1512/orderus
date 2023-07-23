@@ -8,6 +8,8 @@ import { IMenuItemCard } from 'src/app/store/restaurant-details/interfaces/resta
 })
 export class CartMenuCardComponent {
   @Input() menuItem!: IMenuItemCard;
+  @Input() isCountChangeEnabled: boolean = true;
+  @Input() isCountLabelEnabled: boolean = false;
   @Input() isLast!: boolean;
   itemCount = 0;
 
