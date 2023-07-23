@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { APP_ROUTES } from 'src/app/shared/constants/app-routes.constants';
 import { IRestaurantDetailsState } from 'src/app/store/restaurant-details/interfaces/restaurant-details.interface';
 import { RestaurantDetailsFacade } from 'src/app/store/restaurant-details/restaurant-details.facade';
 import {
@@ -53,7 +54,8 @@ export class OrderDetailsComponent {
 
   constructor(
     private restaurantDetailsFacade: RestaurantDetailsFacade,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) {
     this.getRestaurantDetails();
   }
@@ -80,6 +82,10 @@ export class OrderDetailsComponent {
 
   onSectionSelect(section: string): void {
     this.activeSlideName = section;
+  }
+
+  navigateToMyOrders(): void {
+    this.router.navigate([APP_ROUTES.MY_ORDERS]);
   }
 
   ngOnDestroy(): void {

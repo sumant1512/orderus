@@ -60,6 +60,15 @@
   margin-bottom: 1px;
 }
 
+.back-label {
+  padding-top: 6px;
+  color: var(--label-1);
+
+  &:hover {
+    border-bottom: 2px solid var(--checkout-back-underline-color);
+  }
+}
+
 .horizontal-line {
   width: calc(100% - 56px);
   background-color: var(--order-details-deliverycard-line-separator-bg-color);
