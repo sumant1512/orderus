@@ -5,6 +5,7 @@
   <div>
     <input
       #input
+      [ngClass]="{ disabled: isDisabled }"
       [type]="inputType"
       [value]="value"
       (input)="onInput($event)"

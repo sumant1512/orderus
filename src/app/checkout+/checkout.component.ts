@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs';
 import { IPayment } from '../store/user-info/interfaces/user-info.interface';
 import { UserInfoFacade } from '../store/user-info/user-info.facade';
 import { paymentForm } from './payment.form';
+import { paymentInfoForm } from '../profile+/payment-info/payment-info.form';
 
 @Component({
   selector: 'app-checkout',
@@ -12,9 +13,11 @@ import { paymentForm } from './payment.form';
   styleUrls: ['./checkout.component.scss'],
 })
 export class CheckoutComponent {
+  paymentInfoForm = paymentInfoForm();
   paymentForm = paymentForm();
   subscription = new Subscription();
   paymentList!: Array<IPayment>;
+  isNewPaymentEnabled = true;
 
   selectedPaymentId = 0;
 
@@ -50,6 +53,10 @@ export class CheckoutComponent {
     // if (selectedAddress) {
     //   this.setAddressForm(selectedAddress);
     // }
+  }
+
+  enableNewPayment(): void {
+    this.isNewPaymentEnabled = !this.isNewPaymentEnabled;
   }
 
   navigateToCart(): void {
