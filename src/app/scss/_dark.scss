@@ -50,7 +50,7 @@
   --deal-card-green-btn-border: #{$green-0};
   --deal-card-orange-btn-color: #{$orange-0};
   --deal-card-orange-btn-border: #{$orange-0};
-  --deal-card-details-color: #{$black-1};
+  --deal-card-details-color: #{$white-1};
   --deal-card-header-color: #{$gray-3};
   --deal-card-validity-info-color: #{$gray-3};
 
@@ -113,7 +113,7 @@
   --box-border-hover-color: #{$white};
   --box-border-focus-color: #{$white};
   --icons-bg-color: #{$gray-1};
-  --icons-bg-selected-color: #{$blue-0};
+  --icons-bg-selected-color: #{$black-15};
   --label-1: #{$black-14};
   --label-2: #{$white};
   --label-3: #{$blue-0};
@@ -137,8 +137,10 @@
   --primary-select-border: #{$blue-1};
   --primary-select-text-color: #{$blue-2};
 
-  --primary-filled-btn-bg: #{$blue-15};
-  --primary-filled-btn-color: #{$white};
+  --primary-filled-btn-bg: #{$black-15};
+  --primary-filled-btn-bg-hover: #{$black};
+  --primary-filled-btn-color: #{$gray-3};
+  --primary-filled-btn-color-hover: #{$white};
 
   --transparent-filled-btn-bg: #{$black-15};
   --transparent-filled-btn-bg-hover: #{$black};
@@ -160,6 +162,6 @@
   --input-color: #{$white};
   --input-border-focused: #{$black};
   --input-disbled-border-color: #{$gray-6};
-  --input-disbled-background-color: #{$gray-6};
-  --input-disbled-color: #{$gray-7};
+  --input-disbled-background-color: #{$gray-14};
+  --input-disbled-color: #{$gray-15};
 }
