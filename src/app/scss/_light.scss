@@ -82,6 +82,7 @@
 
   --menu-card-border: #{$gray-2};
   --menu-card-one-add-sub-btn-bg: #{$gray-6};
+  --menu-card-one-add-sub-btn-color: #{$black};
   --menu-card-one-add-sub-btn-disabled-color: #{$gray-3};
 
   --review-rating-header-separator-color: #{$gray-2};
@@ -100,8 +101,6 @@
   --address-card-action-color: #{$black};
   --address-card-action-bg-color: #{$white};
 
-  --payment-card-box-border: #{$gray-7};
-  --payment-card-number-color: #{$black};
   --payment-card-expiry-name-color: #{$black-14};
 
   --checkout-back-underline-color: #{$black-14};
@@ -109,6 +108,7 @@
   // common
 
   --box-border-color: #{$gray-2};
+  --box-border-2-color: #{$gray-7};
   --separator-color: #{$gray-2};
   --box-border-hover-color: #{$blue-2};
   --box-border-focus-background-color: #{$blue-3};
