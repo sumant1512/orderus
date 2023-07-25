@@ -40,6 +40,25 @@ const routes: Routes = [
     loadChildren: () =>
       import('./profile+/profile.module').then((m) => m.ProfileModule),
   },
+  {
+    path: APP_ROUTES.LOGIN,
+    loadChildren: () =>
+      import('./login+/login.module').then((m) => m.LoginModule),
+  },
+  {
+    path: APP_ROUTES.FORGET_PASSWORD,
+    loadChildren: () =>
+      import('./forget-password+/forget-password.module').then(
+        (m) => m.ForgetPasswordModule
+      ),
+  },
+  {
+    path: APP_ROUTES.REGISTRATION,
+    loadChildren: () =>
+      import('./registration+/registration.module').then(
+        (m) => m.RegistrationModule
+      ),
+  },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 

@@ -6,4 +6,7 @@ export const APP_ROUTES = {
   CART: 'cart',
   CHECKOUT: 'checkout',
   PROFILE: 'profile',
+  LOGIN: 'login',
+  FORGET_PASSWORD: 'forget-password',
+  REGISTRATION: 'registration',
 };
