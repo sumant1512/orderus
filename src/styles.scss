@@ -105,6 +105,11 @@
   border-radius: 6px;
 }
 
+.primary-filled-btn:hover {
+  background-color: var(--primary-filled-btn-bg-hover);
+  color: var(--primary-filled-btn-color-hover);
+}
+
 .transparent-filled-btn {
   background-color: var(--transparent-filled-btn-bg);
   color: var(--transparent-filled-btn-color);
