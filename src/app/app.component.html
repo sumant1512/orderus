@@ -1,8 +1,8 @@
-<app-header></app-header>
-<div class="app-body pb-4">
+<app-header *ngIf="!isHeaderFooterActive"></app-header>
+<div class="app-body">
   <router-outlet></router-outlet>
 </div>
-<app-footer></app-footer>
+<app-footer *ngIf="!isHeaderFooterActive"></app-footer>
 <label class="switch">
   <input type="checkbox" (click)="toggleTheme()" />
   <span class="slider round"></span>

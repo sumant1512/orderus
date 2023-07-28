@@ -1,0 +1,18 @@
+.login-container {
+  height: 100vh;
+
+  .form-container {
+    max-width: 400px;
+    margin: auto;
+
+    .sign-up {
+      max-width: 400px;
+      bottom: 36px;
+      width: 100%;
+    }
+  }
+
+  .section-2 {
+    background-color: var(--auth-section-two-bg);
+  }
+}
