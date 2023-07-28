@@ -24,6 +24,7 @@ import { AddressCardComponent } from './components/address-card/address-card.com
 import { CartMenuCardComponent } from './components/cart-menu-card/cart-menu-card.component';
 import { TransparentFilledButtonDirective } from './directives/transparent-filled-button.directive';
 import { ToggleComponent } from './components/toggle/toggle.component';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 const COMPONENTS = [
   HeaderComponent,
@@ -49,7 +50,13 @@ const COMPONENTS = [
   PrimaryFilledButtonDirective,
   TransparentFilledButtonDirective,
 ];
-const MODULES = [CommonModule, NgbModule, FormsModule, ReactiveFormsModule];
+const MODULES = [
+  CommonModule,
+  NgbModule,
+  FormsModule,
+  ReactiveFormsModule,
+  NgxSkeletonLoaderModule,
+];
 
 @NgModule({
   declarations: [...COMPONENTS],

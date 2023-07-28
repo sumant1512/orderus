@@ -1,4 +1,5 @@
 <div
+  *ngIf="cardDetails?.id"
   [ngClass]="{
     'spicy-box': cardDetails.type === 'spicy',
     'sweet-box': cardDetails.type === 'sweet'
@@ -24,3 +25,9 @@
     </div>
   </div>
 </div>
+
+<ngx-skeleton-loader
+  *ngIf="!cardDetails?.id"
+  count="1"
+  [theme]="{ 'margin-top': '24px', 'border-radius': '16px', height: '204px' }"
+></ngx-skeleton-loader>
