@@ -1,0 +1,16 @@
+.registration-container {
+  height: 100vh;
+
+  .form-container {
+    margin: auto;
+
+    .sign-up {
+      bottom: 36px;
+      width: calc(100% - 72px);
+    }
+  }
+
+  .section-2 {
+    background-color: var(--auth-section-two-bg);
+  }
+}
