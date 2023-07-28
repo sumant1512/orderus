@@ -1,13 +1,20 @@
 <div class="container">
   <div class="row">
-    <div *ngFor="let card of offerCardList" class="col-12 col-md-6">
+    <div
+      *ngFor="
+        let card of offerCardList.length ? offerCardList : [].constructor(2)
+      "
+      class="col-12 col-md-6"
+    >
       <app-offer-card [cardDetails]="card"></app-offer-card>
     </div>
   </div>
 
   <div class="row">
     <div
-      *ngFor="let item of itemFilterList"
+      *ngFor="
+        let item of itemFilterList.length ? itemFilterList : [].constructor(6)
+      "
       class="col-3 col-md-4 col-lg-2 mt-4"
     >
       <app-product-thumbnail
@@ -25,7 +32,11 @@
 
   <div class="row">
     <div
-      *ngFor="let restaurant of restaurantList"
+      *ngFor="
+        let restaurant of restaurantList?.length
+          ? restaurantList
+          : [].constructor(6)
+      "
       class="col-12 col-md-6 col-lg-4 mt-4"
     >
       <app-restaurant-card

@@ -39,6 +39,13 @@
   justify-content: space-between;
 }
 
+.heading-zero {
+  font-size: 60px;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+  color: var(--label-2);
+}
+
 .heading-one {
   font-size: 24px;
   font-weight: bold;
@@ -67,6 +74,12 @@
   color: var(--label-2);
 }
 
+.heading-five-normal {
+  font-size: 14px;
+  letter-spacing: 0.1px;
+  color: var(--label-2);
+}
+
 .heading-five {
   font-size: 14px;
   font-weight: bold;
@@ -78,6 +91,13 @@
   font-size: 12px;
   font-weight: 500;
   color: var(--label-2);
+}
+
+.app-link {
+  color: var(--app-link);
+  letter-spacing: 0.1px;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 .primary-btn {
@@ -138,6 +158,20 @@
 .danger-btn:hover {
   background-color: var(--danger-btn-bg-color-hover);
   color: var(--danger-btn-text-color-hover);
+}
+
+// common css
+
+.app-first-name {
+  color: var(--app-first-name);
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.app-last-name {
+  color: var(--app-last-name);
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .blue-dot {
