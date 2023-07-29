@@ -1,16 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { IImage } from '../interfaces/image.interface';
 import { APP_ROUTES } from '../constants/app-routes.constants';
+import { UserInfoFacade } from 'src/app/store/user-info/user-info.facade';
+import { Subscription } from 'rxjs';
+import { IUserBasicInfo } from 'src/app/store/user-info/interfaces/user-info.interface';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent {
-  routesPath = APP_ROUTES;
+export class HeaderComponent implements OnInit {
+  subscription = new Subscription();
+  appRoutes = APP_ROUTES;
   cartItemCount = 1;
   selectedRoute = APP_ROUTES.HOME;
   cartImage: IImage = {
@@ -23,10 +27,28 @@ export class HeaderComponent {
     imgAlt: 'User',
   };
 
-  constructor(private router: Router, private modalService: NgbModal) {}
+  userBasicInfo!: IUserBasicInfo;
+
+  constructor(
+    private router: Router,
+    private modalService: NgbModal,
+    private userInfoFacade: UserInfoFacade
+  ) {}
 
   public open(modal: any): void {
     this.modalService.open(modal);
+  }
+
+  ngOnInit(): void {
+    // this.getUserInfo();
+  }
+
+  getUserInfo(): void {
+    this.subscription.add(
+      this.userInfoFacade.userBasicInfo.subscribe((userInfo) => {
+        this.userBasicInfo = userInfo;
+      })
+    );
   }
 
   toggleHamburger() {

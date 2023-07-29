@@ -21,9 +21,7 @@ export class CheckoutComponent {
 
   selectedPaymentId = 0;
 
-  constructor(private router: Router, private userInfoFacade: UserInfoFacade) {
-    this.userInfoFacade.fetchUserInfo();
-  }
+  constructor(private router: Router, private userInfoFacade: UserInfoFacade) {}
 
   ngOnInit(): void {
     this.getPaymentList();

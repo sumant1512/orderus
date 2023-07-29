@@ -1,12 +1,12 @@
 <div class="registration-container row mx-0">
   <div class="col-md-5 d-none d-md-flex px-0 section-2"></div>
-  <div class="col-12 col-md-7 position-relative px-3 px-md-5">
-    <div [formGroup]="registrationForm" class="form-container pt-5">
+  <div class="col-12 col-md-7 mt-5 px-3 px-md-5">
+    <div [formGroup]="registrationForm" class="form-container pt-4 pt-md-5">
       <a class="navbar-brand pe-cursor" [routerLink]="''">
         <div class="mb-0 app-first-name">Food</div>
         <div class="app-last-name">Delivery</div>
       </a>
-      <div class="heading-zero mt-5">Sign up</div>
+      <div class="heading-zero mt-3 mt-md-5">Sign up</div>
       <div class="heading-five-normal mt-4">
         Enter the email associated with your account and we'll send and email
         with instructions to reset your password.
@@ -23,7 +23,7 @@
           Continue
         </button>
       </div>
-      <div class="sign-up position-absolute text-center">
+      <div class="mt-5 text-center">
         <span class="heading-five-normal"
           >Already have an account?
           <a [routerLink]="['/' + appRoutes.LOGIN]" class="app-link"

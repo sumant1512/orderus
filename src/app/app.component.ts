@@ -3,6 +3,7 @@ import { ThemeService } from './shared/services/theme/theme.service';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { APP_ROUTES } from './shared/constants/app-routes.constants';
 import { filter } from 'rxjs';
+import { UserInfoFacade } from './store/user-info/user-info.facade';
 
 @Component({
   selector: 'app-root',
@@ -16,9 +17,11 @@ export class AppComponent implements OnInit {
   constructor(
     private themeService: ThemeService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private userInfoFacade: UserInfoFacade
   ) {
     this.themeService.setThemeOnStart();
+    this.userInfoFacade.fetchUserInfo();
   }
 
   ngOnInit(): void {
