@@ -33,7 +33,7 @@
               tabindex="1"
               class="nav-link header-nav-link fw-bold"
               aria-current="page"
-              (click)="navigateToPage(routesPath.RESTAURANTS)"
+              (click)="navigateToPage(appRoutes.RESTAURANTS)"
               >Restaurants</a
             >
           </li>
@@ -41,7 +41,7 @@
             <a
               tabindex="1"
               class="nav-link header-nav-link fw-bold"
-              (click)="navigateToPage(routesPath.DEALS)"
+              (click)="navigateToPage(appRoutes.DEALS)"
               >Deals</a
             >
           </li>
@@ -50,7 +50,7 @@
             <a
               tabindex="1"
               class="nav-link header-nav-link fw-bold"
-              (click)="navigateToPage(routesPath.MY_ORDERS)"
+              (click)="navigateToPage(appRoutes.MY_ORDERS)"
               >My orders</a
             >
           </li>
@@ -58,7 +58,7 @@
             class="nav-item me-0 me-md-2 me-lg-3 mb-3 mb-md-0 mt-2 mt-md-0 pe-cursor"
           >
             <div
-              (click)="navigateToPage(routesPath.CART)"
+              (click)="navigateToPage(appRoutes.CART)"
               [ngClass]="{ selected: selectedRoute === 'cart' }"
               class="cart-img-container position-relative"
             >
@@ -76,16 +76,24 @@
           </li>
           <li class="nav-item pe-cursor">
             <div
-              (click)="navigateToPage(routesPath.PROFILE)"
+              *ngIf="userBasicInfo?.id"
+              (click)="navigateToPage(appRoutes.PROFILE)"
               [ngClass]="{ selected: selectedRoute === 'profile' }"
               class="user-img-container selected"
             >
               <img
                 class="user-img"
-                [src]="userInfo.imgUrl"
-                [alt]="userInfo.imgAlt"
+                [src]="userBasicInfo.imgUrl"
+                [alt]="userBasicInfo.imgAlt"
               />
             </div>
+            <a
+              *ngIf="!userBasicInfo?.id"
+              tabindex="1"
+              class="app-link"
+              [routerLink]="['/' + appRoutes.LOGIN]"
+              >Sign in</a
+            >
           </li>
         </ul>
       </div>

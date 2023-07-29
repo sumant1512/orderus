@@ -25,6 +25,7 @@ import { CartMenuCardComponent } from './components/cart-menu-card/cart-menu-car
 import { TransparentFilledButtonDirective } from './directives/transparent-filled-button.directive';
 import { ToggleComponent } from './components/toggle/toggle.component';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+import { RouterModule } from '@angular/router';
 
 const COMPONENTS = [
   HeaderComponent,
@@ -52,6 +53,7 @@ const COMPONENTS = [
 ];
 const MODULES = [
   CommonModule,
+  RouterModule,
   NgbModule,
   FormsModule,
   ReactiveFormsModule,
