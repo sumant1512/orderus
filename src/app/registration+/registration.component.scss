@@ -8,4 +8,26 @@
   .section-2 {
     background-color: var(--auth-section-two-bg);
   }
+
+  .section-icon {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    border-radius: 100%;
+  }
+
+  .un-selected {
+    background-color: var(--registration-circle-unselected);
+  }
+
+  .selected {
+    background-color: var(--registration-circle-selected);
+  }
+
+  .horizontal-line {
+    width: calc(100% - 31px);
+    background-color: var(--order-details-deliverycard-line-separator-bg-color);
+    height: 1px;
+    margin-left: 16px;
+  }
 }

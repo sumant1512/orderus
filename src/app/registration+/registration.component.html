@@ -2,24 +2,99 @@
   <div class="col-md-5 d-none d-md-flex px-0 section-2"></div>
   <div class="col-12 col-md-7 mt-5 px-3 px-md-5">
     <div [formGroup]="registrationForm" class="form-container pt-4 pt-md-5">
-      <a class="navbar-brand pe-cursor" [routerLink]="''">
-        <div class="mb-0 app-first-name">Food</div>
-        <div class="app-last-name">Delivery</div>
-      </a>
-      <div class="heading-zero mt-3 mt-lg-5">Sign up</div>
-      <div class="heading-five-normal mt-4">
-        Enter the email associated with your account and we'll send and email
-        with instructions to reset your password.
-      </div>
-      <div class="mt-4">
-        <app-input formControlName="email" [label]="'Email'"></app-input>
-      </div>
-      <div class="mt-4">
-        <button
-          class="w-100 mb-3"
-          (click)="navigateToPage('')"
-          appPrimaryFilledButton
+      <div class="row mt-4">
+        <div
+          *ngFor="let page of pageList; last as isLast"
+          class="col-12 col-md-3"
         >
+          <div class="row">
+            <div class="col-2 col-md-12 d-flex align-items-center">
+              <span
+                [ngClass]="{
+                  selected: page.id <= selectedPageId,
+                  'un-selected': page.id > selectedPageId
+                }"
+                class="section-icon"
+              ></span>
+              <span
+                *ngIf="!isLast"
+                class="d-none d-md-inline-block horizontal-line"
+              ></span>
+            </div>
+            <div class="col-10 mt-md-3 heading-five">
+              <div>{{ page.name }}</div>
+            </div>
+          </div>
+          <div class="d-md-none vertical-line"></div>
+        </div>
+      </div>
+
+      <section *ngIf="selectedPageId === 1">
+        <div class="heading-zero mt-3 mt-lg-5">Sign up</div>
+        <div class="heading-five-normal mt-4">
+          Register to create your restaurant or personal account.
+        </div>
+        <div class="row">
+          <div *ngFor="let user of userTypeList" class="col-12 col-md-6 mt-4">
+            <app-setting-card
+              [settingDetails]="user"
+              [isSelected]="selectedUserTypeId === user.id"
+              (selectedCardEvent)="selectUserType($event)"
+            ></app-setting-card>
+          </div>
+        </div>
+      </section>
+
+      <section *ngIf="selectedPageId === 2">
+        <div class="heading-zero mt-3 mt-lg-5">Personal details</div>
+        <div class="heading-five-normal mt-4">
+          Enter your data that you will use for entering.
+        </div>
+        <div class="row">
+          <div *ngFor="let user of userTypeList" class="col-12 col-md-6 mt-4">
+            <app-setting-card
+              [settingDetails]="user"
+              [isSelected]="selectedUserTypeId === user.id"
+              (selectedCardEvent)="selectUserType($event)"
+            ></app-setting-card>
+          </div>
+        </div>
+      </section>
+
+      <section *ngIf="selectedPageId === 3">
+        <div class="heading-zero mt-3 mt-lg-5">Additional info</div>
+        <div class="heading-five-normal mt-4">
+          Enter your additional information.
+        </div>
+        <div class="row">
+          <div *ngFor="let user of userTypeList" class="col-12 col-md-6 mt-4">
+            <app-setting-card
+              [settingDetails]="user"
+              [isSelected]="selectedUserTypeId === user.id"
+              (selectedCardEvent)="selectUserType($event)"
+            ></app-setting-card>
+          </div>
+        </div>
+      </section>
+
+      <section *ngIf="selectedPageId === 4">
+        <div class="heading-zero mt-3 mt-lg-5">Confirmation</div>
+        <div class="heading-five-normal mt-4">
+          Enter your security code that we sent to your phone.
+        </div>
+        <div class="row">
+          <div *ngFor="let user of userTypeList" class="col-12 col-md-6 mt-4">
+            <app-setting-card
+              [settingDetails]="user"
+              [isSelected]="selectedUserTypeId === user.id"
+              (selectedCardEvent)="selectUserType($event)"
+            ></app-setting-card>
+          </div>
+        </div>
+      </section>
+
+      <div class="mt-4 text-end">
+        <button class="w-25 mb-3" (click)="next()" appPrimaryFilledButton>
           Continue
         </button>
       </div>
