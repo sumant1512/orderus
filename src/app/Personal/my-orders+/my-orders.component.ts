@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IOrder } from '../shared/interfaces/my-order.interface';
+import { IOrder } from '../../shared/interfaces/my-order.interface';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({

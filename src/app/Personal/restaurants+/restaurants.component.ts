@@ -1,11 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { IRestaurantCardDetail } from '../shared/interfaces/restaurant-card-details.interface';
-import { RestaurantFacade } from '../store/restaurant/restaurant.facade';
-import { ItemFilterFacade } from '../store/item-filter/item-filter.facade';
-import { IItemFilter } from '../store/item-filter/interfaces/item-filter.interface';
-import { ItemFilterPipe } from '../shared/pipes/item-filter.pipe';
+import { IRestaurantCardDetail } from '../../shared/interfaces/restaurant-card-details.interface';
+import { RestaurantFacade } from '../../store/restaurant/restaurant.facade';
+import { ItemFilterFacade } from '../../store/item-filter/item-filter.facade';
+import { IItemFilter } from '../../store/item-filter/interfaces/item-filter.interface';
+import { ItemFilterPipe } from '../../shared/pipes/item-filter.pipe';
 
 @Component({
   selector: 'app-restaurants',

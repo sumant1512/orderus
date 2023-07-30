@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IDealCardDetail } from '../shared/interfaces/deal-card.interface';
-import { EDealBtn } from '../shared/enum/deal-btn.enum';
+import { IDealCardDetail } from '../../shared/interfaces/deal-card.interface';
+import { EDealBtn } from '../../shared/enum/deal-btn.enum';
 
 @Component({
   selector: 'app-deals',

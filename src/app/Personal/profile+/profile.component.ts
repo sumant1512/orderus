@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ISettings } from '../shared/interfaces/settings.interface';
-import { EHeadingType } from '../shared/enum/heading-type.enum';
+import { ISettings } from '../../shared/interfaces/settings.interface';
+import { EHeadingType } from '../../shared/enum/heading-type.enum';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
