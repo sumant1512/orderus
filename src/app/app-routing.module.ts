@@ -7,55 +7,60 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () =>
-      import('./landing+/landing.module').then((m) => m.LandingModule),
+      import('./Personal/landing+/landing.module').then((m) => m.LandingModule),
   },
   {
     path: APP_ROUTES.RESTAURANTS,
     loadChildren: () =>
-      import('./restaurants+/restaurants.module').then(
+      import('./Personal/restaurants+/restaurants.module').then(
         (m) => m.RestaurantsModule
       ),
   },
   {
     path: APP_ROUTES.DEALS,
     loadChildren: () =>
-      import('./deals+/deals.module').then((m) => m.DealsModule),
+      import('./Personal/deals+/deals.module').then((m) => m.DealsModule),
   },
   {
     path: APP_ROUTES.MY_ORDERS,
     loadChildren: () =>
-      import('./my-orders+/my-orders.module').then((m) => m.MyOrdersModule),
+      import('./Personal/my-orders+/my-orders.module').then(
+        (m) => m.MyOrdersModule
+      ),
   },
   {
     path: APP_ROUTES.CART,
-    loadChildren: () => import('./cart+/cart.module').then((m) => m.CartModule),
+    loadChildren: () =>
+      import('./Personal/cart+/cart.module').then((m) => m.CartModule),
   },
   {
     path: APP_ROUTES.CHECKOUT,
     loadChildren: () =>
-      import('./checkout+/checkout.module').then((m) => m.CheckoutModule),
+      import('./Personal/checkout+/checkout.module').then(
+        (m) => m.CheckoutModule
+      ),
   },
   {
     path: APP_ROUTES.PROFILE,
     loadChildren: () =>
-      import('./profile+/profile.module').then((m) => m.ProfileModule),
+      import('./Personal/profile+/profile.module').then((m) => m.ProfileModule),
   },
   {
     path: APP_ROUTES.LOGIN,
     loadChildren: () =>
-      import('./login+/login.module').then((m) => m.LoginModule),
+      import('./Personal/login+/login.module').then((m) => m.LoginModule),
   },
   {
     path: APP_ROUTES.FORGET_PASSWORD,
     loadChildren: () =>
-      import('./forget-password+/forget-password.module').then(
+      import('./Personal/forget-password+/forget-password.module').then(
         (m) => m.ForgetPasswordModule
       ),
   },
   {
     path: APP_ROUTES.REGISTRATION,
     loadChildren: () =>
-      import('./registration+/registration.module').then(
+      import('./Personal/registration+/registration.module').then(
         (m) => m.RegistrationModule
       ),
   },

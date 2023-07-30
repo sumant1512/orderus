@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { APP_ROUTES } from '../shared/constants/app-routes.constants';
+import { APP_ROUTES } from '../../shared/constants/app-routes.constants';
 import { Subscription } from 'rxjs';
-import { IPayment } from '../store/user-info/interfaces/user-info.interface';
-import { UserInfoFacade } from '../store/user-info/user-info.facade';
+import { IPayment } from '../../store/user-info/interfaces/user-info.interface';
+import { UserInfoFacade } from '../../store/user-info/user-info.facade';
 import { paymentForm } from './payment.form';
 import { paymentInfoForm } from '../profile+/payment-info/payment-info.form';
 

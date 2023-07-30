@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { LoginForm } from './login.form';
 import { Router } from '@angular/router';
-import { APP_ROUTES } from '../shared/constants/app-routes.constants';
+import { APP_ROUTES } from '../../shared/constants/app-routes.constants';
 
 @Component({
   selector: 'app-login',

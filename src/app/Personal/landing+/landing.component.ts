@@ -1,14 +1,14 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { IRestaurantCardDetail } from '../shared/interfaces/restaurant-card-details.interface';
+import { IRestaurantCardDetail } from '../../shared/interfaces/restaurant-card-details.interface';
 import { Router } from '@angular/router';
-import { APP_ROUTES } from '../shared/constants/app-routes.constants';
+import { APP_ROUTES } from '../../shared/constants/app-routes.constants';
 import { Subscription } from 'rxjs';
-import { RestaurantFacade } from '../store/restaurant/restaurant.facade';
-import { ItemFilterFacade } from '../store/item-filter/item-filter.facade';
-import { IItemFilter } from '../store/item-filter/interfaces/item-filter.interface';
-import { ItemFilterPipe } from '../shared/pipes/item-filter.pipe';
-import { IOffers } from '../store/offers/interfaces/offers.interface';
-import { OffersFacade } from '../store/offers/offers.facade';
+import { RestaurantFacade } from '../../store/restaurant/restaurant.facade';
+import { ItemFilterFacade } from '../../store/item-filter/item-filter.facade';
+import { IItemFilter } from '../../store/item-filter/interfaces/item-filter.interface';
+import { ItemFilterPipe } from '../../shared/pipes/item-filter.pipe';
+import { IOffers } from '../../store/offers/interfaces/offers.interface';
+import { OffersFacade } from '../../store/offers/offers.facade';
 
 @Component({
   selector: 'app-landing',

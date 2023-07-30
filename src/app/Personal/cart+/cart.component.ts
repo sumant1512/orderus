@@ -1,10 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { IRestaurantDetailsState } from '../store/restaurant-details/interfaces/restaurant-details.interface';
-import { RestaurantDetailsFacade } from '../store/restaurant-details/restaurant-details.facade';
-import { IAddress } from '../store/user-info/interfaces/user-info.interface';
-import { APP_ROUTES } from '../shared/constants/app-routes.constants';
+import { IRestaurantDetailsState } from '../../store/restaurant-details/interfaces/restaurant-details.interface';
+import { RestaurantDetailsFacade } from '../../store/restaurant-details/restaurant-details.facade';
+import { IAddress } from '../../store/user-info/interfaces/user-info.interface';
+import { APP_ROUTES } from '../../shared/constants/app-routes.constants';
 
 @Component({
   selector: 'app-cart',

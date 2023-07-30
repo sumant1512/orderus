@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { APP_ROUTES } from '../shared/constants/app-routes.constants';
+import { APP_ROUTES } from '../../shared/constants/app-routes.constants';
 import { RegistrationForm } from './registration.form';
-import { ISettings } from '../shared/interfaces/settings.interface';
+import { ISettings } from '../../shared/interfaces/settings.interface';
 import { IRegistrationPage } from './registration.interface';
 
 @Component({
