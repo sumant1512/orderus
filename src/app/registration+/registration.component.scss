@@ -1,3 +1,5 @@
+@import "mq";
+
 .registration-container {
   height: 100vh;
 
@@ -7,6 +9,20 @@
 
   .section-2 {
     background-color: var(--auth-section-two-bg);
+  }
+
+  .registration-img {
+    max-width: 375px;
+    transform: rotate(20deg);
+    margin-top: 90px;
+
+    @include mq(lg) {
+      max-width: 480px;
+    }
+  }
+
+  .section-text {
+    color: var(--label-7);
   }
 
   .section-icon {
