@@ -12,10 +12,10 @@
     background-color: var(--auth-section-two-bg);
 
     .device-align {
-      top: 0%;
+      padding-top: 0%;
 
       @include mq(md) {
-        top: 8%;
+        padding-top: 8%;
       }
     }
   }
