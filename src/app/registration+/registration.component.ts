@@ -59,6 +59,12 @@ export class RegistrationComponent {
     }
   }
 
+  back(): void {
+    if (this.selectedPageId > 1) {
+      this.selectedPageId = this.selectedPageId - 1;
+    }
+  }
+
   navigateToPage(routePath: string): void {
     this.router.navigate([routePath]);
   }
