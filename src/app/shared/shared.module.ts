@@ -26,6 +26,7 @@ import { TransparentFilledButtonDirective } from './directives/transparent-fille
 import { ToggleComponent } from './components/toggle/toggle.component';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { RouterModule } from '@angular/router';
+import { SearchDropdownComponent } from './components/search-dropdown/search-dropdown.component';
 
 const COMPONENTS = [
   HeaderComponent,
@@ -45,6 +46,7 @@ const COMPONENTS = [
   DropdownComponent,
   InputComponent,
   InputCheckboxComponent,
+  SearchDropdownComponent,
   ItemFilterPipe,
   PrimaryButtonDirective,
   DangerButtonDirective,

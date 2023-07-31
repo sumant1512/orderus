@@ -18,12 +18,12 @@ export class HeaderComponent implements OnInit {
   cartItemCount = 1;
   selectedRoute = APP_ROUTES.HOME;
   cartImage: IImage = {
-    imgUrl: './../../../assets/cart-blue.png',
+    img: './../../../assets/cart-blue.png',
     imgAlt: 'Cart',
   };
 
   userInfo = {
-    imgUrl: './../../assets/userImg.png',
+    img: './../../assets/userImg.png',
     imgAlt: 'User',
   };
 

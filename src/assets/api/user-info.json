@@ -1,7 +1,7 @@
 {
   "data": {
     "id": 1,
-    "imgUrl": "./../../assets/userImg.png",
+    "img": "./../../assets/userImg.png",
     "imgAlt": "Sumant",
     "firstName": "Sumant",
     "lastName": "Mishra",
@@ -19,7 +19,7 @@
     "addressList": [
       {
         "id": 1,
-        "imgUrl": "./../../../../assets/profile/map.png",
+        "img": "./../../../../assets/profile/map.png",
         "imgAlt": "Map",
         "country": "USA",
         "state": "New York",
@@ -30,7 +30,7 @@
       },
       {
         "id": 2,
-        "imgUrl": "./../../../../assets/profile/map.png",
+        "img": "./../../../../assets/profile/map.png",
         "imgAlt": "Map",
         "country": "USA",
         "state": "California",

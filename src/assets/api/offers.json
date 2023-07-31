@@ -2,7 +2,7 @@
   "data": [
     {
       "id": 1,
-      "imgUrl": "./../../assets/icecream.png",
+      "img": "./../../assets/icecream.png",
       "imgAlt": "Icecream",
       "offerCardHeader": "All Deserts",
       "offer": "20% OFF",
@@ -11,7 +11,7 @@
     },
     {
       "id": 2,
-      "imgUrl": "./../../assets/burger.png",
+      "img": "./../../assets/burger.png",
       "imgAlt": "Burger",
       "offerCardHeader": "Big Burgers",
       "offer": "50% OFF",

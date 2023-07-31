@@ -3,7 +3,7 @@
     <div class="col-2 p-0">
       <img
         class="img-thumbnail rounded-circle"
-        [src]="reviewDetails.imgUrl"
+        [src]="reviewDetails.img"
         [alt]="reviewDetails.imgAlt"
       />
     </div>
@@ -23,8 +23,8 @@
           class="like-img"
           [src]="
             reviewDetails.likes < reviewDetails.dislikes
-              ? trasnparentLikeImg.imgUrl
-              : likeImg.imgUrl
+              ? trasnparentLikeImg.img
+              : likeImg.img
           "
           [alt]="
             reviewDetails.likes < reviewDetails.dislikes
@@ -39,8 +39,8 @@
           class="dislike-img mt-2"
           [src]="
             reviewDetails.likes < reviewDetails.dislikes
-              ? likeImg.imgUrl
-              : trasnparentLikeImg.imgUrl
+              ? likeImg.img
+              : trasnparentLikeImg.img
           "
           [alt]="
             reviewDetails.likes < reviewDetails.dislikes

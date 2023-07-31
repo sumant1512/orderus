@@ -64,6 +64,11 @@ const routes: Routes = [
         (m) => m.RegistrationModule
       ),
   },
+  {
+    path: APP_ROUTES.RESTAURANT,
+    loadChildren: () =>
+      import('./Restaurant/restaurant.module').then((m) => m.RestaurantModule),
+  },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 

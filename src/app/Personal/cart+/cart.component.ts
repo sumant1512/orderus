@@ -21,7 +21,7 @@ export class CartComponent implements OnInit, OnDestroy {
   addressList: Array<IAddress> = [
     {
       id: 1,
-      imgUrl: './../../../../assets/profile/map.png',
+      img: './../../../../assets/profile/map.png',
       imgAlt: 'Map',
       country: 'USA',
       state: 'New York',
@@ -32,7 +32,7 @@ export class CartComponent implements OnInit, OnDestroy {
     },
     {
       id: 2,
-      imgUrl: './../../../../assets/profile/map.png',
+      img: './../../../../assets/profile/map.png',
       imgAlt: 'Map',
       country: 'USA',
       state: 'California',

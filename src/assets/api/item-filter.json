@@ -2,37 +2,37 @@
   "data": [
     {
       "id": 1,
-      "imgUrl": "./../../assets/product-thumbnail/pizza.png",
+      "img": "./../../assets/product-thumbnail/pizza.png",
       "imgAlt": "Pizza",
       "name": "Pizza"
     },
     {
       "id": 2,
-      "imgUrl": "./../../assets/product-thumbnail/burger.png",
+      "img": "./../../assets/product-thumbnail/burger.png",
       "imgAlt": "Burger",
       "name": "Burger"
     },
     {
       "id": 3,
-      "imgUrl": "./../../assets/product-thumbnail/meat.png",
+      "img": "./../../assets/product-thumbnail/meat.png",
       "imgAlt": "BBQ",
       "name": "BBQ"
     },
     {
       "id": 4,
-      "imgUrl": "./../../assets/product-thumbnail/sushi.png",
+      "img": "./../../assets/product-thumbnail/sushi.png",
       "imgAlt": "Sushi",
       "name": "Sushi"
     },
     {
       "id": 5,
-      "imgUrl": "./../../assets/product-thumbnail/broccoli.png",
+      "img": "./../../assets/product-thumbnail/broccoli.png",
       "imgAlt": "Vegan",
       "name": "Vegan"
     },
     {
       "id": 6,
-      "imgUrl": "./../../assets/product-thumbnail/cake.png",
+      "img": "./../../assets/product-thumbnail/cake.png",
       "imgAlt": "Dessarts",
       "name": "Dessarts"
     }

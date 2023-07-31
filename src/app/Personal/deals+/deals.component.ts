@@ -11,7 +11,7 @@ export class DealsComponent {
   dealsList: Array<IDealCardDetail> = [
     {
       btnType: EDealBtn.ACTIVE,
-      imgUrl: './../../assets/deals-card/deal-1.jpg',
+      img: './../../assets/deals-card/deal-1.jpg',
       imgAlt: 'sandwich',
       name: '20% off on Vegan sandwiched',
       validity: {
@@ -23,7 +23,7 @@ export class DealsComponent {
     },
     {
       btnType: EDealBtn.ACTIVE,
-      imgUrl: './../../assets/deals-card/deal-2.jpg',
+      img: './../../assets/deals-card/deal-2.jpg',
       imgAlt: 'sandwich',
       name: '5% off on all meals every Wednesday',
       validity: {
@@ -35,7 +35,7 @@ export class DealsComponent {
     },
     {
       btnType: EDealBtn.ACTIVE,
-      imgUrl: './../../assets/deals-card/deal-3.jpg',
+      img: './../../assets/deals-card/deal-3.jpg',
       imgAlt: 'sandwich',
       name: 'Free Pepsi on order above $50',
       validity: {
@@ -46,7 +46,7 @@ export class DealsComponent {
     },
     {
       btnType: EDealBtn.ACTIVE,
-      imgUrl: './../../assets/deals-card/deal-4.jpg',
+      img: './../../assets/deals-card/deal-4.jpg',
       imgAlt: 'sandwich',
       name: 'Get extra Pizza on order above $200',
       validity: {
@@ -57,7 +57,7 @@ export class DealsComponent {
     },
     {
       btnType: EDealBtn.SCHEDULED,
-      imgUrl: './../../assets/deals-card/deal-5.jpg',
+      img: './../../assets/deals-card/deal-5.jpg',
       imgAlt: 'sandwich',
       name: '10% off on all order above $300',
       validity: {
@@ -68,7 +68,7 @@ export class DealsComponent {
     },
     {
       btnType: EDealBtn.SCHEDULED,
-      imgUrl: './../../assets/deals-card/deal-6.jpg',
+      img: './../../assets/deals-card/deal-6.jpg',
       imgAlt: 'sandwich',
       name: '30% off on all vegan meals every Monday',
       validity: {
@@ -80,7 +80,7 @@ export class DealsComponent {
     },
     {
       btnType: EDealBtn.EXPIRED,
-      imgUrl: './../../assets/deals-card/deal-7.jpg',
+      img: './../../assets/deals-card/deal-7.jpg',
       imgAlt: 'burger',
       name: 'Free burger and fries on order above $120',
       validity: {
@@ -90,7 +90,7 @@ export class DealsComponent {
     },
     {
       btnType: EDealBtn.EXPIRED,
-      imgUrl: './../../assets/deals-card/deal-8.jpg',
+      img: './../../assets/deals-card/deal-8.jpg',
       imgAlt: 'sushi',
       name: 'Free sushi roll on order above $200',
       validity: {
@@ -100,7 +100,7 @@ export class DealsComponent {
     },
     {
       btnType: EDealBtn.EXPIRED,
-      imgUrl: './../../assets/deals-card/deal-9.jpg',
+      img: './../../assets/deals-card/deal-9.jpg',
       imgAlt: 'sandwich',
       name: '25% off on all Deserts (Chef"s Birthday)',
       validity: {

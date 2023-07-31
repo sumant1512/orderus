@@ -16,7 +16,7 @@ export class ProfileComponent {
       name: 'Accounts',
       path: 'account',
       description: 'Personal Information',
-      imgUrl: './../../assets/icons/user.svg',
+      img: './../../assets/icons/user.svg',
       imgAlt: 'user',
     },
     {
@@ -24,7 +24,7 @@ export class ProfileComponent {
       name: 'Address',
       path: 'address',
       description: 'Shipping Address',
-      imgUrl: './../../assets/icons/location.svg',
+      img: './../../assets/icons/location.svg',
       imgAlt: 'address',
     },
     {
@@ -32,7 +32,7 @@ export class ProfileComponent {
       name: 'Payment Method',
       path: 'payment',
       description: 'Connected credit cards',
-      imgUrl: './../../assets/icons/credit-card.svg',
+      img: './../../assets/icons/credit-card.svg',
       imgAlt: 'payment',
     },
     {
@@ -40,7 +40,7 @@ export class ProfileComponent {
       name: 'Security',
       path: 'security',
       description: 'Password, 2FA',
-      imgUrl: './../../assets/icons/security.svg',
+      img: './../../assets/icons/security.svg',
       imgAlt: 'security',
     },
   ];
@@ -56,7 +56,7 @@ export class ProfileComponent {
 
   getPathById(id: number): string {
     const foundItem = this.settingsList.find((item) => item.id === id);
-    return foundItem ? foundItem.path : '';
+    return foundItem && foundItem.path ? foundItem.path : '';
   }
 
   selectSetting(id: number): void {
