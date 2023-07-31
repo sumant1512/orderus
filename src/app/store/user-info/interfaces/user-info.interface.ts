@@ -12,7 +12,7 @@ export interface IUserInfo extends IUserBasicInfo {
 
 export interface IUserBasicInfo {
   id: number;
-  imgUrl: string;
+  img: string;
   imgAlt: string;
   firstName: string;
   lastName: string;

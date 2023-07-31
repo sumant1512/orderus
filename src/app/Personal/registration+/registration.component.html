@@ -74,7 +74,7 @@
           Register to create your restaurant or personal account.
         </div>
         <div class="row">
-          <div *ngFor="let user of userTypeList" class="col-12 col-md-6 mt-4">
+          <div *ngFor="let user of rolesList" class="col-12 col-md-6 mt-4">
             <app-setting-card
               [settingDetails]="user"
               [isSelected]="selectedUserTypeId === user.id"
@@ -90,20 +90,39 @@
           Enter your data that you will use for entering.
         </div>
         <div class="row">
-          <div class="col-12 col-md-7 mt-3">
+          <div class="col-12 col-md-6 mt-2">
+            <app-input formControlName="name" [label]="'Name'"></app-input>
+          </div>
+          <div class="col-12 col-md-6 mt-2">
             <app-input formControlName="email" [label]="'Email'"></app-input>
           </div>
-          <div class="col-12 col-md-7 mt-2">
+          <div class="col-12 col-md-6 mt-2">
+            <app-input
+              formControlName="userName"
+              [label]="'Username'"
+            ></app-input>
+          </div>
+          <div class="col-12 col-md-6 mt-2">
             <app-input
               formControlName="password"
               [label]="'Password'"
             ></app-input>
           </div>
-          <div class="col-12 col-md-7 mt-2">
+          <div class="col-12 col-md-6 mt-2">
             <app-input
               formControlName="confirmPassword"
               [label]="'Confirm Password'"
             ></app-input>
+          </div>
+          <div class="col-12 col-md-6 mt-2">
+            <app-search-dropdown
+              [inputLabel]="'Role'"
+              [items]="rolesList"
+              [label]="['name']"
+              [uid]="'id'"
+              formControlName="roleId"
+            >
+            </app-search-dropdown>
           </div>
         </div>
       </section>
@@ -171,7 +190,7 @@
         </div>
       </section>
 
-      <div class="mt-3 mt-md-5 text-center">
+      <div class="my-3 my-md-5 text-center">
         <span class="heading-five-normal"
           >Already have an account?
           <a [routerLink]="['/' + appRoutes.LOGIN]" class="app-link"

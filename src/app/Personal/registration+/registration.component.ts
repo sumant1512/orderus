@@ -1,16 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { APP_ROUTES } from '../../shared/constants/app-routes.constants';
 import { RegistrationForm } from './registration.form';
-import { ISettings } from '../../shared/interfaces/settings.interface';
 import { IRegistrationPage } from './registration.interface';
+import { RegistrationFacade } from 'src/app/store/registration/registration.facade';
+import { Subscription } from 'rxjs';
+import { IRoles } from 'src/app/store/registration/interfaces/registration.interface';
 
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.scss'],
 })
-export class RegistrationComponent {
+export class RegistrationComponent implements OnInit {
+  subscription = new Subscription();
   registrationForm = RegistrationForm();
   appRoutes = APP_ROUTES;
   selectedPageId = 1;
@@ -23,30 +26,25 @@ export class RegistrationComponent {
     { id: 4, name: 'Confirmation', isActive: false },
   ];
 
-  userTypeList: Array<ISettings> = [
-    {
-      id: 1,
-      name: 'Restaurant',
-      path: 'restaurant',
-      description: 'Manage your own restaurant',
-      imgUrl: './../../assets/icons/user.svg',
-      imgAlt: 'user',
-    },
-    {
-      id: 2,
-      name: 'Personal',
-      path: 'personal',
-      description: 'Keep your order in one place',
-      imgUrl: './../../assets/icons/user.svg',
-      imgAlt: 'address',
-    },
-  ];
+  rolesList!: Array<IRoles>;
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private registrationFacade: RegistrationFacade
+  ) {
+    this.registrationFacade.fetchRoles();
+  }
 
-  getPathById(id: number): string {
-    const foundItem = this.userTypeList.find((item) => item.id === id);
-    return foundItem ? foundItem.path : '';
+  ngOnInit(): void {
+    this.getRolesList();
+  }
+
+  getRolesList(): void {
+    this.subscription.add(
+      this.registrationFacade.rolesListState.subscribe((rolesList) => {
+        this.rolesList = rolesList;
+      })
+    );
   }
 
   selectUserType(id: number): void {

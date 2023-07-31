@@ -30,7 +30,7 @@ export class OrderDetailsComponent {
   addressList: Array<IAddress> = [
     {
       id: 1,
-      imgUrl: './../../../../assets/profile/map.png',
+      img: './../../../../assets/profile/map.png',
       imgAlt: 'Map',
       country: 'USA',
       state: 'New York',
@@ -41,7 +41,7 @@ export class OrderDetailsComponent {
     },
     {
       id: 2,
-      imgUrl: './../../../../assets/profile/map.png',
+      img: './../../../../assets/profile/map.png',
       imgAlt: 'Map',
       country: 'USA',
       state: 'California',

@@ -1,0 +1,41 @@
+<div
+  class="search-dropdown mb-3"
+  [ngClass]="{
+    open: shown
+  }"
+>
+  <div>
+    <label class="f-10 fw-500">{{ inputLabel }}</label>
+  </div>
+  <div class="search-dropdown-btn f-12" (click)="show()">
+    <span class="select-placeholder">{{ value | titlecase }}</span>
+  </div>
+  <div class="search-dropdown__dropdown">
+    <input
+      class="rounded-0 w-100"
+      type="text"
+      placeholder="Search"
+      [(ngModel)]="keyword"
+      (keyup)="search(keyword)"
+      #input
+    />
+    <div class="search-dropdown-scroller search-dropdown__dropdown__scroller">
+      <div
+        class="search-dropdown__dropdown__item"
+        *ngFor="let item of list"
+        (click)="select(item)"
+      >
+        <span
+          *ngFor="let label of _label; let i = index"
+          [ngClass]="{ 'fw-bold': i === 0 }"
+          class="f-12"
+          >{{ item[label] | titlecase }}
+          <span *ngIf="i + 1 !== _label?.length"> , </span>
+        </span>
+      </div>
+      <div class="text-center p-3" *ngIf="list?.length == 0">
+        No Result Found
+      </div>
+    </div>
+  </div>
+</div>

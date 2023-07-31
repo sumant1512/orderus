@@ -12,12 +12,12 @@ export class ReviewCardComponent {
   @Input() isLast!: boolean;
 
   likeImg: IImage = {
-    imgUrl: './../../../../assets/like.svg',
+    img: './../../../../assets/like.svg',
     imgAlt: 'Like',
   };
 
   trasnparentLikeImg: IImage = {
-    imgUrl: './../../../../assets/like-transparent.svg',
+    img: './../../../../assets/like-transparent.svg',
     imgAlt: 'Like',
   };
 }

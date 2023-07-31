@@ -11,7 +11,7 @@ export const fetchUserInfo = (state: AppState) =>
 export const fetchUserBasicInfo = (state: AppState) => {
   return {
     id: state.userInfo?.userInfo.id,
-    imgUrl: state.userInfo?.userInfo.imgUrl,
+    img: state.userInfo?.userInfo.img,
     imgAlt: state.userInfo?.userInfo.imgAlt,
     firstName: state.userInfo?.userInfo.firstName,
     lastName: state.userInfo?.userInfo.lastName,

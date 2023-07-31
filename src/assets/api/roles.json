@@ -1,0 +1,25 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Admin",
+      "description": "Manage the application.",
+      "img": "./../../assets/icons/user.svg",
+      "imgAlt": "user"
+    },
+    {
+      "id": 2,
+      "name": "Restaurant",
+      "description": "Manage your own restaurant.",
+      "img": "./../../assets/icons/user.svg",
+      "imgAlt": "user"
+    },
+    {
+      "id": 3,
+      "name": "Client",
+      "description": "Keep your order in one place.",
+      "img": "./../../assets/icons/user.svg",
+      "imgAlt": "user"
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+$offset: 1px;
+.search-dropdown {
+  background-color: var(--input-background-color);
+  position: relative;
+  user-select: none;
+  border-radius: 5px;
+  label {
+    color: var(--label-6);
+    letter-spacing: 0.3px;
+    margin-bottom: 2px;
+  }
+  .select-placeholder {
+    font-size: 12px;
+    color: var(--search-dropdown-placeholder);
+  }
+  $self: &;
+  #{$self}__dropdown {
+    position: absolute;
+    width: 100%;
+    border: 1px solid var(--input-border);
+    background-color: var(--input-background-color);
+    margin-top: -1px;
+    z-index: 9999;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    box-shadow: 0px 6px 12px rgba(black, 0.1);
+    &__scroller {
+      max-height: 150px;
+      overflow-y: auto;
+    }
+    &__item {
+      position: relative;
+      height: 40px;
+      line-height: 40px;
+      padding: 0px 20px;
+      text-transform: capitalize;
+      border-bottom: 1px solid var(--input-border);
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      &:last-child {
+        border-bottom: 0px;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    &__msg {
+      padding: 5px 10px;
+      text-align: center;
+    }
+  }
+  .search-dropdown-btn {
+    padding: 10px;
+    border: 1px solid var(--input-border);
+    border-radius: 5px;
+    &:before {
+      content: "";
+      position: absolute;
+      right: 12px;
+      top: 70%;
+      transform: translateY(-50%);
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid #999;
+    }
+  }
+  &.open {
+    #{$self}__btn {
+      &:before {
+        border-top: 0px;
+        border-bottom: 5px solid #999;
+      }
+    }
+    #{$self}__dropdown {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  &.small {
+    #{$self}__btn {
+      height: 32px - $offset;
+      line-height: 32px - $offset;
+    }
+  }
+}
+
+.search-dropdown-scroller {
+  background-color: var(--bg-box);
+}
