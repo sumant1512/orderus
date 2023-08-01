@@ -21,6 +21,7 @@ export class RegistrationComponent implements OnInit, OnDestroy {
   registrationForm = RegistrationForm();
   appRoutes = APP_ROUTES;
   currentAction = ERegistrationAction.CONTINUE;
+  registrationAction = ERegistrationAction;
   selectedPageId = 1;
   selectedUserTypeId = 1;
 
@@ -33,9 +34,6 @@ export class RegistrationComponent implements OnInit, OnDestroy {
   rolesList!: Array<IRoles>;
 
   get nextBtnLabel(): ERegistrationAction {
-    if (this.selectedPageId === this.pageList.length) {
-      this.currentAction = ERegistrationAction.REGISTER;
-    }
     return this.currentAction;
   }
 
@@ -95,12 +93,17 @@ export class RegistrationComponent implements OnInit, OnDestroy {
 
     if (this.selectedPageId < this.pageList.length) {
       this.selectedPageId = this.selectedPageId + 1;
+      this.currentAction = ERegistrationAction.CONTINUE;
+    }
+    if (this.selectedPageId === this.pageList.length) {
+      this.currentAction = ERegistrationAction.REGISTER;
     }
   }
 
   back(): void {
     if (this.selectedPageId > 1) {
       this.selectedPageId = this.selectedPageId - 1;
+      this.currentAction = ERegistrationAction.CONTINUE;
     }
   }
 

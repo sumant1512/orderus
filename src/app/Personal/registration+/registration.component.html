@@ -144,7 +144,15 @@
           <div class="col-md-9"></div>
           <div class="col-12 col-md-3">
             <div class="mt-4 text-end">
-              <button class="w-100" (click)="next()" appPrimaryFilledButton>
+              <button
+                class="w-100"
+                (click)="next()"
+                [disabled]="
+                  currentAction === registrationAction.REGISTER &&
+                  registrationForm.invalid
+                "
+                appPrimaryFilledButton
+              >
                 {{ nextBtnLabel }}
               </button>
             </div>

@@ -31,7 +31,7 @@ export class UserInfoEffects {
       mergeMap((action) =>
         this.userInfoService.login(action.payload).pipe(
           map((userInfo) => {
-            return this.userInfoFacade.loggedIn(userInfo);
+            return this.userInfoFacade.loggedIn(userInfo?.authToken || '');
           })
         )
       )
