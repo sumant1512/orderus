@@ -9,5 +9,6 @@ export const APP_ROUTES = {
   LOGIN: 'login',
   FORGET_PASSWORD: 'forget-password',
   REGISTRATION: 'registration',
+  VERIFY: 'verify',
   RESTAURANT: 'restaurant',
 };

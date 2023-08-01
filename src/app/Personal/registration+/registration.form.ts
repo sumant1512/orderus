@@ -1,14 +1,12 @@
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 export function RegistrationForm(): FormGroup {
   return new FormGroup({
-    name: new FormControl(''),
-    userName: new FormControl(''),
-    email: new FormControl(''),
-    password: new FormControl(''),
-    confirmPassword: new FormControl(''),
-    roleId: new FormControl(''),
-    phone: new FormControl(''),
-    code: new FormControl(''),
+    name: new FormControl('test', [Validators.required]),
+    userName: new FormControl('test', [Validators.required]),
+    email: new FormControl('test@gmail.com', [Validators.required]),
+    password: new FormControl('123456', [Validators.required]),
+    confirmPassword: new FormControl('123456', [Validators.required]),
+    phone: new FormControl('123456', [Validators.required]),
   });
 }

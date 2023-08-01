@@ -1,21 +1,33 @@
 import { Injectable } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { Action, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { AppState } from '../app.state';
 import * as userInfoSelector from './user-info.selectors';
 import {
   IAddress,
+  ILoginRequestBody,
   IPayment,
   ITwoFactorAuth,
   IUserBasicInfo,
   IUserInfo,
 } from './interfaces/user-info.interface';
-import { FetchUserInfo, FetchedUserInfo } from './user-info.actions';
+import {
+  FetchUserInfo,
+  FetchedUserInfo,
+  LoggedInUser,
+  LoggedOut,
+  LoginUser,
+  Logout,
+} from './user-info.actions';
 
 @Injectable({ providedIn: 'root' })
 export class UserInfoFacade {
   userInfo: Observable<IUserInfo> = this.store.select(
     userInfoSelector.fetchUserInfo
+  );
+
+  authToken: Observable<string> = this.store.select(
+    userInfoSelector.fetchAuthToken
   );
 
   userBasicInfo: Observable<IUserBasicInfo> = this.store.select(
@@ -35,6 +47,22 @@ export class UserInfoFacade {
   );
 
   constructor(private store: Store<AppState>) {}
+
+  login(credentials: ILoginRequestBody) {
+    this.store.dispatch(new LoginUser(credentials));
+  }
+
+  loggedIn(authToken: string): Action {
+    return new LoggedInUser(authToken);
+  }
+
+  logout(userId: number): void {
+    this.store.dispatch(new Logout(userId));
+  }
+
+  loggedOut(): Action {
+    return new LoggedOut();
+  }
 
   fetchUserInfo() {
     this.store.dispatch(new FetchUserInfo());

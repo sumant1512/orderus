@@ -1,9 +1,15 @@
 import { Action } from '@ngrx/store';
-import { IRoles } from './interfaces/registration.interface';
+import {
+  IRegistrationRequestBody,
+  IRoles,
+  IVerifyRequestBody,
+} from './interfaces/registration.interface';
 
 export enum RegistrationActions {
   FETCH_ROLES = '[Registraion] Fetch Roles',
   FETCHED_ROLES = '[Registraion] Fetched Roles',
+  REGISTER_USER = '[Registraion] Register User',
+  VERIFY_USER = '[Registraion] Verify User',
 }
 
 export class FetchRoles implements Action {
@@ -15,4 +21,18 @@ export class FetchedRoles implements Action {
   constructor(public payload: IRoles[]) {}
 }
 
-export type RegistrationActionsUnion = FetchRoles | FetchedRoles;
+export class RegisterUser implements Action {
+  readonly type = RegistrationActions.REGISTER_USER;
+  constructor(public payload: IRegistrationRequestBody) {}
+}
+
+export class VerifyUser implements Action {
+  readonly type = RegistrationActions.VERIFY_USER;
+  constructor(public payload: IVerifyRequestBody) {}
+}
+
+export type RegistrationActionsUnion =
+  | FetchRoles
+  | FetchedRoles
+  | RegisterUser
+  | VerifyUser;

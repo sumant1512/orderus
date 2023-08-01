@@ -32,6 +32,7 @@ export class AppComponent implements OnInit {
           APP_ROUTES.LOGIN,
           APP_ROUTES.REGISTRATION,
           APP_ROUTES.FORGET_PASSWORD,
+          APP_ROUTES.VERIFY,
         ].includes(this.route.snapshot.firstChild?.routeConfig?.path || '');
       });
   }

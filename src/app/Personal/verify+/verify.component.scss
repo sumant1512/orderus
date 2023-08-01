@@ -1,0 +1,49 @@
+@import "mq";
+
+.registration-container {
+  height: 100vh;
+
+  .form-container {
+    margin: auto;
+  }
+
+  .section-2 {
+    background-color: var(--auth-section-two-bg);
+  }
+
+  .registration-img {
+    max-width: 375px;
+    transform: rotate(20deg);
+    margin-top: 90px;
+
+    @include mq(lg) {
+      max-width: 480px;
+    }
+  }
+
+  .section-text {
+    color: var(--label-7);
+  }
+
+  .section-icon {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    border-radius: 100%;
+  }
+
+  .un-selected {
+    background-color: var(--registration-circle-unselected);
+  }
+
+  .selected {
+    background-color: var(--registration-circle-selected);
+  }
+
+  .horizontal-line {
+    width: calc(100% - 31px);
+    background-color: var(--order-details-deliverycard-line-separator-bg-color);
+    height: 1px;
+    margin-left: 16px;
+  }
+}

@@ -3,8 +3,17 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { AppState } from '../app.state';
 import * as rolesSelector from './registration.selectors';
-import { IRoles } from './interfaces/registration.interface';
-import { FetchRoles, FetchedRoles } from './registration.actions';
+import {
+  IRegistrationRequestBody,
+  IRoles,
+  IVerifyRequestBody,
+} from './interfaces/registration.interface';
+import {
+  FetchRoles,
+  FetchedRoles,
+  RegisterUser,
+  VerifyUser,
+} from './registration.actions';
 
 @Injectable({ providedIn: 'root' })
 export class RegistrationFacade {
@@ -14,11 +23,19 @@ export class RegistrationFacade {
 
   constructor(private store: Store<AppState>) {}
 
-  fetchRoles() {
+  fetchRoles(): void {
     this.store.dispatch(new FetchRoles());
   }
 
-  fetchedRoles(rolesList: IRoles[]) {
+  fetchedRoles(rolesList: IRoles[]): void {
     this.store.dispatch(new FetchedRoles(rolesList));
+  }
+
+  registerUser(body: IRegistrationRequestBody): void {
+    this.store.dispatch(new RegisterUser(body));
+  }
+
+  verifyUser(body: IVerifyRequestBody): void {
+    this.store.dispatch(new VerifyUser(body));
   }
 }
