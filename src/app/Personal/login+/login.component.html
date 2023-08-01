@@ -21,7 +21,8 @@
       <div class="mt-4">
         <button
           class="w-100 mb-3"
-          (click)="navigateToPage('')"
+          [disabled]="loginForm.invalid"
+          (click)="login()"
           appPrimaryFilledButton
         >
           Login

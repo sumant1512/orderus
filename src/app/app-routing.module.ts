@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { APP_ROUTES } from './shared/constants/app-routes.constants';
+import { AuthGuard } from './store/user-info/guards/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full' },
@@ -27,6 +28,7 @@ const routes: Routes = [
       import('./Personal/my-orders+/my-orders.module').then(
         (m) => m.MyOrdersModule
       ),
+    canActivate: [AuthGuard],
   },
   {
     path: APP_ROUTES.CART,
@@ -44,6 +46,7 @@ const routes: Routes = [
     path: APP_ROUTES.PROFILE,
     loadChildren: () =>
       import('./Personal/profile+/profile.module').then((m) => m.ProfileModule),
+    canActivate: [AuthGuard],
   },
   {
     path: APP_ROUTES.LOGIN,

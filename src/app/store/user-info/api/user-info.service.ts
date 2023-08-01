@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { AppConfigurations } from '../../config/config';
 import { ApiType } from '../../config/config.type';
+import { ILoginRequestBody } from '../interfaces/user-info.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -19,5 +20,27 @@ export class UserInfoService {
         }
       })
     );
+  }
+
+  login(body: ILoginRequestBody): Observable<any> {
+    return this.http.post<any>('http://localhost:8080/auth/login', body).pipe(
+      map((response) => {
+        if (response) {
+          return response.data;
+        }
+      })
+    );
+  }
+
+  logout(id: number): Observable<any> {
+    return this.http
+      .delete<any>(`http://localhost:8080/auth/logout/${id}`)
+      .pipe(
+        map((response) => {
+          if (response) {
+            return response;
+          }
+        })
+      );
   }
 }

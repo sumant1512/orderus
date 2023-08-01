@@ -8,6 +8,7 @@ import {
 } from './user-info.actions';
 import { IUserInfo } from './interfaces/user-info.interface';
 import { UserInfoService } from './api/user-info.service';
+import { UserInfoFacade } from './user-info.facade';
 
 @Injectable()
 export class UserInfoEffects {
@@ -24,8 +25,35 @@ export class UserInfoEffects {
     )
   );
 
+  login$ = createEffect(() =>
+    this.action$.pipe(
+      ofType(UserInfoActions.LOGIN),
+      mergeMap((action) =>
+        this.userInfoService.login(action.payload).pipe(
+          map((userInfo) => {
+            return this.userInfoFacade.loggedIn(userInfo);
+          })
+        )
+      )
+    )
+  );
+
+  logout$ = createEffect(() =>
+    this.action$.pipe(
+      ofType(UserInfoActions.LOGOUT),
+      mergeMap((action) => {
+        return this.userInfoService.logout(action.payload).pipe(
+          map(() => {
+            return this.userInfoFacade.loggedOut();
+          })
+        );
+      })
+    )
+  );
+
   constructor(
     private action$: Actions<UserInfoActionsUnion>,
-    private userInfoService: UserInfoService
+    private userInfoService: UserInfoService,
+    private userInfoFacade: UserInfoFacade
   ) {}
 }

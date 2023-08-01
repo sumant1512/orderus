@@ -8,6 +8,9 @@ import {
 export const fetchUserInfo = (state: AppState) =>
   state.userInfo?.userInfo as IUserInfo;
 
+export const fetchAuthToken = (state: AppState) =>
+  state?.userInfo?.authToken as string;
+
 export const fetchUserBasicInfo = (state: AppState) => {
   return {
     id: state.userInfo?.userInfo.id,

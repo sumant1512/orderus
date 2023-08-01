@@ -133,7 +133,7 @@
   border-radius: 6px;
 }
 
-.primary-filled-btn:hover {
+.primary-filled-btn:disabled {
   background-color: var(--primary-filled-btn-bg-hover);
   color: var(--primary-filled-btn-color-hover);
 }

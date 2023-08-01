@@ -2,6 +2,7 @@ import { IImage } from 'src/app/shared/interfaces/image.interface';
 
 export interface IUserInfoState {
   userInfo: IUserInfo;
+  authToken: string;
 }
 
 export interface IUserInfo extends IUserBasicInfo {
@@ -49,4 +50,9 @@ export interface IPayment {
 export interface ITwoFactorAuth {
   isActive: boolean;
   phone: string;
+}
+
+export interface ILoginRequestBody {
+  email: string;
+  password: string;
 }
