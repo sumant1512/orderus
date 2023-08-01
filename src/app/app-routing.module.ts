@@ -69,6 +69,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./Restaurant/restaurant.module').then((m) => m.RestaurantModule),
   },
+  {
+    path: APP_ROUTES.VERIFY,
+    loadChildren: () =>
+      import('./Personal/verify+/verify.module').then((m) => m.VerifyModule),
+  },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
