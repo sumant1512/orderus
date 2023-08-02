@@ -8,24 +8,24 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () =>
-      import('./Personal/landing+/landing.module').then((m) => m.LandingModule),
+      import('./Customer/landing+/landing.module').then((m) => m.LandingModule),
   },
   {
     path: APP_ROUTES.RESTAURANTS,
     loadChildren: () =>
-      import('./Personal/restaurants+/restaurants.module').then(
+      import('./Customer/restaurants+/restaurants.module').then(
         (m) => m.RestaurantsModule
       ),
   },
   {
     path: APP_ROUTES.DEALS,
     loadChildren: () =>
-      import('./Personal/deals+/deals.module').then((m) => m.DealsModule),
+      import('./Customer/deals+/deals.module').then((m) => m.DealsModule),
   },
   {
     path: APP_ROUTES.MY_ORDERS,
     loadChildren: () =>
-      import('./Personal/my-orders+/my-orders.module').then(
+      import('./Customer/my-orders+/my-orders.module').then(
         (m) => m.MyOrdersModule
       ),
     canActivate: [AuthGuard],
@@ -33,37 +33,37 @@ const routes: Routes = [
   {
     path: APP_ROUTES.CART,
     loadChildren: () =>
-      import('./Personal/cart+/cart.module').then((m) => m.CartModule),
+      import('./Customer/cart+/cart.module').then((m) => m.CartModule),
   },
   {
     path: APP_ROUTES.CHECKOUT,
     loadChildren: () =>
-      import('./Personal/checkout+/checkout.module').then(
+      import('./Customer/checkout+/checkout.module').then(
         (m) => m.CheckoutModule
       ),
   },
   {
     path: APP_ROUTES.PROFILE,
     loadChildren: () =>
-      import('./Personal/profile+/profile.module').then((m) => m.ProfileModule),
+      import('./Customer/profile+/profile.module').then((m) => m.ProfileModule),
     canActivate: [AuthGuard],
   },
   {
     path: APP_ROUTES.LOGIN,
     loadChildren: () =>
-      import('./Personal/login+/login.module').then((m) => m.LoginModule),
+      import('./Customer/login+/login.module').then((m) => m.LoginModule),
   },
   {
     path: APP_ROUTES.FORGET_PASSWORD,
     loadChildren: () =>
-      import('./Personal/forget-password+/forget-password.module').then(
+      import('./Customer/forget-password+/forget-password.module').then(
         (m) => m.ForgetPasswordModule
       ),
   },
   {
     path: APP_ROUTES.REGISTRATION,
     loadChildren: () =>
-      import('./Personal/registration+/registration.module').then(
+      import('./Customer/registration+/registration.module').then(
         (m) => m.RegistrationModule
       ),
   },
@@ -75,7 +75,7 @@ const routes: Routes = [
   {
     path: APP_ROUTES.VERIFY,
     loadChildren: () =>
-      import('./Personal/verify+/verify.module').then((m) => m.VerifyModule),
+      import('./Customer/verify+/verify.module').then((m) => m.VerifyModule),
   },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
