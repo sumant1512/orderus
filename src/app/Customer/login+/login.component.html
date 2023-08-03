@@ -16,7 +16,10 @@
         <app-input formControlName="password" [label]="'Password'"></app-input>
       </div>
       <div class="mt-3">
-        <app-input-checkbox [label]="'Keep me logged in'"></app-input-checkbox>
+        <app-input-checkbox
+          formControlName="keepSignedIn"
+          [label]="'Keep me logged in'"
+        ></app-input-checkbox>
       </div>
       <div class="mt-4">
         <button
