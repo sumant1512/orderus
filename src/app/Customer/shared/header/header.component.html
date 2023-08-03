@@ -1,0 +1,242 @@
+<div class="header-container">
+  <nav class="container navbar navbar-expand-sm navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand pe-cursor" (click)="navigateToPage('')">
+        <div class="mb-0 app-first-name">Food</div>
+        <div class="app-last-name">Delivery</div>
+      </a>
+      <button
+        class="border-0 mobile-hamberger d-block d-sm-none"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        (click)="toggleHamburger()"
+      >
+        <div class="hamburger" id="hamburger-9">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </div>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <form
+          class="d-flex mt-3 mt-md-0 mb-2 mb-md-0 ms-0 ms-md-3 ms-lg-5 me-0 me-md-3 me-lg-auto justify-content-center justify-content-md-left"
+        >
+          <input class="search-input" type="text" placeholder="Search" />
+        </form>
+        <ul class="navbar-nav nav-bar-list mb-2 mb-lg-0">
+          <li class="nav-item me-0 me-md-2 me-lg-3 pe-cursor">
+            <a
+              tabindex="1"
+              class="nav-link header-nav-link fw-bold"
+              aria-current="page"
+              (click)="navigateToPage(appRoutes.RESTAURANTS)"
+              >Restaurants</a
+            >
+          </li>
+          <li class="nav-item me-0 me-md-2 me-lg-3 pe-cursor">
+            <a
+              tabindex="1"
+              class="nav-link header-nav-link fw-bold"
+              (click)="navigateToPage(appRoutes.DEALS)"
+              >Deals</a
+            >
+          </li>
+          <li class="d-none d-md-block header-seprator me-3"></li>
+          <li class="nav-item me-0 me-md-2 me-lg-3 pe-cursor">
+            <a
+              tabindex="1"
+              class="nav-link header-nav-link fw-bold"
+              (click)="navigateToPage(appRoutes.MY_ORDERS)"
+              >My orders</a
+            >
+          </li>
+          <div class="row w-100 d-flex align-items-center d-md-none">
+            <div class="col-6">
+              <li class="nav-item me-0 me-md-2 me-lg-3 pe-cursor">
+                <div
+                  (click)="navigateToPage(appRoutes.CART)"
+                  [ngClass]="{ selected: selectedRoute === 'cart' }"
+                  class="cart-img-container position-relative"
+                >
+                  <span
+                    *ngIf="cartItemCount"
+                    class="badge cart-badge position-absolute"
+                    >{{ cartItemCount }}</span
+                  >
+                  <img
+                    class="cart-img"
+                    [src]="cartImage.img"
+                    [alt]="cartImage.imgAlt"
+                  />
+                </div>
+              </li>
+            </div>
+            <div class="col-6 text-end">
+              <li class="nav-item pe-cursor">
+                <div
+                  *ngIf="userBasicInfo?.id"
+                  (click)="navigateToPage(appRoutes.PROFILE)"
+                  [ngClass]="{ selected: selectedRoute === 'profile' }"
+                  class="user-img-container selected"
+                >
+                  <img
+                    class="user-img"
+                    [src]="userBasicInfo.img"
+                    [alt]="userBasicInfo.imgAlt"
+                  />
+                </div>
+                <a
+                  *ngIf="!userBasicInfo?.id"
+                  tabindex="1"
+                  class="app-link"
+                  [routerLink]="['/' + appRoutes.LOGIN]"
+                  >Sign in</a
+                >
+              </li>
+            </div>
+          </div>
+          <li
+            class="d-none d-md-block nav-item me-0 me-md-2 me-lg-3 mb-3 mb-md-0 mt-2 mt-md-0 pe-cursor"
+          >
+            <div
+              (click)="navigateToPage(appRoutes.CART)"
+              [ngClass]="{ selected: selectedRoute === 'cart' }"
+              class="cart-img-container position-relative"
+            >
+              <span
+                *ngIf="cartItemCount"
+                class="badge cart-badge position-absolute"
+                >{{ cartItemCount }}</span
+              >
+              <img
+                class="cart-img"
+                [src]="cartImage.img"
+                [alt]="cartImage.imgAlt"
+              />
+            </div>
+          </li>
+          <li class="d-none d-md-block nav-item pe-cursor">
+            <div
+              *ngIf="userBasicInfo?.id"
+              (click)="navigateToPage(appRoutes.PROFILE)"
+              [ngClass]="{ selected: selectedRoute === 'profile' }"
+              class="user-img-container selected"
+            >
+              <img
+                class="user-img"
+                [src]="userBasicInfo.img"
+                [alt]="userBasicInfo.imgAlt"
+              />
+            </div>
+            <a
+              *ngIf="!userBasicInfo?.id"
+              tabindex="1"
+              class="app-link"
+              [routerLink]="['/' + appRoutes.LOGIN]"
+              >Sign in</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+<!-- <div class="container-fluid py-3">
+    <div class="row my-3">
+      <div class="col">
+        <label for="exampleFormControlInput1" class="form-label"
+          >Email address</label
+        >
+        <input
+          type="email"
+          class="form-control form-control-sm"
+          id="exampleFormControlInput1"
+          placeholder="name@example.com"
+        />
+      </div>
+    </div>
+    <div class="row my-3">
+      <div class="col">
+        <label for="exampleFormControlTextarea1" class="form-label"
+          >Example textarea</label
+        >
+        <textarea
+          class="form-control form-control-sm"
+          id="exampleFormControlTextarea1"
+          rows="3"
+        ></textarea>
+      </div>
+    </div>
+    <div class="row my-3">
+      <div class="col">
+        <div class="form-check form-switch">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="flexSwitchCheckDefault"
+          />
+          <label class="form-check-label" for="flexSwitchCheckDefault"
+            >Default switch checkbox input</label
+          >
+        </div>
+      </div>
+    </div>
+    <div class="row my-3">
+      <div class="col">
+        <button
+          class="btn btn-sm btn-outline-primary"
+          (click)="open(demoModal)"
+        >
+          Launch demo modal
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #demoModal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+        (click)="modal.dismiss('Cross click')"
+      ></button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="form-group">
+          <label for="dateOfBirth">Date of birth</label>
+          <div class="input-group">
+            <input
+              id="dateOfBirth"
+              name="dateOfBirth"
+              class="form-control"
+              placeholder="yyyy-mm-dd"
+              ngbDatepicker
+              #dp="ngbDatepicker"
+            />
+            <button
+              type="button"
+              class="btn btn-outline-secondary bi bi-calendar"
+              (click)="dp.toggle()"
+            ></button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button
+        type="button"
+        class="btn btn-outline-dark"
+        (click)="modal.close('Save click')"
+      >
+        Save
+      </button>
+    </div>
+  </ng-template> -->
