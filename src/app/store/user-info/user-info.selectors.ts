@@ -3,13 +3,21 @@ import {
   ITwoFactorAuth,
   IUserInfo,
   IUserBasicInfo,
+  IAuthInfo,
 } from './interfaces/user-info.interface';
 
 export const fetchUserInfo = (state: AppState) =>
   state.userInfo?.userInfo as IUserInfo;
 
-export const fetchAuthToken = (state: AppState) =>
-  state?.userInfo?.authToken as string;
+// export const fetchAuthInfo = (state: AppState) =>
+//   state?.userInfo?.authToken as string;
+
+export const fetchAuthInfo = (state: AppState) => {
+  return {
+    authToken: state?.userInfo?.authToken as string,
+    roleId: state?.userInfo?.authToken || 0,
+  } as IAuthInfo;
+};
 
 export const fetchUserBasicInfo = (state: AppState) => {
   return {

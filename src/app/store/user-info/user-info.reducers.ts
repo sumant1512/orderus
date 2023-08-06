@@ -18,6 +18,7 @@ export function UserInfoReducer(
         userInfo: action.payload,
       };
     case UserInfoActions.LOGGED_IN:
+      localStorage.setItem('authInfo', JSON.stringify(action.payload));
       return {
         ...state,
         authToken: action.payload.authToken,
