@@ -24,13 +24,12 @@ export class AuthGuard implements CanActivate {
     | boolean
     | UrlTree {
     let isRouteActivated = false;
-    console.log(route, state.url);
     const authInfo: IAuthInfo = JSON.parse(
       localStorage.getItem('authInfo') as string
     );
     switch (authInfo.roleId) {
       case 2:
-        isRouteActivated = state.url.includes(APP_ROUTES.RESTAURANT);
+        isRouteActivated = state.url.includes(APP_ROUTES.RESTAURANT.PARENT);
         break;
       case 4:
         isRouteActivated = state.url.includes(APP_ROUTES.DELIVERY);

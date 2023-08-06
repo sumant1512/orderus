@@ -33,32 +33,47 @@
               tabindex="1"
               class="nav-link header-nav-link fw-bold"
               aria-current="page"
-              (click)="navigateToPage(appRoutes.RESTAURANTS)"
-              >Restaurants</a
+              [routerLink]="[appRoutes.RESTAURANT.CHILD_ROUTES.DASHBOARD]"
+              >Dashboard</a
             >
           </li>
           <li class="nav-item me-0 me-md-2 me-lg-3 pe-cursor">
             <a
               tabindex="1"
               class="nav-link header-nav-link fw-bold"
-              (click)="navigateToPage(appRoutes.DEALS)"
-              >Deals</a
+              [routerLink]="[appRoutes.RESTAURANT.CHILD_ROUTES.ORDERS]"
+              >Orders</a
             >
           </li>
-          <li class="d-none d-md-block header-seprator me-3"></li>
           <li class="nav-item me-0 me-md-2 me-lg-3 pe-cursor">
             <a
               tabindex="1"
               class="nav-link header-nav-link fw-bold"
-              (click)="navigateToPage(appRoutes.MY_ORDERS)"
-              >My orders</a
+              [routerLink]="[appRoutes.RESTAURANT.CHILD_ROUTES.CUSTOMERS]"
+              >Customers</a
+            >
+          </li>
+          <li class="nav-item me-0 me-md-2 me-lg-3 pe-cursor">
+            <a
+              tabindex="1"
+              class="nav-link header-nav-link fw-bold"
+              [routerLink]="[appRoutes.RESTAURANT.CHILD_ROUTES.MENU]"
+              >Menu</a
+            >
+          </li>
+          <li class="nav-item me-0 me-md-2 me-lg-3 pe-cursor">
+            <a
+              tabindex="1"
+              class="nav-link header-nav-link fw-bold"
+              [routerLink]="[appRoutes.RESTAURANT.CHILD_ROUTES.PROMOTIONS]"
+              >Promotions</a
             >
           </li>
           <div class="row w-100 d-flex align-items-center d-md-none">
             <div class="col-6">
               <li class="nav-item me-0 me-md-2 me-lg-3 pe-cursor">
                 <div
-                  (click)="navigateToPage(appRoutes.CART)"
+                  (click)="(appRoutes.CART)"
                   [ngClass]="{ selected: selectedRoute === 'cart' }"
                   class="cart-img-container position-relative"
                 >
@@ -78,7 +93,6 @@
             <div class="col-6 text-end">
               <li class="nav-item pe-cursor">
                 <div
-                  *ngIf="userBasicInfo?.id"
                   (click)="navigateToPage(appRoutes.PROFILE)"
                   [ngClass]="{ selected: selectedRoute === 'profile' }"
                   class="user-img-container selected"
@@ -89,13 +103,6 @@
                     [alt]="userBasicInfo.imgAlt"
                   />
                 </div>
-                <a
-                  *ngIf="!userBasicInfo?.id"
-                  tabindex="1"
-                  class="app-link"
-                  [routerLink]="['/' + appRoutes.LOGIN]"
-                  >Sign in</a
-                >
               </li>
             </div>
           </div>
@@ -121,7 +128,6 @@
           </li>
           <li class="d-none d-md-block nav-item pe-cursor">
             <div
-              *ngIf="userBasicInfo?.id"
               (click)="navigateToPage(appRoutes.PROFILE)"
               [ngClass]="{ selected: selectedRoute === 'profile' }"
               class="user-img-container selected"
@@ -132,13 +138,6 @@
                 [alt]="userBasicInfo.imgAlt"
               />
             </div>
-            <a
-              *ngIf="!userBasicInfo?.id"
-              tabindex="1"
-              class="app-link"
-              [routerLink]="['/' + appRoutes.LOGIN]"
-              >Sign in</a
-            >
           </li>
         </ul>
       </div>

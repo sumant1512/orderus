@@ -15,11 +15,11 @@ import { IImage } from 'src/app/shared/interfaces/image.interface';
 export class HeaderComponent implements OnInit {
   subscription = new Subscription();
   appRoutes = APP_ROUTES;
-  cartItemCount = 1;
+  bellItemCount = 1;
   selectedRoute = APP_ROUTES.HOME;
-  cartImage: IImage = {
-    img: './../../../assets/cart-blue.png',
-    imgAlt: 'Cart',
+  bellImage: IImage = {
+    img: './../../../assets/bell.svg',
+    imgAlt: 'Bell',
   };
 
   userInfo = {
@@ -40,7 +40,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.getUserInfo();
+    this.getUserInfo();
   }
 
   getUserInfo(): void {

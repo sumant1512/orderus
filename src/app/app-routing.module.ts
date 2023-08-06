@@ -35,7 +35,7 @@ const routes: Routes = [
       import('./General/verify+/verify.module').then((m) => m.VerifyModule),
   },
   {
-    path: APP_ROUTES.RESTAURANT,
+    path: APP_ROUTES.RESTAURANT.PARENT,
     loadChildren: () =>
       import('./Restaurant/restaurant.module').then((m) => m.RestaurantModule),
     canActivate: [AuthGuard],

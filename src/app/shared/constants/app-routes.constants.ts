@@ -10,6 +10,15 @@ export const APP_ROUTES = {
   FORGET_PASSWORD: 'forget-password',
   REGISTRATION: 'registration',
   VERIFY: 'verify',
-  RESTAURANT: 'restaurant',
+  RESTAURANT: {
+    PARENT: 'restaurant',
+    CHILD_ROUTES: {
+      DASHBOARD: 'dashboard',
+      ORDERS: 'orders',
+      CUSTOMERS: 'customers',
+      MENU: 'menu',
+      PROMOTIONS: 'promotions',
+    },
+  },
   DELIVERY: 'delivery',
 };

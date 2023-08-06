@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { UserInfoFacade } from 'src/app/store/user-info/user-info.facade';
 import { Subscription } from 'rxjs';
@@ -31,6 +31,7 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private router: Router,
+    private activatedRoute: ActivatedRoute,
     private modalService: NgbModal,
     private userInfoFacade: UserInfoFacade
   ) {}
@@ -40,7 +41,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.getUserInfo();
+    this.getUserInfo();
   }
 
   getUserInfo(): void {
@@ -74,6 +75,8 @@ export class HeaderComponent implements OnInit {
       this.toggleHamburger();
     }
     this.selectedRoute = routePath;
-    this.router.navigate([routePath]);
+    this.router.navigate([`${routePath}`], {
+      relativeTo: this.activatedRoute,
+    });
   }
 }
