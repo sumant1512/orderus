@@ -1,5 +1,9 @@
 import { Action } from '@ngrx/store';
-import { ILoginRequestBody, IUserInfo } from './interfaces/user-info.interface';
+import {
+  IAuthInfo,
+  ILoginRequestBody,
+  IUserInfo,
+} from './interfaces/user-info.interface';
 
 export enum UserInfoActions {
   FETCH_USER_INFO = '[UserInfo] Fetch UserInfo',
@@ -26,7 +30,7 @@ export class LoginUser implements Action {
 
 export class LoggedInUser implements Action {
   readonly type = UserInfoActions.LOGGED_IN;
-  constructor(public payload: string) {}
+  constructor(public payload: IAuthInfo) {}
 }
 
 export class Logout implements Action {

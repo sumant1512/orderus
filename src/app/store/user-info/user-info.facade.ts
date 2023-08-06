@@ -5,6 +5,7 @@ import { AppState } from '../app.state';
 import * as userInfoSelector from './user-info.selectors';
 import {
   IAddress,
+  IAuthInfo,
   ILoginRequestBody,
   IPayment,
   ITwoFactorAuth,
@@ -52,7 +53,7 @@ export class UserInfoFacade {
     this.store.dispatch(new LoginUser(credentials));
   }
 
-  loggedIn(authToken: string): Action {
+  loggedIn(authToken: IAuthInfo): Action {
     return new LoggedInUser(authToken);
   }
 
