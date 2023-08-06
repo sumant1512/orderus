@@ -4,6 +4,7 @@ import { UserInfoActions, UserInfoActionsUnion } from './user-info.actions';
 export const initialUserInfoState: IUserInfoState = {
   userInfo: {} as IUserInfo,
   authToken: '',
+  roleId: 0,
 };
 
 export function UserInfoReducer(
@@ -17,7 +18,11 @@ export function UserInfoReducer(
         userInfo: action.payload,
       };
     case UserInfoActions.LOGGED_IN:
-      return { ...state, authToken: action.payload };
+      return {
+        ...state,
+        authToken: action.payload.authToken,
+        roleId: action.payload.roleId,
+      };
     case UserInfoActions.LOGGED_OUT:
       return initialUserInfoState;
     default:

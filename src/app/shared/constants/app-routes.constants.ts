@@ -11,4 +11,5 @@ export const APP_ROUTES = {
   REGISTRATION: 'registration',
   VERIFY: 'verify',
   RESTAURANT: 'restaurant',
+  DELIVERY: 'delivery',
 };

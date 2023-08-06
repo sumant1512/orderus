@@ -12,7 +12,9 @@ const routes: Routes = [
       {
         path: '',
         loadChildren: () =>
-          import('./landing+/landing.module').then((m) => m.LandingModule),
+          import('../Customer/landing+/landing.module').then(
+            (m) => m.LandingModule
+          ),
       },
       {
         path: APP_ROUTES.RESTAURANTS,

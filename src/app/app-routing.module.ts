@@ -12,31 +12,36 @@ const routes: Routes = [
   {
     path: APP_ROUTES.LOGIN,
     loadChildren: () =>
-      import('./Customer/login+/login.module').then((m) => m.LoginModule),
+      import('./General/login+/login.module').then((m) => m.LoginModule),
   },
   {
     path: APP_ROUTES.FORGET_PASSWORD,
     loadChildren: () =>
-      import('./Customer/forget-password+/forget-password.module').then(
+      import('./General/forget-password+/forget-password.module').then(
         (m) => m.ForgetPasswordModule
       ),
   },
   {
     path: APP_ROUTES.REGISTRATION,
     loadChildren: () =>
-      import('./Customer/registration+/registration.module').then(
+      import('./General/registration+/registration.module').then(
         (m) => m.RegistrationModule
       ),
   },
   {
     path: APP_ROUTES.VERIFY,
     loadChildren: () =>
-      import('./Customer/verify+/verify.module').then((m) => m.VerifyModule),
+      import('./General/verify+/verify.module').then((m) => m.VerifyModule),
   },
   {
     path: APP_ROUTES.RESTAURANT,
     loadChildren: () =>
       import('./Restaurant/restaurant.module').then((m) => m.RestaurantModule),
+  },
+  {
+    path: APP_ROUTES.DELIVERY,
+    loadChildren: () =>
+      import('./Delivery/delivery.module').then((m) => m.DeliveryModule),
   },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];

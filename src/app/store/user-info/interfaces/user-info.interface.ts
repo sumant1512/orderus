@@ -1,8 +1,7 @@
 import { IImage } from 'src/app/shared/interfaces/image.interface';
 
-export interface IUserInfoState {
+export interface IUserInfoState extends IAuthInfo {
   userInfo: IUserInfo;
-  authToken: string;
 }
 
 export interface IUserInfo extends IUserBasicInfo {
@@ -21,6 +20,11 @@ export interface IUserBasicInfo {
   phone: string;
   altPhone: string;
   emailNotification: Array<INotifcation>;
+}
+
+export interface IAuthInfo {
+  authToken: string;
+  roleId: number;
 }
 
 export interface INotifcation {

@@ -6,7 +6,7 @@ import {
   UserInfoActions,
   UserInfoActionsUnion,
 } from './user-info.actions';
-import { IUserInfo } from './interfaces/user-info.interface';
+import { IAuthInfo, IUserInfo } from './interfaces/user-info.interface';
 import { UserInfoService } from './api/user-info.service';
 import { UserInfoFacade } from './user-info.facade';
 
@@ -30,8 +30,8 @@ export class UserInfoEffects {
       ofType(UserInfoActions.LOGIN),
       mergeMap((action) =>
         this.userInfoService.login(action.payload).pipe(
-          map((userInfo) => {
-            return this.userInfoFacade.loggedIn(userInfo?.authToken || '');
+          map((userInfo: IAuthInfo) => {
+            return this.userInfoFacade.loggedIn(userInfo as IAuthInfo);
           })
         )
       )
