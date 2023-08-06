@@ -7,14 +7,14 @@ import {
   UrlTree,
 } from '@angular/router';
 import { Observable } from 'rxjs';
-import { UserInfoFacade } from '../user-info.facade';
 import { APP_ROUTES } from 'src/app/shared/constants/app-routes.constants';
+import { IAuthInfo } from '../interfaces/user-info.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthGuard implements CanActivate {
-  constructor(private userInfoFacade: UserInfoFacade, private router: Router) {}
+  constructor(private router: Router) {}
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
@@ -24,14 +24,25 @@ export class AuthGuard implements CanActivate {
     | boolean
     | UrlTree {
     let isRouteActivated = false;
-    this.userInfoFacade.authToken.subscribe((authToken: string) => {
-      if (authToken) {
-        isRouteActivated = true;
-      } else {
+    console.log(route, state.url);
+    const authInfo: IAuthInfo = JSON.parse(
+      localStorage.getItem('authInfo') as string
+    );
+    switch (authInfo.roleId) {
+      case 2:
+        isRouteActivated = state.url.includes(APP_ROUTES.RESTAURANT);
+        break;
+      case 4:
+        isRouteActivated = state.url.includes(APP_ROUTES.DELIVERY);
+        break;
+
+      default:
         isRouteActivated = false;
-        this.router.navigate([APP_ROUTES.LOGIN]);
-      }
-    });
+        break;
+    }
+    if (!isRouteActivated) {
+      this.router.navigate([APP_ROUTES.LOGIN]);
+    }
     return isRouteActivated;
   }
 }

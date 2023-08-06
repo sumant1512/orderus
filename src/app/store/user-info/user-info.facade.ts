@@ -27,8 +27,8 @@ export class UserInfoFacade {
     userInfoSelector.fetchUserInfo
   );
 
-  authToken: Observable<string> = this.store.select(
-    userInfoSelector.fetchAuthToken
+  authInfo: Observable<IAuthInfo> = this.store.select(
+    userInfoSelector.fetchAuthInfo
   );
 
   userBasicInfo: Observable<IUserBasicInfo> = this.store.select(
