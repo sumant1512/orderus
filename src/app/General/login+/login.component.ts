@@ -24,4 +24,8 @@ export class LoginComponent {
     delete loginBody.keepSignedIn;
     this.userInfoFacade.login(loginBody);
   }
+
+  setLoginForm(userName: string): void {
+    this.loginForm.get('email')?.setValue(`${userName}@gmail.com`);
+  }
 }

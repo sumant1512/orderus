@@ -28,11 +28,17 @@ export class AuthGuard implements CanActivate {
       localStorage.getItem('authInfo') as string
     );
     switch (authInfo.roleId) {
+      case 1:
+        isRouteActivated = state.url.includes(APP_ROUTES.ADMIN.PARENT);
+        break;
       case 2:
         isRouteActivated = state.url.includes(APP_ROUTES.RESTAURANT.PARENT);
         break;
+      case 3:
+        isRouteActivated = true;
+        break;
       case 4:
-        isRouteActivated = state.url.includes(APP_ROUTES.DELIVERY);
+        isRouteActivated = state.url.includes(APP_ROUTES.DELIVERY.PARENT);
         break;
 
       default:

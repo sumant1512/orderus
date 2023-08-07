@@ -44,6 +44,44 @@
           ></span
         >
       </div>
+      <div *ngIf="true" class="row mt-4">
+        <div class="col-12 col-md-6">
+          <button
+            class="w-100 mb-3"
+            (click)="setLoginForm('admin')"
+            appPrimaryFilledButton
+          >
+            Admin
+          </button>
+        </div>
+        <div class="col-12 col-md-6">
+          <button
+            class="w-100 mb-3"
+            (click)="setLoginForm('restaurant')"
+            appPrimaryFilledButton
+          >
+            Restaurant
+          </button>
+        </div>
+        <div class="col-12 col-md-6">
+          <button
+            class="w-100 mb-3"
+            (click)="setLoginForm('customer')"
+            appPrimaryFilledButton
+          >
+            Customer
+          </button>
+        </div>
+        <div class="col-12 col-md-6">
+          <button
+            class="w-100 mb-3"
+            (click)="setLoginForm('delivery')"
+            appPrimaryFilledButton
+          >
+            Delivery
+          </button>
+        </div>
+      </div>
     </div>
   </div>
   <div class="col-md-7 d-none d-md-flex px-0 section-2">

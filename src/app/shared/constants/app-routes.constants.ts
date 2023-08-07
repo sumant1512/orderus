@@ -10,6 +10,16 @@ export const APP_ROUTES = {
   FORGET_PASSWORD: 'forget-password',
   REGISTRATION: 'registration',
   VERIFY: 'verify',
+  ADMIN: {
+    PARENT: 'admin',
+    CHILD_ROUTES: {
+      DASHBOARD: 'dashboard',
+      ORDERS: 'orders',
+      CUSTOMERS: 'customers',
+      MENU: 'menu',
+      PROMOTIONS: 'promotions',
+    },
+  },
   RESTAURANT: {
     PARENT: 'restaurant',
     CHILD_ROUTES: {
@@ -20,5 +30,14 @@ export const APP_ROUTES = {
       PROMOTIONS: 'promotions',
     },
   },
-  DELIVERY: 'delivery',
+  DELIVERY: {
+    PARENT: 'delivery',
+    CHILD_ROUTES: {
+      DASHBOARD: 'dashboard',
+      ORDERS: 'orders',
+      CUSTOMERS: 'customers',
+      MENU: 'menu',
+      PROMOTIONS: 'promotions',
+    },
+  },
 };
