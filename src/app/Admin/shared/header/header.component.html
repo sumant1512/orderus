@@ -115,7 +115,11 @@
               <img
                 class="user-img"
                 [src]="userBasicInfo.img"
-                [alt]="userBasicInfo.imgAlt"
+                [alt]="
+                  userBasicInfo.firstName ||
+                  '' + ' ' + userBasicInfo.lastName ||
+                  ''
+                "
               />
             </div>
           </li>

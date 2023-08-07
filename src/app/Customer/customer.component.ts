@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ThemeService } from '../shared/services/theme/theme.service';
 import { ActivatedRoute, Router } from '@angular/router';
-// import { filter } from 'rxjs';
 import { APP_ROUTES } from '../shared/constants/app-routes.constants';
-import { UserInfoFacade } from '../store/user-info/user-info.facade';
 
 @Component({
   selector: 'app-customer',
@@ -16,11 +14,9 @@ export class CustomerComponent implements OnInit {
   constructor(
     private themeService: ThemeService,
     private route: ActivatedRoute,
-    private router: Router,
-    private userInfoFacade: UserInfoFacade
+    private router: Router
   ) {
     this.themeService.setThemeOnStart();
-    this.userInfoFacade.fetchUserInfo();
   }
 
   ngOnInit(): void {

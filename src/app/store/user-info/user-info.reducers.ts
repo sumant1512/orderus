@@ -5,6 +5,7 @@ export const initialUserInfoState: IUserInfoState = {
   userInfo: {} as IUserInfo,
   authToken: '',
   roleId: 0,
+  userName: '',
 };
 
 export function UserInfoReducer(

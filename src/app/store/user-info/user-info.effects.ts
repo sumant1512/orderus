@@ -17,9 +17,10 @@ export class UserInfoEffects {
   fetchUserInfo$ = createEffect(() =>
     this.action$.pipe(
       ofType(UserInfoActions.FETCH_USER_INFO),
-      mergeMap(() =>
-        this.userInfoService.fetchUserInfo().pipe(
+      mergeMap((action) =>
+        this.userInfoService.fetchUserInfo(action.payload).pipe(
           map((userInfo: IUserInfo) => {
+            console.log(userInfo);
             return new FetchedUserInfo(userInfo);
           })
         )
@@ -35,6 +36,10 @@ export class UserInfoEffects {
           map((userInfo: IAuthInfo) => {
             localStorage.setItem('authInfo', JSON.stringify(userInfo));
             this.navigateToProfile(userInfo.roleId);
+            this.userInfoFacade.fetchUserInfo({
+              userName: userInfo.userName,
+              authToken: userInfo.authToken,
+            });
             return this.userInfoFacade.loggedIn(userInfo as IAuthInfo);
           })
         )
