@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { APP_ROUTES } from './shared/constants/app-routes.constants';
-import { AuthGuard } from './store/user-info/guards/auth.guard';
+// import { AuthGuard } from './store/user-info/guards/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full' },
@@ -46,19 +46,19 @@ const routes: Routes = [
     path: APP_ROUTES.ADMIN.PARENT,
     loadChildren: () =>
       import('./Admin/admin.module').then((m) => m.AdminModule),
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
   },
   {
     path: APP_ROUTES.RESTAURANT.PARENT,
     loadChildren: () =>
       import('./Restaurant/restaurant.module').then((m) => m.RestaurantModule),
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
   },
   {
     path: APP_ROUTES.DELIVERY.PARENT,
     loadChildren: () =>
       import('./Delivery/delivery.module').then((m) => m.DeliveryModule),
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
   },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];

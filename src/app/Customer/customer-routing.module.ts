@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CustomerComponent } from './customer.component';
 import { APP_ROUTES } from '../shared/constants/app-routes.constants';
-import { AuthGuard } from '../store/user-info/guards/auth.guard';
+// import { AuthGuard } from '../store/user-info/guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -32,7 +32,7 @@ const routes: Routes = [
         path: APP_ROUTES.MY_ORDERS,
         loadChildren: () =>
           import('./my-orders+/my-orders.module').then((m) => m.MyOrdersModule),
-        canActivate: [AuthGuard],
+        // canActivate: [AuthGuard],
       },
       {
         path: APP_ROUTES.CART,
@@ -43,14 +43,14 @@ const routes: Routes = [
         path: APP_ROUTES.CHECKOUT,
         loadChildren: () =>
           import('./checkout+/checkout.module').then((m) => m.CheckoutModule),
-        canActivate: [AuthGuard],
+        // canActivate: [AuthGuard],
       },
 
       {
         path: APP_ROUTES.PROFILE,
         loadChildren: () =>
           import('./profile+/profile.module').then((m) => m.ProfileModule),
-        canActivate: [AuthGuard],
+        // canActivate: [AuthGuard],
       },
     ],
   },
