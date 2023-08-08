@@ -28,8 +28,8 @@
               tabindex="1"
               class="nav-link header-nav-link fw-bold"
               aria-current="page"
-              [routerLink]="[appRoutes.SUPER_ADMIN.CHILD_ROUTES.CUSTOMERS]"
-              >Customers</a
+              [routerLink]="[appRoutes.SUPER_ADMIN.CHILD_ROUTES.ADMINS]"
+              >Admins</a
             >
           </li>
           <li class="nav-item me-0 me-md-2 me-lg-3 pe-cursor">
@@ -45,7 +45,6 @@
               <li class="nav-item me-0 me-md-2 me-lg-3 pe-cursor">
                 <div
                   (click)="navigateToPage(appRoutes.CART)"
-                  [ngClass]="{ selected: selectedRoute === 'bell' }"
                   class="ps-1 float-end logout-img-container position-relative"
                 >
                   <img
@@ -61,7 +60,7 @@
             class="d-none d-md-block nav-item me-0 me-md-2 me-lg-3 mb-3 mb-md-0 mt-2 mt-md-0 pe-cursor"
           >
             <div
-              (click)="navigateToPage(appRoutes.CART)"
+              (click)="navigateToPage(appRoutes.LOGIN)"
               [ngClass]="{ selected: selectedRoute === 'notification' }"
               class="ps-1 logout-img-container position-relative"
             >

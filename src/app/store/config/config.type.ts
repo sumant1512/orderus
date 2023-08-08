@@ -5,6 +5,7 @@ export interface AppConfigType {
 
 export interface ApiType {
   restaurants: string;
+  admins: string;
 }
 
 export interface FeatureFlagType {

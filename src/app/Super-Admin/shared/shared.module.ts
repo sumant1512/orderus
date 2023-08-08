@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './header/header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { RouterModule } from '@angular/router';
+import { SuperAdminHeaderComponent } from './super-admin-header/super-admin-header.component';
 
-const COMPONENTS = [HeaderComponent];
+const COMPONENTS = [SuperAdminHeaderComponent];
 const MODULES = [
   CommonModule,
   RouterModule,
@@ -22,4 +22,4 @@ const MODULES = [
   exports: [...COMPONENTS, MODULES],
   providers: [],
 })
-export class SharedModule {}
+export class SuperAdminSharedModule {}
