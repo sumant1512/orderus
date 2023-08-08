@@ -3,7 +3,10 @@ import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { AppConfigurations } from '../../config/config';
 import { ApiType } from '../../config/config.type';
-import { ILoginRequestBody } from '../interfaces/user-info.interface';
+import {
+  ILoginRequestBody,
+  IUserInfoRequestBody,
+} from '../interfaces/user-info.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -11,16 +14,6 @@ import { ILoginRequestBody } from '../interfaces/user-info.interface';
 export class UserInfoService {
   apiUrls: ApiType = AppConfigurations.api;
   constructor(private http: HttpClient) {}
-
-  fetchUserInfo(): Observable<any> {
-    return this.http.get<any>('./../../../../assets/api/user-info.json').pipe(
-      map((response) => {
-        if (response) {
-          return response.data;
-        }
-      })
-    );
-  }
 
   login(body: ILoginRequestBody): Observable<any> {
     return this.http.post<any>('http://localhost:8080/auth/login', body).pipe(
@@ -30,6 +23,18 @@ export class UserInfoService {
         }
       })
     );
+  }
+
+  fetchUserInfo(body: IUserInfoRequestBody): Observable<any> {
+    return this.http
+      .post<any>('http://localhost:8080/auth/userInfo', body)
+      .pipe(
+        map((response) => {
+          if (response) {
+            return response.data;
+          }
+        })
+      );
   }
 
   logout(id: number): Observable<any> {

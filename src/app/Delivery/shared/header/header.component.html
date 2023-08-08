@@ -22,12 +22,7 @@
         </div>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <form
-          class="d-flex mt-3 mt-md-0 mb-2 mb-md-0 ms-0 ms-md-3 ms-lg-5 me-0 me-md-3 me-lg-auto justify-content-center justify-content-md-left"
-        >
-          <input class="search-input" type="text" placeholder="Search" />
-        </form>
-        <ul class="navbar-nav nav-bar-list mb-2 mb-lg-0">
+        <ul class="navbar-nav nav-bar-list mb-2 mb-lg-0 ms-auto">
           <li class="nav-item me-0 me-md-2 me-lg-3 pe-cursor">
             <a
               tabindex="1"
@@ -59,18 +54,18 @@
               <li class="nav-item me-0 me-md-2 me-lg-3 pe-cursor">
                 <div
                   (click)="navigateToPage(appRoutes.CART)"
-                  [ngClass]="{ selected: selectedRoute === 'cart' }"
-                  class="cart-img-container position-relative"
+                  [ngClass]="{ selected: selectedRoute === 'bell' }"
+                  class="bell-img-container position-relative"
                 >
                   <span
-                    *ngIf="cartItemCount"
-                    class="badge cart-badge position-absolute"
-                    >{{ cartItemCount }}</span
+                    *ngIf="bellItemCount"
+                    class="badge bell-badge position-absolute"
+                    >{{ bellItemCount }}</span
                   >
                   <img
-                    class="cart-img"
-                    [src]="cartImage.img"
-                    [alt]="cartImage.imgAlt"
+                    class="bell-img"
+                    [src]="bellImage.img"
+                    [alt]="bellImage.imgAlt"
                   />
                 </div>
               </li>
@@ -78,7 +73,6 @@
             <div class="col-6 text-end">
               <li class="nav-item pe-cursor">
                 <div
-                  *ngIf="userBasicInfo?.id"
                   (click)="navigateToPage(appRoutes.PROFILE)"
                   [ngClass]="{ selected: selectedRoute === 'profile' }"
                   class="user-img-container selected"
@@ -89,13 +83,6 @@
                     [alt]="userBasicInfo.imgAlt"
                   />
                 </div>
-                <a
-                  *ngIf="!userBasicInfo?.id"
-                  tabindex="1"
-                  class="app-link"
-                  [routerLink]="['/' + appRoutes.LOGIN]"
-                  >Sign in</a
-                >
               </li>
             </div>
           </div>
@@ -104,24 +91,23 @@
           >
             <div
               (click)="navigateToPage(appRoutes.CART)"
-              [ngClass]="{ selected: selectedRoute === 'cart' }"
-              class="cart-img-container position-relative"
+              [ngClass]="{ selected: selectedRoute === 'notification' }"
+              class="bell-img-container position-relative"
             >
               <span
-                *ngIf="cartItemCount"
-                class="badge cart-badge position-absolute"
-                >{{ cartItemCount }}</span
+                *ngIf="bellItemCount"
+                class="badge bell-badge position-absolute"
+                >{{ bellItemCount }}</span
               >
               <img
-                class="cart-img"
-                [src]="cartImage.img"
-                [alt]="cartImage.imgAlt"
+                class="bell-img"
+                [src]="bellImage.img"
+                [alt]="bellImage.imgAlt"
               />
             </div>
           </li>
           <li class="d-none d-md-block nav-item pe-cursor">
             <div
-              *ngIf="userBasicInfo?.id"
               (click)="navigateToPage(appRoutes.PROFILE)"
               [ngClass]="{ selected: selectedRoute === 'profile' }"
               class="user-img-container selected"
@@ -132,13 +118,6 @@
                 [alt]="userBasicInfo.imgAlt"
               />
             </div>
-            <a
-              *ngIf="!userBasicInfo?.id"
-              tabindex="1"
-              class="app-link"
-              [routerLink]="['/' + appRoutes.LOGIN]"
-              >Sign in</a
-            >
           </li>
         </ul>
       </div>

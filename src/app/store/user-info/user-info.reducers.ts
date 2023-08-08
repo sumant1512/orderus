@@ -5,6 +5,7 @@ export const initialUserInfoState: IUserInfoState = {
   userInfo: {} as IUserInfo,
   authToken: '',
   roleId: 0,
+  userName: '',
 };
 
 export function UserInfoReducer(
@@ -18,7 +19,6 @@ export function UserInfoReducer(
         userInfo: action.payload,
       };
     case UserInfoActions.LOGGED_IN:
-      localStorage.setItem('authInfo', JSON.stringify(action.payload));
       return {
         ...state,
         authToken: action.payload.authToken,

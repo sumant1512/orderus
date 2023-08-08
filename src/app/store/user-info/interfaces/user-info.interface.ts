@@ -23,6 +23,7 @@ export interface IUserBasicInfo {
 }
 
 export interface IAuthInfo {
+  userName: string;
   authToken: string;
   roleId: number;
 }
@@ -59,4 +60,9 @@ export interface ITwoFactorAuth {
 export interface ILoginRequestBody {
   email: string;
   password: string;
+}
+
+export interface IUserInfoRequestBody {
+  userName: string;
+  authToken: string;
 }

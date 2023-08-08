@@ -11,6 +11,7 @@ import {
   ITwoFactorAuth,
   IUserBasicInfo,
   IUserInfo,
+  IUserInfoRequestBody,
 } from './interfaces/user-info.interface';
 import {
   FetchUserInfo,
@@ -65,8 +66,8 @@ export class UserInfoFacade {
     return new LoggedOut();
   }
 
-  fetchUserInfo() {
-    this.store.dispatch(new FetchUserInfo());
+  fetchUserInfo(body: IUserInfoRequestBody) {
+    this.store.dispatch(new FetchUserInfo(body));
   }
 
   fetchedUserInfo(userInfoList: IUserInfo) {

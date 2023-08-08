@@ -9,15 +9,18 @@ import {
 import { IAuthInfo, IUserInfo } from './interfaces/user-info.interface';
 import { UserInfoService } from './api/user-info.service';
 import { UserInfoFacade } from './user-info.facade';
+import { Router } from '@angular/router';
+import { APP_ROUTES } from 'src/app/shared/constants/app-routes.constants';
 
 @Injectable()
 export class UserInfoEffects {
   fetchUserInfo$ = createEffect(() =>
     this.action$.pipe(
       ofType(UserInfoActions.FETCH_USER_INFO),
-      mergeMap(() =>
-        this.userInfoService.fetchUserInfo().pipe(
+      mergeMap((action) =>
+        this.userInfoService.fetchUserInfo(action.payload).pipe(
           map((userInfo: IUserInfo) => {
+            localStorage.setItem('userBasicInfo', JSON.stringify(userInfo));
             return new FetchedUserInfo(userInfo);
           })
         )
@@ -31,6 +34,12 @@ export class UserInfoEffects {
       mergeMap((action) =>
         this.userInfoService.login(action.payload).pipe(
           map((userInfo: IAuthInfo) => {
+            localStorage.setItem('authInfo', JSON.stringify(userInfo));
+            this.navigateToProfile(userInfo.roleId);
+            this.userInfoFacade.fetchUserInfo({
+              userName: userInfo.userName,
+              authToken: userInfo.authToken,
+            });
             return this.userInfoFacade.loggedIn(userInfo as IAuthInfo);
           })
         )
@@ -51,9 +60,31 @@ export class UserInfoEffects {
     )
   );
 
+  navigateToProfile(roleId: number): void {
+    let routePath: string = '';
+    switch (roleId) {
+      case 1:
+        routePath = APP_ROUTES.ADMIN.PARENT;
+        break;
+      case 2:
+        routePath = APP_ROUTES.RESTAURANT.PARENT;
+        break;
+      case 3:
+        // routePath = APP_ROUTES.ADMIN.PARENT
+        break;
+      case 4:
+        routePath = APP_ROUTES.DELIVERY.PARENT;
+        break;
+      default:
+        break;
+    }
+    this.router.navigate([routePath]);
+  }
+
   constructor(
     private action$: Actions<UserInfoActionsUnion>,
     private userInfoService: UserInfoService,
-    private userInfoFacade: UserInfoFacade
+    private userInfoFacade: UserInfoFacade,
+    private router: Router
   ) {}
 }

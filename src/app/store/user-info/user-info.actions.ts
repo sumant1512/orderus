@@ -3,6 +3,7 @@ import {
   IAuthInfo,
   ILoginRequestBody,
   IUserInfo,
+  IUserInfoRequestBody,
 } from './interfaces/user-info.interface';
 
 export enum UserInfoActions {
@@ -16,6 +17,7 @@ export enum UserInfoActions {
 
 export class FetchUserInfo implements Action {
   readonly type = UserInfoActions.FETCH_USER_INFO;
+  constructor(public payload: IUserInfoRequestBody) {}
 }
 
 export class FetchedUserInfo implements Action {
