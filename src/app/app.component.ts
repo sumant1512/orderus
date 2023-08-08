@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { filter } from 'rxjs';
 import { ThemeService } from './shared/services/theme/theme.service';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { APP_ROUTES } from './shared/constants/app-routes.constants';
-import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -16,8 +17,11 @@ export class AppComponent implements OnInit {
   constructor(
     private themeService: ThemeService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    public translate: TranslateService
   ) {
+    this.translate.addLangs(['en', 'hi']);
+    this.translate.setDefaultLang('hi');
     this.themeService.setThemeOnStart();
   }
 

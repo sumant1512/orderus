@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
-import { SharedModule } from './shared/shared.module';
+import { CustomerSharedModule } from './shared/customer-shared.module';
 import { CustomerRoutingModule } from './customer-routing.module';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [],
-  imports: [RouterModule, SharedModule, CustomerRoutingModule],
+  imports: [RouterModule, CustomerSharedModule, CustomerRoutingModule],
 })
 export class CustomerModule {}

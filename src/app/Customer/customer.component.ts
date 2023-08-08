@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ThemeService } from '../shared/services/theme/theme.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { APP_ROUTES } from '../shared/constants/app-routes.constants';
 
@@ -11,13 +10,7 @@ import { APP_ROUTES } from '../shared/constants/app-routes.constants';
 export class CustomerComponent implements OnInit {
   isHeaderFooterActive = true;
 
-  constructor(
-    private themeService: ThemeService,
-    private route: ActivatedRoute,
-    private router: Router
-  ) {
-    this.themeService.setThemeOnStart();
-  }
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
     this.getRouterEvents();

@@ -8,11 +8,11 @@ import { APP_ROUTES } from 'src/app/shared/constants/app-routes.constants';
 import { IImage } from 'src/app/shared/interfaces/image.interface';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
+  selector: 'app-customer-header',
+  templateUrl: './customer-header.component.html',
+  styleUrls: ['./customer-header.component.scss'],
 })
-export class HeaderComponent implements OnInit {
+export class CustomerHeaderComponent implements OnInit {
   subscription = new Subscription();
   appRoutes = APP_ROUTES;
   cartItemCount = 1;
