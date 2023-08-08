@@ -27,7 +27,7 @@ export class AuthGuard implements CanActivate {
     const authInfo: IAuthInfo = JSON.parse(
       localStorage.getItem('authInfo') as string
     );
-    switch (authInfo.roleId) {
+    switch (authInfo?.roleId) {
       case 0:
         isRouteActivated = state.url.includes(APP_ROUTES.SUPER_ADMIN.PARENT);
         break;
