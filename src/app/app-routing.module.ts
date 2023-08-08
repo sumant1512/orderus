@@ -40,7 +40,7 @@ const routes: Routes = [
       import('./Super-Admin/super-admin.module').then(
         (m) => m.SuperAdminModule
       ),
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
   },
   {
     path: APP_ROUTES.ADMIN.PARENT,

@@ -1,1 +1,44 @@
-<p>admin-registration works!</p>
+<div class="container">
+  <div class="row pt-3 pt-lg-4">
+    <div class="col-12">
+      <span class="heading-two pe-cursor">Admin Registration</span>
+    </div>
+  </div>
+
+  <div
+    [formGroup]="adminRegistrationForm"
+    class="container-fluid mt-4 py-3 account-info-container"
+  >
+    <section>
+      <div class="row mb-0 mb-md-3">
+        <div class="col-12 mb-1 mb-md-0 col-md-6 col-lg-4">
+          <app-input
+            [formControlName]="adminKeys.NAME"
+            [label]="'Name'"
+          ></app-input>
+        </div>
+        <div class="col-12 mb-1 mb-md-0 col-md-6 col-lg-4">
+          <app-input
+            [formControlName]="adminKeys.USER_NAME"
+            [label]="'User name'"
+          ></app-input>
+        </div>
+        <div class="col-12 mb-1 mb-md-0 col-md-6 col-lg-4">
+          <app-input
+            [formControlName]="adminKeys.PASSWORD"
+            [label]="'Password'"
+          ></app-input>
+        </div>
+        <div class="col-12 mb-1 mb-md-0 col-md-6 col-lg-4">
+          <app-input
+            [formControlName]="adminKeys.TOKEN"
+            [label]="'Token'"
+          ></app-input>
+        </div>
+      </div>
+      <div class="text-end">
+        <button appTransparentFilledButton>Register</button>
+      </div>
+    </section>
+  </div>
+</div>

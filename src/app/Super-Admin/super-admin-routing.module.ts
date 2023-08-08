@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SuperAdminComponent } from './super-admin.component';
 import { APP_ROUTES } from '../shared/constants/app-routes.constants';
-import { CustomersComponent } from './customers/customers.component';
 import { AdminRegistrationComponent } from './admin-registration/admin-registration.component';
+import { AdminsComponent } from './admins/admins.component';
 
 const routes: Routes = [
   {
@@ -12,12 +12,12 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: APP_ROUTES.SUPER_ADMIN.CHILD_ROUTES.CUSTOMERS,
+        redirectTo: APP_ROUTES.SUPER_ADMIN.CHILD_ROUTES.ADMINS,
         pathMatch: 'full',
       },
       {
-        path: APP_ROUTES.SUPER_ADMIN.CHILD_ROUTES.CUSTOMERS,
-        component: CustomersComponent,
+        path: APP_ROUTES.SUPER_ADMIN.CHILD_ROUTES.ADMINS,
+        component: AdminsComponent,
       },
       {
         path: APP_ROUTES.SUPER_ADMIN.CHILD_ROUTES.REGISTER,

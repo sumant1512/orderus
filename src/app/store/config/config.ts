@@ -9,6 +9,7 @@ const host = isLocalhostActive
 export const AppConfigurations: AppConfigType = {
   api: {
     restaurants: host + '/restaurant',
+    admins: host + '/admins',
   },
   featureFlags: {
     isSearchFilterActive: true,

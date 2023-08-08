@@ -13,7 +13,7 @@ export const APP_ROUTES = {
   SUPER_ADMIN: {
     PARENT: 'super-admin',
     CHILD_ROUTES: {
-      CUSTOMERS: 'customers',
+      ADMINS: 'admins',
       REGISTER: 'register',
     },
   },
