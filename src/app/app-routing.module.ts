@@ -35,6 +35,14 @@ const routes: Routes = [
       import('./General/verify+/verify.module').then((m) => m.VerifyModule),
   },
   {
+    path: APP_ROUTES.SUPER_ADMIN.PARENT,
+    loadChildren: () =>
+      import('./Super-Admin/super-admin.module').then(
+        (m) => m.SuperAdminModule
+      ),
+    canActivate: [AuthGuard],
+  },
+  {
     path: APP_ROUTES.ADMIN.PARENT,
     loadChildren: () =>
       import('./Admin/admin.module').then((m) => m.AdminModule),

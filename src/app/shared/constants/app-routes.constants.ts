@@ -10,6 +10,13 @@ export const APP_ROUTES = {
   FORGET_PASSWORD: 'forget-password',
   REGISTRATION: 'registration',
   VERIFY: 'verify',
+  SUPER_ADMIN: {
+    PARENT: 'super-admin',
+    CHILD_ROUTES: {
+      CUSTOMERS: 'customers',
+      REGISTER: 'register',
+    },
+  },
   ADMIN: {
     PARENT: 'admin',
     CHILD_ROUTES: {

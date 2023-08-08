@@ -20,7 +20,7 @@ export class UserInfoEffects {
       mergeMap((action) =>
         this.userInfoService.fetchUserInfo(action.payload).pipe(
           map((userInfo: IUserInfo) => {
-            console.log(userInfo);
+            localStorage.setItem('userBasicInfo', JSON.stringify(userInfo));
             return new FetchedUserInfo(userInfo);
           })
         )
