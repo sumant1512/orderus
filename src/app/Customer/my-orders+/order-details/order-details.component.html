@@ -55,7 +55,7 @@
                 />
                 <span class="d-none d-md-inline-block horizontal-line"></span>
               </div>
-              <div class="col-10 mt-md-3 heading-five">
+              <div class="col-10 mt-md-3 f-14 fw-bold">
                 <div>Order placed</div>
                 <div class="f-14 fw-500">23:14</div>
               </div>
@@ -71,7 +71,7 @@
                 />
                 <span class="d-none d-md-inline-block horizontal-line"></span>
               </div>
-              <div class="col-10 mt-md-3 heading-five">
+              <div class="col-10 mt-md-3 f-14 fw-bold">
                 <div>Order being prepared</div>
                 <div class="f-14 fw-500">23:13</div>
               </div>
@@ -87,7 +87,7 @@
                 />
                 <span class="d-none d-md-inline-block horizontal-line"></span>
               </div>
-              <div class="col-10 mt-md-3 heading-five">
+              <div class="col-10 mt-md-3 f-14 fw-bold">
                 <div>Out for delivery</div>
                 <div class="f-14 fw-500">23:39</div>
               </div>
@@ -102,7 +102,7 @@
                   alt=""
                 />
               </div>
-              <div class="col-10 mt-md-3 heading-five">
+              <div class="col-10 mt-md-3 f-14 fw-bold">
                 <div>Delivered</div>
                 <div class="f-14 fw-500">23:57 approx</div>
               </div>
@@ -141,16 +141,21 @@
             <p class="fw-500 f-12 mb-2 shipping-address-heading">
               Shipping address
             </p>
-            <div class="shipping-location mb-2">
-              <google-map
+            <img
+              class="img-fluid shipping-location mb-2"
+              src="./../../assets/location.png"
+              alt="location"
+            />
+            <!-- <google-map
                 height="200px"
                 width="100%"
                 [className]="'shipping-location'"
                 [center]="center"
               >
-              </google-map>
-            </div>
-            <div class="heading-five">San Deigo</div>
+              </google-map> -->
+            <p>{{ center.lat }}</p>
+            <p>{{ center.lng }}</p>
+            <div class="f-14 fw-bold country">San Deigo</div>
             <div class="f-12 fw-500 add-1">California State, USA</div>
             <div class="f-12 fw-500 mt-2 add-2">
               {{ "3891 Ranchview Dr." }} {{ "Richardson" }},
