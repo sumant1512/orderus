@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CustomerSharedModule } from './shared/customer-shared.module';
+import { CustomerSharedModule } from './customer-shared/customer-shared.module';
 import { CustomerRoutingModule } from './customer-routing.module';
 import { RouterModule } from '@angular/router';
 

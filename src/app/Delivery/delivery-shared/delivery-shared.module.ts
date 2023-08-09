@@ -23,4 +23,4 @@ const MODULES = [
   exports: [...COMPONENTS, MODULES],
   providers: [],
 })
-export class SharedModule {}
+export class DeliverySharedModule {}
