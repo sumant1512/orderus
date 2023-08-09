@@ -4,77 +4,66 @@
       <span class="heading-two pe-cursor">My Orders</span>
     </div>
   </div>
-
-  <table class="table mt-4">
-    <thead class="pe-cursor">
-      <tr class="f-14">
-        <th
-          class="ps-3 ps-md-4 ps-lg-5"
-          (click)="onSortClick('orderId', 'number')"
-          scope="col"
+  <div class="table-container mt-4">
+    <table class="table mt-4">
+      <thead class="pe-cursor">
+        <tr class="f-14">
+          <th
+            class="ps-3 ps-md-4 ps-lg-5"
+            (click)="onSortClick('orderId', 'number')"
+            scope="col"
+          >
+            OrderId
+          </th>
+          <th (click)="onSortClick('restaurantName', 'string')" scope="col">
+            Restaurant
+          </th>
+          <th (click)="onSortClick('orderDate', 'date')" scope="col">
+            Creation Date
+          </th>
+          <th (click)="onSortClick('orderTime', 'date')" scope="col">
+            Creation Time
+          </th>
+          <th (click)="onSortClick('status', 'string')" scope="col">Status</th>
+          <th (click)="onSortClick('amount', 'number')" scope="col">
+            Total Amount
+          </th>
+        </tr>
+      </thead>
+      <tbody class="pe-cursor">
+        <tr
+          class="f-12"
+          *ngFor="let order of orderList"
+          (click)="navigateToOrderDetails(order.orderId)"
         >
-          OrderId
-        </th>
-        <th
-          (click)="onSortClick('restaurantName', 'string')"
-          class="d-none d-md-table-cell"
-          scope="col"
-        >
-          Restaurant
-        </th>
-        <th
-          (click)="onSortClick('orderDate', 'date')"
-          class="d-none d-lg-table-cell"
-          scope="col"
-        >
-          Creation Date
-        </th>
-        <th
-          (click)="onSortClick('orderTime', 'date')"
-          class="d-none d-lg-table-cell"
-          scope="col"
-        >
-          Creation Time
-        </th>
-        <th (click)="onSortClick('status', 'string')" scope="col">Status</th>
-        <th (click)="onSortClick('amount', 'number')" scope="col">
-          Total Amount
-        </th>
-      </tr>
-    </thead>
-    <tbody class="pe-cursor">
-      <tr
-        class="f-12"
-        *ngFor="let order of orderList"
-        (click)="navigateToOrderDetails(order.orderId)"
-      >
-        <td class="fw-500 ps-md-4 ps-lg-5" data-label="OrderId">
-          {{ order.orderId }}
-        </td>
-        <td class="d-none d-md-table-cell" data-label="Restaurant">
-          {{ order.restaurantName }}
-        </td>
-        <td class="d-none d-lg-table-cell" data-label="Creation Date">
-          {{ order.orderDateTime | date : "d MMM, y" }}
-        </td>
-        <td class="d-none d-lg-table-cell" data-label="Creation Time">
-          {{ order.orderDateTime | date : "hh:mm a" }}
-        </td>
-        <td class="fw-500" data-label="Status">
-          <span
-            [ngClass]="{
-              completed: order.status === 'Completed',
-              cancelled: order.status === 'Canceled',
-              'in-progress': order.status === 'In Progress'
-            }"
-            class="dot me-2"
-          ></span
-          >{{ order.status }}
-        </td>
-        <td class="fw-500" data-label="Total Amount">
-          ${{ order.amount | number : "1.2-2" }}
-        </td>
-      </tr>
-    </tbody>
-  </table>
+          <td class="fw-500 ps-md-4 ps-lg-5" data-label="OrderId">
+            {{ order.orderId }}
+          </td>
+          <td data-label="Restaurant">
+            {{ order.restaurantName }}
+          </td>
+          <td data-label="Creation Date">
+            {{ order.orderDateTime | date : "d MMM, y" }}
+          </td>
+          <td data-label="Creation Time">
+            {{ order.orderDateTime | date : "hh:mm a" }}
+          </td>
+          <td class="fw-500" data-label="Status">
+            <span
+              [ngClass]="{
+                completed: order.status === 'Completed',
+                cancelled: order.status === 'Canceled',
+                'in-progress': order.status === 'In Progress'
+              }"
+              class="dot me-2"
+            ></span
+            >{{ order.status }}
+          </td>
+          <td class="fw-500" data-label="Total Amount">
+            ${{ order.amount | number : "1.2-2" }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
