@@ -4,7 +4,7 @@
 
 .table-container {
   overflow-x: auto;
-  box-shadow: 0 1px 5px var(--order-border-box-shadow-color);
+  box-shadow: 0 1px 5px var(--border-box-shadow-color);
 
   table {
     border: 0;
@@ -15,21 +15,21 @@
     border-collapse: collapse;
     border-spacing: 0;
     thead > tr {
-      border-bottom: 2px solid var(--order-table-head-border-color);
+      border-bottom: 2px solid var(--table-head-border-color);
     }
     thead > tr > th {
       line-height: 60px !important;
-      background-color: var(--order-table-bg-color);
-      color: var(--order-table-text-color);
+      background-color: var(--table-bg-color);
+      color: var(--table-text-color);
     }
     tbody > tr {
-      border-bottom: 1px solid var(--order-table-head-border-color);
+      border-bottom: 1px solid var(--table-head-border-color);
     }
     tbody > tr > td {
       line-height: 60px !important;
       padding: 0 10px;
-      background-color: var(--order-table-bg-color);
-      color: var(--order-table-text-color);
+      background-color: var(--table-bg-color);
+      color: var(--table-text-color);
 
       .dot {
         height: 5px;
@@ -39,7 +39,7 @@
       }
 
       .completed {
-        background-color: var(--order-completed-status-color);
+        background-color: var(--success-status-color);
       }
 
       .in-progress {
@@ -47,7 +47,7 @@
       }
 
       .cancelled {
-        background-color: var(--order-cancelled-status-color);
+        background-color: var(--failed-status-color);
       }
     }
   }
