@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { APP_ROUTES } from 'src/app/shared/constants/app-routes.constants';
@@ -13,11 +13,29 @@ import {
   selector: 'app-order-details',
   templateUrl: './order-details.component.html',
   styleUrls: ['./order-details.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class OrderDetailsComponent {
   subscription = new Subscription();
   restaurantDetails!: IRestaurantDetailsState;
   activeSlideName = 'delivery';
+  lat = 51.678418;
+  lng = 7.809007;
+
+  display: any;
+  center: google.maps.LatLngLiteral = {
+    lat: 22.2736308,
+    lng: 70.7512555,
+  };
+  zoom = 6;
+
+  moveMap(event: google.maps.MapMouseEvent) {
+    if (event.latLng != null) this.center = event.latLng.toJSON();
+  }
+
+  move(event: google.maps.MapMouseEvent) {
+    if (event.latLng != null) this.display = event.latLng.toJSON();
+  }
 
   paymentInfo: IPayment = {
     id: 1,

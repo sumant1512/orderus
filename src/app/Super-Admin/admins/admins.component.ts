@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AdminService } from '../services/admin.service';
 import { Subscription } from 'rxjs';
 import { EAdmin } from '../enum/admin-registration.enum';
+import { ActivatedRoute, Router } from '@angular/router';
 
 interface IAdmin {
   [EAdmin.ID]: number;
@@ -25,7 +26,11 @@ export class AdminsComponent implements OnInit, OnDestroy {
   sortOrder = 1;
   adminList!: Array<IAdmin>;
 
-  constructor(private adminService: AdminService) {}
+  constructor(
+    private adminService: AdminService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     this.getAdmins();
@@ -33,6 +38,12 @@ export class AdminsComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
+  }
+
+  navigateToAdminDetails(id: number): void {
+    this.router.navigate([id], {
+      relativeTo: this.activatedRoute,
+    });
   }
 
   getAdmins(): void {
