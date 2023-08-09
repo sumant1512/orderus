@@ -29,6 +29,7 @@ import { RouterModule } from '@angular/router';
 import { SearchDropdownComponent } from './components/search-dropdown/search-dropdown.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { RestaurantReviewsComponent } from './components/restaurant-reviews/restaurant-reviews.component';
+import { SelectionCardComponent } from './components/selection-card/selection-card.component';
 
 const COMPONENTS = [
   HeaderComponent,
@@ -40,6 +41,7 @@ const COMPONENTS = [
   MenuItemCardOneComponent,
   ReviewCardComponent,
   SettingCardComponent,
+  SelectionCardComponent,
   PaymentCardComponent,
   AddressCardComponent,
   CartMenuCardComponent,

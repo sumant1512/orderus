@@ -1,0 +1,37 @@
+.selection-card {
+  border: 1px solid var(--box-border-color);
+  background-color: var(--selection-card-bg-color);
+  border-radius: 10px;
+
+  .heading {
+    color: var(--selection-card-heading-color);
+  }
+
+  .description {
+    color: var(--selection-card-description-color);
+  }
+
+  .selection-icon {
+    background-color: var(--icons-bg-color);
+    padding: 8px;
+    border-radius: 10px;
+    text-align: center;
+
+    img {
+      width: 75%;
+    }
+  }
+}
+
+.selection-card:hover {
+  background-color: var(--selection-card-selected-bg-color);
+}
+
+.selected {
+  border: 2px solid var(--box-border-hover-color);
+  background-color: var(--selection-card-selected-bg-color);
+
+  .selection-icon {
+    background-color: var(--icons-bg-selected-color);
+  }
+}

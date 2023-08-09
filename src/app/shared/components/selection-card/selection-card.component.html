@@ -1,0 +1,19 @@
+<div
+  class="selection-card container-fluid pe-cursor"
+  [tabIndex]="selectionDetails.id"
+  [ngClass]="{ selected: isSelected }"
+  (click)="emitEvent(selectionDetails.id)"
+>
+  <div class="row p-2">
+    <div class="col-12">
+      <div>
+        <label class="heading f-14 fw-bold">{{ selectionDetails.name }}</label>
+      </div>
+      <div>
+        <label class="description f-12"
+          >{{ selectionDetails.items.length || 0 }} items</label
+        >
+      </div>
+    </div>
+  </div>
+</div>
