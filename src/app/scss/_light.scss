@@ -54,14 +54,8 @@
   --deal-card-header-color: #{$gray-3};
   --deal-card-validity-info-color: #{$gray-3};
 
-  --order-border-box-shadow-color: #{$gray-4};
-  --order-table-head-border-color: #{$gray-5};
   --order-table-body-border-color: #{$gray-5};
-  --order-completed-status-color: #{$green-0};
-  --order-cancelled-status-color: #{$red-0};
   --order-in-progress-status-color: #{$blue-0};
-  --order-table-bg-color: #{$white};
-  --order-table-text-color: #{$black};
 
   --order-details-deliverycard-line-separator-bg-color: #{$green-0};
 
@@ -115,8 +109,18 @@
   --separator-color: #{$gray-2};
   --box-border-hover-color: #{$blue-2};
   --box-border-focus-background-color: #{$blue-3};
+  --border-box-shadow-color: #{$gray-4};
   --icons-bg-color: #{$gray-1};
   --icons-bg-selected-color: #{$blue-0};
+  --success-status-color: #{$green-0};
+  --failed-status-color: #{$red-0};
+
+  // table
+  --table-head-border-color: #{$gray-5};
+  --table-bg-color: #{$white};
+  --table-text-color: #{$black};
+
+  // label
   --label-1: #{$black-14};
   --label-2: #{$black};
   --label-3: #{$blue-0};
@@ -124,6 +128,8 @@
   --label-5: #{$gray-3};
   --label-6: #{$gray-12};
   --label-7: #{$white};
+
+  // link
   --app-link: #{$blue-0};
 
   //auth pages
