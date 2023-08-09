@@ -6,6 +6,5 @@ export function adminRegistrationForm(): FormGroup {
     [EAdmin.NAME]: new FormControl(''),
     [EAdmin.USER_NAME]: new FormControl(''),
     [EAdmin.PASSWORD]: new FormControl(''),
-    [EAdmin.TOKEN]: new FormControl(''),
   });
 }

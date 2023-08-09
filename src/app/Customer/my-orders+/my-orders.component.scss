@@ -2,48 +2,53 @@
   text-decoration: underline;
 }
 
-table {
-  border: 0;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  border-collapse: collapse;
-  border-spacing: 0;
+.table-container {
+  overflow-x: auto;
   box-shadow: 0 1px 5px var(--order-border-box-shadow-color);
-  thead > tr {
-    border-bottom: 2px solid var(--order-table-head-border-color);
-  }
-  thead > tr > th {
-    line-height: 60px !important;
-    background-color: var(--order-table-bg-color);
-    color: var(--order-table-text-color);
-  }
-  tbody > tr {
-    border-bottom: 1px solid var(--order-table-head-border-color);
-  }
-  tbody > tr > td {
-    line-height: 60px !important;
-    padding: 0 10px;
-    background-color: var(--order-table-bg-color);
-    color: var(--order-table-text-color);
 
-    .dot {
-      height: 5px;
-      width: 5px;
-      border-radius: 50%;
-      display: inline-block;
+  table {
+    border: 0;
+    width: 100%;
+    min-width: 1110px;
+    margin: 0;
+    padding: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+    thead > tr {
+      border-bottom: 2px solid var(--order-table-head-border-color);
     }
-
-    .completed {
-      background-color: var(--order-completed-status-color);
+    thead > tr > th {
+      line-height: 60px !important;
+      background-color: var(--order-table-bg-color);
+      color: var(--order-table-text-color);
     }
-
-    .in-progress {
-      background-color: var(--order-in-progress-status-color);
+    tbody > tr {
+      border-bottom: 1px solid var(--order-table-head-border-color);
     }
+    tbody > tr > td {
+      line-height: 60px !important;
+      padding: 0 10px;
+      background-color: var(--order-table-bg-color);
+      color: var(--order-table-text-color);
 
-    .cancelled {
-      background-color: var(--order-cancelled-status-color);
+      .dot {
+        height: 5px;
+        width: 5px;
+        border-radius: 50%;
+        display: inline-block;
+      }
+
+      .completed {
+        background-color: var(--order-completed-status-color);
+      }
+
+      .in-progress {
+        background-color: var(--order-in-progress-status-color);
+      }
+
+      .cancelled {
+        background-color: var(--order-cancelled-status-color);
+      }
     }
   }
 }
