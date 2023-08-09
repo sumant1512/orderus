@@ -16,11 +16,9 @@
 }
 
 .shipping-location {
-  border-radius: 10px;
-}
-
-.country {
-  color: var(--label-2);
+  .map-container {
+    border-radius: 10px !important;
+  }
 }
 
 .add-1 {

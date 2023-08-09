@@ -4,6 +4,7 @@ import { SuperAdminComponent } from './super-admin.component';
 import { APP_ROUTES } from '../shared/constants/app-routes.constants';
 import { AdminRegistrationComponent } from './admin-registration/admin-registration.component';
 import { AdminsComponent } from './admins/admins.component';
+import { AdminDetailsComponent } from './admin-details/admin-details.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,10 @@ const routes: Routes = [
       {
         path: APP_ROUTES.SUPER_ADMIN.CHILD_ROUTES.ADMINS,
         component: AdminsComponent,
+      },
+      {
+        path: `${APP_ROUTES.SUPER_ADMIN.CHILD_ROUTES.ADMINS}/:id`,
+        component: AdminDetailsComponent,
       },
       {
         path: APP_ROUTES.SUPER_ADMIN.CHILD_ROUTES.REGISTER,

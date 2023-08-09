@@ -27,6 +27,7 @@ import { ToggleComponent } from './components/toggle/toggle.component';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { RouterModule } from '@angular/router';
 import { SearchDropdownComponent } from './components/search-dropdown/search-dropdown.component';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 const COMPONENTS = [
   HeaderComponent,
@@ -60,6 +61,7 @@ const MODULES = [
   FormsModule,
   ReactiveFormsModule,
   NgxSkeletonLoaderModule,
+  GoogleMapsModule,
 ];
 
 @NgModule({

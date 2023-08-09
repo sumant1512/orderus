@@ -41,7 +41,11 @@
         </tr>
       </thead>
       <tbody class="pe-cursor">
-        <tr class="f-12" *ngFor="let admin of adminList">
+        <tr
+          class="f-12"
+          *ngFor="let admin of adminList"
+          (click)="navigateToAdminDetails(admin.id)"
+        >
           <td class="fw-500 ps-md-4 ps-lg-5" data-label="OrderId">
             {{ admin.id }}
           </td>
@@ -77,4 +81,6 @@
       </tbody>
     </table>
   </div>
+
+  <router-outlet></router-outlet>
 </div>
