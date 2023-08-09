@@ -2,7 +2,7 @@
   <div class="col-5 col-md-3">
     <img class="img-fluid" [src]="menuItem.img" [alt]="menuItem.imgAlt" />
   </div>
-  <div class="d-block d-md-none my-auto text-end col-7">
+  <div *ngIf="isActionEnabled" class="d-block d-md-none my-auto text-end col-7">
     <div class="fw-bold mb-4">
       <span
         [ngClass]="{
@@ -26,7 +26,7 @@
     <div class="heading-one mt-2">$ {{ menuItem.price }}</div>
   </div>
   <div class="d-none d-md-block col-12 col-md-3 position-relative">
-    <div class="position-absolute bottom-0">
+    <div *ngIf="isActionEnabled" class="position-absolute bottom-0">
       <div class="fw-bold text-center mb-4">
         <span
           [ngClass]="{

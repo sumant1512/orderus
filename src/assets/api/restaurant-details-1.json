@@ -98,17 +98,6 @@
         "likes": 1,
         "dislikes": 13,
         "date": "23/6/2023"
-      },
-      {
-        "id": 4,
-        "img": "./../../../../assets/female-avtar.png",
-        "imgAlt": "User Image",
-        "name": "Shraddha Sharma",
-        "review": "Lorem ipsum dolor sit amet. Ab esse praesentium sit assumenda veritatis quo cumque voluptatem ut ipsa dicta!",
-        "rating": 4,
-        "likes": 5,
-        "dislikes": 9,
-        "date": "23/6/2023"
       }
     ]
   }

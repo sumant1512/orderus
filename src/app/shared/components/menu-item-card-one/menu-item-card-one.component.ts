@@ -8,6 +8,7 @@ import { IMenuItemCard } from 'src/app/store/restaurant-details/interfaces/resta
 })
 export class MenuItemCardOneComponent {
   @Input() menuItem!: IMenuItemCard;
+  @Input() isActionEnabled: boolean = true;
   itemCount = 0;
 
   updateProductCount(action: string): void {

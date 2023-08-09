@@ -26,6 +26,10 @@ export class RestaurantReviewsComponent {
     }
   }
 
+  roundOffValue(number: number): number {
+    return parseInt(number.toFixed());
+  }
+
   reviewBtnClick(): void {
     console.log('event');
   }

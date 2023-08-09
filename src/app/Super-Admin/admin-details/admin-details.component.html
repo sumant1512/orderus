@@ -1,1 +1,101 @@
-<p>admin-details works!</p>
+<div *ngIf="restaurantDetails?.id" class="restaurant-details-header py-4">
+  <div class="row mt-4">
+    <div class="col-12 f-12 fw-bold" (click)="navigateToAdminList()">
+      <img class="me-1" src="./../../assets/chevron-left.svg" alt="back" />
+      <span class="back-label pe-cursor"> Back to list</span>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="header">
+      <div class="row">
+        <div class="col-12 col-lg-8 d-flex align-items-center mb-3 mb-lg-0">
+          <div class="row">
+            <div class="col-4 col-md-3">
+              <div class="restaurant-thumbnail">
+                <img
+                  class="img-fluid"
+                  [src]="restaurantDetails.thumbnailImage.img"
+                  [alt]="restaurantDetails.thumbnailImage.imgAlt"
+                />
+              </div>
+            </div>
+            <div class="col-8 col-md-9">
+              <div class="heading-one">{{ restaurantDetails.name }}</div>
+              <div class="f-14 mt-2 restaurant-about">
+                {{ restaurantDetails.about }}
+              </div>
+              <div class="delivery-time mt-3 d-flex align-items-center">
+                <span
+                  ><img
+                    class="clock"
+                    src="./../../../../assets/restaurant-details/clock.svg"
+                    alt="Clock"
+                /></span>
+                <span class="ms-1 mt-1">{{
+                  restaurantDetails.deliveryTime
+                }}</span>
+                <span class="ms-3 blue-dot blue-dot-align"></span>
+                <span class="ms-2 mt-1">{{
+                  restaurantDetails.minimumPrice
+                }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-4">
+          <img
+            class="img-fluid location-image"
+            [src]="restaurantDetails.locationImage.img"
+            [alt]="restaurantDetails.locationImage.imgAlt"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container pt-3">
+  <div class="row">
+    <div class="col-12 col-lg-8">
+      <div class="mb-3">
+        <span
+          [ngClass]="{ active: activeSlideName === 'menu' }"
+          class="heading-two deactive pe-cursor"
+          (click)="onSlideChange('menu')"
+          >Menu</span
+        >
+        <span
+          [ngClass]="{ active: activeSlideName === 'reviews' }"
+          class="heading-two deactive pe-cursor ms-3 d-inline-block d-lg-none"
+          (click)="onSlideChange('reviews')"
+          >Reviews</span
+        >
+      </div>
+      <ng-container *ngIf="activeSlideName === 'menu'">
+        <div
+          class="container-fluid mb-3"
+          *ngFor="let menu of restaurantDetails.menuItemList"
+        >
+          <app-menu-item-card-one
+            [menuItem]="menu"
+            [isActionEnabled]="false"
+          ></app-menu-item-card-one>
+        </div>
+      </ng-container>
+      <div *ngIf="activeSlideName === 'reviews'" class="d-block d-lg-none">
+        <app-restaurant-reviews
+          [reviews]="restaurantDetails.reviews"
+        ></app-restaurant-reviews>
+      </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-4">
+      <div class="mb-3">
+        <span class="heading-two pe-cursor">Reviews</span>
+      </div>
+      <app-restaurant-reviews
+        [reviews]="restaurantDetails.reviews"
+      ></app-restaurant-reviews>
+    </div>
+  </div>
+</div>

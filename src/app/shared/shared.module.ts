@@ -28,6 +28,7 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { RouterModule } from '@angular/router';
 import { SearchDropdownComponent } from './components/search-dropdown/search-dropdown.component';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { RestaurantReviewsComponent } from './components/restaurant-reviews/restaurant-reviews.component';
 
 const COMPONENTS = [
   HeaderComponent,
@@ -42,6 +43,7 @@ const COMPONENTS = [
   PaymentCardComponent,
   AddressCardComponent,
   CartMenuCardComponent,
+  RestaurantReviewsComponent,
   ToggleComponent,
   RatingComponent,
   DropdownComponent,
