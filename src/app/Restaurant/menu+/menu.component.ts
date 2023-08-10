@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { EHeadingType } from 'src/app/shared/enum/heading-type.enum';
 import {
-  IItems,
-  ISelection,
-} from 'src/app/shared/interfaces/selection.interface';
+  IMenuAdmin,
+  IMenuItem,
+} from 'src/app/shared/interfaces/menu-admin.interface';
 
 @Component({
   selector: 'app-menu',
@@ -12,7 +12,7 @@ import {
 })
 export class MenuComponent {
   headingTypeList = EHeadingType;
-  categoryList: Array<ISelection> = [
+  categoryList: Array<IMenuAdmin> = [
     {
       id: 1,
       name: 'Breakfast menu',
@@ -26,8 +26,8 @@ export class MenuComponent {
           ingredeints:
             'Loream ipsum dolar sit amet, pri atqui facete evertitur an, ea assum solet invidunt vim.',
           price: 16.8,
-          img: '',
-          imgAlt: '',
+          img: './../../../assets/menu-card/item-1.jpg',
+          imgAlt: 'dish',
           nurtitionValue: [
             {
               id: 1,
@@ -57,8 +57,8 @@ export class MenuComponent {
           ingredeints:
             'Loream ipsum dolar sit amet, pri atqui facete evertitur an, ea assum solet invidunt vim.',
           price: 16.8,
-          img: '',
-          imgAlt: '',
+          img: './../../../assets/menu-card/item-1.jpg',
+          imgAlt: 'dish',
           nurtitionValue: [
             {
               id: 1,
@@ -88,8 +88,8 @@ export class MenuComponent {
           ingredeints:
             'Loream ipsum dolar sit amet, pri atqui facete evertitur an, ea assum solet invidunt vim.',
           price: 16.8,
-          img: '',
-          imgAlt: '',
+          img: './../../../assets/menu-card/item-1.jpg',
+          imgAlt: 'dish',
           nurtitionValue: [
             {
               id: 1,
@@ -126,8 +126,8 @@ export class MenuComponent {
           ingredeints:
             'Loream ipsum dolar sit amet, pri atqui facete evertitur an, ea assum solet invidunt vim.',
           price: 16.8,
-          img: '',
-          imgAlt: '',
+          img: './../../../assets/menu-card/item-1.jpg',
+          imgAlt: 'dish',
           nurtitionValue: [
             {
               id: 1,
@@ -157,8 +157,8 @@ export class MenuComponent {
           ingredeints:
             'Loream ipsum dolar sit amet, pri atqui facete evertitur an, ea assum solet invidunt vim.',
           price: 16.8,
-          img: '',
-          imgAlt: '',
+          img: './../../../assets/menu-card/item-1.jpg',
+          imgAlt: 'dish',
           nurtitionValue: [
             {
               id: 1,
@@ -195,8 +195,8 @@ export class MenuComponent {
           ingredeints:
             'Loream ipsum dolar sit amet, pri atqui facete evertitur an, ea assum solet invidunt vim.',
           price: 16.8,
-          img: '',
-          imgAlt: '',
+          img: './../../../assets/menu-card/item-1.jpg',
+          imgAlt: 'dish',
           nurtitionValue: [
             {
               id: 1,
@@ -226,8 +226,8 @@ export class MenuComponent {
           ingredeints:
             'Loream ipsum dolar sit amet, pri atqui facete evertitur an, ea assum solet invidunt vim.',
           price: 16.8,
-          img: '',
-          imgAlt: '',
+          img: './../../../assets/menu-card/item-1.jpg',
+          imgAlt: 'dish',
           nurtitionValue: [
             {
               id: 1,
@@ -257,8 +257,8 @@ export class MenuComponent {
           ingredeints:
             'Loream ipsum dolar sit amet, pri atqui facete evertitur an, ea assum solet invidunt vim.',
           price: 16.8,
-          img: '',
-          imgAlt: '',
+          img: './../../../assets/menu-card/item-1.jpg',
+          imgAlt: 'dish',
           nurtitionValue: [
             {
               id: 1,
@@ -289,8 +289,8 @@ export class MenuComponent {
           ingredeints:
             'Loream ipsum dolar sit amet, pri atqui facete evertitur an, ea assum solet invidunt vim.',
           price: 16.8,
-          img: '',
-          imgAlt: '',
+          img: './../../../assets/menu-card/item-1.jpg',
+          imgAlt: 'dish',
           nurtitionValue: [
             {
               id: 1,
@@ -320,8 +320,8 @@ export class MenuComponent {
           ingredeints:
             'Loream ipsum dolar sit amet, pri atqui facete evertitur an, ea assum solet invidunt vim.',
           price: 16.8,
-          img: '',
-          imgAlt: '',
+          img: './../../../assets/menu-card/item-1.jpg',
+          imgAlt: 'dish',
           nurtitionValue: [
             {
               id: 4,
@@ -351,8 +351,8 @@ export class MenuComponent {
           ingredeints:
             'Loream ipsum dolar sit amet, pri atqui facete evertitur an, ea assum solet invidunt vim.',
           price: 16.8,
-          img: '',
-          imgAlt: '',
+          img: './../../../assets/menu-card/item-1.jpg',
+          imgAlt: 'dish',
           nurtitionValue: [
             {
               id: 1,
@@ -389,8 +389,8 @@ export class MenuComponent {
           ingredeints:
             'Loream ipsum dolar sit amet, pri atqui facete evertitur an, ea assum solet invidunt vim.',
           price: 16.8,
-          img: '',
-          imgAlt: '',
+          img: './../../../assets/menu-card/item-1.jpg',
+          imgAlt: 'dish',
           nurtitionValue: [
             {
               id: 7,
@@ -425,7 +425,7 @@ export class MenuComponent {
     return foundItem ? foundItem.name : '';
   }
 
-  getItemListById(id: number): Array<IItems> {
+  getItemListById(id: number): Array<IMenuItem> {
     const foundItem = this.categoryList.find((item) => item.id === id);
     return foundItem ? foundItem.items : [];
   }

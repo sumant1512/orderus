@@ -30,6 +30,8 @@ import { SearchDropdownComponent } from './components/search-dropdown/search-dro
 import { GoogleMapsModule } from '@angular/google-maps';
 import { RestaurantReviewsComponent } from './components/restaurant-reviews/restaurant-reviews.component';
 import { SelectionCardComponent } from './components/selection-card/selection-card.component';
+import { MenuItemCardTwoComponent } from './components/menu-item-card-two/menu-item-card-two.component';
+import { AddNewCardComponent } from './components/add-new-card/add-new-card.component';
 
 const COMPONENTS = [
   HeaderComponent,
@@ -38,7 +40,9 @@ const COMPONENTS = [
   ProductThumbnailComponent,
   RestaurantCardComponent,
   DealsCardComponent,
+  AddNewCardComponent,
   MenuItemCardOneComponent,
+  MenuItemCardTwoComponent,
   ReviewCardComponent,
   SettingCardComponent,
   SelectionCardComponent,

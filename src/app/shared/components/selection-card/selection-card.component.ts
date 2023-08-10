@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { EHeadingType } from '../../enum/heading-type.enum';
-import { ISelection } from '../../interfaces/selection.interface';
+import { IMenuAdmin } from '../../interfaces/menu-admin.interface';
 
 @Component({
   selector: 'app-selection-card',
@@ -9,7 +9,7 @@ import { ISelection } from '../../interfaces/selection.interface';
 })
 export class SelectionCardComponent {
   headingTypeList = EHeadingType;
-  @Input() selectionDetails!: ISelection;
+  @Input() selectionDetails!: IMenuAdmin;
   @Input() isSelected: boolean = false;
 
   @Output() selectedCardEvent = new EventEmitter<number>();

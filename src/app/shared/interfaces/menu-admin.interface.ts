@@ -1,13 +1,13 @@
 import { IImage } from './image.interface';
 
-export interface ISelection {
+export interface IMenuAdmin {
   id: number;
   name: string;
   itemsCount: number;
-  items: Array<IItems>;
+  items: Array<IMenuItem>;
 }
 
-export interface IItems extends IImage {
+export interface IMenuItem extends IImage {
   id: number;
   name: string;
   description: string;

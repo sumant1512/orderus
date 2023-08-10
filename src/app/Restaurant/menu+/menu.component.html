@@ -15,6 +15,12 @@
             (selectedCardEvent)="selectCategory($event)"
           ></app-selection-card>
         </div>
+        <div class="col-6 mt-2">
+          <app-add-new-card [label]="'New category'"></app-add-new-card>
+        </div>
+        <div class="col-6 mt-2">
+          <app-add-new-card [label]="'New menu'"></app-add-new-card>
+        </div>
       </div>
     </div>
     <div class="col-12 col-lg-8">
@@ -22,8 +28,11 @@
         <span class="heading-two">{{ getNameById(selectedCategoryId) }}</span>
       </div>
       <div>
-        <div *ngFor="let item of getItemListById(selectedCategoryId)">
-          {{ item.id }}
+        <div
+          class="mb-3"
+          *ngFor="let item of getItemListById(selectedCategoryId)"
+        >
+          <app-menu-item-card-two [menuItem]="item"></app-menu-item-card-two>
         </div>
       </div>
     </div>

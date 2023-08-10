@@ -1,0 +1,18 @@
+.new-payment-card-box {
+  border: 1px solid var(--box-border-2-color);
+  border-radius: 10px;
+  min-height: 93px;
+
+  img {
+    background-color: var(--icons-bg-color);
+    border-radius: 50%;
+
+    &:hover {
+      background-color: var(--icons-bg-selected-color);
+    }
+  }
+
+  .selected {
+    background-color: var(--icons-bg-selected-color);
+  }
+}
