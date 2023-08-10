@@ -1,3 +1,5 @@
+@import "mq";
+
 .menu-card-one {
   border: 1px solid var(--box-border-color);
   border-radius: 16px;
@@ -15,39 +17,16 @@
     color: var(--label-5);
   }
 
-  .add-btn {
-    background-color: var(--menu-card-one-add-sub-btn-bg);
-    padding: 3px 8px 5px 8px;
-    border-radius: 10px;
-    color: var(--menu-card-one-add-sub-btn-color);
+  .half-separator {
+    @include mq(md) {
+      border-bottom: 1px solid var(--separator-color);
+    }
   }
 
-  .item-count {
-    color: var(--label-2);
-  }
-
-  .sub-btn {
-    background-color: var(--menu-card-one-add-sub-btn-bg);
-    padding: 3px 11px 6px 11px;
-    border-radius: 10px;
-    color: var(--menu-card-one-add-sub-btn-color);
-  }
-
-  .sub-btn-disabled {
-    color: var(--menu-card-one-add-sub-btn-disabled-color);
-  }
-
-  .add-cart-btn {
-    background-color: var(--menu-card-one-btn-bg);
-    border: none;
-    border-radius: 8px;
-    padding: 12px 20px;
-    right: 12px;
-    color: var(--menu-card-one-btn-color);
-  }
-
-  .add-cart-btn:hover {
-    background-color: var(--menu-card-one-btn-bg-hover);
-    color: var(--menu-card-one-btn-color-hover);
+  .full-separator {
+    border-bottom: 1px solid var(--separator-color);
+    @include mq(md) {
+      border-bottom: 0px;
+    }
   }
 }

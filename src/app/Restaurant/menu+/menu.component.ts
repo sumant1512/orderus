@@ -28,7 +28,7 @@ export class MenuComponent {
           price: 16.8,
           img: './../../../assets/menu-card/item-1.jpg',
           imgAlt: 'dish',
-          nurtitionValue: [
+          nutritionValue: [
             {
               id: 1,
               name: 'Proteins',
@@ -59,7 +59,7 @@ export class MenuComponent {
           price: 16.8,
           img: './../../../assets/menu-card/item-1.jpg',
           imgAlt: 'dish',
-          nurtitionValue: [
+          nutritionValue: [
             {
               id: 1,
               name: 'Proteins',
@@ -90,7 +90,7 @@ export class MenuComponent {
           price: 16.8,
           img: './../../../assets/menu-card/item-1.jpg',
           imgAlt: 'dish',
-          nurtitionValue: [
+          nutritionValue: [
             {
               id: 1,
               name: 'Proteins',
@@ -128,7 +128,7 @@ export class MenuComponent {
           price: 16.8,
           img: './../../../assets/menu-card/item-1.jpg',
           imgAlt: 'dish',
-          nurtitionValue: [
+          nutritionValue: [
             {
               id: 1,
               name: 'Proteins',
@@ -159,7 +159,7 @@ export class MenuComponent {
           price: 16.8,
           img: './../../../assets/menu-card/item-1.jpg',
           imgAlt: 'dish',
-          nurtitionValue: [
+          nutritionValue: [
             {
               id: 1,
               name: 'Proteins',
@@ -197,7 +197,7 @@ export class MenuComponent {
           price: 16.8,
           img: './../../../assets/menu-card/item-1.jpg',
           imgAlt: 'dish',
-          nurtitionValue: [
+          nutritionValue: [
             {
               id: 1,
               name: 'Proteins',
@@ -228,7 +228,7 @@ export class MenuComponent {
           price: 16.8,
           img: './../../../assets/menu-card/item-1.jpg',
           imgAlt: 'dish',
-          nurtitionValue: [
+          nutritionValue: [
             {
               id: 1,
               name: 'Proteins',
@@ -259,7 +259,7 @@ export class MenuComponent {
           price: 16.8,
           img: './../../../assets/menu-card/item-1.jpg',
           imgAlt: 'dish',
-          nurtitionValue: [
+          nutritionValue: [
             {
               id: 1,
               name: 'Proteins',
@@ -291,7 +291,7 @@ export class MenuComponent {
           price: 16.8,
           img: './../../../assets/menu-card/item-1.jpg',
           imgAlt: 'dish',
-          nurtitionValue: [
+          nutritionValue: [
             {
               id: 1,
               name: 'Proteins',
@@ -322,7 +322,7 @@ export class MenuComponent {
           price: 16.8,
           img: './../../../assets/menu-card/item-1.jpg',
           imgAlt: 'dish',
-          nurtitionValue: [
+          nutritionValue: [
             {
               id: 4,
               name: 'Proteins',
@@ -353,7 +353,7 @@ export class MenuComponent {
           price: 16.8,
           img: './../../../assets/menu-card/item-1.jpg',
           imgAlt: 'dish',
-          nurtitionValue: [
+          nutritionValue: [
             {
               id: 1,
               name: 'Proteins',
@@ -391,7 +391,7 @@ export class MenuComponent {
           price: 16.8,
           img: './../../../assets/menu-card/item-1.jpg',
           imgAlt: 'dish',
-          nurtitionValue: [
+          nutritionValue: [
             {
               id: 7,
               name: 'Proteins',
