@@ -3,9 +3,10 @@
   border-radius: 10px;
   min-height: 93px;
 
-  img {
+  app-add-icon {
     background-color: var(--icons-bg-color);
     border-radius: 50%;
+    padding: 7px 11px 10px 11px !important;
 
     &:hover {
       background-color: var(--icons-bg-selected-color);
