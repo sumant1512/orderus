@@ -1,4 +1,7 @@
-<div class="new-payment-card-box pe-cursor p-2 text-center">
+<div
+  (click)="emitEvent()"
+  class="new-payment-card-box pe-cursor p-2 text-center"
+>
   <div class="mt-2 mb-3">
     <app-add-icon class="p-2" [color]="iconColor"></app-add-icon>
   </div>

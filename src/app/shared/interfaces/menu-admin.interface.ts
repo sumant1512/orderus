@@ -3,7 +3,6 @@ import { IImage } from './image.interface';
 export interface IMenuAdmin {
   id: number;
   name: string;
-  itemsCount: number;
   items: Array<IMenuItem>;
 }
 

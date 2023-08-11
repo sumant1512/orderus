@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-add-new-card',
@@ -7,5 +7,11 @@ import { Component, Input } from '@angular/core';
 })
 export class AddNewCardComponent {
   @Input() label: string = 'New';
+
+  @Output() onClickEvent = new EventEmitter<boolean>();
   iconColor = 'black';
+
+  emitEvent(): void {
+    this.onClickEvent.emit(true);
+  }
 }

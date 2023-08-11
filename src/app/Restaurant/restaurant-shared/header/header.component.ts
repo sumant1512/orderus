@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { UserInfoFacade } from 'src/app/store/user-info/user-info.facade';
 import { Subscription } from 'rxjs';
 import { IUserBasicInfo } from 'src/app/store/user-info/interfaces/user-info.interface';
@@ -32,13 +31,8 @@ export class HeaderComponent implements OnInit {
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private modalService: NgbModal,
     private userInfoFacade: UserInfoFacade
   ) {}
-
-  public open(modal: any): void {
-    this.modalService.open(modal);
-  }
 
   ngOnInit(): void {
     this.getUserInfo();
