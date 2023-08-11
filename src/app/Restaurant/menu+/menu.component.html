@@ -1,1 +1,40 @@
-<p>menu works!</p>
+<div class="container py-4">
+  <div class="row">
+    <div class="col-12 col-lg-3">
+      <div class="mb-3">
+        <span class="heading-two">Category menu</span>
+      </div>
+      <div class="row mb-3">
+        <div
+          class="col-12 col-md-6 col-lg-12 mb-2"
+          *ngFor="let category of categoryList"
+        >
+          <app-selection-card
+            [selectionDetails]="category"
+            [isSelected]="selectedCategoryId === category.id"
+            (selectedCardEvent)="selectCategory($event)"
+          ></app-selection-card>
+        </div>
+        <div class="col-6 mt-2">
+          <app-add-new-card [label]="'New category'"></app-add-new-card>
+        </div>
+        <div class="col-6 mt-2">
+          <app-add-new-card [label]="'New menu'"></app-add-new-card>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-lg-9">
+      <div class="mb-3">
+        <span class="heading-two">{{ getNameById(selectedCategoryId) }}</span>
+      </div>
+      <div>
+        <div
+          class="mb-3"
+          *ngFor="let item of getItemListById(selectedCategoryId)"
+        >
+          <app-menu-item-card-two [menuItem]="item"></app-menu-item-card-two>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

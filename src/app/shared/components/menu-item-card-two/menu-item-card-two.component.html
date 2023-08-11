@@ -1,0 +1,38 @@
+<div *ngIf="menuItem?.id" class="menu-card-one container-fluid py-3">
+  <div class="row full-separator">
+    <div class="col-5 col-md-2">
+      <img class="img-fluid" [src]="menuItem.img" [alt]="menuItem.imgAlt" />
+    </div>
+    <div class="col-7 col-md-10">
+      <div class="row half-separator pb-3">
+        <div class="col-12 col-md-7">
+          <div class="heading-two mt-1">{{ menuItem.name }}</div>
+          <div class="item-desc mt-1">{{ menuItem.description }}</div>
+        </div>
+        <div class="col-12 col-md-5">
+          <div class="row">
+            <div class="col-6">
+              <div class="heading-one mt-2">$ {{ menuItem.price }}</div>
+            </div>
+            <div class="col-6"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-6">
+      <div class="heading-five">Ingredients</div>
+      <div class="item-desc mt-1">{{ menuItem.ingredeints }}</div>
+    </div>
+    <div class="col-6">
+      <div class="heading-five">Nutritional value</div>
+      <div class="item-desc mt-1">
+        <span *ngFor="let nutrition of menuItem.nutritionValue"
+          >{{ nutrition.name }} {{ nutrition.quantity }} {{ nutrition.unit }},
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
