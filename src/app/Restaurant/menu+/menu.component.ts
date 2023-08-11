@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { EHeadingType } from 'src/app/shared/enum/heading-type.enum';
 import {
   IMenuAdmin,
@@ -16,7 +17,6 @@ export class MenuComponent {
     {
       id: 1,
       name: 'Breakfast menu',
-      itemsCount: 17,
       items: [
         {
           id: 1,
@@ -116,7 +116,6 @@ export class MenuComponent {
     {
       id: 2,
       name: 'Lunch menu',
-      itemsCount: 17,
       items: [
         {
           id: 4,
@@ -185,7 +184,6 @@ export class MenuComponent {
     {
       id: 7,
       name: 'Dinner menu',
-      itemsCount: 17,
       items: [
         {
           id: 5,
@@ -379,7 +377,6 @@ export class MenuComponent {
     {
       id: 4,
       name: 'Drinks menu',
-      itemsCount: 17,
       items: [
         {
           id: 12,
@@ -418,7 +415,11 @@ export class MenuComponent {
 
   selectedCategoryId = 1;
 
-  constructor() {}
+  constructor(private modalService: NgbModal) {}
+
+  open(modal: any): void {
+    this.modalService.open(modal);
+  }
 
   getNameById(id: number): string {
     const foundItem = this.categoryList.find((item) => item.id === id);
