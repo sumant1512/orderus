@@ -6,5 +6,6 @@ export function MenuItemForm(): FormGroup {
     price: new FormControl('', [Validators.required]),
     description: new FormControl('', [Validators.required]),
     ingredeints: new FormControl('', [Validators.required]),
+    nutritionalValue: new FormControl(''),
   });
 }
