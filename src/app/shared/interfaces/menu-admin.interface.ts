@@ -12,7 +12,8 @@ export interface IMenuItem extends IImage {
   description: string;
   ingredeints: string;
   price: number;
-  nutritionValue: Array<INutritionValue>;
+  nutritionalValue?: string;
+  nutritionValue?: Array<INutritionValue>;
 }
 
 export interface INutritionValue {
