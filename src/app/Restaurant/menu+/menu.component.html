@@ -49,49 +49,17 @@
 </div>
 
 <ng-template #categoryModal let-modal>
-  <div class="modal-header">
-    <h4 class="heading-two" id="modal-basic-title">
-      {{ actionLabel }} category
-    </h4>
-    <button
-      type="button"
-      class="btn-close m-0"
-      data-bs-dismiss="modal"
-      aria-label="Close"
-      (click)="modal.dismiss('Cross click')"
-    ></button>
-  </div>
-  <div class="modal-body">
-    <form>
-      <div><app-input [label]="'Category name'"></app-input></div>
-    </form>
-  </div>
-  <div class="modal-footer">
-    <button (click)="modal.close('Save click')" appTransparentFilledButton>
-      Save
-    </button>
-  </div>
+  <app-category-modal
+    [headingLabel]="actionLabel"
+    [actionId]="selectedActionId"
+    [modal]="modal"
+  ></app-category-modal>
 </ng-template>
 
 <ng-template #menuModal let-modal>
-  <div class="modal-header">
-    <h4 class="heading-two" id="modal-basic-title">{{ actionLabel }} menu</h4>
-    <button
-      type="button"
-      class="btn-close m-0"
-      data-bs-dismiss="modal"
-      aria-label="Close"
-      (click)="modal.dismiss('Cross click')"
-    ></button>
-  </div>
-  <div class="modal-body">
-    <form>
-      <div><app-input [label]="'Menu name'"></app-input></div>
-    </form>
-  </div>
-  <div class="modal-footer">
-    <button (click)="modal.close('Save click')" appTransparentFilledButton>
-      Save
-    </button>
-  </div>
+  <app-menu-modal
+    [headingLabel]="actionLabel"
+    [actionId]="selectedActionId"
+    [modal]="modal"
+  ></app-menu-modal>
 </ng-template>

@@ -1,0 +1,24 @@
+<div class="modal-header">
+  <h4 class="heading-two" id="modal-basic-title">
+    {{ headingLabel }} category
+  </h4>
+  <button
+    type="button"
+    class="btn-close m-0"
+    data-bs-dismiss="modal"
+    aria-label="Close"
+    (click)="modal.dismiss('Cross click')"
+  ></button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="menuCategoryForm">
+    <div>
+      <app-input [label]="'Category name'" formControlName="name"></app-input>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button (click)="categoryAction(modal)" appTransparentFilledButton>
+    {{ headingLabel }}
+  </button>
+</div>
