@@ -17,9 +17,18 @@
           <div class="heading-one mt-2">$ {{ menuItem.price }}</div>
         </div>
         <div class="col-6 col-md-7 text-end my-auto">
-          <app-edit-icon class="me-3"></app-edit-icon>
-          <app-copy-icon class="me-3"></app-copy-icon>
-          <app-delete-icon class="me-3"></app-delete-icon>
+          <app-edit-icon
+            (click)="emitEditEvent(actionList[1])"
+            class="me-3 pe-cursor"
+          ></app-edit-icon>
+          <app-copy-icon
+            (click)="emitDublicateEvent(menuItem)"
+            class="me-3 pe-cursor"
+          ></app-copy-icon>
+          <app-delete-icon
+            (click)="emitDeleteEvent(menuItem.id)"
+            class="pe-cursor"
+          ></app-delete-icon>
         </div>
       </div>
     </div>
