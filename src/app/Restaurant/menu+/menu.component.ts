@@ -15,7 +15,6 @@ import { IAction } from '../restaurant-shared/interfaces/action.interface';
 })
 export class MenuComponent {
   headingTypeList = EHeadingType;
-  actionLabel = 'Create';
   categoryList: Array<IMenuAdmin> = [
     {
       id: 1,
@@ -424,19 +423,9 @@ export class MenuComponent {
 
   constructor(private modalService: NgbModal) {}
 
-  action($event: IAction, modalName: any): void {
+  action($event: IAction, modalName: any, modalSize?: string): void {
     this.selectedAction = $event;
-    this.open(modalName);
-  }
-
-  openNewCategoryModal(modal: any): void {
-    this.actionLabel = 'Create';
-    this.open(modal);
-  }
-
-  openNewMenuModal(modal: any): void {
-    this.actionLabel = 'Create';
-    this.open(modal, 'medium');
+    this.open(modalName, modalSize);
   }
 
   open(modal: any, modalSize?: string): void {
@@ -445,6 +434,14 @@ export class MenuComponent {
     } else {
       this.modalService.open(modal);
     }
+  }
+
+  deleteMenu(id: number): void {
+    console.log(id);
+  }
+
+  dublicateMenu(menu: IMenuItem): void {
+    console.log(menu);
   }
 
   getNameById(id: number): string {

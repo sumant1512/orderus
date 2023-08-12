@@ -21,13 +21,13 @@
         <div class="col-6 mt-2">
           <app-add-new-card
             [label]="'New category'"
-            (onClickEvent)="openNewCategoryModal(categoryModal)"
+            (onClickEvent)="action(actionList[0], categoryModal)"
           ></app-add-new-card>
         </div>
         <div class="col-6 mt-2">
           <app-add-new-card
             [label]="'New menu'"
-            (onClickEvent)="openNewMenuModal(menuModal)"
+            (onClickEvent)="action(actionList[0], menuModal, 'medium')"
           ></app-add-new-card>
         </div>
       </div>
@@ -41,7 +41,12 @@
           class="mb-3"
           *ngFor="let item of getItemListById(selectedCategoryId)"
         >
-          <app-menu-item-card-two [menuItem]="item"></app-menu-item-card-two>
+          <app-menu-item-card-two
+            [menuItem]="item"
+            (editEvent)="action($event, menuModal, 'medium')"
+            (deleteEvent)="deleteMenu($event)"
+            (dublicateEvent)="dublicateMenu($event)"
+          ></app-menu-item-card-two>
         </div>
       </div>
     </div>
