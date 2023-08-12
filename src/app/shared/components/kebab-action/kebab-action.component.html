@@ -9,10 +9,10 @@
   </button>
 
   <div class="action hidden" [attr.id]="prefix + id">
-    <ul>
+    <ul class="mt-1">
       <li
         *ngFor="let action of actionList"
-        (mousedown)="emitEvent(action.id)"
+        (mousedown)="emitEvent(action)"
         class="heading-six"
       >
         {{ action.name }}

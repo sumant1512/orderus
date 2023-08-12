@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { IKebabAction } from '../../interfaces/kebab-action.interface';
 import { KebabActionService } from '../../services/kebab-action.service';
+import { IAction } from 'src/app/Restaurant/restaurant-shared/interfaces/action.interface';
+import { ActionList } from 'src/app/Restaurant/restaurant-shared/constants/actions';
 
 @Component({
   selector: 'app-kebab-action',
@@ -11,19 +12,16 @@ export class KebabActionComponent {
   @Input() id!: number;
   @Input() prefix!: string;
   @Input() isActionEnabled: boolean = true;
-  @Input() actionList: Array<IKebabAction> = [
-    { id: 1, name: 'Update' },
-    { id: 2, name: 'Delete' },
-  ];
+  @Input() actionList: Array<IAction> = ActionList;
 
-  @Output() selectedActionEvent = new EventEmitter<number>();
+  @Output() selectedActionEvent = new EventEmitter<IAction>();
 
   isActionHidden = true;
 
   constructor(private kebabActionService: KebabActionService) {}
 
-  emitEvent(id: number): void {
-    this.selectedActionEvent.emit(id);
+  emitEvent(action: IAction): void {
+    this.selectedActionEvent.emit(action);
   }
 
   closeAction(): void {

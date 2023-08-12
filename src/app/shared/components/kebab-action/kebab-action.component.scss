@@ -4,9 +4,9 @@
 }
 
 .action {
-  background: var(--address-card-action-bg-color);
-  color: var(--address-card-action-color);
-  padding: 8px 16px;
+  background: var(--kebab-action-bg-color);
+  color: var(--kebab-action-color);
+  padding: 8px;
   width: 120px;
   transition: opacity 0.2s, margin-top 0.2s;
   border-radius: 8px;
@@ -26,7 +26,11 @@
     margin: 0;
     padding: 0;
     li {
-      margin-bottom: 4px;
+      padding: 8px;
+    }
+
+    li:hover {
+      background-color: var(--kebab-hover-bg-color);
     }
   }
 }

@@ -11,12 +11,6 @@
     max-height: 124px;
   }
 
-  .item-desc {
-    font-size: 14px;
-    font-weight: 400;
-    color: var(--label-5);
-  }
-
   .half-separator {
     @include mq(md) {
       border-bottom: 1px solid var(--separator-color);

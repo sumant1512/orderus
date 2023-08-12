@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { EHeadingType } from 'src/app/shared/enum/heading-type.enum';
-import { IKebabAction } from 'src/app/shared/interfaces/kebab-action.interface';
 import {
   IMenuAdmin,
   IMenuItem,
 } from 'src/app/shared/interfaces/menu-admin.interface';
+import { ActionList } from '../restaurant-shared/constants/actions';
+import { IAction } from '../restaurant-shared/interfaces/action.interface';
 
 @Component({
   selector: 'app-menu',
@@ -415,28 +416,17 @@ export class MenuComponent {
     },
   ];
 
-  actionList: Array<IKebabAction> = [
-    { id: 1, name: 'Update' },
-    { id: 2, name: 'Delete' },
-  ];
+  actionList: Array<IAction> = ActionList;
 
-  selectedCategoryId = 1;
-  selectedActionId = 1;
+  selectedCategoryId: number = 1;
+  selectedMenuId!: number;
+  selectedAction: IAction = ActionList[0];
 
   constructor(private modalService: NgbModal) {}
 
-  action($event: number, modalName: any): void {
-    this.selectedActionId = $event;
-    if (this.selectedActionId === 1) {
-      const foundItem = this.actionList.find(
-        (item) => item.id === this.selectedActionId
-      );
-      this.actionLabel = foundItem?.name ? foundItem?.name : this.actionLabel;
-      this.open(modalName);
-    }
-    if (this.selectedActionId === 2) {
-      console.log('Trigger Delete');
-    }
+  action($event: IAction, modalName: any): void {
+    this.selectedAction = $event;
+    this.open(modalName);
   }
 
   openNewCategoryModal(modal: any): void {
@@ -446,11 +436,15 @@ export class MenuComponent {
 
   openNewMenuModal(modal: any): void {
     this.actionLabel = 'Create';
-    this.open(modal);
+    this.open(modal, 'medium');
   }
 
-  open(modal: any): void {
-    this.modalService.open(modal);
+  open(modal: any, modalSize?: string): void {
+    if (modalSize) {
+      this.modalService.open(modal, { windowClass: modalSize });
+    } else {
+      this.modalService.open(modal);
+    }
   }
 
   getNameById(id: number): string {
