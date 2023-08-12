@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { MenuItemForm } from './menu-item.form';
 import { IAction } from 'src/app/Restaurant/restaurant-shared/interfaces/action.interface';
 import { EAction } from 'src/app/Restaurant/restaurant-shared/enum/action.enum';
+import { IImage } from 'src/app/shared/interfaces/image.interface';
 
 @Component({
   selector: 'app-menu-modal',
@@ -12,6 +13,11 @@ export class MenuModalComponent {
   @Input() action!: IAction;
   @Input() selectedMenuId!: number;
   @Input() modal!: any;
+
+  userInfo: IImage = {
+    img: './../../../../../assets/menu-card/item-1.jpg',
+    imgAlt: 'Item',
+  };
 
   menuItemForm = MenuItemForm();
 
