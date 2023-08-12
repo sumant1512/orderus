@@ -9,11 +9,49 @@
   ></button>
 </div>
 <div class="modal-body">
-  <form [formGroup]="menuItemForm">
-    <div>
-      <app-input [label]="'Menu name'" formControlName="name"></app-input>
+  <div
+    [formGroup]="menuItemForm"
+    class="container-fluid py-3 account-info-container"
+  >
+    <div class="row mb-3">
+      <div class="heading-four">Menu details</div>
+      <div class="col-12 mt-3 mb-2 f-10 fw-500 avtar">Avtar</div>
+      <div class="col-12">
+        <img
+          class="user-img me-3 mb-3 mb-md-0"
+          [src]="userInfo.img"
+          [alt]="userInfo.imgAlt"
+        />
+        <button class="me-3" appPrimaryButton>Change</button>
+        <button class="me-3" appTransparentFilledButton>Remove</button>
+      </div>
     </div>
-  </form>
+
+    <section class="mb-5">
+      <div class="row mb-0 mb-md-3">
+        <div class="col-12 mb-1 mb-md-0 col-md-6">
+          <app-input formControlName="name" [label]="'Name'"></app-input>
+        </div>
+        <div class="col-12 mb-1 mb-md-0 col-md-6">
+          <app-input formControlName="price" [label]="'Price'"></app-input>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 mb-1 mb-md-0 col-md-6">
+          <app-input
+            formControlName="description"
+            [label]="'Description'"
+          ></app-input>
+        </div>
+        <div class="col-12 mb-1 mb-md-0 col-md-6">
+          <app-input
+            formControlName="ingredeints"
+            [label]="'Ingredeints'"
+          ></app-input>
+        </div>
+      </div>
+    </section>
+  </div>
 </div>
 <div class="modal-footer">
   <button (click)="itemAction(modal)" appTransparentFilledButton>

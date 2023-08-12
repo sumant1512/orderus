@@ -1,0 +1,18 @@
+.account-info-container {
+  border: 1px solid var(--box-border-color);
+  border-radius: 16px;
+
+  .avtar {
+    color: var(--account-info-avtar-color);
+  }
+
+  .user-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+  }
+
+  .account-footer {
+    border-top: 1px solid var(--box-border-color);
+  }
+}
