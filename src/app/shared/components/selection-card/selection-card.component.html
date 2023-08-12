@@ -13,6 +13,7 @@
           [actionList]="actionList"
           [id]="selectionDetails.id"
           [prefix]="'category_'"
+          (selectedActionEvent)="emitActionEvent($event)"
         ></app-kebab-action>
       </div>
       <div>

@@ -16,14 +16,14 @@ export class KebabActionComponent {
     { id: 2, name: 'Delete' },
   ];
 
-  @Output() selectedCardEvent = new EventEmitter<number>();
+  @Output() selectedActionEvent = new EventEmitter<number>();
 
   isActionHidden = true;
 
   constructor(private kebabActionService: KebabActionService) {}
 
   emitEvent(id: number): void {
-    this.selectedCardEvent.emit(id);
+    this.selectedActionEvent.emit(id);
   }
 
   closeAction(): void {

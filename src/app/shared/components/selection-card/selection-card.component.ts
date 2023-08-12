@@ -19,11 +19,16 @@ export class SelectionCardComponent {
   @Input() isSelected: boolean = false;
 
   @Output() selectedCardEvent = new EventEmitter<number>();
+  @Output() selectedActionEvent = new EventEmitter<number>();
 
   isActionHidden = true;
 
   emitEvent(id: number): void {
     this.selectedCardEvent.emit(id);
+  }
+
+  emitActionEvent(id: number): void {
+    this.selectedActionEvent.emit(id);
   }
 
   toggleAction(id: number): void {
