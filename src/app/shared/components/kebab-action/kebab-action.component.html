@@ -1,0 +1,22 @@
+<span *ngIf="isActionEnabled" class="float-end">
+  <button
+    class="action-btn"
+    type="button"
+    (click)="openAction(prefix + id)"
+    (blur)="closeAction()"
+  >
+    <img src="./../../../assets/icons/kebab.svg" alt="action" />
+  </button>
+
+  <div class="action hidden" [attr.id]="prefix + id">
+    <ul>
+      <li
+        *ngFor="let action of actionList"
+        (mousedown)="emitEvent(action.id)"
+        class="heading-six"
+      >
+        {{ action.name }}
+      </li>
+    </ul>
+  </div>
+</span>

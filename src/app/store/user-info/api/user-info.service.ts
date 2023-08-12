@@ -26,15 +26,14 @@ export class UserInfoService {
   }
 
   fetchUserInfo(body: IUserInfoRequestBody): Observable<any> {
-    return this.http
-      .post<any>('http://localhost:8080/auth/userInfo', body)
-      .pipe(
-        map((response) => {
-          if (response) {
-            return response.data;
-          }
-        })
-      );
+    const userInfoApi = 'http://localhost:8080/auth/userInfo';
+    return this.http.post<any>(userInfoApi, body).pipe(
+      map((response) => {
+        if (response) {
+          return response.data;
+        }
+      })
+    );
   }
 
   logout(id: number): Observable<any> {

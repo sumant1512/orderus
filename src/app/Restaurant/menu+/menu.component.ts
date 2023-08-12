@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { EHeadingType } from 'src/app/shared/enum/heading-type.enum';
+import { IKebabAction } from 'src/app/shared/interfaces/kebab-action.interface';
 import {
   IMenuAdmin,
   IMenuItem,
@@ -13,6 +14,7 @@ import {
 })
 export class MenuComponent {
   headingTypeList = EHeadingType;
+  action = 'New';
   categoryList: Array<IMenuAdmin> = [
     {
       id: 1,
@@ -411,6 +413,11 @@ export class MenuComponent {
         },
       ],
     },
+  ];
+
+  actionList: Array<IKebabAction> = [
+    { id: 1, name: 'Update' },
+    { id: 2, name: 'Delete' },
   ];
 
   selectedCategoryId = 1;

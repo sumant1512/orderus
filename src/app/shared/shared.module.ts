@@ -33,6 +33,7 @@ import { SelectionCardComponent } from './components/selection-card/selection-ca
 import { MenuItemCardTwoComponent } from './components/menu-item-card-two/menu-item-card-two.component';
 import { AddNewCardComponent } from './components/add-new-card/add-new-card.component';
 import { AddIconComponent } from './components/add-icon/add-icon.component';
+import { KebabActionComponent } from './components/kebab-action/kebab-action.component';
 
 const COMPONENTS = [
   HeaderComponent,
@@ -57,6 +58,7 @@ const COMPONENTS = [
   InputComponent,
   InputCheckboxComponent,
   SearchDropdownComponent,
+  KebabActionComponent,
   AddIconComponent,
   ItemFilterPipe,
   PrimaryButtonDirective,
