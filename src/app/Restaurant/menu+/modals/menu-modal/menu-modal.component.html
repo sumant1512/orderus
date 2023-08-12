@@ -27,7 +27,7 @@
       </div>
     </div>
 
-    <section class="mb-5">
+    <section class="mb-3">
       <div class="row mb-0 mb-md-3">
         <div class="col-12 mb-1 mb-md-0 col-md-6">
           <app-input formControlName="name" [label]="'Name'"></app-input>
@@ -37,16 +37,24 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-12 mb-1 mb-md-0 col-md-6">
+        <div class="col-12 mb-1 mb-md-0">
           <app-input
             formControlName="description"
             [label]="'Description'"
           ></app-input>
         </div>
+      </div>
+      <div class="row mt-0 mt-md-3">
         <div class="col-12 mb-1 mb-md-0 col-md-6">
           <app-input
             formControlName="ingredeints"
             [label]="'Ingredeints'"
+          ></app-input>
+        </div>
+        <div class="col-12 mb-1 mb-md-0 col-md-6">
+          <app-input
+            formControlName="nutritionalValue"
+            [label]="'Nutritional Value'"
           ></app-input>
         </div>
       </div>

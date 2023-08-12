@@ -34,6 +34,9 @@ import { MenuItemCardTwoComponent } from './components/menu-item-card-two/menu-i
 import { AddNewCardComponent } from './components/add-new-card/add-new-card.component';
 import { AddIconComponent } from './components/add-icon/add-icon.component';
 import { KebabActionComponent } from './components/kebab-action/kebab-action.component';
+import { EditIconComponent } from './components/edit-icon/edit-icon.component';
+import { DeleteIconComponent } from './components/delete-icon/delete-icon.component';
+import { CopyIconComponent } from './components/copy-icon/copy-icon.component';
 
 const COMPONENTS = [
   HeaderComponent,
@@ -60,6 +63,9 @@ const COMPONENTS = [
   SearchDropdownComponent,
   KebabActionComponent,
   AddIconComponent,
+  EditIconComponent,
+  DeleteIconComponent,
+  CopyIconComponent,
   ItemFilterPipe,
   PrimaryButtonDirective,
   DangerButtonDirective,
