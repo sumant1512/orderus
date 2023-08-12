@@ -14,7 +14,7 @@ import {
 })
 export class MenuComponent {
   headingTypeList = EHeadingType;
-  action = 'New';
+  actionLabel = 'New';
   categoryList: Array<IMenuAdmin> = [
     {
       id: 1,
@@ -423,6 +423,27 @@ export class MenuComponent {
   selectedCategoryId = 1;
 
   constructor(private modalService: NgbModal) {}
+
+  action($event: number, modalName: any): void {
+    if ($event === 1) {
+      const foundItem = this.actionList.find((item) => item.id === $event);
+      this.actionLabel = foundItem?.name ? foundItem?.name : this.actionLabel;
+      this.open(modalName);
+    }
+    if ($event === 2) {
+      console.log('Trigger Delete');
+    }
+  }
+
+  openNewCategoryModal(modal: any): void {
+    this.actionLabel = 'New';
+    this.open(modal);
+  }
+
+  openNewMenuModal(modal: any): void {
+    this.actionLabel = 'New';
+    this.open(modal);
+  }
 
   open(modal: any): void {
     this.modalService.open(modal);

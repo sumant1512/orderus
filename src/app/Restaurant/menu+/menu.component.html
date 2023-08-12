@@ -15,18 +15,19 @@
             [actionList]="actionList"
             [isSelected]="selectedCategoryId === category.id"
             (selectedCardEvent)="selectCategory($event)"
+            (selectedActionEvent)="action($event, categoryModal)"
           ></app-selection-card>
         </div>
         <div class="col-6 mt-2">
           <app-add-new-card
             [label]="'New category'"
-            (onClickEvent)="open(categoryModal)"
+            (onClickEvent)="openNewCategoryModal(categoryModal)"
           ></app-add-new-card>
         </div>
         <div class="col-6 mt-2">
           <app-add-new-card
             [label]="'New menu'"
-            (onClickEvent)="open(categoryModal)"
+            (onClickEvent)="openNewMenuModal(menuModal)"
           ></app-add-new-card>
         </div>
       </div>
@@ -49,7 +50,9 @@
 
 <ng-template #categoryModal let-modal>
   <div class="modal-header">
-    <h4 class="heading-two" id="modal-basic-title">{{ action }} category</h4>
+    <h4 class="heading-two" id="modal-basic-title">
+      {{ actionLabel }} category
+    </h4>
     <button
       type="button"
       class="btn-close m-0"
@@ -61,6 +64,29 @@
   <div class="modal-body">
     <form>
       <div><app-input [label]="'Category name'"></app-input></div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button (click)="modal.close('Save click')" appTransparentFilledButton>
+      Save
+    </button>
+  </div>
+</ng-template>
+
+<ng-template #menuModal let-modal>
+  <div class="modal-header">
+    <h4 class="heading-two" id="modal-basic-title">{{ actionLabel }} menu</h4>
+    <button
+      type="button"
+      class="btn-close m-0"
+      data-bs-dismiss="modal"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div><app-input [label]="'Menu name'"></app-input></div>
     </form>
   </div>
   <div class="modal-footer">
