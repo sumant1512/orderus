@@ -8,10 +8,12 @@ import { UserInfoFacade } from '../store/user-info/user-info.facade';
 })
 export class RestaurantComponent {
   constructor(private userInfoFacade: UserInfoFacade) {
-    const authInfo = JSON.parse(localStorage.getItem('authInfo') || '');
-    this.userInfoFacade.fetchUserInfo({
-      userName: authInfo.userName,
-      authToken: authInfo.authToken,
-    });
+    const authInfo = JSON.parse(localStorage.getItem('authInfo') as string);
+    if (authInfo) {
+      this.userInfoFacade.fetchUserInfo({
+        userName: authInfo.userName,
+        authToken: authInfo.authToken,
+      });
+    }
   }
 }
