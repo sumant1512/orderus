@@ -1,6 +1,6 @@
 <div class="modal-header">
   <h4 class="heading-two" id="modal-basic-title">
-    {{ headingLabel }} category
+    {{ action.heading }} category
   </h4>
   <button
     type="button"
@@ -18,7 +18,7 @@
   </form>
 </div>
 <div class="modal-footer">
-  <button (click)="categoryAction(modal)" appTransparentFilledButton>
-    {{ headingLabel }}
+  <button (click)="categoryAction()" appTransparentFilledButton>
+    {{ action.btn }}
   </button>
 </div>

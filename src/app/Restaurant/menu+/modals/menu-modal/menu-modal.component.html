@@ -1,5 +1,5 @@
 <div class="modal-header">
-  <h4 class="heading-two" id="modal-basic-title">{{ headingLabel }} menu</h4>
+  <h4 class="heading-two" id="modal-basic-title">{{ action.heading }} menu</h4>
   <button
     type="button"
     class="btn-close m-0"
@@ -17,6 +17,6 @@
 </div>
 <div class="modal-footer">
   <button (click)="itemAction(modal)" appTransparentFilledButton>
-    {{ headingLabel }}
+    {{ action.btn }}
   </button>
 </div>

@@ -89,8 +89,8 @@
   --settings-card-heading-color: #{$black};
   --settings-card-description-color: #{$gray-3};
 
-  --selection-card-bg-color: #{$white};
-  --selection-card-selected-bg-color: #{$blue-3};
+  --selection-card-bg-color: #{$black-15};
+  --selection-card-selected-bg-color: #{$black-2};
   --selection-card-heading-color: #{$black};
   --selection-card-description-color: #{$gray-3};
 
@@ -186,4 +186,9 @@
   --input-disbled-color: #{$gray-15};
 
   --search-dropdown-placeholder: #{$gray};
+
+  // kebab action
+  --kebab-action-color: #{$white};
+  --kebab-action-bg-color: #{$black};
+  --kebab-hover-bg-color: #{$gray};
 }

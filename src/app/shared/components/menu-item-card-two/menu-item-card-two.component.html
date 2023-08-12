@@ -7,7 +7,7 @@
       <div class="row half-separator pb-3">
         <div class="col-12 col-md-7">
           <div class="heading-two mt-1">{{ menuItem.name }}</div>
-          <div class="item-desc mt-1">{{ menuItem.description }}</div>
+          <div class="heading-five-normal mt-1">{{ menuItem.description }}</div>
         </div>
         <div class="col-12 col-md-5">
           <div class="row">
@@ -24,11 +24,11 @@
   <div class="row mt-3">
     <div class="col-6">
       <div class="heading-five">Ingredients</div>
-      <div class="item-desc mt-1">{{ menuItem.ingredeints }}</div>
+      <div class="heading-five-normal mt-1">{{ menuItem.ingredeints }}</div>
     </div>
     <div class="col-6">
       <div class="heading-five">Nutritional value</div>
-      <div class="item-desc mt-1">
+      <div class="heading-five-normal mt-1">
         <span *ngFor="let nutrition of menuItem.nutritionValue"
           >{{ nutrition.name }} {{ nutrition.quantity }} {{ nutrition.unit }},
         </span>
