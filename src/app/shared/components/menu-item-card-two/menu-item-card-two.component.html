@@ -3,22 +3,30 @@
     <div class="col-5 col-md-2">
       <img class="img-fluid" [src]="menuItem.img" [alt]="menuItem.imgAlt" />
     </div>
-    <div class="col-7 col-md-10">
-      <div class="row half-separator pb-3">
-        <div class="col-12 col-md-7">
+    <div class="col-7 col-md-6">
+      <div class="row pb-3">
+        <div class="col-12">
           <div class="heading-two mt-1">{{ menuItem.name }}</div>
           <div class="heading-five-normal mt-1">{{ menuItem.description }}</div>
         </div>
-        <div class="col-12 col-md-5">
-          <div class="row">
-            <div class="col-6">
-              <div class="heading-one mt-2">$ {{ menuItem.price }}</div>
-            </div>
-            <div class="col-6"></div>
-          </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-4 mb-3 mb-md-0">
+      <div class="row">
+        <div class="col-6 col-md-5">
+          <div class="heading-one mt-2">$ {{ menuItem.price }}</div>
+        </div>
+        <div class="col-6 col-md-7 text-end my-auto">
+          <app-edit-icon class="me-3"></app-edit-icon>
+          <app-copy-icon class="me-3"></app-copy-icon>
+          <app-delete-icon class="me-3"></app-delete-icon>
         </div>
       </div>
     </div>
+  </div>
+  <div class="row d-none d-md-flex">
+    <div class="col-2"></div>
+    <div class="col-10 half-separator"></div>
   </div>
 
   <div class="row mt-3">
