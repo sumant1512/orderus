@@ -11,6 +11,8 @@
         >
           <app-selection-card
             [selectionDetails]="category"
+            [isActionEnabled]="true"
+            [actionList]="actionList"
             [isSelected]="selectedCategoryId === category.id"
             (selectedCardEvent)="selectCategory($event)"
           ></app-selection-card>
@@ -18,13 +20,13 @@
         <div class="col-6 mt-2">
           <app-add-new-card
             [label]="'New category'"
-            (onClickEvent)="open(demoModal)"
+            (onClickEvent)="open(categoryModal)"
           ></app-add-new-card>
         </div>
         <div class="col-6 mt-2">
           <app-add-new-card
             [label]="'New menu'"
-            (onClickEvent)="open(demoModal)"
+            (onClickEvent)="open(categoryModal)"
           ></app-add-new-card>
         </div>
       </div>
@@ -45,12 +47,12 @@
   </div>
 </div>
 
-<ng-template #demoModal let-modal>
+<ng-template #categoryModal let-modal>
   <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <h4 class="heading-two" id="modal-basic-title">{{ action }} category</h4>
     <button
       type="button"
-      class="btn-close"
+      class="btn-close m-0"
       data-bs-dismiss="modal"
       aria-label="Close"
       (click)="modal.dismiss('Cross click')"
@@ -58,32 +60,11 @@
   </div>
   <div class="modal-body">
     <form>
-      <div class="form-group">
-        <label for="dateOfBirth">Date of birth</label>
-        <div class="input-group">
-          <input
-            id="dateOfBirth"
-            name="dateOfBirth"
-            class="form-control"
-            placeholder="yyyy-mm-dd"
-            ngbDatepicker
-            #dp="ngbDatepicker"
-          />
-          <button
-            type="button"
-            class="btn btn-outline-secondary bi bi-calendar"
-            (click)="dp.toggle()"
-          ></button>
-        </div>
-      </div>
+      <div><app-input [label]="'Category name'"></app-input></div>
     </form>
   </div>
   <div class="modal-footer">
-    <button
-      type="button"
-      class="btn btn-outline-dark"
-      (click)="modal.close('Save click')"
-    >
+    <button (click)="modal.close('Save click')" appTransparentFilledButton>
       Save
     </button>
   </div>

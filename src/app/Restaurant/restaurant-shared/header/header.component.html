@@ -1,7 +1,7 @@
 <div class="header-container">
   <nav class="container navbar navbar-expand-sm navbar-light">
     <div class="container-fluid">
-      <a class="navbar-brand pe-cursor" (click)="navigateToPage('')">
+      <a class="navbar-brand pe-cursor" [routerLink]="['']">
         <div class="mb-0 app-first-name">Food</div>
         <div class="app-last-name">Delivery</div>
       </a>
@@ -127,6 +127,7 @@
               [ngClass]="{ selected: selectedRoute === 'profile' }"
               class="user-img-container selected"
             >
+              <p>{{ userBasicInfo.img }}</p>
               <img
                 class="user-img"
                 [src]="userBasicInfo.img"

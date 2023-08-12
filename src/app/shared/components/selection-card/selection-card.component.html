@@ -5,9 +5,15 @@
   (click)="emitEvent(selectionDetails.id)"
 >
   <div class="row p-2">
-    <div class="col-12">
-      <div>
+    <div class="col-12 pe-0">
+      <div class="position-relative">
         <label class="heading-five">{{ selectionDetails.name }}</label>
+        <app-kebab-action
+          *ngIf="isActionEnabled"
+          [actionList]="actionList"
+          [id]="selectionDetails.id"
+          [prefix]="'category_'"
+        ></app-kebab-action>
       </div>
       <div>
         <label class="description f-12"
