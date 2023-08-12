@@ -1,1 +1,84 @@
-<p>customers works!</p>
+<div class="container pb-4">
+  <div class="row pt-3 pt-lg-4">
+    <div class="col-12">
+      <span class="heading-two pe-cursor">Customers</span>
+    </div>
+  </div>
+
+  <div class="table-container mt-4">
+    <table class="table">
+      <thead class="pe-cursor">
+        <tr class="f-14">
+          <th
+            class="ps-3 ps-md-4 ps-lg-5"
+            (click)="onSortClick(customerKeys.ID, 'number')"
+            scope="col"
+          >
+            Id
+          </th>
+          <th
+            (click)="onSortClick(customerKeys.FIRST_NAME, 'string')"
+            scope="col"
+          >
+            Name
+          </th>
+          <th (click)="onSortClick(customerKeys.PHONE, 'string')" scope="col">
+            Phone
+          </th>
+          <th (click)="onSortClick(customerKeys.EMAIL, 'string')" scope="col">
+            Email
+          </th>
+          <th
+            (click)="onSortClick(customerKeys.LAST_ORDER_DATE, 'date')"
+            scope="col"
+          >
+            Last order date
+          </th>
+          <th
+            (click)="onSortClick(customerKeys.TOTAL_ORDERS, 'string')"
+            scope="col"
+          >
+            Total orders
+          </th>
+          <th
+            (click)="onSortClick(customerKeys.TOTAL_AMOUNT, 'string')"
+            scope="col"
+          >
+            Total spent
+          </th>
+        </tr>
+      </thead>
+      <tbody class="pe-cursor">
+        <tr
+          class="f-12"
+          *ngFor="let customer of customerList"
+          (click)="navigateToAdminDetails(customer.id)"
+        >
+          <td class="fw-500 ps-md-4 ps-lg-5" data-label="OrderId">
+            {{ customer.id }}
+          </td>
+          <td data-label="Customer">
+            {{ customer.firstName }} {{ customer.lastName }}
+          </td>
+          <td data-label="Customer">
+            {{ customer.phone }}
+          </td>
+          <td data-label="Customer">
+            {{ customer.email }}
+          </td>
+          <td data-label="Customer">
+            {{ customer.lastOrderDate | date : "d MMM, y" }}
+          </td>
+          <td data-label="Total orders">
+            {{ customer.totalOrders }}
+          </td>
+          <td data-label="Total amount">
+            {{ customer.totalAmount }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <router-outlet></router-outlet>
+</div>

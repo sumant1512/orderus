@@ -1,0 +1,44 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "firstName": "Sumant",
+      "lastName": "Mishra",
+      "phone": "9579310997",
+      "email": "sumantmishra511@gmail.com",
+      "lastOrderDate": "2/03/2023",
+      "totalOrders": "22",
+      "totalAmount": "4959"
+    },
+    {
+      "id": 2,
+      "firstName": "Rajat",
+      "lastName": "Sharma",
+      "phone": "8579310997",
+      "email": "rajatsharma@gmail.com",
+      "lastOrderDate": "2/03/2023",
+      "totalOrders": "6",
+      "totalAmount": "959"
+    },
+    {
+      "id": 3,
+      "firstName": "Ashutosh",
+      "lastName": "Khute",
+      "phone": "7579310997",
+      "email": "ashutoshkhute@gmail.com",
+      "lastOrderDate": "2/03/2023",
+      "totalOrders": "71",
+      "totalAmount": "12959"
+    },
+    {
+      "id": 4,
+      "firstName": "Shivansh",
+      "lastName": "Mishra",
+      "phone": "8989232799",
+      "email": "shivanshmishra@gmail.com",
+      "lastOrderDate": "2/03/2023",
+      "totalOrders": "3",
+      "totalAmount": "397"
+    }
+  ]
+}
