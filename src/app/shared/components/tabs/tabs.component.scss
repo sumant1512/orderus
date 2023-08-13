@@ -1,0 +1,18 @@
+.tabs {
+  background-color: var(--tab-bg-color) !important;
+  border-radius: 16px !important;
+  .tab-link {
+    margin: 4px 0;
+  }
+  .tab-section {
+    color: var(--tab-label-color);
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 0;
+  }
+}
+
+.active {
+  background-color: var(--tab-active-bg-color) !important;
+  border-radius: 16px !important;
+}
