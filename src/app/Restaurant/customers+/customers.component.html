@@ -58,6 +58,11 @@
             {{ customer.id }}
           </td>
           <td data-label="Customer">
+            <img
+              class="user-img"
+              [src]="customer.img"
+              [alt]="customer.imgAlt"
+            />
             {{ customer.firstName }} {{ customer.lastName }}
           </td>
           <td data-label="Customer">

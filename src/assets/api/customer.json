@@ -3,6 +3,8 @@
     {
       "id": 1,
       "firstName": "Sumant",
+      "img": "./../../../assets/userImg.png",
+      "imgAlt": "Sumant",
       "lastName": "Mishra",
       "phone": "9579310997",
       "email": "sumantmishra511@gmail.com",
@@ -13,6 +15,8 @@
     {
       "id": 2,
       "firstName": "Rajat",
+      "img": "./../../../assets/userImg.png",
+      "imgAlt": "Sumant",
       "lastName": "Sharma",
       "phone": "8579310997",
       "email": "rajatsharma@gmail.com",
@@ -23,6 +27,8 @@
     {
       "id": 3,
       "firstName": "Ashutosh",
+      "img": "./../../../assets/userImg.png",
+      "imgAlt": "Sumant",
       "lastName": "Khute",
       "phone": "7579310997",
       "email": "ashutoshkhute@gmail.com",
@@ -33,6 +39,8 @@
     {
       "id": 4,
       "firstName": "Shivansh",
+      "img": "./../../../assets/userImg.png",
+      "imgAlt": "Sumant",
       "lastName": "Mishra",
       "phone": "8989232799",
       "email": "shivanshmishra@gmail.com",

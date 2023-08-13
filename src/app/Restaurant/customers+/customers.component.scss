@@ -30,6 +30,13 @@
       padding: 0 10px;
       background-color: var(--table-bg-color);
       color: var(--table-text-color);
+
+      .user-img {
+        height: 35px;
+        border-radius: 50%;
+        width: 35px;
+        margin-right: 10px;
+      }
     }
   }
 }

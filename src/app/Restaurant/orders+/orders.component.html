@@ -1,1 +1,113 @@
-<p>orders works!</p>
+<div class="container pb-4">
+  <div class="row pt-3 pt-lg-4">
+    <div class="col-12">
+      <span class="heading-two pe-cursor">Restaurant Received Orderss</span>
+    </div>
+  </div>
+
+  <div class="table-container mt-4">
+    <table class="table">
+      <thead class="pe-cursor">
+        <tr class="f-14">
+          <th
+            class="ps-3 ps-md-4 ps-lg-5"
+            (click)="
+              onSortClick(restaurantReceivedOrdersKeys.ORDER_ID, 'number')
+            "
+            scope="col"
+          >
+            Id
+          </th>
+          <th
+            (click)="
+              onSortClick(restaurantReceivedOrdersKeys.FIRST_NAME, 'string')
+            "
+            scope="col"
+          >
+            Name
+          </th>
+          <th
+            (click)="
+              onSortClick(restaurantReceivedOrdersKeys.ADDRESS_1, 'string')
+            "
+            scope="col"
+          >
+            Address
+          </th>
+          <th
+            (click)="
+              onSortClick(restaurantReceivedOrdersKeys.ORDER_DATE, 'date')
+            "
+            scope="col"
+          >
+            Creation date
+          </th>
+          <th
+            (click)="
+              onSortClick(restaurantReceivedOrdersKeys.ORDER_DATE, 'date')
+            "
+            scope="col"
+          >
+            Creation time
+          </th>
+          <th
+            (click)="onSortClick(restaurantReceivedOrdersKeys.STATUS, 'string')"
+            scope="col"
+          >
+            Status
+          </th>
+          <th
+            (click)="
+              onSortClick(restaurantReceivedOrdersKeys.TOTAL_AMOUNT, 'string')
+            "
+            scope="col"
+          >
+            Total amount
+          </th>
+        </tr>
+      </thead>
+      <tbody class="pe-cursor">
+        <tr
+          class="f-12"
+          *ngFor="let restaurantReceivedOrders of restaurantReceivedOrdersList"
+          (click)="navigateToAdminDetails(restaurantReceivedOrders.orderId)"
+        >
+          <td class="fw-500 ps-md-4 ps-lg-5" data-label="OrderId">
+            {{ restaurantReceivedOrders.orderId }}
+          </td>
+          <td data-label="Restaurant Received Orders">
+            {{ restaurantReceivedOrders.firstName }}
+            {{ restaurantReceivedOrders.lastName }}
+          </td>
+          <td data-label="Restaurant Received Orders">
+            {{ restaurantReceivedOrders.addressOne
+            }}{{ restaurantReceivedOrders.addressTwo
+            }}{{ restaurantReceivedOrders.city }}
+          </td>
+          <td data-label="Restaurant Received Orders">
+            {{ restaurantReceivedOrders.orderDate | date : "d MMM, y" }}
+          </td>
+          <td data-label="Restaurant Received Orders">
+            {{ restaurantReceivedOrders.orderDate | date : "hh:mm a" }}
+          </td>
+          <td data-label="Restaurant Received Orders">
+            <span
+              [ngClass]="{
+                completed: restaurantReceivedOrders.status === 'Completed',
+                cancelled: restaurantReceivedOrders.status === 'Pending',
+                'in-progress': restaurantReceivedOrders.status === 'In Progress'
+              }"
+              class="dot me-2"
+            ></span>
+            {{ restaurantReceivedOrders.status }}
+          </td>
+          <td data-label="Total amount">
+            {{ restaurantReceivedOrders.totalAmount }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <router-outlet></router-outlet>
+</div>
