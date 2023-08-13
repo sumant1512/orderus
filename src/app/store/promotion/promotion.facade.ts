@@ -5,12 +5,27 @@ import { AppState } from '../app.state';
 import * as promotionSelector from './promotion.selectors';
 import { IPromotion } from './interfaces/promotion.interface';
 import { FetchPromotions, FetchedPromotions } from './promotion.actions';
+import { EPromotionStatus } from './enum/promotion.enum';
 
 @Injectable({ providedIn: 'root' })
 export class PromotionFacade {
-  promotionListState: Observable<IPromotion[]> = this.store.select(
+  promotionListState: Observable<Array<IPromotion>> = this.store.select(
     promotionSelector.fetchPromotionList
   );
+
+  // promotionByStatus: Observable<IPromotion[]> = this.store.select(
+  //   promotionSelector.selectPromotionByStatus(this.productId)
+  // );
+
+  // promotionByStatuss = (status: EPromotionStatus) => {
+  //   return this.store.select(promotionSelector.selectPromotionByStatus(status));
+  // };
+
+  promotionByStatus = (
+    status: EPromotionStatus
+  ): Observable<Array<IPromotion>> => {
+    return this.store.select(promotionSelector.selectPromotionByStatus(status));
+  };
 
   constructor(private store: Store<AppState>) {}
 
