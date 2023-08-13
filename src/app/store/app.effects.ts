@@ -6,6 +6,7 @@ import { RestaurantDetailsEffects } from './restaurant-details/restaurant-detail
 import { RestaurantEffects } from './restaurant/restaurant.effects';
 import { UserInfoEffects } from './user-info/user-info.effects';
 import { RestaurantReceivedOrdersEffects } from './restaurant-received-orders/restaurant-received-orders.effects';
+import { PromotionEffects } from './promotion/promotion.effects';
 
 export const AppEffects = [
   RestaurantEffects,
@@ -16,4 +17,5 @@ export const AppEffects = [
   RegistrationEffects,
   CustomerEffects,
   RestaurantReceivedOrdersEffects,
+  PromotionEffects,
 ];

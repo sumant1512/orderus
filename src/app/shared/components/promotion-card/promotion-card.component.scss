@@ -1,0 +1,48 @@
+.promotion-card {
+  border: 2px solid var(--box-border-color);
+  border-radius: 16px;
+
+  .promotion-img {
+    max-height: 101px;
+    min-height: 101px;
+  }
+
+  .type-btn {
+    border-radius: 16px;
+  }
+
+  .active-promotion {
+    border: 1px solid var(--promotion-green-btn-color);
+    color: var(--promotion-green-btn-color);
+  }
+
+  .scheduled-promotion {
+    border: 1px solid var(--promotion-orange-btn-border);
+    color: var(--promotion-orange-btn-color);
+  }
+
+  .expired-promotion {
+    border: 1px solid var(--promotion-red-btn-color);
+    color: var(--promotion-red-btn-border);
+  }
+
+  .promotion-details {
+    color: var(--promotion-details-color);
+  }
+
+  .promotion-separator {
+    border-top: 2px solid var(--separator-color);
+  }
+
+  .promotion-info-header {
+    color: var(--promotion-header-color);
+  }
+
+  .validity-info {
+    color: var(--promotion-validity-info-color);
+  }
+
+  .clock {
+    width: 10px;
+  }
+}

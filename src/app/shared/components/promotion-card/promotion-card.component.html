@@ -1,0 +1,77 @@
+<div class="promotion-card w-100 p-3">
+  <div class="row">
+    <div class="col-8">
+      <button
+        [ngClass]="{
+          'active-promotion': promotionCard.status === status.ACTIVE,
+          'scheduled-promotion': promotionCard.status === status.SCHEDULED,
+          'expired-promotion': promotionCard.status === status.EXPIRED
+        }"
+        class="type-btn bg-transparent f-10 px-3 py-1 mb-2"
+      >
+        {{ promotionCard.status }}
+      </button>
+      <div class="promotion-details fw-bold fw-14">
+        {{ promotionCard.promotionDescription }}
+      </div>
+    </div>
+    <div class="col-4">
+      <img
+        class="img-thumbnail promotion-img"
+        [src]="promotionCard.img"
+        [alt]="promotionCard.imgAlt"
+      />
+    </div>
+  </div>
+
+  <div
+    class="row promotion-separator promotion-info-header f-12 fw-500 mt-2 mx-0"
+  >
+    <div class="col-12 d-flex align-items-center px-0">
+      <span
+        ><img
+          class="clock"
+          src="./../../../../assets/restaurant-card/clock.svg"
+          alt="Clock"
+      /></span>
+      <span class="ms-1 mt-1">Valid through</span>
+    </div>
+  </div>
+
+  <div class="row heading-six">
+    <div class="col-12 d-flex align-items-center">
+      <span class="ms-1 mt-1">{{
+        promotionCard.validity?.validityStartsFrom | date : "d MMMM, y"
+      }}</span>
+      <span *ngIf="promotionCard.validity?.validityEndsOn" class="ms-1 mt-1">
+        -
+      </span>
+      <span *ngIf="promotionCard.validity?.validityEndsOn" class="ms-1 mt-1">{{
+        promotionCard.validity?.validityEndsOn | date : "d MMMM, y"
+      }}</span>
+      <span
+        *ngIf="promotionCard?.validity?.validityInfo"
+        class="fw-500 ms-1 mt-1 validity-info"
+        >({{ promotionCard.validity?.validityInfo }})</span
+      >
+    </div>
+  </div>
+
+  <div class="row promotion-info-header f-12 fw-500 mt-2 mx-0">
+    <div class="col-12 d-flex align-items-center px-0">
+      <span
+        ><img
+          class="clock"
+          src="./../../../../assets/restaurant-card/clock.svg"
+          alt="Clock"
+      /></span>
+      <span class="ms-1 mt-1">Restaurant</span>
+    </div>
+  </div>
+
+  <div class="row f-12 fw-500">
+    <div class="col-12">
+      <span class="ms-1 mt-1">{{ promotionCard.restaurantName }}</span>
+    </div>
+  </div>
+</div>
