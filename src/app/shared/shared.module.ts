@@ -37,6 +37,7 @@ import { KebabActionComponent } from './components/kebab-action/kebab-action.com
 import { EditIconComponent } from './components/edit-icon/edit-icon.component';
 import { DeleteIconComponent } from './components/delete-icon/delete-icon.component';
 import { CopyIconComponent } from './components/copy-icon/copy-icon.component';
+import { TabsComponent } from './components/tabs/tabs.component';
 
 const COMPONENTS = [
   HeaderComponent,
@@ -57,6 +58,7 @@ const COMPONENTS = [
   RestaurantReviewsComponent,
   ToggleComponent,
   RatingComponent,
+  TabsComponent,
   DropdownComponent,
   InputComponent,
   InputCheckboxComponent,

@@ -145,8 +145,13 @@
 
   --toggle-bg-color: #{$gray-6};
   --toggle-label-color: #{$black};
-  --switch-bg-color: #{$black-1};
-  --switch-text-color: #{$white};
+  --toggle-switch-bg-color: #{$black-1};
+  --toggle-switch-text-color: #{$white};
+
+  --tab-bg-color: #{$gray-6};
+  --tab-label-color: #{$black};
+  --tab-switch-bg-color: #{$black-1};
+  --tab-switch-text-color: #{$white};
 
   --primary-btn-border: #{$gray};
   --primary-btn-text-color: #{$gray};

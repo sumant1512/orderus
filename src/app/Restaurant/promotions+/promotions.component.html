@@ -1,1 +1,25 @@
-<p>promotions works!</p>
+<div class="container">
+  <div class="row pt-3 pt-lg-4">
+    <div class="col-12">
+      <span class="heading-two pe-cursor">Restaurant promotions</span>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-12">
+      <app-tabs
+        [tabList]="sectionList"
+        (selectedTab)="getSelectedPromotion($event)"
+      ></app-tabs>
+    </div>
+  </div>
+
+  <div class="row pb-4">
+    <div
+      *ngFor="let deal of promotionsList"
+      class="col-12 col-md-6 col-lg-4 mt-4"
+    >
+      <app-deals-card [dealCardDetails]="deal"></app-deals-card>
+    </div>
+  </div>
+</div>
