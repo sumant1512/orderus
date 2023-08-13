@@ -42,8 +42,6 @@
   --load-more-btn-border: #{$blue-1};
   --load-more-btn-text-color: #{$blue-2};
 
-  --deal-card-border-color: #{$gray-2};
-  --deal-card-separator: #{$gray-2};
   --deal-card-red-btn-color: #{$red-0};
   --deal-card-red-btn-border: #{$red-0};
   --deal-card-green-btn-color: #{$green-0};
@@ -53,6 +51,16 @@
   --deal-card-details-color: #{$white-1};
   --deal-card-header-color: #{$gray-3};
   --deal-card-validity-info-color: #{$gray-3};
+
+  --promotion-red-btn-color: #{$red-0};
+  --promotion-red-btn-border: #{$red-0};
+  --promotion-green-btn-color: #{$green-0};
+  --promotion-green-btn-border: #{$green-0};
+  --promotion-orange-btn-color: #{$orange-0};
+  --promotion-orange-btn-border: #{$orange-0};
+  --promotion-details-color: #{$white-1};
+  --promotion-header-color: #{$gray-3};
+  --promotion-validity-info-color: #{$gray-3};
 
   --order-table-body-border-color: #{$gray-5};
   --order-in-progress-status-color: #{$blue-0};

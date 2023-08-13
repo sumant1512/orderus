@@ -38,6 +38,7 @@ import { EditIconComponent } from './components/edit-icon/edit-icon.component';
 import { DeleteIconComponent } from './components/delete-icon/delete-icon.component';
 import { CopyIconComponent } from './components/copy-icon/copy-icon.component';
 import { TabsComponent } from './components/tabs/tabs.component';
+import { PromotionCardComponent } from './components/promotion-card/promotion-card.component';
 
 const COMPONENTS = [
   HeaderComponent,
@@ -46,6 +47,7 @@ const COMPONENTS = [
   ProductThumbnailComponent,
   RestaurantCardComponent,
   DealsCardComponent,
+  PromotionCardComponent,
   AddNewCardComponent,
   MenuItemCardOneComponent,
   MenuItemCardTwoComponent,

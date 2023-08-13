@@ -1,0 +1,103 @@
+{
+  "data": [
+    {
+      "status": "Active",
+      "img": "./../../assets/deals-card/deal-1.jpg",
+      "imgAlt": "sandwich",
+      "promotionDescription": "20% off on Vegan sandwiched",
+      "validity": {
+        "validityStartsFrom": "7/1/2023",
+        "validityEndsOn": "7/1/2024",
+        "validityInfo": "Saturday Only"
+      },
+      "restaurantName": "Vegfood"
+    },
+    {
+      "status": "Active",
+      "img": "./../../assets/deals-card/deal-2.jpg",
+      "imgAlt": "sandwich",
+      "promotionDescription": "5% off on all meals every Wednesday",
+      "validity": {
+        "validityStartsFrom": "7/1/2023",
+        "validityEndsOn": "7/1/2024",
+        "validityInfo": "Wednesday Only"
+      },
+      "restaurantName": "Parallax Restaurant"
+    },
+    {
+      "status": "Active",
+      "img": "./../../assets/deals-card/deal-3.jpg",
+      "imgAlt": "sandwich",
+      "promotionDescription": "Free Pepsi on order above $50",
+      "validity": {
+        "validityStartsFrom": "7/1/2023",
+        "validityEndsOn": "7/30/2024"
+      },
+      "restaurantName": "Sur un Arbere Perche"
+    },
+    {
+      "status": "Active",
+      "img": "./../../assets/deals-card/deal-4.jpg",
+      "imgAlt": "sandwich",
+      "promotionDescription": "Get extra Pizza on order above $200",
+      "validity": {
+        "validityStartsFrom": "7/1/2023",
+        "validityEndsOn": "7/30/2023"
+      },
+      "restaurantName": "Norma's"
+    },
+    {
+      "status": "Scheduled",
+      "img": "./../../assets/deals-card/deal-5.jpg",
+      "imgAlt": "sandwich",
+      "promotionDescription": "10% off on all order above $300",
+      "validity": {
+        "validityStartsFrom": "8/1/2023",
+        "validityEndsOn": "12/1/2023"
+      },
+      "restaurantName": "Ithaa"
+    },
+    {
+      "status": "Scheduled",
+      "img": "./../../assets/deals-card/deal-6.jpg",
+      "imgAlt": "sandwich",
+      "promotionDescription": "30% off on all vegan meals every Monday",
+      "validity": {
+        "validityStartsFrom": "8/15/2023",
+        "validityEndsOn": "10/15/2023",
+        "validityInfo": "Monday Only"
+      },
+      "restaurantName": "Vegfood"
+    },
+    {
+      "status": "Expired",
+      "img": "./../../assets/deals-card/deal-7.jpg",
+      "imgAlt": "burger",
+      "promotionDescription": "Free burger and fries on order above $120",
+      "validity": {
+        "validityStartsFrom": "4/17/2023"
+      },
+      "restaurantName": "Vegfood"
+    },
+    {
+      "status": "Expired",
+      "img": "./../../assets/deals-card/deal-8.jpg",
+      "imgAlt": "sushi",
+      "promotionDescription": "Free sushi roll on order above $200",
+      "validity": {
+        "validityStartsFrom": "4/16/2023"
+      },
+      "restaurantName": "Vegfood"
+    },
+    {
+      "status": "Expired",
+      "img": "./../../assets/deals-card/deal-9.jpg",
+      "imgAlt": "sandwich",
+      "promotionDescription": "25% off on all Deserts (Chef's Birthday)",
+      "validity": {
+        "validityStartsFrom": "4/15/2023"
+      },
+      "restaurantName": "Vegfood"
+    }
+  ]
+}
