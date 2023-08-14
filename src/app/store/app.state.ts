@@ -4,7 +4,6 @@ import { IRegistrationState } from './registration/interfaces/registration.inter
 import { IRestaurantDetailsState } from './restaurant-details/interfaces/restaurant-details.interface';
 import { IRestaurantState } from './restaurant/interfaces/restaurant.interface';
 import { IUserInfoState } from './user-info/interfaces/user-info.interface';
-import { IPromotionState } from './promotion/interfaces/promotion.interface';
 
 export type AppState = Partial<{
   restaurant: IRestaurantState;
@@ -13,5 +12,4 @@ export type AppState = Partial<{
   offers: IOffersState;
   userInfo: IUserInfoState;
   registration: IRegistrationState;
-  promotion: IPromotionState;
 }>;

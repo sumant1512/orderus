@@ -1,9 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ITab } from 'src/app/shared/interfaces/tabs.interface';
-import { EPromotionStatus } from 'src/app/store/promotion/enum/promotion.enum';
-import { IPromotion } from 'src/app/store/promotion/interfaces/promotion.interface';
-import { PromotionFacade } from 'src/app/store/promotion/promotion.facade';
+import { RestaurantPromotionsFacade } from './restaurant-promotions-store/restaurant-promotions/restaurant-promotions.facade';
+import { ERestaurantPromotionsStatus } from './restaurant-promotions-store/restaurant-promotions/enum/restaurant-promotions.enum';
+import { IRestaurantPromotions } from './restaurant-promotions-store/restaurant-promotions/interfaces/restaurant-promotions.interface';
 
 @Component({
   selector: 'app-promotions',
@@ -13,14 +13,14 @@ import { PromotionFacade } from 'src/app/store/promotion/promotion.facade';
 export class PromotionsComponent implements OnInit, OnDestroy {
   subscription = new Subscription();
   sectionList: Array<ITab> = [
-    { id: 1, name: 'Active', code: EPromotionStatus.ACTIVE },
-    { id: 2, name: 'Scheduled', code: EPromotionStatus.SCHEDULED },
-    { id: 1, name: 'Expired', code: EPromotionStatus.EXPIRED },
+    { id: 1, name: 'Active', code: ERestaurantPromotionsStatus.ACTIVE },
+    { id: 2, name: 'Scheduled', code: ERestaurantPromotionsStatus.SCHEDULED },
+    { id: 1, name: 'Expired', code: ERestaurantPromotionsStatus.EXPIRED },
   ];
-  promotionsList!: Array<IPromotion>;
+  promotionsList!: Array<IRestaurantPromotions>;
 
-  constructor(private promotionFacade: PromotionFacade) {
-    this.promotionFacade.fetchPromotion();
+  constructor(private restaurantPromotionsFacade: RestaurantPromotionsFacade) {
+    this.restaurantPromotionsFacade.fetchRestaurantPromotions();
   }
 
   ngOnInit(): void {}
@@ -31,8 +31,10 @@ export class PromotionsComponent implements OnInit, OnDestroy {
 
   getSelectedPromotion(selectedSection: ITab): void {
     this.subscription.add(
-      this.promotionFacade
-        .promotionByStatus(selectedSection.code || EPromotionStatus.ACTIVE)
+      this.restaurantPromotionsFacade
+        .restaurantPromotionByStatus(
+          selectedSection.code || ERestaurantPromotionsStatus.ACTIVE
+        )
         .subscribe((promotionList) => {
           this.promotionsList = promotionList;
         })

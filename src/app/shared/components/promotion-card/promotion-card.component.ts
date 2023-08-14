@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { EPromotionStatus } from 'src/app/store/promotion/enum/promotion.enum';
-import { IPromotion } from 'src/app/store/promotion/interfaces/promotion.interface';
+import { ERestaurantPromotionsStatus } from 'src/app/Restaurant/promotions+/restaurant-promotions-store/restaurant-promotions/enum/restaurant-promotions.enum';
+import { IRestaurantPromotions } from 'src/app/Restaurant/promotions+/restaurant-promotions-store/restaurant-promotions/interfaces/restaurant-promotions.interface';
 
 @Component({
   selector: 'app-promotion-card',
@@ -8,7 +8,7 @@ import { IPromotion } from 'src/app/store/promotion/interfaces/promotion.interfa
   styleUrls: ['./promotion-card.component.scss'],
 })
 export class PromotionCardComponent {
-  @Input() promotionCard!: IPromotion;
+  @Input() promotionCard!: IRestaurantPromotions;
 
-  status = EPromotionStatus;
+  status = ERestaurantPromotionsStatus;
 }

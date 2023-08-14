@@ -4,7 +4,6 @@ import { RegistrationActions } from './registration/registration.actions';
 import { RestaurantDetailsActions } from './restaurant-details/restaurant-details.actions';
 import { RestaurantActions } from './restaurant/restaurant.actions';
 import { UserInfoActions } from './user-info/user-info.actions';
-import { PromotionActions } from './promotion/promotion.actions';
 
 export type AppActionsUnion =
   | RestaurantActions
@@ -12,5 +11,4 @@ export type AppActionsUnion =
   | ItemFilterActions
   | OffersActions
   | UserInfoActions
-  | RegistrationActions
-  | PromotionActions;
+  | RegistrationActions;

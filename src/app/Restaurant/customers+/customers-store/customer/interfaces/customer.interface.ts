@@ -11,7 +11,3 @@ export interface ICustomer extends IImage {
   [ECustomer.TOTAL_ORDERS]: string;
   [ECustomer.TOTAL_AMOUNT]: string;
 }
-
-export interface ICustomerState {
-  customerList: Array<ICustomer>;
-}

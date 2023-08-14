@@ -1,4 +1,4 @@
-export enum EPromotion {
+export enum ERestaurantPromotions {
   ID = 'id',
   STATUS = 'status',
   NAME = 'promotionDescription',
@@ -12,7 +12,7 @@ export enum EValidity {
   VALIDITY_INFO = 'validityInfo',
 }
 
-export enum EPromotionStatus {
+export enum ERestaurantPromotionsStatus {
   ACTIVE = 'Active',
   SCHEDULED = 'Scheduled',
   EXPIRED = 'Expired',
