@@ -1,9 +1,7 @@
-import { ICustomerState } from './interfaces/customer.interface';
+import { ICustomer } from './interfaces/customer.interface';
 import { CustomerActions, CustomerActionsUnion } from './customer.actions';
 
-export const initialCustomerState: ICustomerState = {
-  customerList: [],
-};
+export const initialCustomerState: Array<ICustomer> = [];
 
 export function CustomerReducer(
   state = initialCustomerState,
@@ -11,10 +9,7 @@ export function CustomerReducer(
 ) {
   switch (action.type) {
     case CustomerActions.FETCHED_CUSTOMERS:
-      return {
-        ...state,
-        customerList: action.payload,
-      };
+      return action.payload;
     default:
       return state;
   }

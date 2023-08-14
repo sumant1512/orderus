@@ -13,7 +13,7 @@ export function RestaurantReceivedOrdersReducer(
 ) {
   switch (action.type) {
     case RestaurantReceivedOrdersActions.FETCHED_RESTAURANT_RECEIVED_ORDERS:
-      return [...state, ...action.payload];
+      return action.payload;
     default:
       return state;
   }

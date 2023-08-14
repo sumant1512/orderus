@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { CustomerFacade } from 'src/app/store/customer/customer.facade';
-import { ECustomer } from 'src/app/store/customer/enum/customer.enum';
-import { ICustomer } from 'src/app/store/customer/interfaces/customer.interface';
+import { CustomerFacade } from './customers-store/customer/customer.facade';
+import { ECustomer } from './customers-store/customer/enum/customer.enum';
+import { ICustomer } from './customers-store/customer/interfaces/customer.interface';
 
 @Component({
   selector: 'app-customers',

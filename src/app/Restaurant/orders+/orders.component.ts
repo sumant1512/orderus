@@ -25,7 +25,7 @@ export class OrdersComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getRestaurantReceivedOrderss();
+    this.getRestaurantReceivedOrders();
   }
 
   ngOnDestroy(): void {
@@ -38,7 +38,7 @@ export class OrdersComponent implements OnInit {
     });
   }
 
-  getRestaurantReceivedOrderss(): void {
+  getRestaurantReceivedOrders(): void {
     this.subscription.add(
       this.restaurantReceivedOrdersFacade.restaurantReceivedOrdersListState.subscribe(
         (restaurantReceivedOrdersList) => {

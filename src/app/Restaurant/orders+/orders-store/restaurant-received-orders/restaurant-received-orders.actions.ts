@@ -2,8 +2,8 @@ import { Action } from '@ngrx/store';
 import { IRestaurantReceivedOrders } from './interfaces/restaurant-received-orders.interface';
 
 export enum RestaurantReceivedOrdersActions {
-  FETCH_RESTAURANT_RECEIVED_ORDERS = '[RestaurantReceivedOrders] Fetch RestaurantReceivedOrderss',
-  FETCHED_RESTAURANT_RECEIVED_ORDERS = '[RestaurantReceivedOrders] Fetched RestaurantReceivedOrderss',
+  FETCH_RESTAURANT_RECEIVED_ORDERS = '[RestaurantReceivedOrders] Fetch RestaurantReceivedOrders',
+  FETCHED_RESTAURANT_RECEIVED_ORDERS = '[RestaurantReceivedOrders] Fetched RestaurantReceivedOrders',
 }
 
 export class FetchRestaurantReceivedOrders implements Action {
