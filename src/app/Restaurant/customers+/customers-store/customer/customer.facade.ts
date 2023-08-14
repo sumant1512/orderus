@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { AppState } from '../app.state';
 import * as customerSelector from './customer.selectors';
 import { ICustomer } from './interfaces/customer.interface';
 import { FetchCustomers, FetchedCustomers } from './customer.actions';
+import { CustomersAppState } from '../customers-app.state';
 
 @Injectable({ providedIn: 'root' })
 export class CustomerFacade {
@@ -12,7 +12,7 @@ export class CustomerFacade {
     customerSelector.fetchCustomerList
   );
 
-  constructor(private store: Store<AppState>) {}
+  constructor(private store: Store<CustomersAppState>) {}
 
   fetchCustomer() {
     this.store.dispatch(new FetchCustomers());

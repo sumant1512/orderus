@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { ERestaurantReceivedOrders } from 'src/app/store/restaurant-received-orders/enum/restaurant-received-orders.enum';
-import { IRestaurantReceivedOrders } from 'src/app/store/restaurant-received-orders/interfaces/restaurant-received-orders.interface';
-import { RestaurantReceivedOrdersFacade } from 'src/app/store/restaurant-received-orders/restaurant-received-orders.facade';
+import { ERestaurantReceivedOrders } from './orders-store/restaurant-received-orders/enum/restaurant-received-orders.enum';
+import { IRestaurantReceivedOrders } from './orders-store/restaurant-received-orders/interfaces/restaurant-received-orders.interface';
+import { RestaurantReceivedOrdersFacade } from './orders-store/restaurant-received-orders/restaurant-received-orders.facade';
 
 @Component({
   selector: 'app-orders',
@@ -25,7 +25,7 @@ export class OrdersComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getRestaurantReceivedOrderss();
+    this.getRestaurantReceivedOrders();
   }
 
   ngOnDestroy(): void {
@@ -38,7 +38,7 @@ export class OrdersComponent implements OnInit {
     });
   }
 
-  getRestaurantReceivedOrderss(): void {
+  getRestaurantReceivedOrders(): void {
     this.subscription.add(
       this.restaurantReceivedOrdersFacade.restaurantReceivedOrdersListState.subscribe(
         (restaurantReceivedOrdersList) => {

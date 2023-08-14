@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { AppState } from '../app.state';
 import * as restaurantReceivedOrdersSelector from './restaurant-received-orders.selectors';
 import { IRestaurantReceivedOrders } from './interfaces/restaurant-received-orders.interface';
 import {
   FetchRestaurantReceivedOrders,
   FetchedRestaurantReceivedOrders,
 } from './restaurant-received-orders.actions';
+import { OrdersAppState } from '../orders-app.state';
 
 @Injectable({ providedIn: 'root' })
 export class RestaurantReceivedOrdersFacade {
@@ -16,7 +16,7 @@ export class RestaurantReceivedOrdersFacade {
       restaurantReceivedOrdersSelector.fetchRestaurantReceivedOrdersList
     );
 
-  constructor(private store: Store<AppState>) {}
+  constructor(private store: Store<OrdersAppState>) {}
 
   fetchRestaurantReceivedOrders() {
     this.store.dispatch(new FetchRestaurantReceivedOrders());
