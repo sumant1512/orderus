@@ -7,7 +7,6 @@ import { OffersReducer } from './offers/offers.reducers';
 import { UserInfoReducer } from './user-info/user-info.reducers';
 import { RegistrationReducer } from './registration/registration.reducers';
 import { CustomerReducer } from './customer/customer.reducers';
-import { RestaurantReceivedOrdersReducer } from './restaurant-received-orders/restaurant-received-orders.reducers';
 import { PromotionReducer } from './promotion/promotion.reducers';
 
 export const appReducers: ActionReducerMap<AppState, any> = {
@@ -18,6 +17,5 @@ export const appReducers: ActionReducerMap<AppState, any> = {
   userInfo: UserInfoReducer,
   registration: RegistrationReducer,
   customer: CustomerReducer,
-  restaurantReceivedOrders: RestaurantReceivedOrdersReducer,
   promotion: PromotionReducer,
 };
