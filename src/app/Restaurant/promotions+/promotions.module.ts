@@ -8,11 +8,7 @@ import { restaurantPromotionsAppReducers } from './restaurant-promotions-store/r
 import { RestaurantPromotionsAppEffects } from './restaurant-promotions-store/restaurant-promotions-app.effects';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { PromotionsRoutingModule } from './promotions-routing.module';
-
-// @NgModule({
-//   declarations: [PromotionsComponent],
-//   imports: [CommonModule, PromotionsRoutingModule, SharedModule],
-// })
+import { PromotionsModalComponent } from './modals/promotions-modal/promotions-modal.component';
 
 const metaReducer = combineReducers(restaurantPromotionsAppReducers);
 
@@ -21,7 +17,7 @@ export function restaurantPromotionsMetaReducer(state: any, action: any) {
 }
 
 @NgModule({
-  declarations: [PromotionsComponent],
+  declarations: [PromotionsComponent, PromotionsModalComponent],
   imports: [
     CommonModule,
     PromotionsRoutingModule,
