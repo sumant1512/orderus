@@ -1,0 +1,61 @@
+<div class="modal-header">
+  <h4 class="heading-two" id="modal-basic-title">
+    {{ action.heading }} promotion
+  </h4>
+  <button
+    type="button"
+    class="btn-close m-0"
+    data-bs-dismiss="modal"
+    aria-label="Close"
+    (click)="modal.dismiss('Cross click')"
+  ></button>
+</div>
+<div class="modal-body">
+  <div
+    [formGroup]="promotionsForm"
+    class="container-fluid py-3 account-info-container"
+  >
+    <div class="row mb-3">
+      <div class="heading-four">Promotion details</div>
+      <div class="col-12 mt-3 mb-2 f-10 fw-500 avtar">Avtar</div>
+      <div class="col-12">
+        <img
+          class="user-img me-3 mb-3 mb-md-0"
+          [src]="userInfo.img"
+          [alt]="userInfo.imgAlt"
+        />
+        <button class="me-3" appPrimaryButton>Change</button>
+        <button class="me-3" appTransparentFilledButton>Remove</button>
+      </div>
+    </div>
+
+    <section class="mb-3">
+      <div class="row mb-0 mb-md-3">
+        <div class="col-12 mb-1 mb-md-0">
+          <app-input formControlName="name" [label]="'Name'"></app-input>
+        </div>
+      </div>
+      <div class="row mt-0 mt-md-3">
+        <div class="col-12 mb-1 mb-md-0 col-md-6">
+          <app-input
+            formControlName="startDate"
+            [label]="'Start date'"
+            [inputType]="'date'"
+          ></app-input>
+        </div>
+        <div class="col-12 mb-1 mb-md-0 col-md-6">
+          <app-input
+            formControlName="endDate"
+            [label]="'End date'"
+            [inputType]="'date'"
+          ></app-input>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+<div class="modal-footer">
+  <button (click)="itemAction(modal)" appTransparentFilledButton>
+    {{ action.btn }}
+  </button>
+</div>

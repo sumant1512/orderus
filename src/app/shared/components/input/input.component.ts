@@ -27,7 +27,7 @@ export class InputComponent implements ControlValueAccessor {
 
   @Input() isDisabled!: boolean;
 
-  @Input() inputType!: boolean;
+  @Input() inputType: string = 'text';
 
   @Input() edit!: boolean;
 

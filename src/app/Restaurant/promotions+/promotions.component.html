@@ -4,7 +4,11 @@
       <span class="heading-two pe-cursor">Restaurant promotions</span>
     </div>
     <div class="col-12 col-md-6 text-end">
-      <button class="create-btn mt-3 mt-md-0 mb-3" appPrimaryFilledButton>
+      <button
+        class="create-btn mt-3 mt-md-0 mb-3"
+        (click)="action(actionList[0], promotionsModal, 'medium')"
+        appPrimaryFilledButton
+      >
         Create promotion
       </button>
     </div>
@@ -28,3 +32,11 @@
     </div>
   </div>
 </div>
+
+<ng-template #promotionsModal let-modal>
+  <app-promotions-modal
+    [action]="selectedAction"
+    [selectedPromotionId]="selectedPromotionId"
+    [modal]="modal"
+  ></app-promotions-modal>
+</ng-template>
