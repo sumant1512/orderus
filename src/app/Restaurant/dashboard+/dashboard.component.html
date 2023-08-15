@@ -4,4 +4,28 @@
       <span class="heading-two pe-cursor">Dashboard</span>
     </div>
   </div>
+
+  <div class="row mt-3">
+    <div class="col-12 col-md-4">
+      <app-setting-card
+        [settingDetails]="orderReceived"
+        [isSelected]="false"
+        (selectedCardEvent)="onCardSelect($event)"
+      ></app-setting-card>
+    </div>
+    <div class="col-12 col-md-4">
+      <app-setting-card
+        [settingDetails]="ordersDelivered"
+        [isSelected]="false"
+        (selectedCardEvent)="onCardSelect($event)"
+      ></app-setting-card>
+    </div>
+    <div class="col-12 col-md-4">
+      <app-setting-card
+        [settingDetails]="revenue"
+        [isSelected]="false"
+        (selectedCardEvent)="onCardSelect($event)"
+      ></app-setting-card>
+    </div>
+  </div>
 </div>
