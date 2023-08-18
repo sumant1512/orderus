@@ -1,6 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Chart, registerables } from 'chart.js';
 import { IImage } from 'src/app/shared/interfaces/image.interface';
 import { ISettings } from 'src/app/shared/interfaces/settings.interface';
+
+Chart.register(...registerables);
 
 export interface IPopularMeals extends IImage {
   id: number;
@@ -14,7 +17,7 @@ export interface IPopularMeals extends IImage {
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
   orderReceived: ISettings = {
     id: 1,
     img: './../../../assets/icons/bag.svg',
@@ -73,7 +76,48 @@ export class DashboardComponent {
     },
   ];
 
+  chart: any;
+
+  ngOnInit(): void {
+    this.createChart();
+  }
+
   onCardSelect(event: number): void {
     console.log(event);
+  }
+
+  createChart() {
+    this.chart = new Chart('MyChart', {
+      type: 'line', //this denotes tha type of chart
+
+      data: {
+        // values on X-Axis
+        labels: [
+          '2022-05-10',
+          '2022-05-11',
+          '2022-05-12',
+          '2022-05-13',
+          '2022-05-14',
+          '2022-05-15',
+          '2022-05-16',
+          '2022-05-17',
+        ],
+        datasets: [
+          {
+            label: 'Sales',
+            data: ['467', '576', '572', '79', '92', '574', '573', '576'],
+            backgroundColor: 'blue',
+          },
+          {
+            label: 'Profit',
+            data: ['542', '542', '536', '327', '17', '0.00', '538', '541'],
+            backgroundColor: 'limegreen',
+          },
+        ],
+      },
+      options: {
+        aspectRatio: 2.5,
+      },
+    });
   }
 }
