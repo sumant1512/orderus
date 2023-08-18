@@ -1,9 +1,10 @@
-export interface IRoles {
+import { IImage } from 'src/app/shared/interfaces/image.interface';
+
+export interface IRoles extends IImage {
   id: number;
   name: string;
   description: string;
-  img: string;
-  imgAlt: string;
+  status?: number;
 }
 
 export interface IRegistrationState {
