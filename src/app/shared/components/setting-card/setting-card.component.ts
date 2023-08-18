@@ -15,6 +15,9 @@ export class SettingCardComponent {
 
   @Output() selectedCardEvent = new EventEmitter<number>();
 
+  upCaratIcon = './../../../../assets/icons/caret-up.svg';
+  downCaratIcon = './../../../../assets/icons/caret-down.svg';
+
   getSelectedIcon(img: string): string {
     const pathArr = img.split('/');
     const position = pathArr.length - 1;

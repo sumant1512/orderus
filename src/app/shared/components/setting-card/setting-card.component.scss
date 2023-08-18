@@ -21,6 +21,21 @@
       width: 75%;
     }
   }
+
+  .status-posative {
+    color: green;
+  }
+
+  .status-negative {
+    color: red;
+  }
+
+  .status-icon {
+    background-color: var(--icons-bg-color);
+    padding: 4px;
+    border-radius: 6px;
+    margin-right: 4px;
+  }
 }
 
 .settings-card:hover {

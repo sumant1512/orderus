@@ -20,6 +20,22 @@
     <div class="col-10">
       <div>
         <label class="heading f-14 fw-bold">{{ settingDetails.name }}</label>
+        <span
+          *ngIf="settingDetails.status"
+          [ngClass]="{
+            'status-posative': settingDetails.status > 0,
+            'status-negative': settingDetails.status < 0,
+            'status-neutral': settingDetails.status === 0
+          }"
+          class="float-end f-12 fw-bold"
+        >
+          <img
+            class="status-icon"
+            [src]="settingDetails.status > 0 ? upCaratIcon : downCaratIcon"
+            alt=""
+          />
+          <span> {{ settingDetails.status }}%</span></span
+        >
       </div>
       <div>
         <label class="description f-12">{{ settingDetails.description }}</label>
