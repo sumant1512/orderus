@@ -30,10 +30,12 @@
   </div>
 
   <div class="row mt-3">
-    <div class="col-8">
-      <div class="revenue-chart"></div>
+    <div class="col-12 col-md-8">
+      <div class="revenue-chart">
+        <canvas id="MyChart">{{ chart }}</canvas>
+      </div>
     </div>
-    <div class="col-4">
+    <div class="col-12 col-md-4 mt-3 mt-md-0">
       <div class="popular-meals">
         <div><label class="heading-four mb-4">Popular meals</label></div>
 
@@ -45,13 +47,15 @@
               [alt]="meal.imgAlt"
             />
           </div>
-          <div class="col-7 ps-0">
+          <div class="col-6 ps-0">
             <div class="heading-six">{{ meal.name }}</div>
             <div class="f-12 mt-1 orders-count">
               {{ meal.ordersCount }} orders
             </div>
           </div>
-          <div class="col-2 b-heading-six price">${{ meal.price }}</div>
+          <div class="col-3 text-end b-heading-six price">
+            ${{ meal.price }}
+          </div>
         </div>
 
         <div class="row">
