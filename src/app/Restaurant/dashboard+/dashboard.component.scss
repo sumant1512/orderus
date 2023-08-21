@@ -10,6 +10,12 @@
   padding: 16px;
 }
 
+.dropdown-container {
+  max-width: 100px;
+  min-width: 100px;
+  margin-left: auto;
+}
+
 .popular-meals {
   border: 1px solid var(--box-border-color);
   border-radius: 16px;

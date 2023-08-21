@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
+import { IDropdown } from 'src/app/shared/interfaces/dropdown.interface';
 import { IImage } from 'src/app/shared/interfaces/image.interface';
 import { ISettings } from 'src/app/shared/interfaces/settings.interface';
 
@@ -74,6 +75,28 @@ export class DashboardComponent implements OnInit {
       ordersCount: 306,
       price: 16.8,
     },
+    {
+      id: 5,
+      img: './../../../assets/menu-card/item-1.jpg',
+      imgAlt: 'meal',
+      name: 'Alaska',
+      ordersCount: 281,
+      price: 16.8,
+    },
+    {
+      id: 6,
+      img: './../../../assets/menu-card/item-1.jpg',
+      imgAlt: 'meal',
+      name: 'Kappa maki',
+      ordersCount: 253,
+      price: 16.8,
+    },
+  ];
+
+  dropDownList: Array<IDropdown> = [
+    { id: 1, name: 'Week' },
+    { id: 2, name: 'Month' },
+    { id: 3, name: 'Year' },
   ];
 
   chart: any;
@@ -88,30 +111,16 @@ export class DashboardComponent implements OnInit {
 
   createChart() {
     this.chart = new Chart('MyChart', {
-      type: 'line', //this denotes tha type of chart
+      type: 'line',
 
       data: {
         // values on X-Axis
-        labels: [
-          '2022-05-10',
-          '2022-05-11',
-          '2022-05-12',
-          '2022-05-13',
-          '2022-05-14',
-          '2022-05-15',
-          '2022-05-16',
-          '2022-05-17',
-        ],
+        labels: ['1 July', '', '', '', '', '', '31 July'],
         datasets: [
           {
             label: 'Sales',
-            data: ['467', '576', '572', '79', '92', '574', '573', '576'],
+            data: ['467', '576', '572', '79', '92', '574', '576'],
             backgroundColor: 'blue',
-          },
-          {
-            label: 'Profit',
-            data: ['542', '542', '536', '327', '17', '0.00', '538', '541'],
-            backgroundColor: 'limegreen',
           },
         ],
       },

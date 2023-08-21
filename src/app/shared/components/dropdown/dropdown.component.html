@@ -1,5 +1,8 @@
-<div class="dropdown">
-  <select class="f-12 fw-500">
+<div
+  [ngClass]="{ 'button-border': isBorderEnabled }"
+  class="dropdown pe-cursor"
+>
+  <select class="f-12 fw-500 pe-cursor">
     <option *ngFor="let dropdown of dropdownList" [value]="dropdown.id">
       {{ dropdown.name }}
     </option>

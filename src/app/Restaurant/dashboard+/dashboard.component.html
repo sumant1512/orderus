@@ -6,21 +6,21 @@
   </div>
 
   <div class="row mt-3">
-    <div class="col-12 col-md-4">
+    <div class="col-12 col-md-4 mb-3">
       <app-setting-card
         [settingDetails]="orderReceived"
         [isSelected]="false"
         (selectedCardEvent)="onCardSelect($event)"
       ></app-setting-card>
     </div>
-    <div class="col-12 col-md-4">
+    <div class="col-12 col-md-4 mb-3">
       <app-setting-card
         [settingDetails]="ordersDelivered"
         [isSelected]="false"
         (selectedCardEvent)="onCardSelect($event)"
       ></app-setting-card>
     </div>
-    <div class="col-12 col-md-4">
+    <div class="col-12 col-md-4 mb-3">
       <app-setting-card
         [settingDetails]="revenue"
         [isSelected]="false"
@@ -29,17 +29,36 @@
     </div>
   </div>
 
-  <div class="row mt-3">
-    <div class="col-12 col-md-8">
+  <div class="row">
+    <div class="col-12 col-lg-8 mb-3 mb-lg-0">
       <div class="revenue-chart">
+        <div class="row mb-3">
+          <div class="col-12 heading-four">Order revenue</div>
+          <!-- <div class="col-3">
+            <div class="dropdown-container">
+              <app-dropdown
+                [dropdownList]="dropDownList"
+                [isBorderEnabled]="false"
+              ></app-dropdown>
+            </div>
+          </div> -->
+        </div>
         <canvas id="MyChart">{{ chart }}</canvas>
       </div>
     </div>
-    <div class="col-12 col-md-4 mt-3 mt-md-0">
+    <div class="col-12 col-lg-4">
       <div class="popular-meals">
-        <div><label class="heading-four mb-4">Popular meals</label></div>
+        <div class="row">
+          <div class="col-12 heading-four mb-4">Popular meals</div>
+          <!-- <div class="col-5 dropdown-container">
+            <app-dropdown
+              [dropdownList]="dropDownList"
+              [isBorderEnabled]="false"
+            ></app-dropdown>
+          </div> -->
+        </div>
 
-        <div *ngFor="let meal of popularMealsList" class="row mb-3">
+        <div *ngFor="let meal of popularMealsList" class="row mb-4">
           <div class="col-3">
             <img
               class="img-fluid meal-img"

@@ -1,5 +1,4 @@
 .dropdown {
-  border: 1px solid var(--primary-select-border);
   font-size: 14px;
   font-weight: bold;
   color: var(--primary-select-text-color);
@@ -16,6 +15,10 @@
     -moz-appearance: none;
     appearance: none;
   }
+}
+
+.button-border {
+  border: 1px solid var(--primary-select-border);
 }
 
 .dropdown:after {
