@@ -1,7 +1,7 @@
 <div class="container pb-4">
   <div class="row pt-3 pt-lg-4">
     <div class="col-12">
-      <span class="heading-two pe-cursor">Restaurant Received Orders</span>
+      <span class="heading-two pe-cursor">Orders Received</span>
     </div>
   </div>
 
@@ -75,22 +75,22 @@
           <td class="fw-500 ps-md-4 ps-lg-5" data-label="OrderId">
             {{ restaurantReceivedOrders.orderId }}
           </td>
-          <td data-label="Restaurant Received Orders">
+          <td data-label="Orders Received">
             {{ restaurantReceivedOrders.firstName }}
             {{ restaurantReceivedOrders.lastName }}
           </td>
-          <td data-label="Restaurant Received Orders">
+          <td data-label="Orders Received">
             {{ restaurantReceivedOrders.addressOne
             }}{{ restaurantReceivedOrders.addressTwo
             }}{{ restaurantReceivedOrders.city }}
           </td>
-          <td data-label="Restaurant Received Orders">
+          <td data-label="Orders Received">
             {{ restaurantReceivedOrders.orderDate | date : "d MMM, y" }}
           </td>
-          <td data-label="Restaurant Received Orders">
+          <td data-label="Orders Received">
             {{ restaurantReceivedOrders.orderDate | date : "hh:mm a" }}
           </td>
-          <td data-label="Restaurant Received Orders">
+          <td data-label="Orders Received">
             <span
               [ngClass]="{
                 completed: restaurantReceivedOrders.status === 'Completed',
