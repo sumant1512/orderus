@@ -3,5 +3,5 @@ import { DeliveryAppState } from './delivery-app.state';
 import { DeliveryOrdersReducer } from './delivery-orders/delivery-orders.reducers';
 
 export const deliveryAppReducers: ActionReducerMap<DeliveryAppState, any> = {
-  deliveryOrdersList: DeliveryOrdersReducer,
+  deliveryOrders: DeliveryOrdersReducer,
 };

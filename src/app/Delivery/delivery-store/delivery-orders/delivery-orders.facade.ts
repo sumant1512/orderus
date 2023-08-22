@@ -4,24 +4,52 @@ import { Observable } from 'rxjs';
 import * as deliveryOrdersSelector from './delivery-orders.selectors';
 import { IDeliveryOrders } from './interfaces/delivery-orders.interface';
 import {
-  FetchDeliveryOrders,
-  FetchedDeliveryOrders,
+  FetchActiveOrders,
+  FetchDeliveredOrders,
+  FetchOpenOrders,
+  FetchedActiveOrders,
+  FetchedDeliveredOrders,
+  FetchedOpenOrders,
 } from './delivery-orders.actions';
 import { DeliveryAppState } from '../delivery-app.state';
 
 @Injectable({ providedIn: 'root' })
 export class DeliveryOrdersFacade {
-  deliveryOrdersListState: Observable<IDeliveryOrders[]> = this.store.select(
-    deliveryOrdersSelector.fetchDeliveryOrdersList
+  deliveredOrdersListState: Observable<IDeliveryOrders[]> = this.store.select(
+    deliveryOrdersSelector.fetchdeliveredOrdersList
+  );
+
+  activeOrdersListState: Observable<IDeliveryOrders[]> = this.store.select(
+    deliveryOrdersSelector.fetchActiveOrdersList
+  );
+
+  openOrdersListState: Observable<IDeliveryOrders[]> = this.store.select(
+    deliveryOrdersSelector.fetchOpenOrdersList
   );
 
   constructor(private store: Store<DeliveryAppState>) {}
 
-  fetchDeliveryOrders() {
-    this.store.dispatch(new FetchDeliveryOrders());
+  fetchDeliveredOrders() {
+    this.store.dispatch(new FetchDeliveredOrders());
   }
 
-  fetchedDeliveryOrders(deliveryOrdersList: IDeliveryOrders[]) {
-    this.store.dispatch(new FetchedDeliveryOrders(deliveryOrdersList));
+  fetchedDeliveredOrders(deliveredOrdersList: IDeliveryOrders[]) {
+    this.store.dispatch(new FetchedDeliveredOrders(deliveredOrdersList));
+  }
+
+  fetchOpenOrders() {
+    this.store.dispatch(new FetchOpenOrders());
+  }
+
+  fetchedOpenOrders(openOrdersList: IDeliveryOrders[]) {
+    this.store.dispatch(new FetchedOpenOrders(openOrdersList));
+  }
+
+  fetchActiveOrders() {
+    this.store.dispatch(new FetchActiveOrders());
+  }
+
+  fetchedActiveOrders(activeOrdersList: IDeliveryOrders[]) {
+    this.store.dispatch(new FetchedActiveOrders(activeOrdersList));
   }
 }

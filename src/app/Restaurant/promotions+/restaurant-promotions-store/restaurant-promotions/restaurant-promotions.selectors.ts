@@ -1,13 +1,11 @@
 import { createSelector } from '@ngrx/store';
-import { ERestaurantPromotionsStatus } from './enum/restaurant-promotions.enum';
+import { ETabCode } from './enum/restaurant-promotions.enum';
 import { IRestaurantPromotions } from './interfaces/restaurant-promotions.interface';
 
 export const fetchRestaurantPromotionsList = (state: any) =>
   state.restaurantPromotions?.restaurantPromotionsList || [];
 
-export const selectRestaurantPromotionsByStatus = (
-  status: ERestaurantPromotionsStatus
-) =>
+export const selectRestaurantPromotionsByStatus = (status: ETabCode) =>
   createSelector(
     fetchRestaurantPromotionsList,
     (state: Array<IRestaurantPromotions>) =>

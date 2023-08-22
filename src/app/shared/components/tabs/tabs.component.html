@@ -2,6 +2,10 @@
   <ul class="row tabs nav nav-pills" id="pills-tab" role="tablist">
     <li
       *ngFor="let tab of tabList; let i = index"
+      [ngClass]="{
+        'col-4': tabList.length === 3,
+        'col-6': tabList.length === 2
+      }"
       class="col-4 p-0 nav-item tab-link"
       role="presentation"
     >

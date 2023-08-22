@@ -12,9 +12,31 @@ export class DeliveryOrdersService {
   apiUrls: ApiType = AppConfigurations.api;
   constructor(private http: HttpClient) {}
 
-  fetchDeliveryOrders(): Observable<any> {
+  fetchDeliveredOrders(): Observable<any> {
     return this.http
-      .get<any>('./../../../../assets/api/restaurant-received-orders.json')
+      .get<any>('./../../../../assets/api/delivered-orders.json')
+      .pipe(
+        map((response) => {
+          if (response) {
+            return response.data;
+          }
+        })
+      );
+  }
+
+  fetchOpenOrders(): Observable<any> {
+    return this.http.get<any>('./../../../../assets/api/open-orders.json').pipe(
+      map((response) => {
+        if (response) {
+          return response.data;
+        }
+      })
+    );
+  }
+
+  fetchActiveOrders(): Observable<any> {
+    return this.http
+      .get<any>('./../../../../assets/api/active-orders.json')
       .pipe(
         map((response) => {
           if (response) {

@@ -1,5 +1,5 @@
-import { IDeliveryOrders } from './delivery-orders/interfaces/delivery-orders.interface';
+import { IDeliveryOrdersState } from './delivery-orders/interfaces/delivery-orders.interface';
 
 export type DeliveryAppState = Partial<{
-  deliveryOrdersList: Array<IDeliveryOrders>;
+  deliveryOrders: IDeliveryOrdersState;
 }>;

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ERestaurantPromotionsStatus } from 'src/app/Restaurant/promotions+/restaurant-promotions-store/restaurant-promotions/enum/restaurant-promotions.enum';
+import { ETabCode } from 'src/app/Restaurant/promotions+/restaurant-promotions-store/restaurant-promotions/enum/restaurant-promotions.enum';
 import { IRestaurantPromotions } from 'src/app/Restaurant/promotions+/restaurant-promotions-store/restaurant-promotions/interfaces/restaurant-promotions.interface';
 
 @Component({
@@ -10,5 +10,5 @@ import { IRestaurantPromotions } from 'src/app/Restaurant/promotions+/restaurant
 export class PromotionCardComponent {
   @Input() promotionCard!: IRestaurantPromotions;
 
-  status = ERestaurantPromotionsStatus;
+  status = ETabCode;
 }

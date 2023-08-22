@@ -1,7 +1,7 @@
-import { ERestaurantPromotionsStatus } from 'src/app/Restaurant/promotions+/restaurant-promotions-store/restaurant-promotions/enum/restaurant-promotions.enum';
+import { ETabCode } from '../enum/tab-code.enum';
 
 export interface ITab {
   id: number;
   name: string;
-  code?: ERestaurantPromotionsStatus;
+  code?: ETabCode;
 }
