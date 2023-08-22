@@ -12,7 +12,7 @@ export enum EValidity {
   VALIDITY_INFO = 'validityInfo',
 }
 
-export enum ERestaurantPromotionsStatus {
+export enum ETabCode {
   ACTIVE = 'Active',
   SCHEDULED = 'Scheduled',
   EXPIRED = 'Expired',

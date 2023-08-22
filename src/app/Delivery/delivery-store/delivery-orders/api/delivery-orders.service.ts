@@ -14,7 +14,7 @@ export class DeliveryOrdersService {
 
   fetchDeliveryOrders(): Observable<any> {
     return this.http
-      .get<any>('./../../../../assets/api/restaurant-received-orders.json')
+      .get<any>('./../../../../assets/api/delivery-orders.json')
       .pipe(
         map((response) => {
           if (response) {

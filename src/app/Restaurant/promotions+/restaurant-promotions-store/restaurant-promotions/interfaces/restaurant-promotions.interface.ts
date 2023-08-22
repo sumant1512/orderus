@@ -1,13 +1,13 @@
 import { IImage } from 'src/app/shared/interfaces/image.interface';
 import {
   ERestaurantPromotions,
-  ERestaurantPromotionsStatus,
+  ETabCode,
   EValidity,
 } from '../enum/restaurant-promotions.enum';
 
 export interface IRestaurantPromotions extends IImage {
   [ERestaurantPromotions.ID]: number;
-  [ERestaurantPromotions.STATUS]: ERestaurantPromotionsStatus;
+  [ERestaurantPromotions.STATUS]: ETabCode;
   [ERestaurantPromotions.NAME]: string;
   [ERestaurantPromotions.VALIDITY]?: IValidity;
   [ERestaurantPromotions.RESTAURANT_NAME]: string;

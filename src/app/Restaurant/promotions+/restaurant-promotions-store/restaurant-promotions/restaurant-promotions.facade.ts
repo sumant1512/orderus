@@ -7,7 +7,7 @@ import {
   FetchRestaurantPromotions,
   FetchedRestaurantPromotions,
 } from './restaurant-promotions.actions';
-import { ERestaurantPromotionsStatus } from './enum/restaurant-promotions.enum';
+import { ETabCode } from './enum/restaurant-promotions.enum';
 import { RestaurantPromotionsAppState } from '../restaurant-promotions-app.state';
 
 @Injectable({ providedIn: 'root' })
@@ -18,7 +18,7 @@ export class RestaurantPromotionsFacade {
     );
 
   restaurantPromotionByStatus = (
-    status: ERestaurantPromotionsStatus
+    status: ETabCode
   ): Observable<Array<IRestaurantPromotions>> => {
     return this.store.select(
       restaurantPromotionSelector.selectRestaurantPromotionsByStatus(status)

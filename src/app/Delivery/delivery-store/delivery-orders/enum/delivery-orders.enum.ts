@@ -12,3 +12,12 @@ export enum EDeliveryOrders {
   STATUS = 'status',
   TOTAL_AMOUNT = 'totalAmount',
 }
+
+export enum EDeliveryOrderStatus {
+  PENDING = 'Pending',
+  ACCEPTED = 'Accepted',
+  PREPARING = 'Preparing',
+  READY = 'Ready',
+  PICKED_UP = 'Picked up',
+  DELIVERED = 'Delivered',
+}

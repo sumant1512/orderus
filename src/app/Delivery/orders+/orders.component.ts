@@ -2,8 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { DeliveryOrdersFacade } from '../delivery-store/delivery-orders/delivery-orders.facade';
-import { EDeliveryOrders } from '../delivery-store/delivery-orders/enum/delivery-orders.enum';
+import {
+  EDeliveryOrderStatus,
+  EDeliveryOrders,
+} from '../delivery-store/delivery-orders/enum/delivery-orders.enum';
 import { IDeliveryOrders } from '../delivery-store/delivery-orders/interfaces/delivery-orders.interface';
+import { IAction } from 'src/app/Restaurant/restaurant-shared/interfaces/action.interface';
+import { ActionList } from 'src/app/Restaurant/restaurant-shared/constants/actions';
+import { ITab } from 'src/app/shared/interfaces/tabs.interface';
+import { ETabCode } from 'src/app/shared/enum/tab-code.enum';
 
 @Component({
   selector: 'app-orders',
@@ -13,8 +20,15 @@ import { IDeliveryOrders } from '../delivery-store/delivery-orders/interfaces/de
 export class OrdersComponent implements OnInit {
   subscription = new Subscription();
   deliveryOrdersKeys = EDeliveryOrders;
+  orderStatusEnum = EDeliveryOrderStatus;
   sortOrder = 1;
   deliveryOrdersList!: Array<IDeliveryOrders>;
+  sectionList: Array<ITab> = [
+    { id: 2, name: 'Active', code: ETabCode.ACTIVE_ORDERS },
+    { id: 1, name: 'Open', code: ETabCode.OPEN_ORDERS },
+    { id: 2, name: 'Delivered', code: ETabCode.DELIVERED_ORDERS },
+  ];
+  selectedAction: IAction = ActionList[0];
 
   constructor(
     private deliveryOrdersFacade: DeliveryOrdersFacade,
@@ -46,6 +60,19 @@ export class OrdersComponent implements OnInit {
         }
       )
     );
+  }
+
+  getSelectedPromotion(selectedSection: ITab): void {
+    console.log(selectedSection);
+    // this.subscription.add(
+    //   this.restaurantPromotionsFacade
+    //     .restaurantPromotionByStatus(
+    //       selectedSection.code || ETabCode.ACTIVE
+    //     )
+    //     .subscribe((promotionList) => {
+    //       this.promotionsList = promotionList;
+    //     })
+    // );
   }
 
   onSortClick(colName: EDeliveryOrders, type: string) {

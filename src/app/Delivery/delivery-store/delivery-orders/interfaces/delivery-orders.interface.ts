@@ -1,4 +1,7 @@
-import { EDeliveryOrders } from '../enum/delivery-orders.enum';
+import {
+  EDeliveryOrderStatus,
+  EDeliveryOrders,
+} from '../enum/delivery-orders.enum';
 
 export interface IDeliveryOrders {
   [EDeliveryOrders.ORDER_ID]: number;
@@ -11,10 +14,12 @@ export interface IDeliveryOrders {
   [EDeliveryOrders.COUNTRY]: string;
   [EDeliveryOrders.PIN_CODE]: string;
   [EDeliveryOrders.ORDER_DATE]?: string;
-  [EDeliveryOrders.STATUS]: string;
+  [EDeliveryOrders.STATUS]: EDeliveryOrderStatus;
   [EDeliveryOrders.TOTAL_AMOUNT]: string;
 }
 
 export interface IDeliveryOrdersState {
-  DeliveryOrdersList: Array<IDeliveryOrders>;
+  activeOrdersList: Array<IDeliveryOrders>;
+  openOrdersList: Array<IDeliveryOrders>;
+  deliveredOrdersList: Array<IDeliveryOrders>;
 }
