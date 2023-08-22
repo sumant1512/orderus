@@ -15,8 +15,12 @@ export function DeliveryOrdersReducer(
   action: DeliveryOrdersActionsUnion
 ) {
   switch (action.type) {
-    case DeliveryOrdersActions.FETCHED_DELIVERY_ORDERS:
+    case DeliveryOrdersActions.FETCHED_DELIVERED_ORDERS:
       return { ...state, deliveredOrdersList: action.payload };
+    case DeliveryOrdersActions.FETCHED_OPEN_ORDERS:
+      return { ...state, openOrdersList: action.payload };
+    case DeliveryOrdersActions.FETCHED_ACTIVE_ORDERS:
+      return { ...state, activeOrdersList: action.payload };
     default:
       return state;
   }

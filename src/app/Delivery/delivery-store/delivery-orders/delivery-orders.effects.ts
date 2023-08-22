@@ -2,22 +2,50 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { map, mergeMap } from 'rxjs/operators';
 import {
-  FetchedDeliveryOrders,
+  FetchedDeliveredOrders,
   DeliveryOrdersActions,
   DeliveryOrdersActionsUnion,
+  FetchedOpenOrders,
+  FetchedActiveOrders,
 } from './delivery-orders.actions';
 import { IDeliveryOrders } from './interfaces/delivery-orders.interface';
 import { DeliveryOrdersService } from './api/delivery-orders.service';
 
 @Injectable()
 export class DeliveryOrdersEffects {
-  fetchDeliveryOrders$ = createEffect(() =>
+  fetchDeliveredOrders$ = createEffect(() =>
     this.action$.pipe(
-      ofType(DeliveryOrdersActions.FETCH_DELIVERY_ORDERS),
+      ofType(DeliveryOrdersActions.FETCH_DELIVERED_ORDERS),
       mergeMap(() =>
-        this.deliveryOrdersService.fetchDeliveryOrders().pipe(
+        this.deliveryOrdersService.fetchDeliveredOrders().pipe(
           map((deliveredOrdersList: IDeliveryOrders[]) => {
-            return new FetchedDeliveryOrders(deliveredOrdersList);
+            return new FetchedDeliveredOrders(deliveredOrdersList);
+          })
+        )
+      )
+    )
+  );
+
+  fetchOpenOrders$ = createEffect(() =>
+    this.action$.pipe(
+      ofType(DeliveryOrdersActions.FETCH_OPEN_ORDERS),
+      mergeMap(() =>
+        this.deliveryOrdersService.fetchOpenOrders().pipe(
+          map((openOrdersList: IDeliveryOrders[]) => {
+            return new FetchedOpenOrders(openOrdersList);
+          })
+        )
+      )
+    )
+  );
+
+  fetchActiveOrders$ = createEffect(() =>
+    this.action$.pipe(
+      ofType(DeliveryOrdersActions.FETCH_ACTIVE_ORDERS),
+      mergeMap(() =>
+        this.deliveryOrdersService.fetchActiveOrders().pipe(
+          map((activeOrdersList: IDeliveryOrders[]) => {
+            return new FetchedActiveOrders(activeOrdersList);
           })
         )
       )

@@ -33,7 +33,9 @@ export class OrdersComponent implements OnInit {
     private router: Router,
     private activatedRoute: ActivatedRoute
   ) {
-    this.deliveryOrdersFacade.fetchDeliveryOrders();
+    this.deliveryOrdersFacade.fetchDeliveredOrders();
+    this.deliveryOrdersFacade.fetchActiveOrders();
+    this.deliveryOrdersFacade.fetchOpenOrders();
   }
 
   ngOnInit(): void {
@@ -95,18 +97,8 @@ export class OrdersComponent implements OnInit {
   }
 
   getSelectedPromotion(selectedSection: ITab): void {
-    console.log(selectedSection);
     this.selectedSection = selectedSection;
     this.getOrders();
-    // this.subscription.add(
-    //   this.restaurantPromotionsFacade
-    //     .restaurantPromotionByStatus(
-    //       selectedSection.code || ETabCode.ACTIVE
-    //     )
-    //     .subscribe((promotionList) => {
-    //       this.promotionsList = promotionList;
-    //     })
-    // );
   }
 
   onSortClick(colName: EDeliveryOrders, type: string) {

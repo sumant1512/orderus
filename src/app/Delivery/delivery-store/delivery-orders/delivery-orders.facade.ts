@@ -4,8 +4,12 @@ import { Observable } from 'rxjs';
 import * as deliveryOrdersSelector from './delivery-orders.selectors';
 import { IDeliveryOrders } from './interfaces/delivery-orders.interface';
 import {
-  FetchDeliveryOrders,
-  FetchedDeliveryOrders,
+  FetchActiveOrders,
+  FetchDeliveredOrders,
+  FetchOpenOrders,
+  FetchedActiveOrders,
+  FetchedDeliveredOrders,
+  FetchedOpenOrders,
 } from './delivery-orders.actions';
 import { DeliveryAppState } from '../delivery-app.state';
 
@@ -25,11 +29,27 @@ export class DeliveryOrdersFacade {
 
   constructor(private store: Store<DeliveryAppState>) {}
 
-  fetchDeliveryOrders() {
-    this.store.dispatch(new FetchDeliveryOrders());
+  fetchDeliveredOrders() {
+    this.store.dispatch(new FetchDeliveredOrders());
   }
 
-  fetchedDeliveryOrders(deliveredOrdersList: IDeliveryOrders[]) {
-    this.store.dispatch(new FetchedDeliveryOrders(deliveredOrdersList));
+  fetchedDeliveredOrders(deliveredOrdersList: IDeliveryOrders[]) {
+    this.store.dispatch(new FetchedDeliveredOrders(deliveredOrdersList));
+  }
+
+  fetchOpenOrders() {
+    this.store.dispatch(new FetchOpenOrders());
+  }
+
+  fetchedOpenOrders(openOrdersList: IDeliveryOrders[]) {
+    this.store.dispatch(new FetchedOpenOrders(openOrdersList));
+  }
+
+  fetchActiveOrders() {
+    this.store.dispatch(new FetchActiveOrders());
+  }
+
+  fetchedActiveOrders(activeOrdersList: IDeliveryOrders[]) {
+    this.store.dispatch(new FetchedActiveOrders(activeOrdersList));
   }
 }
