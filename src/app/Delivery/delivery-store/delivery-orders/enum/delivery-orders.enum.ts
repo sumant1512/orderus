@@ -1,4 +1,4 @@
-export enum ERestaurantReceivedOrders {
+export enum EDeliveryOrders {
   ORDER_ID = 'orderId',
   FIRST_NAME = 'firstName',
   LAST_NAME = 'lastName',

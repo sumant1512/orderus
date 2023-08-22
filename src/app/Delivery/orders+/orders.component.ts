@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { ERestaurantReceivedOrders } from './orders-store/restaurant-received-orders/enum/restaurant-received-orders.enum';
-import { IRestaurantReceivedOrders } from './orders-store/restaurant-received-orders/interfaces/restaurant-received-orders.interface';
-import { RestaurantReceivedOrdersFacade } from './orders-store/restaurant-received-orders/restaurant-received-orders.facade';
+import { DeliveryOrdersFacade } from '../delivery-store/delivery-orders/delivery-orders.facade';
+import { EDeliveryOrders } from '../delivery-store/delivery-orders/enum/delivery-orders.enum';
+import { IDeliveryOrders } from '../delivery-store/delivery-orders/interfaces/delivery-orders.interface';
 
 @Component({
   selector: 'app-orders',
@@ -12,20 +12,20 @@ import { RestaurantReceivedOrdersFacade } from './orders-store/restaurant-receiv
 })
 export class OrdersComponent implements OnInit {
   subscription = new Subscription();
-  restaurantReceivedOrdersKeys = ERestaurantReceivedOrders;
+  deliveryOrdersKeys = EDeliveryOrders;
   sortOrder = 1;
-  restaurantReceivedOrdersList!: Array<IRestaurantReceivedOrders>;
+  deliveryOrdersList!: Array<IDeliveryOrders>;
 
   constructor(
-    private restaurantReceivedOrdersFacade: RestaurantReceivedOrdersFacade,
+    private deliveryOrdersFacade: DeliveryOrdersFacade,
     private router: Router,
     private activatedRoute: ActivatedRoute
   ) {
-    this.restaurantReceivedOrdersFacade.fetchRestaurantReceivedOrders();
+    this.deliveryOrdersFacade.fetchDeliveryOrders();
   }
 
   ngOnInit(): void {
-    this.getRestaurantReceivedOrders();
+    this.getDeliveryOrders();
   }
 
   ngOnDestroy(): void {
@@ -38,17 +38,17 @@ export class OrdersComponent implements OnInit {
     });
   }
 
-  getRestaurantReceivedOrders(): void {
+  getDeliveryOrders(): void {
     this.subscription.add(
-      this.restaurantReceivedOrdersFacade.restaurantReceivedOrdersListState.subscribe(
-        (restaurantReceivedOrdersList) => {
-          this.restaurantReceivedOrdersList = restaurantReceivedOrdersList;
+      this.deliveryOrdersFacade.deliveryOrdersListState.subscribe(
+        (deliveryOrdersList) => {
+          this.deliveryOrdersList = deliveryOrdersList;
         }
       )
     );
   }
 
-  onSortClick(colName: ERestaurantReceivedOrders, type: string) {
+  onSortClick(colName: EDeliveryOrders, type: string) {
     if (type === 'number') {
       this.sortNumbers(colName);
     } else if (type === 'string') {
@@ -59,45 +59,41 @@ export class OrdersComponent implements OnInit {
     this.sortOrder = this.sortOrder === 1 ? -1 : 1;
   }
 
-  sortNumbers(colName: ERestaurantReceivedOrders): void {
-    let sortedList: Array<IRestaurantReceivedOrders>;
+  sortNumbers(colName: EDeliveryOrders): void {
+    let sortedList: Array<IDeliveryOrders>;
     if (this.sortOrder === 1) {
-      sortedList = [...this.restaurantReceivedOrdersList]?.sort((a, b) => {
+      sortedList = [...this.deliveryOrdersList]?.sort((a, b) => {
         return (
-          (b[colName as keyof IRestaurantReceivedOrders] as any) -
-          (a[colName as keyof IRestaurantReceivedOrders] as any)
+          (b[colName as keyof IDeliveryOrders] as any) -
+          (a[colName as keyof IDeliveryOrders] as any)
         );
       });
     } else {
-      sortedList = [...this.restaurantReceivedOrdersList]?.sort((a, b) => {
+      sortedList = [...this.deliveryOrdersList]?.sort((a, b) => {
         return (
-          (a[colName as keyof IRestaurantReceivedOrders] as any) -
-          (b[colName as keyof IRestaurantReceivedOrders] as any)
+          (a[colName as keyof IDeliveryOrders] as any) -
+          (b[colName as keyof IDeliveryOrders] as any)
         );
       });
     }
-    this.restaurantReceivedOrdersList = sortedList;
+    this.deliveryOrdersList = sortedList;
   }
 
-  sortString(colName: ERestaurantReceivedOrders): void {
-    let sortedList: Array<IRestaurantReceivedOrders>;
+  sortString(colName: EDeliveryOrders): void {
+    let sortedList: Array<IDeliveryOrders>;
     if (this.sortOrder === 1) {
-      sortedList = [...this.restaurantReceivedOrdersList]?.sort((a, b) => {
-        return (
-          a[colName as keyof IRestaurantReceivedOrders] as string
-        ).localeCompare(
-          b[colName as keyof IRestaurantReceivedOrders] as string
+      sortedList = [...this.deliveryOrdersList]?.sort((a, b) => {
+        return (a[colName as keyof IDeliveryOrders] as string).localeCompare(
+          b[colName as keyof IDeliveryOrders] as string
         );
       });
     } else {
-      sortedList = [...this.restaurantReceivedOrdersList]?.sort((a, b) => {
-        return (
-          b[colName as keyof IRestaurantReceivedOrders] as string
-        ).localeCompare(
-          a[colName as keyof IRestaurantReceivedOrders] as string
+      sortedList = [...this.deliveryOrdersList]?.sort((a, b) => {
+        return (b[colName as keyof IDeliveryOrders] as string).localeCompare(
+          a[colName as keyof IDeliveryOrders] as string
         );
       });
     }
-    this.restaurantReceivedOrdersList = sortedList;
+    this.deliveryOrdersList = sortedList;
   }
 }
