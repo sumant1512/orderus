@@ -16,8 +16,8 @@ export class DeliveryOrdersEffects {
       ofType(DeliveryOrdersActions.FETCH_DELIVERY_ORDERS),
       mergeMap(() =>
         this.deliveryOrdersService.fetchDeliveryOrders().pipe(
-          map((deliveryOrdersList: IDeliveryOrders[]) => {
-            return new FetchedDeliveryOrders(deliveryOrdersList);
+          map((deliveredOrdersList: IDeliveryOrders[]) => {
+            return new FetchedDeliveryOrders(deliveredOrdersList);
           })
         )
       )

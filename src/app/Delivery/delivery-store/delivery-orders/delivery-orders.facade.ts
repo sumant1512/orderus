@@ -11,8 +11,16 @@ import { DeliveryAppState } from '../delivery-app.state';
 
 @Injectable({ providedIn: 'root' })
 export class DeliveryOrdersFacade {
-  deliveryOrdersListState: Observable<IDeliveryOrders[]> = this.store.select(
-    deliveryOrdersSelector.fetchDeliveryOrdersList
+  deliveredOrdersListState: Observable<IDeliveryOrders[]> = this.store.select(
+    deliveryOrdersSelector.fetchdeliveredOrdersList
+  );
+
+  activeOrdersListState: Observable<IDeliveryOrders[]> = this.store.select(
+    deliveryOrdersSelector.fetchActiveOrdersList
+  );
+
+  openOrdersListState: Observable<IDeliveryOrders[]> = this.store.select(
+    deliveryOrdersSelector.fetchOpenOrdersList
   );
 
   constructor(private store: Store<DeliveryAppState>) {}
@@ -21,7 +29,7 @@ export class DeliveryOrdersFacade {
     this.store.dispatch(new FetchDeliveryOrders());
   }
 
-  fetchedDeliveryOrders(deliveryOrdersList: IDeliveryOrders[]) {
-    this.store.dispatch(new FetchedDeliveryOrders(deliveryOrdersList));
+  fetchedDeliveryOrders(deliveredOrdersList: IDeliveryOrders[]) {
+    this.store.dispatch(new FetchedDeliveryOrders(deliveredOrdersList));
   }
 }

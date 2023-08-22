@@ -7,8 +7,6 @@ import {
   EDeliveryOrders,
 } from '../delivery-store/delivery-orders/enum/delivery-orders.enum';
 import { IDeliveryOrders } from '../delivery-store/delivery-orders/interfaces/delivery-orders.interface';
-import { IAction } from 'src/app/Restaurant/restaurant-shared/interfaces/action.interface';
-import { ActionList } from 'src/app/Restaurant/restaurant-shared/constants/actions';
 import { ITab } from 'src/app/shared/interfaces/tabs.interface';
 import { ETabCode } from 'src/app/shared/enum/tab-code.enum';
 
@@ -22,13 +20,13 @@ export class OrdersComponent implements OnInit {
   deliveryOrdersKeys = EDeliveryOrders;
   orderStatusEnum = EDeliveryOrderStatus;
   sortOrder = 1;
-  deliveryOrdersList!: Array<IDeliveryOrders>;
+  ordersList: Array<IDeliveryOrders> = [];
   sectionList: Array<ITab> = [
-    { id: 2, name: 'Active', code: ETabCode.ACTIVE_ORDERS },
-    { id: 1, name: 'Open', code: ETabCode.OPEN_ORDERS },
-    { id: 2, name: 'Delivered', code: ETabCode.DELIVERED_ORDERS },
+    { id: 1, name: 'Active', code: ETabCode.ACTIVE_ORDERS },
+    { id: 2, name: 'Open', code: ETabCode.OPEN_ORDERS },
+    { id: 3, name: 'Delivered', code: ETabCode.DELIVERED_ORDERS },
   ];
-  selectedAction: IAction = ActionList[0];
+  selectedSection: ITab = this.sectionList[0];
 
   constructor(
     private deliveryOrdersFacade: DeliveryOrdersFacade,
@@ -39,7 +37,7 @@ export class OrdersComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getDeliveryOrders();
+    this.getOrders();
   }
 
   ngOnDestroy(): void {
@@ -52,11 +50,45 @@ export class OrdersComponent implements OnInit {
     });
   }
 
-  getDeliveryOrders(): void {
+  getOrders(): void {
+    switch (this.selectedSection.code) {
+      case ETabCode.OPEN_ORDERS:
+        this.getOpenOrders();
+        break;
+      case ETabCode.DELIVERED_ORDERS:
+        this.getDeliveredOrders();
+        break;
+      default:
+        this.getActiveOrders();
+        break;
+    }
+  }
+
+  getDeliveredOrders(): void {
     this.subscription.add(
-      this.deliveryOrdersFacade.deliveryOrdersListState.subscribe(
-        (deliveryOrdersList) => {
-          this.deliveryOrdersList = deliveryOrdersList;
+      this.deliveryOrdersFacade.deliveredOrdersListState.subscribe(
+        (deliveredOrdersList) => {
+          this.ordersList = deliveredOrdersList;
+        }
+      )
+    );
+  }
+
+  getOpenOrders(): void {
+    this.subscription.add(
+      this.deliveryOrdersFacade.openOrdersListState.subscribe(
+        (deliveredOrdersList) => {
+          this.ordersList = deliveredOrdersList;
+        }
+      )
+    );
+  }
+
+  getActiveOrders(): void {
+    this.subscription.add(
+      this.deliveryOrdersFacade.activeOrdersListState.subscribe(
+        (deliveredOrdersList) => {
+          this.ordersList = deliveredOrdersList;
         }
       )
     );
@@ -64,6 +96,8 @@ export class OrdersComponent implements OnInit {
 
   getSelectedPromotion(selectedSection: ITab): void {
     console.log(selectedSection);
+    this.selectedSection = selectedSection;
+    this.getOrders();
     // this.subscription.add(
     //   this.restaurantPromotionsFacade
     //     .restaurantPromotionByStatus(
@@ -89,38 +123,38 @@ export class OrdersComponent implements OnInit {
   sortNumbers(colName: EDeliveryOrders): void {
     let sortedList: Array<IDeliveryOrders>;
     if (this.sortOrder === 1) {
-      sortedList = [...this.deliveryOrdersList]?.sort((a, b) => {
+      sortedList = [...this.ordersList]?.sort((a, b) => {
         return (
           (b[colName as keyof IDeliveryOrders] as any) -
           (a[colName as keyof IDeliveryOrders] as any)
         );
       });
     } else {
-      sortedList = [...this.deliveryOrdersList]?.sort((a, b) => {
+      sortedList = [...this.ordersList]?.sort((a, b) => {
         return (
           (a[colName as keyof IDeliveryOrders] as any) -
           (b[colName as keyof IDeliveryOrders] as any)
         );
       });
     }
-    this.deliveryOrdersList = sortedList;
+    this.ordersList = sortedList;
   }
 
   sortString(colName: EDeliveryOrders): void {
     let sortedList: Array<IDeliveryOrders>;
     if (this.sortOrder === 1) {
-      sortedList = [...this.deliveryOrdersList]?.sort((a, b) => {
+      sortedList = [...this.ordersList]?.sort((a, b) => {
         return (a[colName as keyof IDeliveryOrders] as string).localeCompare(
           b[colName as keyof IDeliveryOrders] as string
         );
       });
     } else {
-      sortedList = [...this.deliveryOrdersList]?.sort((a, b) => {
+      sortedList = [...this.ordersList]?.sort((a, b) => {
         return (b[colName as keyof IDeliveryOrders] as string).localeCompare(
           a[colName as keyof IDeliveryOrders] as string
         );
       });
     }
-    this.deliveryOrdersList = sortedList;
+    this.ordersList = sortedList;
   }
 }

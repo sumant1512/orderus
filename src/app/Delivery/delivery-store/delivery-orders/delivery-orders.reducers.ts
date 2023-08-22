@@ -1,10 +1,14 @@
-import { IDeliveryOrders } from './interfaces/delivery-orders.interface';
+import { IDeliveryOrdersState } from './interfaces/delivery-orders.interface';
 import {
   DeliveryOrdersActions,
   DeliveryOrdersActionsUnion,
 } from './delivery-orders.actions';
 
-export const initialDeliveryOrdersState: Array<IDeliveryOrders> = [];
+export const initialDeliveryOrdersState: IDeliveryOrdersState = {
+  activeOrdersList: [],
+  openOrdersList: [],
+  deliveredOrdersList: [],
+};
 
 export function DeliveryOrdersReducer(
   state = initialDeliveryOrdersState,
@@ -12,7 +16,7 @@ export function DeliveryOrdersReducer(
 ) {
   switch (action.type) {
     case DeliveryOrdersActions.FETCHED_DELIVERY_ORDERS:
-      return action.payload;
+      return { ...state, deliveredOrdersList: action.payload };
     default:
       return state;
   }
