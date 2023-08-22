@@ -8,11 +8,11 @@ import { ApiType } from 'src/app/store/config/config.type';
 @Injectable({
   providedIn: 'root',
 })
-export class RestaurantReceivedOrdersService {
+export class DeliveryOrdersService {
   apiUrls: ApiType = AppConfigurations.api;
   constructor(private http: HttpClient) {}
 
-  fetchRestaurantReceivedOrders(): Observable<any> {
+  fetchDeliveryOrders(): Observable<any> {
     return this.http
       .get<any>('./../../../../assets/api/restaurant-received-orders.json')
       .pipe(
