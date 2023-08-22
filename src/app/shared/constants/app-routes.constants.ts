@@ -42,9 +42,6 @@ export const APP_ROUTES = {
     CHILD_ROUTES: {
       DASHBOARD: 'dashboard',
       ORDERS: 'orders',
-      CUSTOMERS: 'customers',
-      MENU: 'menu',
-      PROMOTIONS: 'promotions',
     },
   },
 };

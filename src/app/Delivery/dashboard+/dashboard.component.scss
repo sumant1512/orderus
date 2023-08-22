@@ -1,0 +1,35 @@
+.heading-two:hover {
+  text-decoration: underline;
+}
+
+.revenue-chart {
+  border: 1px solid var(--box-border-color);
+  border-radius: 16px;
+  min-height: 350px;
+  width: 100%;
+  padding: 16px;
+}
+
+.dropdown-container {
+  max-width: 100px;
+  min-width: 100px;
+  margin-left: auto;
+}
+
+.popular-meals {
+  border: 1px solid var(--box-border-color);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.meal-img {
+  border-radius: 8px;
+}
+
+.orders-count {
+  color: var(--label-2);
+}
+
+.price {
+  color: var(--popular-meals-price-color);
+}

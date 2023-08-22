@@ -28,25 +28,16 @@
               tabindex="1"
               class="nav-link header-nav-link fw-bold"
               aria-current="page"
-              (click)="navigateToPage(appRoutes.RESTAURANTS)"
-              >Restaurants</a
+              [routerLink]="[appRoutes.DELIVERY.CHILD_ROUTES.DASHBOARD]"
+              >Dashboard</a
             >
           </li>
           <li class="nav-item me-0 me-md-2 me-lg-3 pe-cursor">
             <a
               tabindex="1"
               class="nav-link header-nav-link fw-bold"
-              (click)="navigateToPage(appRoutes.DEALS)"
-              >Deals</a
-            >
-          </li>
-          <li class="d-none d-md-block header-seprator me-3"></li>
-          <li class="nav-item me-0 me-md-2 me-lg-3 pe-cursor">
-            <a
-              tabindex="1"
-              class="nav-link header-nav-link fw-bold"
-              (click)="navigateToPage(appRoutes.MY_ORDERS)"
-              >My orders</a
+              [routerLink]="[appRoutes.DELIVERY.CHILD_ROUTES.ORDERS]"
+              >Orders</a
             >
           </li>
           <div class="row w-100 d-flex align-items-center d-md-none">
