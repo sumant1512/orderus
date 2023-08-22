@@ -3,11 +3,11 @@ import { IFooterUrlList } from 'src/app/shared/interfaces/footer-url-list.interf
 import { IImage } from 'src/app/shared/interfaces/image.interface';
 
 @Component({
-  selector: 'app-footer',
-  templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss'],
+  selector: 'app-delivery-footer',
+  templateUrl: './delivery-footer.component.html',
+  styleUrls: ['./delivery-footer.component.scss'],
 })
-export class FooterComponent {
+export class DeliveryFooterComponent {
   footerUrlList: Array<IFooterUrlList> = [
     {
       headerName: 'Responses',

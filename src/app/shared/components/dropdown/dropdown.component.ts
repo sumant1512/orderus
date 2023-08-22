@@ -8,4 +8,5 @@ import { IDropdown } from '../../interfaces/dropdown.interface';
 })
 export class DropdownComponent {
   @Input() dropdownList!: Array<IDropdown>;
+  @Input() isBorderEnabled: boolean = true;
 }

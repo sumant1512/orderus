@@ -7,11 +7,11 @@ import { APP_ROUTES } from 'src/app/shared/constants/app-routes.constants';
 import { IImage } from 'src/app/shared/interfaces/image.interface';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
+  selector: 'app-delivery-header',
+  templateUrl: './delivery-header.component.html',
+  styleUrls: ['./delivery-header.component.scss'],
 })
-export class HeaderComponent implements OnInit {
+export class DeliveryHeaderComponent implements OnInit {
   subscription = new Subscription();
   appRoutes = APP_ROUTES;
   bellItemCount = 1;
