@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { ETabCode } from 'src/app/Restaurant/promotions+/restaurant-promotions-store/restaurant-promotions/enum/restaurant-promotions.enum';
 import { IRestaurantPromotions } from 'src/app/Restaurant/promotions+/restaurant-promotions-store/restaurant-promotions/interfaces/restaurant-promotions.interface';
+import { ETabCode } from '../../enum/tab-code.enum';
 
 @Component({
   selector: 'app-promotion-card',

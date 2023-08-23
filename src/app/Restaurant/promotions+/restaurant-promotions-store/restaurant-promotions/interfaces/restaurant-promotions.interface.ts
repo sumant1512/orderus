@@ -1,9 +1,9 @@
 import { IImage } from 'src/app/shared/interfaces/image.interface';
 import {
   ERestaurantPromotions,
-  ETabCode,
   EValidity,
 } from '../enum/restaurant-promotions.enum';
+import { ETabCode } from 'src/app/shared/enum/tab-code.enum';
 
 export interface IRestaurantPromotions extends IImage {
   [ERestaurantPromotions.ID]: number;

@@ -5,6 +5,15 @@
     </div>
   </div>
 
+  <div class="row mt-3 mt-md-4">
+    <div class="col-12">
+      <app-tabs
+        [tabList]="sectionList"
+        (selectedTab)="getSelectedOrders($event)"
+      ></app-tabs>
+    </div>
+  </div>
+
   <div class="table-container mt-4">
     <table class="table">
       <thead class="pe-cursor">
