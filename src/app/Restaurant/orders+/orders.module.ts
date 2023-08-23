@@ -22,7 +22,7 @@ export function ordersMetaReducer(state: any, action: any) {
     CommonModule,
     OrdersRoutingModule,
     SharedModule,
-    StoreModule.forFeature('restaurantReceivedOrders', ordersMetaReducer, {
+    StoreModule.forFeature('restaurant', ordersMetaReducer, {
       metaReducers: [],
     }),
     EffectsModule.forFeature([...OrdersAppEffects]),

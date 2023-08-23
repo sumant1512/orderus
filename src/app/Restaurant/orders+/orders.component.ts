@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { ERestaurantReceivedOrders } from './orders-store/restaurant-received-orders/enum/restaurant-received-orders.enum';
+import {
+  ERestaurantDeliveryOrderStatus,
+  ERestaurantReceivedOrders,
+} from './orders-store/restaurant-received-orders/enum/restaurant-received-orders.enum';
 import { IRestaurantReceivedOrders } from './orders-store/restaurant-received-orders/interfaces/restaurant-received-orders.interface';
 import { RestaurantReceivedOrdersFacade } from './orders-store/restaurant-received-orders/restaurant-received-orders.facade';
 import { ITab } from 'src/app/shared/interfaces/tabs.interface';
@@ -17,10 +20,11 @@ export class OrdersComponent implements OnInit {
   restaurantReceivedOrdersKeys = ERestaurantReceivedOrders;
   sortOrder = 1;
   restaurantReceivedOrdersList!: Array<IRestaurantReceivedOrders>;
+  orderStatusEnum = ERestaurantDeliveryOrderStatus;
   sectionList: Array<ITab> = [
-    { id: 1, name: 'In progress', code: ETabCode.IN_PROGRESS },
-    { id: 2, name: 'Open', code: ETabCode.OPEN_ORDERS },
-    { id: 3, name: 'Delivered', code: ETabCode.DELIVERED_ORDERS },
+    { id: 1, name: 'Active', code: ETabCode.ACTIVE },
+    { id: 2, name: 'Open', code: ETabCode.OPEN },
+    { id: 3, name: 'Delivered', code: ETabCode.DELIVERED },
   ];
   selectedSection: ITab = this.sectionList[0];
 
@@ -29,11 +33,13 @@ export class OrdersComponent implements OnInit {
     private router: Router,
     private activatedRoute: ActivatedRoute
   ) {
-    this.restaurantReceivedOrdersFacade.fetchRestaurantReceivedOrders();
+    this.restaurantReceivedOrdersFacade.fetchRestaurantReceivedDeliveredOrders();
+    this.restaurantReceivedOrdersFacade.fetchRestaurantReceivedOpenOrders();
+    this.restaurantReceivedOrdersFacade.fetchRestaurantReceivedActiveOrders();
   }
 
   ngOnInit(): void {
-    this.getRestaurantReceivedOrders();
+    this.getOrders();
   }
 
   ngOnDestroy(): void {
@@ -46,17 +52,52 @@ export class OrdersComponent implements OnInit {
     });
   }
 
-  getSelectedOrders(selectedSection: ITab): void {
-    this.selectedSection = selectedSection;
-    console.log(this.selectedSection);
-    // this.getOrders();
+  getOrders(): void {
+    switch (this.selectedSection.code) {
+      case ETabCode.OPEN:
+        this.getRestaurantReceivedOpenOrders();
+        break;
+      case ETabCode.DELIVERED:
+        this.getRestaurantReceivedDeliveredOrders();
+        break;
+      default:
+        this.getRestaurantReceivedActiveOrders();
+        break;
+    }
   }
 
-  getRestaurantReceivedOrders(): void {
+  getSelectedOrders(selectedSection: ITab): void {
+    this.selectedSection = selectedSection;
+    this.getOrders();
+  }
+
+  getRestaurantReceivedDeliveredOrders(): void {
     this.subscription.add(
-      this.restaurantReceivedOrdersFacade.restaurantReceivedOrdersListState.subscribe(
-        (restaurantReceivedOrdersList) => {
-          this.restaurantReceivedOrdersList = restaurantReceivedOrdersList;
+      this.restaurantReceivedOrdersFacade.restaurantReceivedDeliveredOrdersList.subscribe(
+        (restaurantReceivedDeliveredOrdersList) => {
+          this.restaurantReceivedOrdersList =
+            restaurantReceivedDeliveredOrdersList;
+        }
+      )
+    );
+  }
+
+  getRestaurantReceivedOpenOrders(): void {
+    this.subscription.add(
+      this.restaurantReceivedOrdersFacade.restaurantReceivedOpenOrdersList.subscribe(
+        (restaurantReceivedOpenOrdersList) => {
+          this.restaurantReceivedOrdersList = restaurantReceivedOpenOrdersList;
+        }
+      )
+    );
+  }
+
+  getRestaurantReceivedActiveOrders(): void {
+    this.subscription.add(
+      this.restaurantReceivedOrdersFacade.restaurantReceivedActiveOrdersList.subscribe(
+        (restaurantReceivedActiveOrdersList) => {
+          this.restaurantReceivedOrdersList =
+            restaurantReceivedActiveOrdersList;
         }
       )
     );

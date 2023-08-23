@@ -22,9 +22,9 @@ export class OrdersComponent implements OnInit {
   sortOrder = 1;
   ordersList: Array<IDeliveryOrders> = [];
   sectionList: Array<ITab> = [
-    { id: 1, name: 'Active', code: ETabCode.ACTIVE_ORDERS },
-    { id: 2, name: 'Open', code: ETabCode.OPEN_ORDERS },
-    { id: 3, name: 'Delivered', code: ETabCode.DELIVERED_ORDERS },
+    { id: 1, name: 'Active', code: ETabCode.ACTIVE },
+    { id: 2, name: 'Open', code: ETabCode.OPEN },
+    { id: 3, name: 'Delivered', code: ETabCode.DELIVERED },
   ];
   selectedSection: ITab = this.sectionList[0];
 
@@ -54,10 +54,10 @@ export class OrdersComponent implements OnInit {
 
   getOrders(): void {
     switch (this.selectedSection.code) {
-      case ETabCode.OPEN_ORDERS:
+      case ETabCode.OPEN:
         this.getOpenOrders();
         break;
-      case ETabCode.DELIVERED_ORDERS:
+      case ETabCode.DELIVERED:
         this.getDeliveredOrders();
         break;
       default:

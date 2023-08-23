@@ -8,7 +8,7 @@ import { UserInfoReducer } from './user-info/user-info.reducers';
 import { RegistrationReducer } from './registration/registration.reducers';
 
 export const appReducers: ActionReducerMap<AppState, any> = {
-  restaurant: RestaurantReducer,
+  restaurants: RestaurantReducer,
   restaurantDetails: RestaurantDetailsReducer,
   itemFilters: ItemFilterReducer,
   offers: OffersReducer,
