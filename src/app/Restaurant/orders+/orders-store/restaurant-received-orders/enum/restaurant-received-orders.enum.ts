@@ -12,3 +12,13 @@ export enum ERestaurantReceivedOrders {
   STATUS = 'status',
   TOTAL_AMOUNT = 'totalAmount',
 }
+
+export enum ERestaurantDeliveryOrderStatus {
+  PENDING = 'Pending',
+  OPEN = 'Open',
+  ACCEPTED = 'Accepted',
+  PREPARING = 'Preparing',
+  READY = 'Ready',
+  PICKED_UP = 'Picked up',
+  DELIVERED = 'Delivered',
+}

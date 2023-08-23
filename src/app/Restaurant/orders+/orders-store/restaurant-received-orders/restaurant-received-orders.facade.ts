@@ -4,29 +4,72 @@ import { Observable } from 'rxjs';
 import * as restaurantReceivedOrdersSelector from './restaurant-received-orders.selectors';
 import { IRestaurantReceivedOrders } from './interfaces/restaurant-received-orders.interface';
 import {
-  FetchRestaurantReceivedOrders,
-  FetchedRestaurantReceivedOrders,
+  FetchRestaurantReceivedActiveOrders,
+  FetchRestaurantReceivedDeliveredOrders,
+  FetchRestaurantReceivedOpenOrders,
+  FetchedRestaurantReceivedActiveOrders,
+  FetchedRestaurantReceivedDeliveredOrders,
+  FetchedRestaurantReceivedOpenOrders,
 } from './restaurant-received-orders.actions';
 import { OrdersAppState } from '../orders-app.state';
 
 @Injectable({ providedIn: 'root' })
 export class RestaurantReceivedOrdersFacade {
-  restaurantReceivedOrdersListState: Observable<IRestaurantReceivedOrders[]> =
+  restaurantReceivedDeliveredOrdersList: Observable<
+    IRestaurantReceivedOrders[]
+  > = this.store.select(
+    restaurantReceivedOrdersSelector.fetchRestaurantReceivedDeliveredOrdersList
+  );
+
+  restaurantReceivedOpenOrdersList: Observable<IRestaurantReceivedOrders[]> =
     this.store.select(
-      restaurantReceivedOrdersSelector.fetchRestaurantReceivedOrdersList
+      restaurantReceivedOrdersSelector.fetchRestaurantReceivedOpenOrdersList
+    );
+
+  restaurantReceivedActiveOrdersList: Observable<IRestaurantReceivedOrders[]> =
+    this.store.select(
+      restaurantReceivedOrdersSelector.fetchRestaurantReceivedActiveOrdersList
     );
 
   constructor(private store: Store<OrdersAppState>) {}
 
-  fetchRestaurantReceivedOrders() {
-    this.store.dispatch(new FetchRestaurantReceivedOrders());
+  fetchRestaurantReceivedDeliveredOrders() {
+    this.store.dispatch(new FetchRestaurantReceivedDeliveredOrders());
   }
 
-  fetchedRestaurantReceivedOrders(
-    restaurantReceivedOrdersList: IRestaurantReceivedOrders[]
+  fetchedRestaurantReceivedDeliveredOrders(
+    restaurantReceivedDeliveredOrdersList: IRestaurantReceivedOrders[]
   ) {
     this.store.dispatch(
-      new FetchedRestaurantReceivedOrders(restaurantReceivedOrdersList)
+      new FetchedRestaurantReceivedDeliveredOrders(
+        restaurantReceivedDeliveredOrdersList
+      )
+    );
+  }
+
+  fetchRestaurantReceivedOpenOrders() {
+    this.store.dispatch(new FetchRestaurantReceivedOpenOrders());
+  }
+
+  fetchedRestaurantReceivedOpenOrders(
+    restaurantReceivedOpenOrdersList: IRestaurantReceivedOrders[]
+  ) {
+    this.store.dispatch(
+      new FetchedRestaurantReceivedOpenOrders(restaurantReceivedOpenOrdersList)
+    );
+  }
+
+  fetchRestaurantReceivedActiveOrders() {
+    this.store.dispatch(new FetchRestaurantReceivedActiveOrders());
+  }
+
+  fetchedRestaurantReceivedActiveOrders(
+    restaurantReceivedActiveOrdersList: IRestaurantReceivedOrders[]
+  ) {
+    this.store.dispatch(
+      new FetchedRestaurantReceivedActiveOrders(
+        restaurantReceivedActiveOrdersList
+      )
     );
   }
 }

@@ -102,9 +102,18 @@
           <td data-label="Orders Received">
             <span
               [ngClass]="{
-                completed: restaurantReceivedOrders.status === 'Completed',
-                cancelled: restaurantReceivedOrders.status === 'Pending',
-                'in-progress': restaurantReceivedOrders.status === 'In Progress'
+                completed:
+                  restaurantReceivedOrders.status === orderStatusEnum.DELIVERED,
+                cancelled:
+                  restaurantReceivedOrders.status === orderStatusEnum.PENDING ||
+                  restaurantReceivedOrders.status === orderStatusEnum.OPEN,
+                'in-progress':
+                  restaurantReceivedOrders.status === orderStatusEnum.READY ||
+                  restaurantReceivedOrders.status ===
+                    orderStatusEnum.PICKED_UP ||
+                  restaurantReceivedOrders.status ===
+                    orderStatusEnum.PREPARING ||
+                  restaurantReceivedOrders.status === orderStatusEnum.ACCEPTED
               }"
               class="dot me-2"
             ></span>

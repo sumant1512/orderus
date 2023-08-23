@@ -12,10 +12,38 @@ export class RestaurantReceivedOrdersService {
   apiUrls: ApiType = AppConfigurations.api;
   constructor(private http: HttpClient) {}
 
-  fetchRestaurantReceivedOrders(): Observable<any> {
+  fetchRestaurantReceivedActiveOrders(): Observable<any> {
     return this.http
       .get<any>(
         './../../../../assets/api/restaurant/restaurant-received-active-orders.json'
+      )
+      .pipe(
+        map((response) => {
+          if (response) {
+            return response.data;
+          }
+        })
+      );
+  }
+
+  fetchRestaurantReceivedOpenOrders(): Observable<any> {
+    return this.http
+      .get<any>(
+        './../../../../assets/api/restaurant/restaurant-received-open-orders.json'
+      )
+      .pipe(
+        map((response) => {
+          if (response) {
+            return response.data;
+          }
+        })
+      );
+  }
+
+  fetchRestaurantReceivedDeliveredOrders(): Observable<any> {
+    return this.http
+      .get<any>(
+        './../../../../assets/api/restaurant/restaurant-received-delivered-orders.json'
       )
       .pipe(
         map((response) => {
