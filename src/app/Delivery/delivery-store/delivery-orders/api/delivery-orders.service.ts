@@ -14,7 +14,7 @@ export class DeliveryOrdersService {
 
   fetchDeliveredOrders(): Observable<any> {
     return this.http
-      .get<any>('./../../../../assets/api/delivered-orders.json')
+      .get<any>('./../../../../assets/api/delivery/delivered-orders.json')
       .pipe(
         map((response) => {
           if (response) {
@@ -25,18 +25,20 @@ export class DeliveryOrdersService {
   }
 
   fetchOpenOrders(): Observable<any> {
-    return this.http.get<any>('./../../../../assets/api/open-orders.json').pipe(
-      map((response) => {
-        if (response) {
-          return response.data;
-        }
-      })
-    );
+    return this.http
+      .get<any>('./../../../../assets/api/delivery/open-orders.json')
+      .pipe(
+        map((response) => {
+          if (response) {
+            return response.data;
+          }
+        })
+      );
   }
 
   fetchActiveOrders(): Observable<any> {
     return this.http
-      .get<any>('./../../../../assets/api/active-orders.json')
+      .get<any>('./../../../../assets/api/delivery/active-orders.json')
       .pipe(
         map((response) => {
           if (response) {

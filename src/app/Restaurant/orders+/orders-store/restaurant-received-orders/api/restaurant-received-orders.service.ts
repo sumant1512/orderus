@@ -14,7 +14,9 @@ export class RestaurantReceivedOrdersService {
 
   fetchRestaurantReceivedOrders(): Observable<any> {
     return this.http
-      .get<any>('./../../../../assets/api/restaurant-received-orders.json')
+      .get<any>(
+        './../../../../assets/api/restaurant/restaurant-received-active-orders.json'
+      )
       .pipe(
         map((response) => {
           if (response) {

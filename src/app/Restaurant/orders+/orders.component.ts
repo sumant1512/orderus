@@ -18,9 +18,9 @@ export class OrdersComponent implements OnInit {
   sortOrder = 1;
   restaurantReceivedOrdersList!: Array<IRestaurantReceivedOrders>;
   sectionList: Array<ITab> = [
-    { id: 1, name: 'In progress', code: ETabCode.IN_PROGRESS },
-    { id: 2, name: 'Open', code: ETabCode.OPEN_ORDERS },
-    { id: 3, name: 'Delivered', code: ETabCode.DELIVERED_ORDERS },
+    { id: 1, name: 'Active', code: ETabCode.ACTIVE },
+    { id: 2, name: 'Open', code: ETabCode.OPEN },
+    { id: 3, name: 'Delivered', code: ETabCode.DELIVERED },
   ];
   selectedSection: ITab = this.sectionList[0];
 
