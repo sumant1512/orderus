@@ -1,1 +1,203 @@
-<p>order-details works!</p>
+<div class="container pt-3 pb-4">
+  <div class="row mt-4">
+    <div class="col-12 f-12 fw-bold" (click)="navigateToRestaurantOrders()">
+      <img class="me-1" src="./../../assets/chevron-left.svg" alt="back" />
+      <span class="back-label pe-cursor"> My orders</span>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-12 col-lg-8">
+      <div class="container-fluid order-status-box mb-3 py-4">
+        <div class="row">
+          <div class="col-12 col-md-6 mb-2 mb-md-0">
+            <span class="heading-three pe-cursor mb-4"
+              >Order status
+              <sub class="f-10 fw-bold grey-light-label">ID 11223344</sub></span
+            >
+          </div>
+          <div class="col-12 d-block d-md-none mb-3 f-12 fw-500">
+            <span class="blue-dot me-1 blue-dot-align"></span> In Progress
+          </div>
+          <div class="col-12 col-md-6 grey-light-label f-12 fw-500">
+            <div class="location-date mb-2">
+              <span
+                ><img
+                  src="./../../../assets/profile//location.svg"
+                  alt="" /></span
+              ><span> Bahama Beeze </span>
+            </div>
+            <div class="d-flex d-md-none location-date mb-2 mb-md-0">
+              <span><img src="./../../../assets/calendar4.svg" alt="" /></span>
+              <span> 21 september </span>
+            </div>
+          </div>
+        </div>
+        <div class="row d-none d-md-flex mt-2">
+          <div class="col-12 col-md-6 f-12 fw-500">
+            <span class="blue-dot me-1 blue-dot-align"></span> In Progress
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="location-date">
+              <span><img src="./../../../assets/calendar4.svg" alt="" /></span>
+              <span class="f-12 fw-500 grey-light-label"> 21 september </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-4">
+          <div class="col-12 col-md-3">
+            <div class="row">
+              <div class="col-2 col-md-12">
+                <img
+                  src="./../../../assets/order-details/check-circle-fill.svg"
+                  alt=""
+                />
+                <span class="d-none d-md-inline-block horizontal-line"></span>
+              </div>
+              <div class="col-10 mt-md-3 f-14 fw-bold">
+                <div>Order placed</div>
+                <div class="f-14 fw-500">23:14</div>
+              </div>
+            </div>
+            <div class="d-md-none vertical-line"></div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="row">
+              <div class="col-2 col-md-12">
+                <img
+                  src="./../../../assets/order-details/check-circle-fill.svg"
+                  alt=""
+                />
+                <span class="d-none d-md-inline-block horizontal-line"></span>
+              </div>
+              <div class="col-10 mt-md-3 f-14 fw-bold">
+                <div>Order being prepared</div>
+                <div class="f-14 fw-500">23:13</div>
+              </div>
+            </div>
+            <div class="d-md-none vertical-line"></div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="row">
+              <div class="col-2 col-md-12">
+                <img
+                  src="./../../../assets/order-details/check-circle-fill.svg"
+                  alt=""
+                />
+                <span class="d-none d-md-inline-block horizontal-line"></span>
+              </div>
+              <div class="col-10 mt-md-3 f-14 fw-bold">
+                <div>Out for delivery</div>
+                <div class="f-14 fw-500">23:39</div>
+              </div>
+            </div>
+            <div class="d-md-none vertical-line"></div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="row">
+              <div class="col-2 col-md-12">
+                <img
+                  src="./../../../assets/order-details/4-circle-fill.svg"
+                  alt=""
+                />
+              </div>
+              <div class="col-10 mt-md-3 f-14 fw-bold">
+                <div>Delivered</div>
+                <div class="f-14 fw-500">23:57 approx</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="menu-box pt-3">
+        <div>
+          <span class="heading-three pe-cursor ms-4 mb-4"
+            >Menu
+            <sub
+              *ngIf="restaurantDetails && restaurantDetails.menuItemList"
+              class="f-10 fw-bold grey-light-label"
+              >{{ restaurantDetails.menuItemList.length }} meals</sub
+            ></span
+          >
+        </div>
+        <div
+          class="container-fluid"
+          *ngFor="let menu of restaurantDetails.menuItemList; last as isLast"
+        >
+          <app-cart-menu-card
+            [menuItem]="menu"
+            [isLast]="isLast"
+            [isCountChangeEnabled]="false"
+            [isCountLabelEnabled]="true"
+          ></app-cart-menu-card>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-lg-4">
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg-12 mt-3 mt-lg-0">
+          <div class="shipping-address-box py-3 px-2 px-md-3">
+            <p class="fw-500 f-12 mb-2 shipping-address-heading">
+              Shipping address
+            </p>
+            <img
+              class="img-fluid shipping-location mb-2"
+              src="./../../assets/location.png"
+              alt="location"
+            />
+            <!-- <google-map
+                  height="200px"
+                  width="100%"
+                  [className]="'shipping-location'"
+                  [center]="center"
+                >
+                </google-map> -->
+            <p>{{ center.lat }}</p>
+            <p>{{ center.lng }}</p>
+            <div class="f-14 fw-bold country">San Deigo</div>
+            <div class="f-12 fw-500 add-1">California State, USA</div>
+            <div class="f-12 fw-500 mt-2 add-2">
+              {{ "3891 Ranchview Dr." }} {{ "Richardson" }},
+              {{ "62639" }}
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-12 mt-3">
+          <div class="payment-box py-3 px-2 px-md-3">
+            <div class="heading-four mb-3">Payment details</div>
+            <div class="mb-3">
+              <app-payment-card
+                [payment]="paymentInfo"
+                [isActionEnabled]="false"
+              ></app-payment-card>
+            </div>
+            <div class="fw-500 f-14">
+              <div class="opposite-direction mb-2">
+                <span class="light-label">Subtotal</span
+                ><span class="dark-label">$129.40</span>
+              </div>
+              <div class="opposite-direction mb-2">
+                <span class="light-label">Shipping</span
+                ><span class="dark-label">$20.00</span>
+              </div>
+              <div class="opposite-direction mb-2">
+                <span class="light-label">Tips</span
+                ><span class="dark-label">$5.00</span>
+              </div>
+              <div class="opposite-direction mb-3">
+                <span class="light-label">Discount</span
+                ><span class="dark-label">-$5.00</span>
+              </div>
+              <div class="opposite-direction mb-3">
+                <span class="dark-label">Total (tax incl.)</span
+                ><span class="fw-bold total-price">$149.40</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
