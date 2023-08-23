@@ -11,9 +11,3 @@ export enum EValidity {
   VALIDITY_ENDS_ON = 'validityEndsOn',
   VALIDITY_INFO = 'validityInfo',
 }
-
-export enum ETabCode {
-  ACTIVE = 'Active',
-  SCHEDULED = 'Scheduled',
-  EXPIRED = 'Expired',
-}

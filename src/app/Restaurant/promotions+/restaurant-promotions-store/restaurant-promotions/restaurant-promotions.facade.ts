@@ -7,8 +7,8 @@ import {
   FetchRestaurantPromotions,
   FetchedRestaurantPromotions,
 } from './restaurant-promotions.actions';
-import { ETabCode } from './enum/restaurant-promotions.enum';
 import { RestaurantPromotionsAppState } from '../restaurant-promotions-app.state';
+import { ETabCode } from 'src/app/shared/enum/tab-code.enum';
 
 @Injectable({ providedIn: 'root' })
 export class RestaurantPromotionsFacade {

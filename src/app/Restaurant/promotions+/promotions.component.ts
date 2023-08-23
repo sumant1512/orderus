@@ -6,7 +6,7 @@ import { IRestaurantPromotions } from './restaurant-promotions-store/restaurant-
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { IAction } from '../restaurant-shared/interfaces/action.interface';
 import { ActionList } from '../restaurant-shared/constants/actions';
-import { ETabCode } from './restaurant-promotions-store/restaurant-promotions/enum/restaurant-promotions.enum';
+import { ETabCode } from 'src/app/shared/enum/tab-code.enum';
 
 @Component({
   selector: 'app-promotions',

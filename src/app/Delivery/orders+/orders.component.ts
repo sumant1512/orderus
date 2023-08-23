@@ -96,7 +96,7 @@ export class OrdersComponent implements OnInit {
     );
   }
 
-  getSelectedPromotion(selectedSection: ITab): void {
+  getSelectedOrders(selectedSection: ITab): void {
     this.selectedSection = selectedSection;
     this.getOrders();
   }

@@ -1,6 +1,6 @@
 import { createSelector } from '@ngrx/store';
-import { ETabCode } from './enum/restaurant-promotions.enum';
 import { IRestaurantPromotions } from './interfaces/restaurant-promotions.interface';
+import { ETabCode } from 'src/app/shared/enum/tab-code.enum';
 
 export const fetchRestaurantPromotionsList = (state: any) =>
   state.restaurantPromotions?.restaurantPromotionsList || [];

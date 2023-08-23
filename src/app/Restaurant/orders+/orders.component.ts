@@ -4,6 +4,8 @@ import { Subscription } from 'rxjs';
 import { ERestaurantReceivedOrders } from './orders-store/restaurant-received-orders/enum/restaurant-received-orders.enum';
 import { IRestaurantReceivedOrders } from './orders-store/restaurant-received-orders/interfaces/restaurant-received-orders.interface';
 import { RestaurantReceivedOrdersFacade } from './orders-store/restaurant-received-orders/restaurant-received-orders.facade';
+import { ITab } from 'src/app/shared/interfaces/tabs.interface';
+import { ETabCode } from 'src/app/shared/enum/tab-code.enum';
 
 @Component({
   selector: 'app-orders',
@@ -15,6 +17,12 @@ export class OrdersComponent implements OnInit {
   restaurantReceivedOrdersKeys = ERestaurantReceivedOrders;
   sortOrder = 1;
   restaurantReceivedOrdersList!: Array<IRestaurantReceivedOrders>;
+  sectionList: Array<ITab> = [
+    { id: 1, name: 'In progress', code: ETabCode.IN_PROGRESS },
+    { id: 2, name: 'Open', code: ETabCode.OPEN_ORDERS },
+    { id: 3, name: 'Delivered', code: ETabCode.DELIVERED_ORDERS },
+  ];
+  selectedSection: ITab = this.sectionList[0];
 
   constructor(
     private restaurantReceivedOrdersFacade: RestaurantReceivedOrdersFacade,
@@ -36,6 +44,12 @@ export class OrdersComponent implements OnInit {
     this.router.navigate([id], {
       relativeTo: this.activatedRoute,
     });
+  }
+
+  getSelectedOrders(selectedSection: ITab): void {
+    this.selectedSection = selectedSection;
+    console.log(this.selectedSection);
+    // this.getOrders();
   }
 
   getRestaurantReceivedOrders(): void {
