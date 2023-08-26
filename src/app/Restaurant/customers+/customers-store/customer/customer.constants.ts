@@ -1,3 +1,4 @@
+import { EAction } from 'src/app/Restaurant/restaurant-shared/enum/action.enum';
 import { ECustomer } from './enum/customer.enum';
 
 export function CustomerTableColumns(): Array<any> {
@@ -53,3 +54,7 @@ export function CustomerTableColumns(): Array<any> {
     },
   ];
 }
+
+export const customerActionList = [
+  { id: EAction.View, name: 'View', heading: 'View', btn: 'View' },
+];

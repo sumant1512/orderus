@@ -30,7 +30,22 @@
         {{ column.header }}
       </th>
       <td mat-cell *matCellDef="let row">
-        <mat-icon>more_vert</mat-icon>
+        <button
+          mat-icon-button
+          [matMenuTriggerFor]="menu"
+          [disabled]="!menuItems.length"
+        >
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button
+            *ngFor="let menu of menuItems"
+            (click)="emitAction(menu)"
+            mat-menu-item
+          >
+            <span class="heading-five">{{ menu?.name }}</span>
+          </button>
+        </mat-menu>
       </td>
     </ng-container>
   </div>
@@ -39,10 +54,12 @@
   <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 </table>
 
-<mat-paginator
-  *ngIf="isPaginationEnabled"
-  [pageSizeOptions]="pageSizeOptions"
-  showFirstLastButtons
-  aria-label="Select page of periodic elements"
->
-</mat-paginator>
+<div class="pagintion-separator">
+  <mat-paginator
+    *ngIf="isPaginationEnabled"
+    [pageSizeOptions]="pageSizeOptions"
+    showFirstLastButtons
+    aria-label="Select page of periodic elements"
+  >
+  </mat-paginator>
+</div>

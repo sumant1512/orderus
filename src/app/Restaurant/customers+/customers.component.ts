@@ -3,7 +3,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { CustomerFacade } from './customers-store/customer/customer.facade';
 import { ICustomer } from './customers-store/customer/interfaces/customer.interface';
-import { CustomerTableColumns } from './customers-store/customer/customer.constants';
+import {
+  CustomerTableColumns,
+  customerActionList,
+} from './customers-store/customer/customer.constants';
+import { IAction } from '../restaurant-shared/interfaces/action.interface';
 
 @Component({
   selector: 'app-customers',
@@ -12,6 +16,7 @@ import { CustomerTableColumns } from './customers-store/customer/customer.consta
 })
 export class CustomersComponent {
   customerTableColumns: Array<any> = CustomerTableColumns();
+  actionList: Array<IAction> = customerActionList;
   subscription = new Subscription();
   customerList!: Array<ICustomer>;
 
@@ -43,5 +48,9 @@ export class CustomersComponent {
         this.customerList = customerList;
       })
     );
+  }
+
+  action(event: IAction): void {
+    console.log(event);
   }
 }

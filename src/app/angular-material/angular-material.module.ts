@@ -22,6 +22,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MaterialTableComponent } from './components/material-table/material-table.component';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatMenuModule } from '@angular/material/menu';
 
 const MODULES = [
   CommonModule,
@@ -45,6 +46,7 @@ const MODULES = [
   MatTableModule,
   MatPaginatorModule,
   MatSortModule,
+  MatMenuModule,
 ];
 
 const COMPONENTS = [MaterialTableComponent];
