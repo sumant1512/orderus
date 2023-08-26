@@ -9,6 +9,7 @@ import { ordersAppReducers } from './orders-store/orders-app.reducers';
 import { OrdersAppEffects } from './orders-store/orders-app.effects';
 import { EffectsModule } from '@ngrx/effects';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { AngularMaterialModule } from 'src/app/angular-material/angular-material.module';
 
 const metaReducer = combineReducers(ordersAppReducers);
 
@@ -22,6 +23,7 @@ export function ordersMetaReducer(state: any, action: any) {
     CommonModule,
     OrdersRoutingModule,
     SharedModule,
+    AngularMaterialModule,
     StoreModule.forFeature('restaurant', ordersMetaReducer, {
       metaReducers: [],
     }),

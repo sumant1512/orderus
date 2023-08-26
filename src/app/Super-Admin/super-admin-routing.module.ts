@@ -28,6 +28,10 @@ const routes: Routes = [
         path: APP_ROUTES.SUPER_ADMIN.CHILD_ROUTES.REGISTER,
         component: AdminRegistrationComponent,
       },
+      {
+        path: `${APP_ROUTES.SUPER_ADMIN.CHILD_ROUTES.UPDATE}/:id`,
+        component: AdminRegistrationComponent,
+      },
     ],
   },
 ];

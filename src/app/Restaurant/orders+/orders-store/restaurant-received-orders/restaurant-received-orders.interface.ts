@@ -1,7 +1,7 @@
 import {
   ERestaurantDeliveryOrderStatus,
   ERestaurantReceivedOrders,
-} from '../enum/restaurant-received-orders.enum';
+} from './restaurant-received-orders.enum';
 
 export interface IRestaurantReceivedOrders {
   [ERestaurantReceivedOrders.ORDER_ID]: number;
@@ -22,4 +22,9 @@ export interface IRestaurantReceivedOrdersState {
   activeRestaurantReceivedOrdersList: Array<IRestaurantReceivedOrders>;
   openRestaurantReceivedOrdersList: Array<IRestaurantReceivedOrders>;
   deliveredRestaurantReceivedOrdersList: Array<IRestaurantReceivedOrders>;
+}
+
+export interface IRestaurantOrdersActions {
+  id: ERestaurantDeliveryOrderStatus;
+  name: string;
 }

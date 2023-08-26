@@ -9,7 +9,7 @@ import {
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { IAction } from 'src/app/Restaurant/restaurant-shared/interfaces/action.interface';
+import { IMenuItemAction } from './material-table.interface';
 
 @Component({
   selector: 'app-material-table',
@@ -20,6 +20,7 @@ export class MaterialTableComponent implements OnChanges {
   dataSource!: any;
   columns!: Array<any>;
   displayedColumns!: Array<any>;
+  selectedRow!: any;
 
   @Input() isPaginationEnabled: boolean = true;
   @Input() menuItems: Array<any> = [];
@@ -34,7 +35,7 @@ export class MaterialTableComponent implements OnChanges {
     this.setColumns();
   }
 
-  @Output() menuEvent = new EventEmitter<IAction>();
+  @Output() menuEvent = new EventEmitter<IMenuItemAction>();
 
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -48,7 +49,11 @@ export class MaterialTableComponent implements OnChanges {
     this.displayedColumns = this.columns.map((c) => c.columnDef);
   }
 
-  emitAction(action: IAction): void {
-    this.menuEvent.emit(action);
+  selectRow(row: any): void {
+    this.selectedRow = row;
+  }
+
+  emitAction(action: any): void {
+    this.menuEvent.emit({ action, data: this.selectedRow });
   }
 }

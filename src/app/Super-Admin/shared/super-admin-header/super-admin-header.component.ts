@@ -5,6 +5,8 @@ import { Subscription } from 'rxjs';
 import { IUserBasicInfo } from 'src/app/store/user-info/interfaces/user-info.interface';
 import { APP_ROUTES } from 'src/app/shared/constants/app-routes.constants';
 import { IImage } from 'src/app/shared/interfaces/image.interface';
+import { AdminDataService } from '../../services/admin-data.service';
+import { EAction } from 'src/app/Restaurant/restaurant-shared/enum/action.enum';
 
 @Component({
   selector: 'app-super-admin-header',
@@ -23,7 +25,11 @@ export class SuperAdminHeaderComponent implements OnInit {
 
   userBasicInfo!: IUserBasicInfo;
 
-  constructor(private router: Router, private userInfoFacade: UserInfoFacade) {}
+  constructor(
+    private router: Router,
+    private userInfoFacade: UserInfoFacade,
+    private adminDataService: AdminDataService
+  ) {}
 
   ngOnInit(): void {
     this.getUserInfo();
@@ -61,5 +67,14 @@ export class SuperAdminHeaderComponent implements OnInit {
     }
     this.selectedRoute = routePath;
     this.router.navigate([routePath]);
+  }
+
+  setAction(): void {
+    this.adminDataService.setAction({
+      id: EAction.Add,
+      name: 'Add',
+      heading: 'Create',
+      btn: 'Save',
+    });
   }
 }

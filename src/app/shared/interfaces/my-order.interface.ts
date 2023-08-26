@@ -1,5 +1,5 @@
 export interface IOrder {
-  orderId: number;
+  id: number;
   restaurantName: string;
   orderDateTime: Date;
   status?: string;

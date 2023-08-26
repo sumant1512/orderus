@@ -15,6 +15,7 @@ export const APP_ROUTES = {
     CHILD_ROUTES: {
       ADMINS: 'admins',
       REGISTER: 'register',
+      UPDATE: 'update',
     },
   },
   ADMIN: {

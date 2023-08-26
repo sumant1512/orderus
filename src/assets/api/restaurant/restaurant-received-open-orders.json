@@ -1,15 +1,15 @@
 {
   "data": [
     {
-      "orderId": 1,
+      "id": 1,
       "firstName": "Sumant",
       "lastName": "Mishra",
-      "adddressOne": "",
-      "adddressTwo": "",
+      "addressOne": "131",
+      "addressTwo": "laxman nagar",
       "city": "Dewas",
       "state": "Madhya Pradesh",
       "pinCode": "455001",
-      "orderDate": "2/03/2023",
+      "orderDateTime": "2/03/2023",
       "status": "Open",
       "totalAmount": "4959"
     }

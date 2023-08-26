@@ -3,7 +3,7 @@ table {
   width: 100%;
 
   .mat-mdc-header-row {
-    height: 80px;
+    height: 75px;
   }
 
   .mat-mdc-row {
@@ -27,4 +27,5 @@ table {
 .pagintion-separator {
   padding: 8px 0;
   border-top: 1px solid var(--separator-color);
+  min-width: 1100px;
 }

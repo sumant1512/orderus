@@ -67,10 +67,10 @@
         <tr
           class="f-12"
           *ngFor="let deliveryOrders of ordersList"
-          (click)="navigateToAdminDetails(deliveryOrders.orderId)"
+          (click)="navigateToAdminDetails(deliveryOrders.id)"
         >
-          <td class="fw-500 ps-md-4 ps-lg-5" data-label="OrderId">
-            {{ deliveryOrders.orderId }}
+          <td class="fw-500 ps-md-4 ps-lg-5" data-label="id">
+            {{ deliveryOrders.id }}
           </td>
           <td data-label="Orders">
             {{ deliveryOrders.firstName }}

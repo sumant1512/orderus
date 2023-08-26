@@ -1,5 +1,5 @@
 export enum EDeliveryOrders {
-  ORDER_ID = 'orderId',
+  ORDER_ID = 'id',
   FIRST_NAME = 'firstName',
   LAST_NAME = 'lastName',
   ADDRESS_1 = 'addressOne',

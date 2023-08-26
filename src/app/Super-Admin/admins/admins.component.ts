@@ -1,19 +1,16 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AdminService } from '../services/admin.service';
 import { Subscription } from 'rxjs';
-import { EAdmin } from '../enum/admin-registration.enum';
 import { ActivatedRoute, Router } from '@angular/router';
-
-interface IAdmin {
-  [EAdmin.ID]: number;
-  [EAdmin.NAME]: string;
-  [EAdmin.USER_NAME]: string;
-  [EAdmin.PASSWORD]: string;
-  [EAdmin.TOKEN]: string;
-  [EAdmin.STATUS]: string;
-  [EAdmin.CREATED_ON]: string;
-  [EAdmin.LAST_UPDATED_ON]: string;
-}
+import { IMenuItemAction } from 'src/app/angular-material/components/material-table/material-table.interface';
+import { EAction } from 'src/app/Restaurant/restaurant-shared/enum/action.enum';
+import { IAction } from 'src/app/Restaurant/restaurant-shared/interfaces/action.interface';
+import {
+  AdminTableColumns,
+  adminActionList,
+} from '../constants/admin.constant';
+import { IAdmin } from '../interfaces/admin.interface';
+import { AdminDataService } from '../services/admin-data.service';
 
 @Component({
   selector: 'app-admins',
@@ -21,15 +18,16 @@ interface IAdmin {
   styleUrls: ['./admins.component.scss'],
 })
 export class AdminsComponent implements OnInit, OnDestroy {
+  customerTableColumns: Array<any> = AdminTableColumns();
+  actionList: Array<IAction> = adminActionList;
   subscription = new Subscription();
-  adminKeys = EAdmin;
-  sortOrder = 1;
   adminList!: Array<IAdmin>;
 
   constructor(
     private adminService: AdminService,
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private adminDataService: AdminDataService
   ) {}
 
   ngOnInit(): void {
@@ -46,6 +44,12 @@ export class AdminsComponent implements OnInit, OnDestroy {
     });
   }
 
+  navigateToUpdateAdminDetails(id: number): void {
+    this.router.navigate(['../', 'update', id], {
+      relativeTo: this.activatedRoute,
+    });
+  }
+
   getAdmins(): void {
     this.subscription.add(
       this.adminService.admins().subscribe((adminList) => {
@@ -54,48 +58,24 @@ export class AdminsComponent implements OnInit, OnDestroy {
     );
   }
 
-  onSortClick(colName: EAdmin, type: string) {
-    if (type === 'number') {
-      this.sortNumbers(colName);
-    } else if (type === 'string') {
-      this.sortString(colName);
-    } else if (type === 'date') {
-      this.sortNumbers(colName);
-    }
-    this.sortOrder = this.sortOrder === 1 ? -1 : 1;
-  }
+  action(event: IMenuItemAction): void {
+    switch (event.action.id) {
+      case EAction.View:
+        if (event?.data?.id) {
+          this.navigateToAdminDetails(event.data.id);
+        }
+        break;
+      case EAction.Edit:
+        if (event?.data?.id) {
+          this.adminDataService.setAction(event.action);
+          this.adminDataService.setSelectedAdmin(event.data);
+          this.navigateToUpdateAdminDetails(event.data.id);
+        }
+        break;
 
-  sortNumbers(colName: EAdmin): void {
-    if (this.sortOrder === 1) {
-      this.adminList?.sort((a, b) => {
-        return (
-          (b[colName as keyof IAdmin] as any) -
-          (a[colName as keyof IAdmin] as any)
-        );
-      });
-    } else {
-      this.adminList?.sort((a, b) => {
-        return (
-          (a[colName as keyof IAdmin] as any) -
-          (b[colName as keyof IAdmin] as any)
-        );
-      });
-    }
-  }
-
-  sortString(colName: EAdmin): void {
-    if (this.sortOrder === 1) {
-      this.adminList?.sort((a, b) => {
-        return (a[colName as keyof IAdmin] as string).localeCompare(
-          b[colName as keyof IAdmin] as string
-        );
-      });
-    } else {
-      this.adminList?.sort((a, b) => {
-        return (b[colName as keyof IAdmin] as string).localeCompare(
-          a[colName as keyof IAdmin] as string
-        );
-      });
+      default:
+        console.log(event);
+        break;
     }
   }
 }

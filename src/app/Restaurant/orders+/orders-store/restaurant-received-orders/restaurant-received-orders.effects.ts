@@ -8,7 +8,7 @@ import {
   RestaurantReceivedOrdersActions,
   RestaurantReceivedOrdersActionsUnion,
 } from './restaurant-received-orders.actions';
-import { IRestaurantReceivedOrders } from './interfaces/restaurant-received-orders.interface';
+import { IRestaurantReceivedOrders } from './restaurant-received-orders.interface';
 import { RestaurantReceivedOrdersService } from './api/restaurant-received-orders.service';
 
 @Injectable()

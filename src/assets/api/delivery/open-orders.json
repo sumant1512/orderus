@@ -1,7 +1,7 @@
 {
   "data": [
     {
-      "orderId": 1,
+      "id": 1,
       "firstName": "Sumant",
       "lastName": "Mishra",
       "adddressOne": "",
@@ -14,7 +14,7 @@
       "totalAmount": "4959"
     },
     {
-      "orderId": 2,
+      "id": 2,
       "firstName": "Rajat",
       "lastName": "Sharma",
       "adddressOne": "",

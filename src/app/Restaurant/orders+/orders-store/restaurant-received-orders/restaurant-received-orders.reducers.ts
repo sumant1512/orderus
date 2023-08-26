@@ -1,4 +1,4 @@
-import { IRestaurantReceivedOrdersState } from './interfaces/restaurant-received-orders.interface';
+import { IRestaurantReceivedOrdersState } from './restaurant-received-orders.interface';
 import {
   RestaurantReceivedOrdersActions,
   RestaurantReceivedOrdersActionsUnion,
