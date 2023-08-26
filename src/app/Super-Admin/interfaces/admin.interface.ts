@@ -1,10 +1,12 @@
-export enum EAdmin {
-  ID = 'id',
-  NAME = 'name',
-  USER_NAME = 'userName',
-  PASSWORD = 'password',
-  TOKEN = 'token',
-  STATUS = 'status',
-  CREATED_ON = 'createdOn',
-  LAST_UPDATED_ON = 'lastUpdatedOn',
+import { EAdmin } from '../enum/admin-registration.enum';
+
+export interface IAdmin {
+  [EAdmin.ID]: number;
+  [EAdmin.NAME]: string;
+  [EAdmin.USER_NAME]: string;
+  [EAdmin.PASSWORD]: string;
+  [EAdmin.TOKEN]: string;
+  [EAdmin.STATUS]: string;
+  [EAdmin.CREATED_ON]: string;
+  [EAdmin.LAST_UPDATED_ON]: string;
 }

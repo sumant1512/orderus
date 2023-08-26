@@ -1,7 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AdminService } from '../services/admin.service';
 import { Subscription } from 'rxjs';
-import { EAdmin } from '../enum/admin-registration.enum';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IMenuItemAction } from 'src/app/angular-material/components/material-table/material-table.interface';
 import { EAction } from 'src/app/Restaurant/restaurant-shared/enum/action.enum';
@@ -10,17 +9,8 @@ import {
   AdminTableColumns,
   adminActionList,
 } from '../constants/admin.constant';
-
-interface IAdmin {
-  [EAdmin.ID]: number;
-  [EAdmin.NAME]: string;
-  [EAdmin.USER_NAME]: string;
-  [EAdmin.PASSWORD]: string;
-  [EAdmin.TOKEN]: string;
-  [EAdmin.STATUS]: string;
-  [EAdmin.CREATED_ON]: string;
-  [EAdmin.LAST_UPDATED_ON]: string;
-}
+import { IAdmin } from '../interfaces/admin.interface';
+import { AdminDataService } from '../services/admin-data.service';
 
 @Component({
   selector: 'app-admins',
@@ -36,7 +26,8 @@ export class AdminsComponent implements OnInit, OnDestroy {
   constructor(
     private adminService: AdminService,
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private adminDataService: AdminDataService
   ) {}
 
   ngOnInit(): void {
@@ -49,6 +40,12 @@ export class AdminsComponent implements OnInit, OnDestroy {
 
   navigateToAdminDetails(id: number): void {
     this.router.navigate([id], {
+      relativeTo: this.activatedRoute,
+    });
+  }
+
+  navigateToUpdateAdminDetails(id: number): void {
+    this.router.navigate(['../', 'update', id], {
       relativeTo: this.activatedRoute,
     });
   }
@@ -66,6 +63,13 @@ export class AdminsComponent implements OnInit, OnDestroy {
       case EAction.View:
         if (event?.data?.id) {
           this.navigateToAdminDetails(event.data.id);
+        }
+        break;
+      case EAction.Edit:
+        if (event?.data?.id) {
+          this.adminDataService.setAction(event.action);
+          this.adminDataService.setSelectedAdmin(event.data);
+          this.navigateToUpdateAdminDetails(event.data.id);
         }
         break;
 
