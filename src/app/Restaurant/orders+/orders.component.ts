@@ -4,11 +4,18 @@ import { Subscription } from 'rxjs';
 import {
   ERestaurantDeliveryOrderStatus,
   ERestaurantReceivedOrders,
-} from './orders-store/restaurant-received-orders/enum/restaurant-received-orders.enum';
-import { IRestaurantReceivedOrders } from './orders-store/restaurant-received-orders/interfaces/restaurant-received-orders.interface';
+} from './orders-store/restaurant-received-orders/restaurant-received-orders.enum';
+import { IRestaurantReceivedOrders } from './orders-store/restaurant-received-orders/restaurant-received-orders.interface';
 import { RestaurantReceivedOrdersFacade } from './orders-store/restaurant-received-orders/restaurant-received-orders.facade';
 import { ITab } from 'src/app/shared/interfaces/tabs.interface';
 import { ETabCode } from 'src/app/shared/enum/tab-code.enum';
+import {
+  RestaurantReceivedOrdersTableColumns,
+  restaurantReceivedOpenOrdersActionList,
+  restaurantReceivedActiveOrdersActionList,
+  restaurantReceivedDeliveredOrdersActionList,
+} from './orders-store/restaurant-received-orders/restaurant-received-orders.constants';
+import { IMenuItemAction } from 'src/app/angular-material/components/material-table/material-table.interface';
 
 @Component({
   selector: 'app-orders',
@@ -16,10 +23,13 @@ import { ETabCode } from 'src/app/shared/enum/tab-code.enum';
   styleUrls: ['./orders.component.scss'],
 })
 export class OrdersComponent implements OnInit {
+  customerTableColumns: Array<any> = RestaurantReceivedOrdersTableColumns();
+  actionList: Array<any> = restaurantReceivedActiveOrdersActionList;
   subscription = new Subscription();
+  restaurantReceivedOrdersList!: Array<IRestaurantReceivedOrders>;
+
   restaurantReceivedOrdersKeys = ERestaurantReceivedOrders;
   sortOrder = 1;
-  restaurantReceivedOrdersList!: Array<IRestaurantReceivedOrders>;
   orderStatusEnum = ERestaurantDeliveryOrderStatus;
   sectionList: Array<ITab> = [
     { id: 1, name: 'Active', code: ETabCode.ACTIVE },
@@ -46,7 +56,7 @@ export class OrdersComponent implements OnInit {
     this.subscription.unsubscribe();
   }
 
-  navigateToAdminDetails(id: number): void {
+  navigateToOrderDetails(id: number): void {
     this.router.navigate([id], {
       relativeTo: this.activatedRoute,
     });
@@ -77,6 +87,7 @@ export class OrdersComponent implements OnInit {
         (restaurantReceivedDeliveredOrdersList) => {
           this.restaurantReceivedOrdersList =
             restaurantReceivedDeliveredOrdersList;
+          this.actionList = restaurantReceivedDeliveredOrdersActionList;
         }
       )
     );
@@ -87,6 +98,7 @@ export class OrdersComponent implements OnInit {
       this.restaurantReceivedOrdersFacade.restaurantReceivedOpenOrdersList.subscribe(
         (restaurantReceivedOpenOrdersList) => {
           this.restaurantReceivedOrdersList = restaurantReceivedOpenOrdersList;
+          this.actionList = restaurantReceivedOpenOrdersActionList;
         }
       )
     );
@@ -98,61 +110,23 @@ export class OrdersComponent implements OnInit {
         (restaurantReceivedActiveOrdersList) => {
           this.restaurantReceivedOrdersList =
             restaurantReceivedActiveOrdersList;
+          this.actionList = restaurantReceivedActiveOrdersActionList;
         }
       )
     );
   }
 
-  onSortClick(colName: ERestaurantReceivedOrders, type: string) {
-    if (type === 'number') {
-      this.sortNumbers(colName);
-    } else if (type === 'string') {
-      this.sortString(colName);
-    } else if (type === 'date') {
-      this.sortNumbers(colName);
-    }
-    this.sortOrder = this.sortOrder === 1 ? -1 : 1;
-  }
+  action(event: IMenuItemAction): void {
+    switch (event.action.id) {
+      case ERestaurantDeliveryOrderStatus.VIEW:
+        if (event?.data?.id) {
+          this.navigateToOrderDetails(event.data.id);
+        }
+        break;
 
-  sortNumbers(colName: ERestaurantReceivedOrders): void {
-    let sortedList: Array<IRestaurantReceivedOrders>;
-    if (this.sortOrder === 1) {
-      sortedList = [...this.restaurantReceivedOrdersList]?.sort((a, b) => {
-        return (
-          (b[colName as keyof IRestaurantReceivedOrders] as any) -
-          (a[colName as keyof IRestaurantReceivedOrders] as any)
-        );
-      });
-    } else {
-      sortedList = [...this.restaurantReceivedOrdersList]?.sort((a, b) => {
-        return (
-          (a[colName as keyof IRestaurantReceivedOrders] as any) -
-          (b[colName as keyof IRestaurantReceivedOrders] as any)
-        );
-      });
+      default:
+        console.log(event);
+        break;
     }
-    this.restaurantReceivedOrdersList = sortedList;
-  }
-
-  sortString(colName: ERestaurantReceivedOrders): void {
-    let sortedList: Array<IRestaurantReceivedOrders>;
-    if (this.sortOrder === 1) {
-      sortedList = [...this.restaurantReceivedOrdersList]?.sort((a, b) => {
-        return (
-          a[colName as keyof IRestaurantReceivedOrders] as string
-        ).localeCompare(
-          b[colName as keyof IRestaurantReceivedOrders] as string
-        );
-      });
-    } else {
-      sortedList = [...this.restaurantReceivedOrdersList]?.sort((a, b) => {
-        return (
-          b[colName as keyof IRestaurantReceivedOrders] as string
-        ).localeCompare(
-          a[colName as keyof IRestaurantReceivedOrders] as string
-        );
-      });
-    }
-    this.restaurantReceivedOrdersList = sortedList;
   }
 }

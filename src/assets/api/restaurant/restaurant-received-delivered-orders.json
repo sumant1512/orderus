@@ -1,28 +1,28 @@
 {
   "data": [
     {
-      "orderId": 3,
+      "id": 3,
       "firstName": "Ashutosh",
       "lastName": "Khute",
-      "adddressOne": "",
-      "adddressTwo": "",
+      "addressOne": "112",
+      "addressTwo": "Jawahar nagar",
       "city": "Dewas",
       "state": "Madhya Pradesh",
       "pinCode": "455001",
-      "orderDate": "2/03/2023",
+      "orderDateTime": "2/03/2023",
       "status": "Delivered",
       "totalAmount": "12959"
     },
     {
-      "orderId": 4,
+      "id": 4,
       "firstName": "Shivansh",
       "lastName": "Mishra",
-      "adddressOne": "",
-      "adddressTwo": "",
+      "addressOne": "106",
+      "addressTwo": "Golden City",
       "city": "Dewas",
       "state": "Madhya Pradesh",
       "pinCode": "455001",
-      "orderDate": "2/03/2023",
+      "orderDateTime": "2/03/2023",
       "status": "Delivered",
       "totalAmount": "397"
     }

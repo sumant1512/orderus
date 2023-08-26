@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import * as restaurantReceivedOrdersSelector from './restaurant-received-orders.selectors';
-import { IRestaurantReceivedOrders } from './interfaces/restaurant-received-orders.interface';
+import { IRestaurantReceivedOrders } from './restaurant-received-orders.interface';
 import {
   FetchRestaurantReceivedActiveOrders,
   FetchRestaurantReceivedDeliveredOrders,

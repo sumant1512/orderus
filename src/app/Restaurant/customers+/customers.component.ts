@@ -8,6 +8,8 @@ import {
   customerActionList,
 } from './customers-store/customer/customer.constants';
 import { IAction } from '../restaurant-shared/interfaces/action.interface';
+import { IMenuItemAction } from 'src/app/angular-material/components/material-table/material-table.interface';
+import { EAction } from '../restaurant-shared/enum/action.enum';
 
 @Component({
   selector: 'app-customers',
@@ -36,7 +38,7 @@ export class CustomersComponent {
     this.subscription.unsubscribe();
   }
 
-  navigateToAdminDetails(id: number): void {
+  navigateToCustomerDetails(id: number): void {
     this.router.navigate([id], {
       relativeTo: this.activatedRoute,
     });
@@ -50,7 +52,17 @@ export class CustomersComponent {
     );
   }
 
-  action(event: IAction): void {
-    console.log(event);
+  action(event: IMenuItemAction): void {
+    switch (event.action.id) {
+      case EAction.View:
+        if (event?.data?.id) {
+          this.navigateToCustomerDetails(event.data.id);
+        }
+        break;
+
+      default:
+        console.log(event);
+        break;
+    }
   }
 }
