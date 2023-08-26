@@ -9,6 +9,8 @@
     <app-material-table
       [columnList]="customerTableColumns"
       [tableData]="customerList"
+      [menuItems]="actionList"
+      (menuEvent)="action($event)"
     ></app-material-table>
   </div>
 </div>
