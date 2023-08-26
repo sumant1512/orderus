@@ -12,7 +12,7 @@ export class AdminService {
 
   constructor(private http: HttpClient) {}
 
-  admins(): Observable<any> {
+  fetchAdmins(): Observable<any> {
     return of([
       {
         id: 1,
@@ -29,6 +29,17 @@ export class AdminService {
       map((response) => {
         if (response) {
           return response.data;
+        }
+      })
+    );
+  }
+
+  deleteAdmin(id: number): Observable<any> {
+    console.log(id);
+    return this.http.delete<any>(`${this.apiUrls.admins}/${id}`).pipe(
+      map((response) => {
+        if (response) {
+          return response;
         }
       })
     );

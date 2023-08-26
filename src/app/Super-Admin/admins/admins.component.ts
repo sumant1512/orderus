@@ -11,6 +11,8 @@ import {
 } from '../constants/admin.constant';
 import { IAdmin } from '../interfaces/admin.interface';
 import { AdminDataService } from '../services/admin-data.service';
+import { MatDialog } from '@angular/material/dialog';
+import { MaterialConfirmDialogComponent } from 'src/app/angular-material/components/material-confirm-dialog/material-confirm-dialog.component';
 
 @Component({
   selector: 'app-admins',
@@ -22,20 +24,46 @@ export class AdminsComponent implements OnInit, OnDestroy {
   actionList: Array<IAction> = adminActionList;
   subscription = new Subscription();
   adminList!: Array<IAdmin>;
+  selectedAction: IAction = {
+    id: EAction.Add,
+    name: 'Add',
+    heading: 'Create',
+    btn: 'Save',
+  };
+  selectedAdmin!: IAdmin;
 
   constructor(
     private adminService: AdminService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private adminDataService: AdminDataService
+    private adminDataService: AdminDataService,
+    private dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
     this.getAdmins();
+    this.getCurrentAction();
+    this.getSelectedAdmin();
   }
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
+  }
+
+  getCurrentAction(): void {
+    this.subscription.add(
+      this.adminDataService.action.subscribe((action: IAction) => {
+        this.selectedAction = action;
+      })
+    );
+  }
+
+  getSelectedAdmin(): void {
+    this.subscription.add(
+      this.adminDataService.selectedAdminDetails.subscribe((admin: IAdmin) => {
+        this.selectedAdmin = admin;
+      })
+    );
   }
 
   navigateToAdminDetails(id: number): void {
@@ -52,7 +80,7 @@ export class AdminsComponent implements OnInit, OnDestroy {
 
   getAdmins(): void {
     this.subscription.add(
-      this.adminService.admins().subscribe((adminList) => {
+      this.adminService.fetchAdmins().subscribe((adminList) => {
         this.adminList = adminList;
       })
     );
@@ -72,10 +100,33 @@ export class AdminsComponent implements OnInit, OnDestroy {
           this.navigateToUpdateAdminDetails(event.data.id);
         }
         break;
+      case EAction.Delete:
+        this.adminDataService.setAction(event.action);
+        this.adminDataService.setSelectedAdmin(event.data);
+        this.openDialog();
+        break;
 
       default:
         console.log(event);
         break;
     }
+  }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(MaterialConfirmDialogComponent, {
+      data: {
+        message: `Are you sure want to delete ${this.selectedAdmin.name}?`,
+        buttonText: {
+          ok: this.selectedAction.btn,
+          cancel: 'No',
+        },
+      },
+    });
+
+    dialogRef.afterClosed().subscribe((confirmed: boolean) => {
+      if (confirmed) {
+        this.adminService.deleteAdmin(this.selectedAdmin.id);
+      }
+    });
   }
 }
