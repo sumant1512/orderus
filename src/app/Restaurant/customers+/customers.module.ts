@@ -8,6 +8,7 @@ import { CustomerDetailsComponent } from './customer-details/customer-details.co
 import { CustomersAppEffects } from './customers-store/customers-app.effects';
 import { customersAppReducers } from './customers-store/customers-app.reducers';
 import { EffectsModule } from '@ngrx/effects';
+import { AngularMaterialModule } from 'src/app/angular-material/angular-material.module';
 
 const metaReducer = combineReducers(customersAppReducers);
 
@@ -20,6 +21,7 @@ export function customersMetaReducer(state: any, action: any) {
   imports: [
     CommonModule,
     CustomersRoutingModule,
+    AngularMaterialModule,
     StoreModule.forFeature('customer', customersMetaReducer, {
       metaReducers: [],
     }),

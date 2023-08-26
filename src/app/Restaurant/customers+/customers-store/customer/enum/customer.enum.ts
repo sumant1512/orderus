@@ -5,6 +5,7 @@ export enum ECustomer {
   PHONE = 'phone',
   EMAIL = 'email',
   LAST_ORDER_DATE = 'lastOrderDate',
+  ORDER_TIME = 'orderTime',
   TOTAL_ORDERS = 'totalOrders',
   TOTAL_AMOUNT = 'totalAmount',
 }

@@ -3,6 +3,15 @@
 @import "light";
 @import "modal";
 
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
 .pe-cursor {
   cursor: pointer !important;
 }
