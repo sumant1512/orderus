@@ -8,6 +8,7 @@ import { AdminRegistrationComponent } from './admin-registration/admin-registrat
 import { AdminsComponent } from './admins/admins.component';
 import { SharedModule } from '../shared/shared.module';
 import { AdminDetailsComponent } from './admin-details/admin-details.component';
+import { AngularMaterialModule } from '../angular-material/angular-material.module';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { AdminDetailsComponent } from './admin-details/admin-details.component';
     CommonModule,
     SuperAdminSharedModule,
     SharedModule,
+    AngularMaterialModule,
     SuperAdminRoutingModule,
   ],
 })

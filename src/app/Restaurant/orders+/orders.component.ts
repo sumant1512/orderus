@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import {
-  ERestaurantDeliveryOrderStatus,
-  ERestaurantReceivedOrders,
-} from './orders-store/restaurant-received-orders/restaurant-received-orders.enum';
+import { ERestaurantDeliveryOrderStatus } from './orders-store/restaurant-received-orders/restaurant-received-orders.enum';
 import { IRestaurantReceivedOrders } from './orders-store/restaurant-received-orders/restaurant-received-orders.interface';
 import { RestaurantReceivedOrdersFacade } from './orders-store/restaurant-received-orders/restaurant-received-orders.facade';
 import { ITab } from 'src/app/shared/interfaces/tabs.interface';
@@ -28,9 +25,6 @@ export class OrdersComponent implements OnInit {
   subscription = new Subscription();
   restaurantReceivedOrdersList!: Array<IRestaurantReceivedOrders>;
 
-  restaurantReceivedOrdersKeys = ERestaurantReceivedOrders;
-  sortOrder = 1;
-  orderStatusEnum = ERestaurantDeliveryOrderStatus;
   sectionList: Array<ITab> = [
     { id: 1, name: 'Active', code: ETabCode.ACTIVE },
     { id: 2, name: 'Open', code: ETabCode.OPEN },

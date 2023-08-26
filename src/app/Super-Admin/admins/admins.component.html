@@ -6,7 +6,13 @@
   </div>
 
   <div class="table-container mt-4">
-    <table class="table">
+    <app-material-table
+      [columnList]="customerTableColumns"
+      [tableData]="adminList"
+      [menuItems]="actionList"
+      (menuEvent)="action($event)"
+    ></app-material-table>
+    <!-- <table class="table"> 
       <thead class="pe-cursor">
         <tr class="f-14">
           <th
@@ -79,6 +85,6 @@
           </td>
         </tr>
       </tbody>
-    </table>
+    </table> -->
   </div>
 </div>
