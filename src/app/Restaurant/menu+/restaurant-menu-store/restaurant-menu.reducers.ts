@@ -1,11 +1,12 @@
-import { IRestaurantMenu } from './interfaces/restaurant-menu.interface';
+import { IRestaurantMenuState } from './interfaces/restaurant-menu.interface';
 import {
   RestaurantMenuActions,
   RestaurantMenuActionsUnion,
 } from './restaurant-menu.actions';
 
-export const initialRestaurantMenuState: IRestaurantMenu = {
+export const initialRestaurantMenuState: IRestaurantMenuState = {
   restaurantMenuItemList: [],
+  restaurantMenuCategories: [],
 };
 
 export function RestaurantMenuReducer(
@@ -15,6 +16,8 @@ export function RestaurantMenuReducer(
   switch (action.type) {
     case RestaurantMenuActions.FETCHED_RESTAURANT_MENU_ITEMS:
       return { ...state, restaurantMenuItemList: action.payload };
+    case RestaurantMenuActions.FETCHED_RESTAURANT_MENU_CATEGORIES:
+      return { ...state, restaurantMenuCategories: action.payload };
     default:
       return state;
   }

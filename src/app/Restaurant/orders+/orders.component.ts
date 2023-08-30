@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { ERestaurantDeliveryOrderStatus } from './restaurant-received-orders/restaurant-received-orders.enum';
-import { IRestaurantReceivedOrders } from './restaurant-received-orders/restaurant-received-orders.interface';
-import { RestaurantReceivedOrdersFacade } from './restaurant-received-orders/restaurant-received-orders.facade';
+import { ERestaurantDeliveryOrderStatus } from './restaurant-received-orders-store/restaurant-received-orders.enum';
+import { IRestaurantReceivedOrders } from './restaurant-received-orders-store/restaurant-received-orders.interface';
+import { RestaurantReceivedOrdersFacade } from './restaurant-received-orders-store/restaurant-received-orders.facade';
 import { ITab } from 'src/app/shared/interfaces/tabs.interface';
 import { ETabCode } from 'src/app/shared/enum/tab-code.enum';
 import {
@@ -11,7 +11,7 @@ import {
   restaurantReceivedOpenOrdersActionList,
   restaurantReceivedActiveOrdersActionList,
   restaurantReceivedDeliveredOrdersActionList,
-} from './restaurant-received-orders/restaurant-received-orders.constants';
+} from './restaurant-received-orders-store/restaurant-received-orders.constants';
 import { IMenuItemAction } from 'src/app/angular-material/components/material-table/material-table.interface';
 
 @Component({

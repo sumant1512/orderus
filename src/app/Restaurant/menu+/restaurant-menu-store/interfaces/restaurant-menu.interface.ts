@@ -11,6 +11,12 @@ export interface IRestaurantMenuItem extends IImage {
   [ERestaurantMenuItem.NUTRITIONAL_VALUE]: string;
 }
 
-export interface IRestaurantMenu {
+export interface IRestaurantMenuCategories {
+  [ERestaurantMenuItem.ID]: number;
+  [ERestaurantMenuItem.NAME]: string;
+}
+
+export interface IRestaurantMenuState {
   restaurantMenuItemList: Array<IRestaurantMenuItem>;
+  restaurantMenuCategories: Array<IRestaurantMenuCategories>;
 }

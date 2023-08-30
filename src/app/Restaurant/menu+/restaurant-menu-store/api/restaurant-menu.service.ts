@@ -12,6 +12,20 @@ export class RestaurantMenuService {
   apiUrls: ApiType = AppConfigurations.api;
   constructor(private http: HttpClient) {}
 
+  fetchRestaurantMenuCategories(): Observable<any> {
+    return this.http
+      .get<any>(
+        './../../../../assets/api/restaurant/restaurant-menu-categories.json'
+      )
+      .pipe(
+        map((response) => {
+          if (response) {
+            return response.data;
+          }
+        })
+      );
+  }
+
   fetchRestaurantMenuItems(): Observable<any> {
     return this.http
       .get<any>(

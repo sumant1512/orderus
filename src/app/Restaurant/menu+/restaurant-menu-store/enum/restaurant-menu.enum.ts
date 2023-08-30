@@ -7,3 +7,8 @@ export enum ERestaurantMenuItem {
   INGREDEINTS = 'ingredients',
   NUTRITIONAL_VALUE = 'nutritionalValue',
 }
+
+export enum ERestaurantCategories {
+  ID = 'id',
+  NAME = 'name',
+}

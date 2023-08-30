@@ -7,8 +7,8 @@ import {
 } from 'src/app/shared/interfaces/menu-admin.interface';
 import { ActionList } from '../restaurant-shared/constants/actions';
 import { IAction } from '../restaurant-shared/interfaces/action.interface';
-import { IRestaurantMenuItem } from './restaurant-menu-store/restaurant-menu-items/interfaces/restaurant-menu.interface';
-import { RestaurantMenuFacade } from './restaurant-menu-store/restaurant-menu-items/restaurant-menu.facade';
+import { IRestaurantMenuItem } from './restaurant-menu-store/interfaces/restaurant-menu.interface';
+import { RestaurantMenuFacade } from './restaurant-menu-store/restaurant-menu.facade';
 
 @Component({
   selector: 'app-menu',
@@ -428,6 +428,7 @@ export class MenuComponent {
     private modalService: NgbModal,
     private restaurantMenuFacade: RestaurantMenuFacade
   ) {
+    this.restaurantMenuFacade.fetchRestaurantMenuCategories();
     this.restaurantMenuFacade.fetchRestaurantMenuItems();
   }
 
