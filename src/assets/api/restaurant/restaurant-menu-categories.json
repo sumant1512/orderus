@@ -1,0 +1,21 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Breakfast menu"
+    },
+    {
+      "id": 2,
+      "name": "Lunch menu"
+    },
+
+    {
+      "id": 3,
+      "name": "Dinner menu"
+    },
+    {
+      "id": 4,
+      "name": "Drinks menu"
+    }
+  ]
+}

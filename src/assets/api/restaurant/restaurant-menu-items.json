@@ -1,0 +1,59 @@
+{
+  "data": [
+    {
+      "id": 5,
+      "name": "Sigri set",
+      "description": "Loream ipsum dolar sit amet, pri atqui facete evertitur an, ea assum solet invidunt vim.",
+      "ingredeints": "Loream ipsum dolar sit amet, pri atqui facete evertitur an, ea assum solet invidunt vim.",
+      "price": 16.8,
+      "img": "./../../../assets/menu-card/item-1.jpg",
+      "nutritionValue": "testing"
+    },
+    {
+      "id": 7,
+      "name": "Nigri set",
+      "description": "Loream ipsum dolar sit amet, pri atqui facete evertitur an, ea assum solet invidunt vim.",
+      "ingredeints": "Loream ipsum dolar sit amet, pri atqui facete evertitur an, ea assum solet invidunt vim.",
+      "price": 16.8,
+      "img": "./../../../assets/menu-card/item-1.jpg",
+      "nutritionValue": "testing"
+    },
+    {
+      "id": 8,
+      "name": "Sigri set",
+      "description": "Loream ipsum dolar sit amet, pri atqui facete evertitur an, ea assum solet invidunt vim.",
+      "ingredeints": "Loream ipsum dolar sit amet, pri atqui facete evertitur an, ea assum solet invidunt vim.",
+      "price": 16.8,
+      "img": "./../../../assets/menu-card/item-1.jpg",
+      "nutritionValue": "testing"
+    },
+
+    {
+      "id": 10,
+      "name": "Nigri set",
+      "description": "Loream ipsum dolar sit amet, pri atqui facete evertitur an, ea assum solet invidunt vim.",
+      "ingredeints": "Loream ipsum dolar sit amet, pri atqui facete evertitur an, ea assum solet invidunt vim.",
+      "price": 16.8,
+      "img": "./../../../assets/menu-card/item-1.jpg",
+      "nutritionValue": "testing"
+    },
+    {
+      "id": 11,
+      "name": "Sigri set",
+      "description": "Loream ipsum dolar sit amet, pri atqui facete evertitur an, ea assum solet invidunt vim.",
+      "ingredeints": "Loream ipsum dolar sit amet, pri atqui facete evertitur an, ea assum solet invidunt vim.",
+      "price": 16.8,
+      "img": "./../../../assets/menu-card/item-1.jpg",
+      "nutritionValue": "testing"
+    },
+    {
+      "id": 9,
+      "name": "Digri set",
+      "description": "Loream ipsum dolar sit amet, pri atqui facete evertitur an, ea assum solet invidunt vim.",
+      "ingredeints": "Loream ipsum dolar sit amet, pri atqui facete evertitur an, ea assum solet invidunt vim.",
+      "price": 16.8,
+      "img": "./../../../assets/menu-card/item-1.jpg",
+      "nutritionValue": "testing"
+    }
+  ]
+}

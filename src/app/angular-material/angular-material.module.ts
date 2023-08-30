@@ -23,6 +23,7 @@ import { MaterialTableComponent } from './components/material-table/material-tab
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatChipsModule } from '@angular/material/chips';
 import { MaterialConfirmDialogComponent } from './components/material-confirm-dialog/material-confirm-dialog.component';
 
 const MODULES = [
@@ -48,6 +49,7 @@ const MODULES = [
   MatPaginatorModule,
   MatSortModule,
   MatMenuModule,
+  MatChipsModule,
 ];
 
 const COMPONENTS = [MaterialTableComponent, MaterialConfirmDialogComponent];

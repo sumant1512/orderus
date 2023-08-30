@@ -59,6 +59,21 @@
         </div>
       </div>
     </section>
+
+    <section>
+      <div>
+        <label class="input-label f-10 fw-500">Assigned categories</label>
+      </div>
+      <mat-chip-listbox selectable multiple aria-label="Category List">
+        <mat-chip-option
+          *ngFor="let category of categoriesList"
+          (click)="selectCategory(category.id)"
+          [selected]="isCategorySelected(category.id)"
+        >
+          {{ category.name }}
+        </mat-chip-option>
+      </mat-chip-listbox>
+    </section>
   </div>
 </div>
 <div class="modal-footer">

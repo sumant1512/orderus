@@ -4,18 +4,18 @@ import { CommonModule } from '@angular/common';
 import { OrdersRoutingModule } from './orders-routing.module';
 import { OrdersComponent } from './orders.component';
 import { OrderDetailsComponent } from './order-details/order-details.component';
-import { StoreModule, combineReducers } from '@ngrx/store';
-import { ordersAppReducers } from './orders-store/orders-app.reducers';
-import { OrdersAppEffects } from './orders-store/orders-app.effects';
-import { EffectsModule } from '@ngrx/effects';
+// import { StoreModule, combineReducers } from '@ngrx/store';
+// import { ordersAppReducers } from './orders-store/orders-app.reducers';
+// import { OrdersAppEffects } from './orders-store/orders-app.effects';
+// import { EffectsModule } from '@ngrx/effects';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { AngularMaterialModule } from 'src/app/angular-material/angular-material.module';
 
-const metaReducer = combineReducers(ordersAppReducers);
+// const metaReducer = combineReducers(ordersAppReducers);
 
-export function ordersMetaReducer(state: any, action: any) {
-  return metaReducer(state, action);
-}
+// export function ordersMetaReducer(state: any, action: any) {
+//   return metaReducer(state, action);
+// }
 
 @NgModule({
   declarations: [OrdersComponent, OrderDetailsComponent],
@@ -24,10 +24,10 @@ export function ordersMetaReducer(state: any, action: any) {
     OrdersRoutingModule,
     SharedModule,
     AngularMaterialModule,
-    StoreModule.forFeature('restaurant', ordersMetaReducer, {
-      metaReducers: [],
-    }),
-    EffectsModule.forFeature([...OrdersAppEffects]),
+    // StoreModule.forFeature('restaurant', ordersMetaReducer, {
+    //   metaReducers: [],
+    // }),
+    // EffectsModule.forFeature([...OrdersAppEffects]),
   ],
 })
 export class OrdersModule {}

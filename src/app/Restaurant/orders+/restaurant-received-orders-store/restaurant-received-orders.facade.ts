@@ -11,7 +11,7 @@ import {
   FetchedRestaurantReceivedDeliveredOrders,
   FetchedRestaurantReceivedOpenOrders,
 } from './restaurant-received-orders.actions';
-import { OrdersAppState } from '../orders-app.state';
+import { RestaurantAppState } from '../../resturant-store/restaurant-app.state';
 
 @Injectable({ providedIn: 'root' })
 export class RestaurantReceivedOrdersFacade {
@@ -31,7 +31,7 @@ export class RestaurantReceivedOrdersFacade {
       restaurantReceivedOrdersSelector.fetchRestaurantReceivedActiveOrdersList
     );
 
-  constructor(private store: Store<OrdersAppState>) {}
+  constructor(private store: Store<RestaurantAppState>) {}
 
   fetchRestaurantReceivedDeliveredOrders() {
     this.store.dispatch(new FetchRestaurantReceivedDeliveredOrders());
