@@ -6,7 +6,7 @@ import {
 
 export const initialRestaurantMenuState: IRestaurantMenuState = {
   restaurantMenuItemList: [],
-  restaurantMenuCategories: [],
+  restaurantMenuCategoriesList: [],
 };
 
 export function RestaurantMenuReducer(
@@ -17,7 +17,7 @@ export function RestaurantMenuReducer(
     case RestaurantMenuActions.FETCHED_RESTAURANT_MENU_ITEMS:
       return { ...state, restaurantMenuItemList: action.payload };
     case RestaurantMenuActions.FETCHED_RESTAURANT_MENU_CATEGORIES:
-      return { ...state, restaurantMenuCategories: action.payload };
+      return { ...state, restaurantMenuCategoriesList: action.payload };
     default:
       return state;
   }

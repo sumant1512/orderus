@@ -18,5 +18,5 @@ export interface IRestaurantMenuCategories {
 
 export interface IRestaurantMenuState {
   restaurantMenuItemList: Array<IRestaurantMenuItem>;
-  restaurantMenuCategories: Array<IRestaurantMenuCategories>;
+  restaurantMenuCategoriesList: Array<IRestaurantMenuCategories>;
 }

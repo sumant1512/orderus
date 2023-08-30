@@ -16,8 +16,14 @@ import { RestaurantAppState } from 'src/app/Restaurant/resturant-store/restauran
 
 @Injectable({ providedIn: 'root' })
 export class RestaurantMenuFacade {
-  restaurantMenuItemListState: Observable<IRestaurantMenuItem[]> =
+  restaurantMenuItemListState: Observable<Array<IRestaurantMenuItem>> =
     this.store.select(restaurantMenuSelector.fetchRestaurantMenuItemList);
+
+  restaurantMenuCategoriesListState: Observable<
+    Array<IRestaurantMenuCategories>
+  > = this.store.select(
+    restaurantMenuSelector.fetchRestaurantMenuCategoriesList
+  );
 
   constructor(private store: Store<RestaurantAppState>) {}
 

@@ -64,11 +64,14 @@
       <div>
         <label class="input-label f-10 fw-500">Assigned categories</label>
       </div>
-      <mat-chip-listbox aria-label="Fish selection">
-        <mat-chip-option>One fish</mat-chip-option>
-        <mat-chip-option>Two fish</mat-chip-option>
-        <mat-chip-option selected>Accent fish</mat-chip-option>
-        <mat-chip-option>Warn fish</mat-chip-option>
+      <mat-chip-listbox selectable multiple aria-label="Category List">
+        <mat-chip-option
+          *ngFor="let category of categoriesList"
+          (click)="selectCategory(category.id)"
+          [selected]="isCategorySelected(category.id)"
+        >
+          {{ category.name }}
+        </mat-chip-option>
       </mat-chip-listbox>
     </section>
   </div>
