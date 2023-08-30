@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { CustomerFacade } from './customers-store/customer/customer.facade';
-import { ICustomer } from './customers-store/customer/interfaces/customer.interface';
+import { CustomerFacade } from './customers-store/customer.facade';
+import { ICustomer } from './customers-store/interfaces/customer.interface';
 import {
   CustomerTableColumns,
   customerActionList,
-} from './customers-store/customer/customer.constants';
+} from './customers-store/customer.constants';
 import { IAction } from '../restaurant-shared/interfaces/action.interface';
 import { IMenuItemAction } from 'src/app/angular-material/components/material-table/material-table.interface';
 import { EAction } from '../restaurant-shared/enum/action.enum';

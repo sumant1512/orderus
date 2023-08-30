@@ -12,6 +12,12 @@
     border-radius: 10px;
   }
 
+  .input-label {
+    color: var(--label-6);
+    letter-spacing: 0.3px;
+    margin-bottom: 2px;
+  }
+
   .account-footer {
     border-top: 1px solid var(--box-border-color);
   }

@@ -27,6 +27,7 @@ export function httpTranslateLoader(http: HttpClient) {
     EffectsModule.forRoot([...AppEffects]),
     StoreDevtoolsModule.instrument({
       maxAge: 10,
+      name: 'Order Us',
     }),
     TranslateModule.forRoot({
       loader: {
