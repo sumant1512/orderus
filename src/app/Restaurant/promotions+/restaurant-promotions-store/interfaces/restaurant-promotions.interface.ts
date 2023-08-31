@@ -18,9 +18,3 @@ export interface IValidity {
   [EValidity.VALIDITY_ENDS_ON]?: string;
   [EValidity.VALIDITY_INFO]?: string;
 }
-
-// export interface IRestaurantPromotionState {
-//   activeRestaurantPromotionsList: Array<IRestaurantPromotions>;
-//   scheduledRestaurantPromotionsList: Array<IRestaurantPromotions>;
-//   expiredRestaurantPromotionsList: Array<IRestaurantPromotions>;
-// }

@@ -1,8 +1,13 @@
-export const fetchRestaurantActivePromotionsList = (state: any) =>
-  state.restaurant.restaurantPromotions.activeRestaurantPromotionsList || [];
+import { createSelector } from '@ngrx/store';
+import { IRestaurantPromotions } from './interfaces/restaurant-promotions.interface';
+import { ETabCode } from 'src/app/shared/enum/tab-code.enum';
 
-export const fetchRestaurantScheduledPromotionsList = (state: any) =>
-  state.restaurant.restaurantPromotions.scheduledRestaurantPromotionsList || [];
+export const fetchRestaurantPromotionsList = (state: any) =>
+  state.restaurant.restaurantPromotions || [];
 
-export const fetchRestaurantExpiredPromotionsList = (state: any) =>
-  state.restaurant.restaurantPromotions.expiredRestaurantPromotionsList || [];
+export const selectRestaurantPromotionsByStatus = (status: ETabCode) =>
+  createSelector(
+    fetchRestaurantPromotionsList,
+    (state: Array<IRestaurantPromotions>) =>
+      state?.filter((promotion) => promotion.status === status)
+  );

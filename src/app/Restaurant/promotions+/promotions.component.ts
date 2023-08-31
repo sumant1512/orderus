@@ -1,12 +1,12 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ITab } from 'src/app/shared/interfaces/tabs.interface';
-import { RestaurantPromotionsFacade } from './restaurant-promotions-store/restaurant-promotions.facade';
-import { IRestaurantPromotions } from './restaurant-promotions-store/interfaces/restaurant-promotions.interface';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { IAction } from '../restaurant-shared/interfaces/action.interface';
 import { ActionList } from '../restaurant-shared/constants/actions';
 import { ETabCode } from 'src/app/shared/enum/tab-code.enum';
+import { IRestaurantPromotions } from './restaurant-promotions-store/interfaces/restaurant-promotions.interface';
+import { RestaurantPromotionsFacade } from './restaurant-promotions-store/restaurant-promotions.facade';
 
 @Component({
   selector: 'app-promotions',
@@ -29,10 +29,12 @@ export class PromotionsComponent implements OnInit, OnDestroy {
     private restaurantPromotionsFacade: RestaurantPromotionsFacade,
     private modalService: NgbModal
   ) {
-    this.restaurantPromotionsFacade.fetchRestaurantActivePromotions();
+    // this.restaurantPromotionsFacade.fetchRestaurantPromotions();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getPromotionsList();
+  }
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
@@ -52,12 +54,18 @@ export class PromotionsComponent implements OnInit, OnDestroy {
   }
 
   getSelectedPromotion(selectedSection: ITab): void {
+    this.restaurantPromotionsFacade.fetchRestaurantPromotions(
+      selectedSection.code || ETabCode.ACTIVE
+    );
+  }
+
+  getPromotionsList(): void {
     this.subscription.add(
-      this.restaurantPromotionsFacade
-        .restaurantPromotionByStatus(selectedSection.code as ETabCode)
-        .subscribe((promotionList) => {
+      this.restaurantPromotionsFacade.restaurantPromotionListState.subscribe(
+        (promotionList) => {
           this.promotionsList = promotionList;
-        })
+        }
+      )
     );
   }
 }

@@ -4,69 +4,38 @@ import { Observable } from 'rxjs';
 import * as restaurantPromotionSelector from './restaurant-promotions.selectors';
 import { IRestaurantPromotions } from './interfaces/restaurant-promotions.interface';
 import {
-  FetchRestaurantActivePromotions,
-  FetchRestaurantExpiredPromotions,
-  FetchRestaurantScheduledPromotions,
-  FetchedRestaurantActivePromotions,
-  FetchedRestaurantExpiredPromotions,
-  FetchedRestaurantScheduledPromotions,
+  FetchRestaurantPromotions,
+  FetchedRestaurantPromotions,
 } from './restaurant-promotions.actions';
+import { ETabCode } from 'src/app/shared/enum/tab-code.enum';
 import { RestaurantAppState } from 'src/app/Restaurant/resturant-store/restaurant-app.state';
 
 @Injectable({ providedIn: 'root' })
 export class RestaurantPromotionsFacade {
-  restaurantActivePromotionListState: Observable<Array<IRestaurantPromotions>> =
+  restaurantPromotionListState: Observable<Array<IRestaurantPromotions>> =
     this.store.select(
-      restaurantPromotionSelector.fetchRestaurantActivePromotionsList
+      restaurantPromotionSelector.fetchRestaurantPromotionsList
     );
 
-  restaurantScheduledPromotionListState: Observable<
-    Array<IRestaurantPromotions>
-  > = this.store.select(
-    restaurantPromotionSelector.fetchRestaurantScheduledPromotionsList
-  );
-
-  restaurantExpiredPromotionListState: Observable<
-    Array<IRestaurantPromotions>
-  > = this.store.select(
-    restaurantPromotionSelector.fetchRestaurantExpiredPromotionsList
-  );
+  restaurantPromotionByStatus = (
+    status: ETabCode
+  ): Observable<Array<IRestaurantPromotions>> => {
+    return this.store.select(
+      restaurantPromotionSelector.selectRestaurantPromotionsByStatus(status)
+    );
+  };
 
   constructor(private store: Store<RestaurantAppState>) {}
 
-  fetchRestaurantActivePromotions() {
-    this.store.dispatch(new FetchRestaurantActivePromotions());
+  fetchRestaurantPromotions(statusCode: ETabCode) {
+    this.store.dispatch(new FetchRestaurantPromotions(statusCode));
   }
 
-  fetchedRestaurantActivePromotions(
-    restaurantActivePromotionList: IRestaurantPromotions[]
+  fetchedRestaurantPromotions(
+    restaurantPromotionList: IRestaurantPromotions[]
   ) {
     this.store.dispatch(
-      new FetchedRestaurantActivePromotions(restaurantActivePromotionList)
-    );
-  }
-
-  fetchRestaurantScheduledPromotions() {
-    this.store.dispatch(new FetchRestaurantScheduledPromotions());
-  }
-
-  fetchedRestaurantScheduledPromotions(
-    restaurantScheduledPromotionList: IRestaurantPromotions[]
-  ) {
-    this.store.dispatch(
-      new FetchedRestaurantScheduledPromotions(restaurantScheduledPromotionList)
-    );
-  }
-
-  fetchRestaurantExpiredPromotions() {
-    this.store.dispatch(new FetchRestaurantExpiredPromotions());
-  }
-
-  fetchedRestaurantExpiredPromotions(
-    restaurantExpiredPromotionList: IRestaurantPromotions[]
-  ) {
-    this.store.dispatch(
-      new FetchedRestaurantExpiredPromotions(restaurantExpiredPromotionList)
+      new FetchedRestaurantPromotions(restaurantPromotionList)
     );
   }
 }
