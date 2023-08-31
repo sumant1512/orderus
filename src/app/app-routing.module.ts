@@ -60,6 +60,11 @@ const routes: Routes = [
       import('./Delivery/delivery.module').then((m) => m.DeliveryModule),
     // canActivate: [AuthGuard],
   },
+  {
+    path: APP_ROUTES.CHEF.PARENT,
+    loadChildren: () => import('./Chef/chef.module').then((m) => m.ChefModule),
+    // canActivate: [AuthGuard],
+  },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 

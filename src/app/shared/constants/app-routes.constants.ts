@@ -45,4 +45,11 @@ export const APP_ROUTES = {
       ORDERS: 'orders',
     },
   },
+  CHEF: {
+    PARENT: 'chef',
+    CHILD_ROUTES: {
+      DASHBOARD: 'dashboard',
+      ORDERS: 'orders',
+    },
+  },
 };
