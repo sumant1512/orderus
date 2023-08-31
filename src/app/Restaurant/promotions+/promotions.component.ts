@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ITab } from 'src/app/shared/interfaces/tabs.interface';
-import { RestaurantPromotionsFacade } from './restaurant-promotions-store/restaurant-promotions/restaurant-promotions.facade';
-import { IRestaurantPromotions } from './restaurant-promotions-store/restaurant-promotions/interfaces/restaurant-promotions.interface';
+import { RestaurantPromotionsFacade } from './restaurant-promotions-store/restaurant-promotions.facade';
+import { IRestaurantPromotions } from './restaurant-promotions-store/interfaces/restaurant-promotions.interface';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { IAction } from '../restaurant-shared/interfaces/action.interface';
 import { ActionList } from '../restaurant-shared/constants/actions';
@@ -29,7 +29,7 @@ export class PromotionsComponent implements OnInit, OnDestroy {
     private restaurantPromotionsFacade: RestaurantPromotionsFacade,
     private modalService: NgbModal
   ) {
-    this.restaurantPromotionsFacade.fetchRestaurantPromotions();
+    this.restaurantPromotionsFacade.fetchRestaurantActivePromotions();
   }
 
   ngOnInit(): void {}

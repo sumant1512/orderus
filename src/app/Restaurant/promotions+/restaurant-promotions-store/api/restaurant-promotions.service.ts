@@ -12,6 +12,26 @@ export class RestaurantPromotionsService {
   apiUrls: ApiType = AppConfigurations.api;
   constructor(private http: HttpClient) {}
 
+  fetchRestaurantActivePromotions(): Observable<any> {
+    return this.http.get<any>('./../../../../assets/api/promotion.json').pipe(
+      map((response) => {
+        if (response) {
+          return response.data;
+        }
+      })
+    );
+  }
+
+  fetchRestaurantScheduledPromotions(): Observable<any> {
+    return this.http.get<any>('./../../../../assets/api/promotion.json').pipe(
+      map((response) => {
+        if (response) {
+          return response.data;
+        }
+      })
+    );
+  }
+
   fetchRestaurantPromotions(): Observable<any> {
     return this.http.get<any>('./../../../../assets/api/promotion.json').pipe(
       map((response) => {

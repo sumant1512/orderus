@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IRestaurantPromotions } from 'src/app/Restaurant/promotions+/restaurant-promotions-store/restaurant-promotions/interfaces/restaurant-promotions.interface';
+import { IRestaurantPromotions } from 'src/app/Restaurant/promotions+/restaurant-promotions-store/interfaces/restaurant-promotions.interface';
 import { ETabCode } from '../../enum/tab-code.enum';
 
 @Component({
