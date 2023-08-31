@@ -3,7 +3,7 @@ import { IRestaurantPromotions } from './interfaces/restaurant-promotions.interf
 import { ETabCode } from 'src/app/shared/enum/tab-code.enum';
 
 export const fetchRestaurantPromotionsList = (state: any) =>
-  state.restaurantPromotions?.restaurantPromotionsList || [];
+  state.restaurant.restaurantPromotions || [];
 
 export const selectRestaurantPromotionsByStatus = (status: ETabCode) =>
   createSelector(

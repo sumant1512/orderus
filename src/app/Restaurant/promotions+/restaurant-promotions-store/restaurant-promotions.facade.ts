@@ -7,8 +7,8 @@ import {
   FetchRestaurantPromotions,
   FetchedRestaurantPromotions,
 } from './restaurant-promotions.actions';
-import { RestaurantPromotionsAppState } from '../restaurant-promotions-app.state';
 import { ETabCode } from 'src/app/shared/enum/tab-code.enum';
+import { RestaurantAppState } from 'src/app/Restaurant/resturant-store/restaurant-app.state';
 
 @Injectable({ providedIn: 'root' })
 export class RestaurantPromotionsFacade {
@@ -25,10 +25,10 @@ export class RestaurantPromotionsFacade {
     );
   };
 
-  constructor(private store: Store<RestaurantPromotionsAppState>) {}
+  constructor(private store: Store<RestaurantAppState>) {}
 
-  fetchRestaurantPromotions() {
-    this.store.dispatch(new FetchRestaurantPromotions());
+  fetchRestaurantPromotions(statusCode: ETabCode) {
+    this.store.dispatch(new FetchRestaurantPromotions(statusCode));
   }
 
   fetchedRestaurantPromotions(

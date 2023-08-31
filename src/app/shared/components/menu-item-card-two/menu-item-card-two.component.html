@@ -46,9 +46,7 @@
     <div class="col-6">
       <div class="heading-five">Nutritional value</div>
       <div class="heading-five-normal mt-1">
-        <span *ngFor="let nutrition of menuItem.nutritionValue"
-          >{{ nutrition.name }} {{ nutrition.quantity }} {{ nutrition.unit }},
-        </span>
+        <span>{{ menuItem.nutritionValue }}, </span>
       </div>
     </div>
   </div>

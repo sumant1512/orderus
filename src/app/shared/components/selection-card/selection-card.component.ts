@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { EHeadingType } from '../../enum/heading-type.enum';
-import { IMenuAdmin } from '../../interfaces/menu-admin.interface';
 import { IAction } from 'src/app/Restaurant/restaurant-shared/interfaces/action.interface';
+import { IRestaurantMenuCategories } from 'src/app/Restaurant/menu+/restaurant-menu-store/interfaces/restaurant-menu.interface';
 
 @Component({
   selector: 'app-selection-card',
@@ -10,7 +10,7 @@ import { IAction } from 'src/app/Restaurant/restaurant-shared/interfaces/action.
 })
 export class SelectionCardComponent {
   headingTypeList = EHeadingType;
-  @Input() selectionDetails!: IMenuAdmin;
+  @Input() selectionDetails!: IRestaurantMenuCategories;
   @Input() actionList!: Array<IAction>;
   @Input() isActionEnabled: boolean = true;
   @Input() isSelected: boolean = false;

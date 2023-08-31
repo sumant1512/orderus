@@ -1,5 +1,8 @@
 import { IImage } from 'src/app/shared/interfaces/image.interface';
-import { ERestaurantMenuItem } from '../enum/restaurant-menu.enum';
+import {
+  ERestaurantCategories,
+  ERestaurantMenuItem,
+} from '../enum/restaurant-menu.enum';
 
 export interface IRestaurantMenuItem extends IImage {
   [ERestaurantMenuItem.ID]: number;
@@ -12,8 +15,9 @@ export interface IRestaurantMenuItem extends IImage {
 }
 
 export interface IRestaurantMenuCategories {
-  [ERestaurantMenuItem.ID]: number;
-  [ERestaurantMenuItem.NAME]: string;
+  [ERestaurantCategories.ID]: number;
+  [ERestaurantCategories.NAME]: string;
+  [ERestaurantCategories.NO_OF_ITEMS]: string;
 }
 
 export interface IRestaurantMenuState {

@@ -14,12 +14,14 @@ export class RestaurantPromotionsEffects {
   fetchRestaurantPromotions$ = createEffect(() =>
     this.action$.pipe(
       ofType(RestaurantPromotionsActions.FETCH_RESTAURANT_PROMOTIONS),
-      mergeMap(() =>
-        this.restaurantPromotionsService.fetchRestaurantPromotions().pipe(
-          map((restaurantPromotionsList: Array<IRestaurantPromotions>) => {
-            return new FetchedRestaurantPromotions(restaurantPromotionsList);
-          })
-        )
+      mergeMap((action) =>
+        this.restaurantPromotionsService
+          .fetchRestaurantPromotions(action.payload)
+          .pipe(
+            map((restaurantPromotionsList: Array<IRestaurantPromotions>) => {
+              return new FetchedRestaurantPromotions(restaurantPromotionsList);
+            })
+          )
       )
     )
   );

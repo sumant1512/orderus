@@ -18,12 +18,14 @@ export class RestaurantMenuEffects {
   fetchRestaurantMenuItems$ = createEffect(() =>
     this.action$.pipe(
       ofType(RestaurantMenuActions.FETCH_RESTAURANT_MENU_ITEMS),
-      mergeMap(() =>
-        this.restaurantMenuService.fetchRestaurantMenuItems().pipe(
-          map((restaurantMenuItemList: IRestaurantMenuItem[]) => {
-            return new FetchedRestaurantMenuItems(restaurantMenuItemList);
-          })
-        )
+      mergeMap((action) =>
+        this.restaurantMenuService
+          .fetchRestaurantMenuItems(action.payload)
+          .pipe(
+            map((restaurantMenuItemList: IRestaurantMenuItem[]) => {
+              return new FetchedRestaurantMenuItems(restaurantMenuItemList);
+            })
+          )
       )
     )
   );

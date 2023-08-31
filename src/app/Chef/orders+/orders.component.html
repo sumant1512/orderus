@@ -1,0 +1,109 @@
+<div class="container pb-4">
+  <div class="row pt-3 pt-lg-4">
+    <div class="col-12">
+      <span class="heading-two pe-cursor">Orders</span>
+    </div>
+  </div>
+
+  <div class="row mt-3 mt-md-4">
+    <div class="col-12">
+      <app-tabs
+        [tabList]="sectionList"
+        (selectedTab)="getSelectedOrders($event)"
+      ></app-tabs>
+    </div>
+  </div>
+
+  <div class="table-container mt-4">
+    <table class="table">
+      <thead class="pe-cursor">
+        <tr class="f-14">
+          <th
+            class="ps-3 ps-md-4 ps-lg-5"
+            (click)="onSortClick(chefOrdersKeys.ORDER_ID, 'number')"
+            scope="col"
+          >
+            Id
+          </th>
+          <th
+            (click)="onSortClick(chefOrdersKeys.FIRST_NAME, 'string')"
+            scope="col"
+          >
+            Name
+          </th>
+          <th
+            (click)="onSortClick(chefOrdersKeys.ADDRESS_1, 'string')"
+            scope="col"
+          >
+            Address
+          </th>
+          <th
+            (click)="onSortClick(chefOrdersKeys.ORDER_DATE, 'date')"
+            scope="col"
+          >
+            Creation date
+          </th>
+          <th
+            (click)="onSortClick(chefOrdersKeys.ORDER_DATE, 'date')"
+            scope="col"
+          >
+            Creation time
+          </th>
+          <th
+            (click)="onSortClick(chefOrdersKeys.STATUS, 'string')"
+            scope="col"
+          >
+            Status
+          </th>
+          <th
+            (click)="onSortClick(chefOrdersKeys.TOTAL_AMOUNT, 'string')"
+            scope="col"
+          >
+            Total amount
+          </th>
+        </tr>
+      </thead>
+      <tbody class="pe-cursor">
+        <tr
+          class="f-12"
+          *ngFor="let chefOrders of ordersList"
+          (click)="navigateToAdminDetails(chefOrders.id)"
+        >
+          <td class="fw-500 ps-md-4 ps-lg-5" data-label="id">
+            {{ chefOrders.id }}
+          </td>
+          <td data-label="Orders">
+            {{ chefOrders.firstName }}
+            {{ chefOrders.lastName }}
+          </td>
+          <td data-label="Orders">
+            {{ chefOrders.addressOne }}{{ chefOrders.addressTwo
+            }}{{ chefOrders.city }}
+          </td>
+          <td data-label="Orders">
+            {{ chefOrders.orderDate | date : "d MMM, y" }}
+          </td>
+          <td data-label="Orders">
+            {{ chefOrders.orderDate | date : "hh:mm a" }}
+          </td>
+          <td data-label="Orders">
+            <span
+              [ngClass]="{
+                completed: chefOrders.status === orderStatusEnum.DELIVERED,
+                cancelled: chefOrders.status === orderStatusEnum.PENDING,
+                'in-progress':
+                  chefOrders.status === orderStatusEnum.READY ||
+                  chefOrders.status === orderStatusEnum.PICKED_UP ||
+                  chefOrders.status === orderStatusEnum.PREPARING ||
+                  chefOrders.status === orderStatusEnum.ACCEPTED
+              }"
+              class="dot me-2"
+            ></span>
+            {{ chefOrders.status }}
+          </td>
+          <td data-label="Total amount">$ {{ chefOrders.totalAmount }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

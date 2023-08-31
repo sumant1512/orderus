@@ -7,7 +7,7 @@
       "ingredeints": "Loream ipsum dolar sit amet, pri atqui facete evertitur an, ea assum solet invidunt vim.",
       "price": 16.8,
       "img": "./../../../assets/menu-card/item-1.jpg",
-      "nutritionValue": "testing"
+      "nutritionValue": "Proteins 7.11 gm., Fats 5.17 gm., Carbohydrates 18.40 kkal (for 100 gm.)."
     },
     {
       "id": 7,
@@ -16,7 +16,7 @@
       "ingredeints": "Loream ipsum dolar sit amet, pri atqui facete evertitur an, ea assum solet invidunt vim.",
       "price": 16.8,
       "img": "./../../../assets/menu-card/item-1.jpg",
-      "nutritionValue": "testing"
+      "nutritionValue": "Proteins 7.11 gm., Fats 5.17 gm., Carbohydrates 18.40 kkal (for 100 gm.)."
     },
     {
       "id": 8,
@@ -25,7 +25,7 @@
       "ingredeints": "Loream ipsum dolar sit amet, pri atqui facete evertitur an, ea assum solet invidunt vim.",
       "price": 16.8,
       "img": "./../../../assets/menu-card/item-1.jpg",
-      "nutritionValue": "testing"
+      "nutritionValue": "Proteins 7.11 gm., Fats 5.17 gm., Carbohydrates 18.40 kkal (for 100 gm.)."
     },
 
     {
@@ -35,7 +35,7 @@
       "ingredeints": "Loream ipsum dolar sit amet, pri atqui facete evertitur an, ea assum solet invidunt vim.",
       "price": 16.8,
       "img": "./../../../assets/menu-card/item-1.jpg",
-      "nutritionValue": "testing"
+      "nutritionValue": "Proteins 7.11 gm., Fats 5.17 gm., Carbohydrates 18.40 kkal (for 100 gm.)."
     },
     {
       "id": 11,
@@ -44,7 +44,7 @@
       "ingredeints": "Loream ipsum dolar sit amet, pri atqui facete evertitur an, ea assum solet invidunt vim.",
       "price": 16.8,
       "img": "./../../../assets/menu-card/item-1.jpg",
-      "nutritionValue": "testing"
+      "nutritionValue": "Proteins 7.11 gm., Fats 5.17 gm., Carbohydrates 18.40 kkal (for 100 gm.)."
     },
     {
       "id": 9,
@@ -53,7 +53,7 @@
       "ingredeints": "Loream ipsum dolar sit amet, pri atqui facete evertitur an, ea assum solet invidunt vim.",
       "price": 16.8,
       "img": "./../../../assets/menu-card/item-1.jpg",
-      "nutritionValue": "testing"
+      "nutritionValue": "Proteins 7.11 gm., Fats 5.17 gm., Carbohydrates 18.40 kkal (for 100 gm.)."
     }
   ]
 }
