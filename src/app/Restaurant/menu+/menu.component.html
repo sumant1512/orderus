@@ -37,10 +37,7 @@
         <span class="heading-two">{{ getNameById(selectedCategoryId) }}</span>
       </div>
       <div>
-        <div
-          class="mb-3"
-          *ngFor="let item of getItemListById(selectedCategoryId)"
-        >
+        <div class="mb-3" *ngFor="let item of menuItemList">
           <app-menu-item-card-two
             [menuItem]="item"
             (editEvent)="action($event, menuModal, 'medium')"

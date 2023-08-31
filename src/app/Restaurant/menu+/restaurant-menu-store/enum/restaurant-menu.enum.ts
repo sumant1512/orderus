@@ -4,11 +4,12 @@ export enum ERestaurantMenuItem {
   NAME = 'name',
   PRICE = 'price',
   DESCRIPTION = 'description',
-  INGREDEINTS = 'ingredients',
-  NUTRITIONAL_VALUE = 'nutritionalValue',
+  INGREDEINTS = 'ingredeints',
+  NUTRITIONAL_VALUE = 'nutritionValue',
 }
 
 export enum ERestaurantCategories {
   ID = 'id',
   NAME = 'name',
+  NO_OF_ITEMS = 'numberOfItems',
 }

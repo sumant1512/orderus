@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { IMenuItem } from '../../interfaces/menu-admin.interface';
 import { IAction } from 'src/app/Restaurant/restaurant-shared/interfaces/action.interface';
 import { ActionList } from 'src/app/Restaurant/restaurant-shared/constants/actions';
+import { IRestaurantMenuItem } from 'src/app/Restaurant/menu+/restaurant-menu-store/interfaces/restaurant-menu.interface';
 
 @Component({
   selector: 'app-menu-item-card-two',
@@ -9,12 +9,12 @@ import { ActionList } from 'src/app/Restaurant/restaurant-shared/constants/actio
   styleUrls: ['./menu-item-card-two.component.scss'],
 })
 export class MenuItemCardTwoComponent {
-  @Input() menuItem!: IMenuItem;
+  @Input() menuItem!: IRestaurantMenuItem;
   @Input() isActionEnabled: boolean = true;
 
   @Output() editEvent = new EventEmitter<IAction>();
   @Output() deleteEvent = new EventEmitter<number>();
-  @Output() dublicateEvent = new EventEmitter<IMenuItem>();
+  @Output() dublicateEvent = new EventEmitter<IRestaurantMenuItem>();
   itemCount = 0;
   actionList = ActionList;
 
@@ -35,7 +35,7 @@ export class MenuItemCardTwoComponent {
     this.deleteEvent.emit(id);
   }
 
-  emitDublicateEvent(menuItem: IMenuItem): void {
+  emitDublicateEvent(menuItem: IRestaurantMenuItem): void {
     this.dublicateEvent.emit(menuItem);
   }
 }

@@ -13,6 +13,7 @@ export enum RestaurantMenuActions {
 
 export class FetchRestaurantMenuItems implements Action {
   readonly type = RestaurantMenuActions.FETCH_RESTAURANT_MENU_ITEMS;
+  constructor(public payload: number) {}
 }
 
 export class FetchedRestaurantMenuItems implements Action {

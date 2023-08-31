@@ -27,8 +27,8 @@ export class RestaurantMenuFacade {
 
   constructor(private store: Store<RestaurantAppState>) {}
 
-  fetchRestaurantMenuItems() {
-    this.store.dispatch(new FetchRestaurantMenuItems());
+  fetchRestaurantMenuItems(id: number) {
+    this.store.dispatch(new FetchRestaurantMenuItems(id));
   }
 
   fetchedRestaurantMenuItems(restaurantMenuItemList: IRestaurantMenuItem[]) {

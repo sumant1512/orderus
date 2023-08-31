@@ -26,7 +26,8 @@ export class RestaurantMenuService {
       );
   }
 
-  fetchRestaurantMenuItems(): Observable<any> {
+  fetchRestaurantMenuItems(id: number): Observable<any> {
+    console.log(id);
     return this.http
       .get<any>(
         './../../../../assets/api/restaurant/restaurant-menu-items.json'

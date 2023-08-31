@@ -2,20 +2,24 @@
   "data": [
     {
       "id": 1,
-      "name": "Breakfast menu"
+      "name": "Breakfast menu",
+      "numberOfItems": 3
     },
     {
       "id": 2,
-      "name": "Lunch menu"
+      "name": "Lunch menu",
+      "numberOfItems": 2
     },
 
     {
       "id": 3,
-      "name": "Dinner menu"
+      "name": "Dinner menu",
+      "numberOfItems": 6
     },
     {
       "id": 4,
-      "name": "Drinks menu"
+      "name": "Drinks menu",
+      "numberOfItems": 1
     }
   ]
 }
